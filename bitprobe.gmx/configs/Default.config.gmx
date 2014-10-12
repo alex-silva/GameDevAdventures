@@ -71,6 +71,7 @@
     <option_colordepth>0</option_colordepth>
     <option_display_name>GameMaker: Studio</option_display_name>
     <option_displayerrors>true</option_displayerrors>
+    <option_facebook_app_display_name></option_facebook_app_display_name>
     <option_facebook_appid></option_facebook_appid>
     <option_facebook_enable>false</option_facebook_enable>
     <option_freeze>false</option_freeze>
