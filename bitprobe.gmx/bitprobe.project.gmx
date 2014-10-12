@@ -6,13 +6,19 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_Probe</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_Level1</room>
+  </rooms>
   <constants number="2">
-    <constant name="GM_build_date">0</constant>
-    <constant name="GM_version">0</constant>
+    <constant name="GM_build_date">41924.8800554514</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
