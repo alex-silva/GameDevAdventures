@@ -7,19 +7,62 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
-    <sprite>sprites\spr_Blue_Spike</sprite>
+    <sprites name="Spike">
+      <sprites name="Blue">
+        <sprite>sprites\spr_Spike_Blue</sprite>
+        <sprite>sprites\spr_Spike_Blue_Sphere</sprite>
+      </sprites>
+      <sprites name="Red">
+        <sprite>sprites\spr_Spike_Red</sprite>
+        <sprite>sprites\spr_Spike_Red_Sphere</sprite>
+      </sprites>
+      <sprites name="Green">
+        <sprite>sprites\spr_Spike_Green</sprite>
+        <sprite>sprites\spr_Spike_Green_Sphere</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Barrier">
+      <sprite>sprites\spr_Barrier_Blue</sprite>
+      <sprite>sprites\spr_Barrier_Green</sprite>
+      <sprite>sprites\spr_Barrier_Red</sprite>
+    </sprites>
+    <sprites name="Door">
+      <sprite>sprites\spr_Door_Start</sprite>
+      <sprite>sprites\spr_Door_End</sprite>
+    </sprites>
+    <sprites name="Floor">
+      <sprites name="White">
+        <sprite>sprites\spr_Floor_White</sprite>
+        <sprite>sprites\spr_Floor_White_Corner</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_Probe</object>
-    <object>objects\obj_Blue_Spike</object>
+    <objects name="Floor">
+      <object>objects\obj_Floor</object>
+      <object>objects\obj_Floor_White</object>
+    </objects>
+    <objects name="Spike">
+      <object>objects\obj_Spike</object>
+      <object>objects\obj_Spike_Blue</object>
+    </objects>
+    <objects name="Barrier">
+      <object>objects\obj_Barrier_Blue</object>
+      <object>objects\obj_Barrier</object>
+    </objects>
+    <objects name="Door">
+      <object>objects\obj_Door</object>
+      <object>objects\obj_Door_Start</object>
+      <object>objects\obj_Door_End</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Level_1</room>
+    <room>rooms\rm_Level_01</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41924.8964529977</constant>
+    <constant name="GM_build_date">41925.9125315741</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
