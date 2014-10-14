@@ -36,9 +36,18 @@
         <sprite>sprites\spr_Floor_White_Corner</sprite>
       </sprites>
     </sprites>
+    <sprites name="Player">
+      <sprite>sprites\spr_Player_JL</sprite>
+      <sprite>sprites\spr_Player_JR</sprite>
+      <sprite>sprites\spr_Player_L</sprite>
+      <sprite>sprites\spr_Player_R</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <objects name="objects">
     <objects name="Floor">
       <object>objects\obj_Floor</object>
@@ -57,13 +66,18 @@
       <object>objects\obj_Door_Start</object>
       <object>objects\obj_Door_End</object>
     </objects>
+    <objects name="Player">
+      <object>objects\obj_Player</object>
+    </objects>
+    <object>objects\obj_Controller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Level_01</room>
+    <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41926.0348619213</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
+    <constant name="GM_build_date">41926.1995578356</constant>
+    <constant name="GM_version">'100'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
