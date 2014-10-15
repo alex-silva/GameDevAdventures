@@ -36,10 +36,22 @@
         <sprite>sprites\spr_Floor_White_Corner</sprite>
       </sprites>
     </sprites>
+<<<<<<< HEAD
     <sprite>sprites\spr_Bit_0</sprite>
+=======
+    <sprites name="Player">
+      <sprite>sprites\spr_Player_JL</sprite>
+      <sprite>sprites\spr_Player_JR</sprite>
+      <sprite>sprites\spr_Player_L</sprite>
+      <sprite>sprites\spr_Player_R</sprite>
+    </sprites>
+>>>>>>> 5f6ec6ee6ab08e5803d98f97674ee03341c80dec
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+<<<<<<< HEAD
   <scripts name="scripts">
     <scripts name="Player">
       <script>scripts\scr_Initialize_Player.gml</script>
@@ -54,6 +66,9 @@
       <script>scripts\scr_Death.gml</script>
     </scripts>
   </scripts>
+=======
+  <scripts name="scripts"/>
+>>>>>>> 5f6ec6ee6ab08e5803d98f97674ee03341c80dec
   <objects name="objects">
     <objects name="Floor">
       <object>objects\obj_Floor</object>
@@ -73,15 +88,27 @@
       <object>objects\obj_Door_End</object>
     </objects>
     <objects name="Player">
+<<<<<<< HEAD
       <object>objects\obj_MrPixeled</object>
     </objects>
+=======
+      <object>objects\obj_Player</object>
+    </objects>
+    <object>objects\obj_Controller</object>
+>>>>>>> 5f6ec6ee6ab08e5803d98f97674ee03341c80dec
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Level_01</room>
+    <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
+<<<<<<< HEAD
     <constant name="GM_build_date">41926,9501737037</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
+=======
+    <constant name="GM_build_date">41926.1995578356</constant>
+    <constant name="GM_version">'100'</constant>
+>>>>>>> 5f6ec6ee6ab08e5803d98f97674ee03341c80dec
   </constants>
   <help>
     <rtf>help.rtf</rtf>
