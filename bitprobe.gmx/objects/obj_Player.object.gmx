@@ -186,8 +186,8 @@ else image_index = 0;
             <kind>1</kind>
             <string>if(lives&lt;=0)
 {
-    //room_goto(rm_GameOver);
-    game_end();
+    room_goto(rm_GameOver);
+    //game_end();
 }
 instance_destroy();
 instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
