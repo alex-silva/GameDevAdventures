@@ -212,6 +212,7 @@
     <instance objName="obj_Door_Start" x="80" y="400" name="inst_511DEDCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Door_End" x="2000" y="400" name="inst_617AB7AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Blue" x="928" y="352" name="inst_2ADDC828" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_MrPixeled" x="128" y="432" name="inst_BF4739ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

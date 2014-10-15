@@ -36,9 +36,24 @@
         <sprite>sprites\spr_Floor_White_Corner</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_Bit_0</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="Player">
+      <script>scripts\scr_Initialize_Player.gml</script>
+    </scripts>
+    <scripts name="Global">
+      <script>scripts\scr_Initialize_Global_Variables.gml</script>
+    </scripts>
+    <scripts name="Spike">
+      <script>scripts\scr_Initialize_Spike.gml</script>
+    </scripts>
+    <scripts name="Particles">
+      <script>scripts\scr_Death.gml</script>
+    </scripts>
+  </scripts>
   <objects name="objects">
     <objects name="Floor">
       <object>objects\obj_Floor</object>
@@ -57,12 +72,15 @@
       <object>objects\obj_Door_Start</object>
       <object>objects\obj_Door_End</object>
     </objects>
+    <objects name="Player">
+      <object>objects\obj_MrPixeled</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Level_01</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41926.0348619213</constant>
+    <constant name="GM_build_date">41926,9501737037</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
