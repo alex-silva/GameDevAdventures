@@ -77,7 +77,7 @@ global.life = 3;
           </argument>
           <argument>
             <kind>5</kind>
-            <sprite>spr_Player_R</sprite>
+            <sprite>spr_Player_B_R</sprite>
           </argument>
         </arguments>
       </action>

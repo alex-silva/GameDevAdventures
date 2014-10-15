@@ -38,10 +38,12 @@
     </sprites>
     <sprite>sprites\spr_Bit_0</sprite>
     <sprites name="Player">
-      <sprite>sprites\spr_Player_JL</sprite>
-      <sprite>sprites\spr_Player_JR</sprite>
-      <sprite>sprites\spr_Player_L</sprite>
-      <sprite>sprites\spr_Player_R</sprite>
+      <sprites name="B">
+        <sprite>sprites\spr_Player_B_L</sprite>
+        <sprite>sprites\spr_Player_B_R</sprite>
+        <sprite>sprites\spr_Player_B_JL</sprite>
+        <sprite>sprites\spr_Player_B_JR</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -88,8 +90,8 @@
     <room>rooms\rm_Level_01</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41927.1277641782</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
+    <constant name="GM_build_date">41927.1370732176</constant>
+    <constant name="GM_version">'100'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
