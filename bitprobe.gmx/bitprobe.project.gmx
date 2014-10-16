@@ -44,6 +44,18 @@
         <sprite>sprites\spr_Player_B_JL</sprite>
         <sprite>sprites\spr_Player_B_JR</sprite>
       </sprites>
+      <sprites name="R">
+        <sprite>sprites\spr_Player_R_L</sprite>
+        <sprite>sprites\spr_Player_R_R</sprite>
+        <sprite>sprites\spr_Player_R_JL</sprite>
+        <sprite>sprites\spr_Player_R_JR</sprite>
+      </sprites>
+      <sprites name="G">
+        <sprite>sprites\spr_Player_G_L</sprite>
+        <sprite>sprites\spr_Player_G_R</sprite>
+        <sprite>sprites\spr_Player_G_JL</sprite>
+        <sprite>sprites\spr_Player_G_JR</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -53,12 +65,11 @@
   <scripts name="scripts">
     <scripts name="Player">
       <script>scripts\scr_Initialize_Player.gml</script>
+      <script>scripts\scr_Troca_Sprite.gml</script>
     </scripts>
     <scripts name="Global">
       <script>scripts\scr_Initialize_Global_Variables.gml</script>
-    </scripts>
-    <scripts name="Spike">
-      <script>scripts\scr_Initialize_Spike.gml</script>
+      <script>scripts\scr_Maps.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_Death.gml</script>
@@ -83,7 +94,6 @@
       <object>objects\obj_Door_End</object>
     </objects>
     <objects name="Player">
-      <object>objects\obj_MrPixeled</object>
       <object>objects\obj_Player</object>
     </objects>
     <object>objects\obj_Controller</object>
@@ -93,8 +103,8 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41927.1408174074</constant>
-    <constant name="GM_version">'100'</constant>
+    <constant name="GM_build_date">41928,096025162</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

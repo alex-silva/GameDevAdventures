@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Inicializar spike
-scr_Initialize_Spike();
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
