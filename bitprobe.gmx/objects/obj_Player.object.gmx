@@ -65,7 +65,8 @@ image_speed = 0.3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Instância do player volta ao início
+            <string>///Destroi Instância do player e volta ao início
+instance_destroy();
 instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
 </string>
           </argument>
@@ -91,40 +92,50 @@ instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
             <kind>1</kind>
             <string>/// Define velocidade e colisões com paredes
 
-key_Right = keyboard_check(global.key_Right);
-key_Left = -keyboard_check(global.key_Left);
-key_Jump = keyboard_check_pressed(global.key_Jump);
+// player visível apenas quando vivo
+visible = global.player_Vivo;
 
-// Define movimentação
-move = key_Right + key_Left;
-horizontal_Speed = move * move_Speed;
-if (vertical_Speed &lt; 10) vertical_Speed += player_Gravity;
-
-//Colisão básica
-if (place_meeting(x, y + 1, obj_Floor))
-    vertical_Speed = key_Jump * -jump_Speed;
-
-//Colisão Horizontal
-if (place_meeting(x + horizontal_Speed, y, obj_Floor))
+if (global.player_Vivo)
 {
-    while(!place_meeting(x + sign(horizontal_Speed), y, obj_Floor))
+    key_Right = keyboard_check(global.key_Right);
+    key_Left = -keyboard_check(global.key_Left);
+    key_Jump = keyboard_check_pressed(global.key_Jump);
+    
+    // Define movimentação
+    move = key_Right + key_Left;
+    horizontal_Speed = move * move_Speed;
+    if (vertical_Speed &lt; 10) vertical_Speed += player_Gravity;
+    
+    //Colisão básica
+    if (place_meeting(x, y + 1, obj_Floor))
+        vertical_Speed = key_Jump * -jump_Speed;
+    
+    //Colisão Horizontal
+    if (place_meeting(x + horizontal_Speed, y, obj_Floor))
     {
-        x += sign(horizontal_Speed);
+        while(!place_meeting(x + sign(horizontal_Speed), y, obj_Floor))
+        {
+            x += sign(horizontal_Speed);
+        }
+        horizontal_Speed = 0;
     }
-    horizontal_Speed = 0;
-}
-x += horizontal_Speed;
-
-//Colisão vertical
-if (place_meeting(x, y + vertical_Speed, obj_Floor))
-{
-    while(!place_meeting(x, y + sign(vertical_Speed), obj_Floor))
+    x += horizontal_Speed;
+    
+    //Colisão vertical
+    if (place_meeting(x, y + vertical_Speed, obj_Floor))
     {
-        y += sign(vertical_Speed);
+        while(!place_meeting(x, y + sign(vertical_Speed), obj_Floor))
+        {
+            y += sign(vertical_Speed);
+        }
+        vertical_Speed = 0;
     }
-    vertical_Speed = 0;
+    y += vertical_Speed;
+    
+    //Verifica se chegou a porta final
+    if (x == obj_Door_End.x &amp;&amp; y &gt;= obj_Door_End.y)
+        room_goto_next();
 }
-y += vertical_Speed;
 </string>
           </argument>
         </arguments>
@@ -168,6 +179,73 @@ sprite_index = scr_Troca_Sprite();
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Here we go
+coordenadas = other.x + other.y
+coordenadas_Saida = ds_map_find_value(global.map_Spheres,coordenadas);
+x = 1392;
+y = 170;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Barrier">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Colisão com barrier
+if (global.player_Cor == other.barrier_Cor
+ &amp;&amp; global.player_Vivo == true)
+{
+    //atravessa (pode mudar cor do sprite aqui)
+    other.solid = false;
+}
+// player troca de cor dentro da barrier (pediu pra morrer)
+else if(x &gt;= other.x &amp;&amp; y &lt;= other.y &amp;&amp; global.player_Vivo == true)
+{
+    // matar ou eixar preso?
+    scr_Player_Death();
+    alarm[0] = 60;     
+}
+else
+{
+    other.solid = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Spike">
       <action>
         <libid>1</libid>
@@ -186,21 +264,15 @@ sprite_index = scr_Troca_Sprite();
           <argument>
             <kind>1</kind>
             <string>///Colisão com spike
-
-/*if(lives&lt;=0)
+if (global.player_Cor == other.spike_Cor
+ || global.player_Vivo == false)
 {
-    room_goto(rm_GameOver);
-    //game_end();
-}*/
-if (global.player_Cor == other.spike_Cor)
-{
-    other.solid = false;
+    //atravessa (pode mudar cor do sprite aqui)
 }
 else
 {
-    instance_destroy();
-    scr_Particle_Death();
-    alarm[0] = 60;
+    scr_Player_Death();
+    alarm[0] = global.alarm_Player_Death;
 }
 </string>
           </argument>

@@ -23,4 +23,11 @@ global.jump_Left = 2;
 global.jump_Right = 3;
 /* sprites de direção */
 
-scr_Maps();
+/* mapas */
+scr_Sprite_Map();
+scr_Sphere_Map();
+/* mapas */
+
+/* tempos de alarme */
+global.alarm_Player_Death = 15;
+/* tempos de alarme */

@@ -10,15 +10,12 @@
     <sprites name="Spike">
       <sprites name="Blue">
         <sprite>sprites\spr_Spike_Blue</sprite>
-        <sprite>sprites\spr_Spike_Blue_Sphere</sprite>
       </sprites>
       <sprites name="Red">
         <sprite>sprites\spr_Spike_Red</sprite>
-        <sprite>sprites\spr_Spike_Red_Sphere</sprite>
       </sprites>
       <sprites name="Green">
         <sprite>sprites\spr_Spike_Green</sprite>
-        <sprite>sprites\spr_Spike_Green_Sphere</sprite>
       </sprites>
     </sprites>
     <sprites name="Barrier">
@@ -57,6 +54,11 @@
         <sprite>sprites\spr_Player_G_JR</sprite>
       </sprites>
     </sprites>
+    <sprites name="Sphere">
+      <sprite>sprites\spr_Sphere_Blue</sprite>
+      <sprite>sprites\spr_Sphere_Red</sprite>
+      <sprite>sprites\spr_Sphere_Green</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -66,13 +68,17 @@
     <scripts name="Player">
       <script>scripts\scr_Initialize_Player.gml</script>
       <script>scripts\scr_Troca_Sprite.gml</script>
+      <script>scripts\scr_Player_Death.gml</script>
     </scripts>
     <scripts name="Global">
       <script>scripts\scr_Initialize_Global_Variables.gml</script>
-      <script>scripts\scr_Maps.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_Particle_Death.gml</script>
+    </scripts>
+    <scripts name="Maps">
+      <script>scripts\scr_Sprite_Map.gml</script>
+      <script>scripts\scr_Sphere_Map.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -83,9 +89,11 @@
     <objects name="Spike">
       <object>objects\obj_Spike</object>
       <object>objects\obj_Spike_Blue</object>
+      <object>objects\obj_Spike_Green</object>
     </objects>
     <objects name="Barrier">
       <object>objects\obj_Barrier_Blue</object>
+      <object>objects\obj_Barrier_Green</object>
       <object>objects\obj_Barrier</object>
     </objects>
     <objects name="Door">
@@ -97,13 +105,17 @@
       <object>objects\obj_Player</object>
     </objects>
     <object>objects\obj_Controller</object>
+    <objects name="Sphere">
+      <object>objects\obj_Sphere</object>
+      <object>objects\obj_Sphere_Blue</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Level_01</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41929,0100919907</constant>
+    <constant name="GM_build_date">41929,0964170833</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
