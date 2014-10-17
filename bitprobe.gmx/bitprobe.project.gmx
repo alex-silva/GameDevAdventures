@@ -72,7 +72,7 @@
       <script>scripts\scr_Maps.gml</script>
     </scripts>
     <scripts name="Particles">
-      <script>scripts\scr_Death.gml</script>
+      <script>scripts\scr_Particle_Death.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -103,7 +103,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41928,096025162</constant>
+    <constant name="GM_build_date">41929,0100919907</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

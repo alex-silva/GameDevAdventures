@@ -48,6 +48,30 @@ image_speed = 0.3;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instância do player volta ao início
+instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -168,8 +192,16 @@ sprite_index = scr_Troca_Sprite();
     room_goto(rm_GameOver);
     //game_end();
 }*/
-instance_destroy();
-instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
+if (global.player_Cor == other.spike_Cor)
+{
+    other.solid = false;
+}
+else
+{
+    instance_destroy();
+    scr_Particle_Death();
+    alarm[0] = 60;
+}
 </string>
           </argument>
         </arguments>
