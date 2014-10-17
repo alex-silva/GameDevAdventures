@@ -224,7 +224,7 @@ y = 170;
           <argument>
             <kind>1</kind>
             <string>///Colisão com barrier
-if (global.player_Cor == other.barrier_Cor
+if (global.player_Cor != other.barrier_Cor
  &amp;&amp; global.player_Vivo == true)
 {
     //atravessa (pode mudar cor do sprite aqui)
