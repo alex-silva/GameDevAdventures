@@ -179,6 +179,33 @@ sprite_index = scr_Troca_Sprite();
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Death">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Adios muchacho
+scr_Player_Death();
+x -= 1;
+y -= 1;
+alarm[0] = global.alarm_Player_Death;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Sphere">
       <action>
         <libid>1</libid>
@@ -196,11 +223,17 @@ sprite_index = scr_Troca_Sprite();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Here we go
-coordenadas = other.x + other.y
-coordenadas_Saida = ds_map_find_value(global.map_Spheres,coordenadas);
-x = 1392;
-y = 170;
+            <string>///Colide e teletransporta para sphere destino
+if (global.player_Cor == other.sphere_Cor)
+{
+    coordenadas = string(other.x) + "," + string(other.y)
+    coordenadas_Saida = string(ds_map_find_value(global.map_Spheres,coordenadas));
+    if (coordenadas_Saida != "0")
+    {
+        x = real(string_copy(coordenadas_Saida, 1, 3));
+        y = real(string_copy(coordenadas_Saida, 5, 3));
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -231,7 +264,8 @@ if (global.player_Cor != other.barrier_Cor
     other.solid = false;
 }
 // player troca de cor dentro da barrier (pediu pra morrer)
-else if(x &gt;= other.x &amp;&amp; y &lt;= other.y &amp;&amp; global.player_Vivo == true)
+else if( global.player_Cor != other.barrier_Cor
+      &amp;&amp; x &gt;= other.x &amp;&amp; y &lt;= other.y &amp;&amp; global.player_Vivo == true)
 {
     // matar ou eixar preso?
     scr_Player_Death();

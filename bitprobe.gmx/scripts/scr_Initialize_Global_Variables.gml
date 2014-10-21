@@ -31,3 +31,8 @@ scr_Sphere_Map();
 /* tempos de alarme */
 global.alarm_Player_Death = 15;
 /* tempos de alarme */
+
+/* room */
+global.snap_x = 16;
+global.snap_y = 16;
+/* room */

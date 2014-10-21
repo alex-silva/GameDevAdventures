@@ -59,6 +59,9 @@
       <sprite>sprites\spr_Sphere_Red</sprite>
       <sprite>sprites\spr_Sphere_Green</sprite>
     </sprites>
+    <sprites name="Control">
+      <sprite>sprites\spr_Death</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -104,18 +107,21 @@
     <objects name="Player">
       <object>objects\obj_Player</object>
     </objects>
-    <object>objects\obj_Controller</object>
     <objects name="Sphere">
       <object>objects\obj_Sphere</object>
       <object>objects\obj_Sphere_Blue</object>
     </objects>
+    <objects name="Control">
+      <object>objects\obj_Controller</object>
+      <object>objects\obj_Death</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Level_01</room>
+    <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41929.1152811227</constant>
+    <constant name="GM_build_date">41933.0498418866</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
