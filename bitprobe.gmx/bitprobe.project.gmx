@@ -96,6 +96,7 @@
     </objects>
     <objects name="Barrier">
       <object>objects\obj_Barrier_Blue</object>
+      <object>objects\obj_Barrier_Red</object>
       <object>objects\obj_Barrier_Green</object>
       <object>objects\obj_Barrier</object>
     </objects>
@@ -117,11 +118,12 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level01</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41933.0498418866</constant>
+    <constant name="GM_build_date">41934.030127338</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

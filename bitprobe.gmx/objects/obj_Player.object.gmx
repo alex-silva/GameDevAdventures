@@ -33,11 +33,11 @@ scr_Initialize_Player();
 /* Globais */
 
 /* Locais */
-player_Gravity = 0.5;
+player_Gravity = 0.75;
 horizontal_Speed = 0;
 vertical_Speed = 0;
-jump_Speed = 7;
-move_Speed = 4;
+jump_Speed = 10;
+move_Speed = 7;
 /* Locais */
 
 //Sprite
@@ -106,11 +106,18 @@ if (global.player_Vivo)
     horizontal_Speed = move * move_Speed;
     if (vertical_Speed &lt; 10) vertical_Speed += player_Gravity;
     
-    //Colisão básica
+    // Faz personagem Pular se for cor igual a barrier, ou se estiver no solo
     if (place_meeting(x, y + 1, obj_Floor))
         vertical_Speed = key_Jump * -jump_Speed;
+    else if (place_meeting(x, y + 1, obj_Barrier_Blue)
+        &amp;&amp;  (global.player_Cor == global.cor_Blue))
+            vertical_Speed = key_Jump * -jump_Speed;
+    else if (place_meeting(x, y + 1, obj_Barrier_Red)
+        &amp;&amp;  (global.player_Cor == global.cor_Red))
+            vertical_Speed = key_Jump * -jump_Speed;
+   
     
-    //Colisão Horizontal
+    //Colisão Horizontal com floor
     if (place_meeting(x + horizontal_Speed, y, obj_Floor))
     {
         while(!place_meeting(x + sign(horizontal_Speed), y, obj_Floor))
@@ -119,9 +126,8 @@ if (global.player_Vivo)
         }
         horizontal_Speed = 0;
     }
-    x += horizontal_Speed;
     
-    //Colisão vertical
+    //Colisão vertical com floor
     if (place_meeting(x, y + vertical_Speed, obj_Floor))
     {
         while(!place_meeting(x, y + sign(vertical_Speed), obj_Floor))
@@ -130,11 +136,54 @@ if (global.player_Vivo)
         }
         vertical_Speed = 0;
     }
-    y += vertical_Speed;
     
-    //Verifica se chegou a porta final
-    if (x == obj_Door_End.x &amp;&amp; y &gt;= obj_Door_End.y)
-        room_goto_next();
+    //Colisão Horizontal com barrier red
+    if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Red)
+    &amp;&amp; (global.player_Cor == global.cor_Red))
+    {
+        while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Red))
+        {
+            x += sign(horizontal_Speed);
+        }
+        horizontal_Speed = 0;
+    }    
+    //Colisão vertical com barrier red
+    if (place_meeting(x, y + vertical_Speed, obj_Barrier_Red)
+    &amp;&amp; (global.player_Cor == global.cor_Red))
+    {
+        while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Red))
+        {
+            y += sign(vertical_Speed);
+        }
+        vertical_Speed = 0;
+    }
+    
+    //Colisão Horizontal com barrier blue
+    if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Blue)
+    &amp;&amp; (global.player_Cor == global.cor_Blue))
+    {
+        while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Blue))
+        {
+            x += sign(horizontal_Speed);
+        }
+        horizontal_Speed = 0;
+    }
+    
+        
+    //Colisão vertical com barrier blue
+    if (place_meeting(x, y + vertical_Speed, obj_Barrier_Blue)
+    &amp;&amp; (global.player_Cor == global.cor_Blue))
+    {
+        while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Blue))
+        {
+            y += sign(vertical_Speed);
+        }
+        vertical_Speed = 0        
+    }
+    
+    // Define movimentação caos não colida com objetos    
+    x += horizontal_Speed;    
+    y += vertical_Speed;
 }
 </string>
           </argument>
@@ -198,8 +247,8 @@ sprite_index = scr_Troca_Sprite();
             <kind>1</kind>
             <string>///Adios muchacho
 scr_Player_Death();
-x -= 1;
-y -= 1;
+x -= 16;
+y -= 16;
 alarm[0] = global.alarm_Player_Death;
 </string>
           </argument>
@@ -239,6 +288,30 @@ if (global.player_Cor == other.sphere_Cor)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Door_End">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Passa ao próximo level
+room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Barrier">
       <action>
         <libid>1</libid>
@@ -257,24 +330,70 @@ if (global.player_Cor == other.sphere_Cor)
           <argument>
             <kind>1</kind>
             <string>///Colisão com barrier
-if (global.player_Cor != other.barrier_Cor
+// mata caso troque para cor da barrier dentro da barrier
+if ( global.player_Cor == other.barrier_Cor
+  &amp;&amp; global.player_Vivo == true )
+{
+    scr_Player_Death();
+    alarm[0] = global.alarm_Player_Death;
+}
+/*else if ( global.player_Cor == global.cor_Red
+  &amp;&amp; x &gt; obj_Barrier_Red.x
+  &amp;&amp; x &lt; (obj_Barrier_Red.x + sprite_get_width(spr_Barrier_Red))
+  &amp;&amp; y &lt; obj_Barrier_Red.y )
+{
+    scr_Player_Death();
+    alarm[0] = global.alarm_Player_Death;
+}
+
+*/
+
+
+
+
+
+
+/////// OLD:
+/*if (global.player_Cor != other.barrier_Cor
  &amp;&amp; global.player_Vivo == true)
 {
     //atravessa (pode mudar cor do sprite aqui)
-    other.solid = false;
+    //other.solid = false;
 }
 // player troca de cor dentro da barrier (pediu pra morrer)
-else if( global.player_Cor != other.barrier_Cor
-      &amp;&amp; x &gt;= other.x &amp;&amp; y &lt;= other.y &amp;&amp; global.player_Vivo == true)
+else if( global.player_Cor == other.barrier_Cor
+      &amp;&amp; x &gt; other.x &amp;&amp; x &lt; other.x + sprite_get_width(spr_Barrier_Blue) 
+      &amp;&amp; y &lt; other.y &amp;&amp; global.player_Vivo == true)
 {
     // matar ou eixar preso?
     scr_Player_Death();
     alarm[0] = 60;     
 }
-else
+// player colide
+else if (global.player_Cor == other.barrier_Cor)
 {
-    other.solid = true;
-}
+    //Colisão Horizontal
+    if (place_meeting(x + horizontal_Speed, y, obj_Barrier))
+    {
+        while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier))
+        {
+            x += sign(horizontal_Speed);
+        }
+        horizontal_Speed = 0;
+    }
+    x += horizontal_Speed;
+    
+    //Colisão vertical
+    if (place_meeting(x, y + vertical_Speed, obj_Barrier))
+    {
+        while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier))
+        {
+            y += sign(vertical_Speed);
+        }
+        vertical_Speed = 0;
+    }
+    y += vertical_Speed;
+}*/
 </string>
           </argument>
         </arguments>
