@@ -123,7 +123,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41934.030127338</constant>
+    <constant name="GM_build_date">41934.0512131829</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
