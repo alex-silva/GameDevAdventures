@@ -16,12 +16,19 @@ global.key_3 = keyboard_check(ord("3"));
 
 /* keys */
 
-/* direção */
+/* sprites de direção player*/
 global.left = 0;
 global.right = 1;
 global.jump_Left = 2;
 global.jump_Right = 3;
-/* sprites de direção */
+/* sprites de direção player*/
+
+/* direção spike*/
+global.spike_Left = 0;
+global.spike_Right = 1;
+global.spike_Down = 2;
+global.spike_Up = 3;
+/* direção spike*/
 
 /* mapas */
 scr_Sprite_Map();

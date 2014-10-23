@@ -1,0 +1,1 @@
+global.spike_Direction = 

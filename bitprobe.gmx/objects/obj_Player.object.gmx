@@ -36,7 +36,7 @@ scr_Initialize_Player();
 player_Gravity = 0.75;
 horizontal_Speed = 0;
 vertical_Speed = 0;
-jump_Speed = 10;
+jump_Speed = 12;
 move_Speed = 7;
 /* Locais */
 

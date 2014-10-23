@@ -1,1 +1,1 @@
-spike_isSolid = true;
+global.spike_Direction = global.spike_Up;

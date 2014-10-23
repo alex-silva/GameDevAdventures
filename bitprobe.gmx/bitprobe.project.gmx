@@ -16,6 +16,7 @@
       </sprites>
       <sprites name="Green">
         <sprite>sprites\spr_Spike_Green</sprite>
+        <sprite>sprites\spr_Spike_Green_Down</sprite>
       </sprites>
     </sprites>
     <sprites name="Barrier">
@@ -83,6 +84,9 @@
       <script>scripts\scr_Sprite_Map.gml</script>
       <script>scripts\scr_Sphere_Map.gml</script>
     </scripts>
+    <scripts name="Spike">
+      <script>scripts\scr_Initialize_Spike.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Floor">
@@ -93,6 +97,7 @@
       <object>objects\obj_Spike</object>
       <object>objects\obj_Spike_Blue</object>
       <object>objects\obj_Spike_Green</object>
+      <object>objects\obj_Spike_Green_Moving_Down</object>
     </objects>
     <objects name="Barrier">
       <object>objects\obj_Barrier_Blue</object>
@@ -118,12 +123,13 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level01</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41934.0512131829</constant>
+    <constant name="GM_build_date">41935.050606956</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
