@@ -1,4 +1,10 @@
 global.map_Sprites = ds_map_create();
+
+ds_map_add(global.map_Sprites, "spr_Player_W_L", spr_Player_W_L);
+ds_map_add(global.map_Sprites, "spr_Player_W_R", spr_Player_W_R);
+ds_map_add(global.map_Sprites, "spr_Player_W_JL", spr_Player_W_JL);
+ds_map_add(global.map_Sprites, "spr_Player_W_JR", spr_Player_W_JR);
+
 ds_map_add(global.map_Sprites, "spr_Player_B_L", spr_Player_B_L);
 ds_map_add(global.map_Sprites, "spr_Player_B_R", spr_Player_B_R);
 ds_map_add(global.map_Sprites, "spr_Player_B_JL", spr_Player_B_JL);

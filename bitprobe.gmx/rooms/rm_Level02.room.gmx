@@ -63,7 +63,7 @@
     <instance objName="obj_Barrier_Red" x="400" y="480" name="inst_CEF0EF5F" locked="0" code="" scaleX="1" scaleY="0.200000002980232" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="32" y="320" name="inst_A2C65F8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="256" y="288" name="inst_BDEFF99D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Spike_Green" x="784" y="32" name="inst_00CD169A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_Spike_Green" x="656" y="32" name="inst_00CD169A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_Barrier_Red" x="560" y="480" name="inst_A2A63686" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="304" y="64" name="inst_68E2EA62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_Floor_White" x="800" y="560" name="inst_8B40D703" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

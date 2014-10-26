@@ -54,6 +54,12 @@
         <sprite>sprites\spr_Player_G_JL</sprite>
         <sprite>sprites\spr_Player_G_JR</sprite>
       </sprites>
+      <sprites name="W">
+        <sprite>sprites\spr_Player_W_L</sprite>
+        <sprite>sprites\spr_Player_W_R</sprite>
+        <sprite>sprites\spr_Player_W_JL</sprite>
+        <sprite>sprites\spr_Player_W_JR</sprite>
+      </sprites>
     </sprites>
     <sprites name="Sphere">
       <sprite>sprites\spr_Sphere_Blue</sprite>
@@ -123,8 +129,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level01</room>
+    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>

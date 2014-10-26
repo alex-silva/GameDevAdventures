@@ -1,6 +1,7 @@
 var sprite_Name = "spr_Player_"
 switch (global.player_Cor)
 {
+    case global.cor_White: sprite_Name += "W_"; break;
     case global.cor_Red : sprite_Name += "R_"; break;
     case global.cor_Green : sprite_Name += "G_"; break;
     case global.cor_Blue : sprite_Name += "B_"; break;
