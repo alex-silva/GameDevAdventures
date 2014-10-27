@@ -68,6 +68,7 @@ image_speed = 0.3;
             <string>///Destroi Instância do player e volta ao início
 instance_destroy();
 instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
+room_restart();
 </string>
           </argument>
         </arguments>
@@ -110,10 +111,10 @@ if (global.player_Vivo)
     if (place_meeting(x, y + 1, obj_Floor))
         vertical_Speed = key_Jump * -jump_Speed;
     else if (place_meeting(x, y + 1, obj_Barrier_Blue)
-        &amp;&amp;  (global.player_Cor == global.cor_Blue))
+        &amp;&amp;  (global.player_Blue == true))
             vertical_Speed = key_Jump * -jump_Speed;
     else if (place_meeting(x, y + 1, obj_Barrier_Red)
-        &amp;&amp;  (global.player_Cor == global.cor_Red))
+        &amp;&amp;  (global.player_Red == true))
             vertical_Speed = key_Jump * -jump_Speed;
    
     
@@ -139,7 +140,7 @@ if (global.player_Vivo)
     
     //Colisão Horizontal com barrier red
     if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Red)
-    &amp;&amp; (global.player_Cor == global.cor_Red))
+    &amp;&amp; (global.player_Red == true))
     {
         while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Red))
         {
@@ -149,7 +150,7 @@ if (global.player_Vivo)
     }    
     //Colisão vertical com barrier red
     if (place_meeting(x, y + vertical_Speed, obj_Barrier_Red)
-    &amp;&amp; (global.player_Cor == global.cor_Red))
+    &amp;&amp; (global.player_Red == true))
     {
         while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Red))
         {
@@ -160,7 +161,7 @@ if (global.player_Vivo)
     
     //Colisão Horizontal com barrier blue
     if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Blue)
-    &amp;&amp; (global.player_Cor == global.cor_Blue))
+    &amp;&amp; (global.player_Blue == true))
     {
         while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Blue))
         {
@@ -172,7 +173,7 @@ if (global.player_Vivo)
         
     //Colisão vertical com barrier blue
     if (place_meeting(x, y + vertical_Speed, obj_Barrier_Blue)
-    &amp;&amp; (global.player_Cor == global.cor_Blue))
+    &amp;&amp; (global.player_Blue == true))
     {
         while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Blue))
         {
@@ -223,6 +224,37 @@ else if horizontal_Speed &lt; 0
 else image_index = 0;
 
 sprite_index = scr_Troca_Sprite();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Powerup">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Habilita alternancia de cor
+if(other.powerup_cor == global.cor_Red) global.player_Hab_R = true;
+if(other.powerup_cor == global.cor_Green) global.player_Hab_G = true;
+if(other.powerup_cor == global.cor_Blue) global.player_Hab_B = true;
+
+with(other)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -417,8 +449,11 @@ else if (global.player_Cor == other.barrier_Cor)
           <argument>
             <kind>1</kind>
             <string>///Colisão com spike
-if (global.player_Cor == other.spike_Cor
- || global.player_Vivo == false)
+
+if ((global.player_Red == other.spike_Red
+  || global.player_Green == other.spike_Green
+  || global.player_Blue == other.spike_Blue)
+  &amp;&amp; global.player_Vivo == true)
 {
     scr_Player_Death();
     alarm[0] = global.alarm_Player_Death;
@@ -427,6 +462,7 @@ else
 {
     //atravessa (pode mudar cor do sprite aqui)
 }
+
 </string>
           </argument>
         </arguments>

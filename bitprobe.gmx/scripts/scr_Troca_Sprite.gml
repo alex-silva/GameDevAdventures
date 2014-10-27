@@ -1,10 +1,30 @@
 var sprite_Name = "spr_Player_"
 switch (global.player_Cor)
 {
-    case global.cor_White: sprite_Name += "W_"; break;
-    case global.cor_Red : sprite_Name += "R_"; break;
-    case global.cor_Green : sprite_Name += "G_"; break;
-    case global.cor_Blue : sprite_Name += "B_"; break;
+    case global.cor_White: 
+        sprite_Name += "W_"; 
+        global.player_Red = true;
+        global.player_Green = true;
+        global.player_Blue = true;
+        break;
+    case global.cor_Red : 
+        sprite_Name += "R_"; 
+        global.player_Red = true;
+        global.player_Green = false;
+        global.player_Blue = false;
+        break;
+    case global.cor_Green : 
+        sprite_Name += "G_"; 
+        global.player_Red = false;
+        global.player_Green = true;
+        global.player_Blue = false;
+        break;
+    case global.cor_Blue : 
+        sprite_Name += "B_"; 
+        global.player_Red = false;
+        global.player_Green = false;
+        global.player_Blue = true;
+        break;
 }
 switch (global.player_Direction)
 {

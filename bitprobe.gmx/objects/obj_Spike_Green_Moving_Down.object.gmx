@@ -28,7 +28,9 @@
             <string>///Inicializa globais e spike
 scr_Initialize_Global_Variables();
 scr_Initialize_Spike();
-spike_Cor = global.cor_Green;
+spike_Red = false;
+spike_Green = true;
+spike_Blue = false;
 global.spike_Direction = global.spike_Down;
 initial_x = x;
 initial_y = y;

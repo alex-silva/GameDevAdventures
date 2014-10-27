@@ -18,6 +18,9 @@
         <sprite>sprites\spr_Spike_Green</sprite>
         <sprite>sprites\spr_Spike_Green_Down</sprite>
       </sprites>
+      <sprites name="White">
+        <sprite>sprites\spr_Spike_White</sprite>
+      </sprites>
     </sprites>
     <sprites name="Barrier">
       <sprite>sprites\spr_Barrier_Blue</sprite>
@@ -32,6 +35,15 @@
       <sprites name="White">
         <sprite>sprites\spr_Floor_White</sprite>
         <sprite>sprites\spr_Floor_White_Corner</sprite>
+      </sprites>
+      <sprites name="Red">
+        <sprite>sprites\spr_Floor_Red</sprite>
+      </sprites>
+      <sprites name="Green">
+        <sprite>sprites\spr_Floor_Green</sprite>
+      </sprites>
+      <sprites name="Blue">
+        <sprite>sprites\spr_Floor_Blue</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\spr_Bit_0</sprite>
@@ -65,9 +77,15 @@
       <sprite>sprites\spr_Sphere_Blue</sprite>
       <sprite>sprites\spr_Sphere_Red</sprite>
       <sprite>sprites\spr_Sphere_Green</sprite>
+      <sprite>sprites\spr_Sphere_White</sprite>
     </sprites>
     <sprites name="Control">
       <sprite>sprites\spr_Death</sprite>
+    </sprites>
+    <sprites name="Powerup">
+      <sprite>sprites\spr_Powerup_Red</sprite>
+      <sprite>sprites\spr_Powerup_Green</sprite>
+      <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -98,10 +116,15 @@
     <objects name="Floor">
       <object>objects\obj_Floor</object>
       <object>objects\obj_Floor_White</object>
+      <object>objects\obj_Floor_Red</object>
+      <object>objects\obj_Floor_Green</object>
+      <object>objects\obj_Floor_Blue</object>
     </objects>
     <objects name="Spike">
       <object>objects\obj_Spike</object>
       <object>objects\obj_Spike_Blue</object>
+      <object>objects\obj_Spike_White</object>
+      <object>objects\obj_Spike_Red</object>
       <object>objects\obj_Spike_Green</object>
       <object>objects\obj_Spike_Green_Moving_Down</object>
     </objects>
@@ -122,10 +145,19 @@
     <objects name="Sphere">
       <object>objects\obj_Sphere</object>
       <object>objects\obj_Sphere_Blue</object>
+      <object>objects\obj_Sphere_White</object>
+      <object>objects\obj_Sphere_Red</object>
+      <object>objects\obj_Sphere_Green</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_Controller</object>
       <object>objects\obj_Death</object>
+    </objects>
+    <objects name="Powerup">
+      <object>objects\obj_Powerup</object>
+      <object>objects\obj_Powerup_Red</object>
+      <object>objects\obj_Powerup_Green</object>
+      <object>objects\obj_Powerup_Blue</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -135,8 +167,8 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41935.0648742245</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
+    <constant name="GM_build_date">41939.1433602546</constant>
+    <constant name="GM_version">'100'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>///Define cor do spike
 scr_Initialize_Global_Variables();
-spike_Cor = global.cor_Blue
+spike_Red = false;
+spike_Green = false;
+spike_Blue = true;
 </string>
           </argument>
         </arguments>
