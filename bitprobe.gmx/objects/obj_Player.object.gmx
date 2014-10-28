@@ -247,14 +247,13 @@ sprite_index = scr_Troca_Sprite();
           <argument>
             <kind>1</kind>
             <string>///Habilita alternancia de cor
-if(other.powerup_cor == global.cor_Red) global.player_Hab_R = true;
-if(other.powerup_cor == global.cor_Green) global.player_Hab_G = true;
-if(other.powerup_cor == global.cor_Blue) global.player_Hab_B = true;
-
-with(other)
+switch(other.powerup_Cor)
 {
-    instance_destroy();
+    case global.cor_Red   : global.player_Hab_R = true; break;
+    case global.cor_Green : global.player_Hab_G = true; break;
+    case global.cor_Blue  : global.player_Hab_B = true; break;
 }
+with (other) instance_destroy();
 </string>
           </argument>
         </arguments>

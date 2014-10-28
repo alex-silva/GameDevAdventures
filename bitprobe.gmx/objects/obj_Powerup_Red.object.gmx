@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>powerup_cor = global.cor_Red;
+            <string>/// Define cor do power up
+powerup_Cor = global.cor_Red;
 </string>
           </argument>
         </arguments>
