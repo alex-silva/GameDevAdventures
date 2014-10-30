@@ -449,9 +449,7 @@ else if (global.player_Cor == other.barrier_Cor)
             <kind>1</kind>
             <string>///Colisão com spike
 
-if ((global.player_Red == other.spike_Red
-  || global.player_Green == other.spike_Green
-  || global.player_Blue == other.spike_Blue)
+if ((global.player_Cor == other.spike_Cor)
   &amp;&amp; global.player_Vivo == true)
 {
     scr_Player_Death();

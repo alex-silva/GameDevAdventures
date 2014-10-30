@@ -26,10 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Define cor do spike
-scr_Initialize_Global_Variables();
-spike_Red = true;
-spike_Green = false;
-spike_Blue = false;
+event_inherited();
+spike_Cor = global.cor_Red;
 </string>
           </argument>
         </arguments>

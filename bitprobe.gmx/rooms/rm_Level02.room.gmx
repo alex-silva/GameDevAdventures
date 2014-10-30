@@ -81,7 +81,7 @@
     <instance objName="obj_Barrier_Red" x="48" y="64" name="inst_D37E0968" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_Floor_White" x="672" y="400" name="inst_712ED87F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="560" y="0" name="inst_EBE2CFE4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Player" x="64" y="176" name="inst_2AAEF49A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Player" x="720" y="144" name="inst_2AAEF49A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="880" y="640" name="inst_5C83ACF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="800" y="784" name="inst_9C29B2E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Spike_Green" x="864" y="80" name="inst_6B352D21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -103,7 +103,7 @@
     <instance objName="obj_Barrier_Red" x="48" y="512" name="inst_E9EB4A6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="112" y="896" name="inst_AD24D34A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="0" y="640" name="inst_1FA38674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Spike_Green_Moving_Down" x="720" y="32" name="inst_14EEAAD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Spike_Green_Down" x="720" y="32" name="inst_14EEAAD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="800" y="464" name="inst_E7BE40E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="640" y="496" name="inst_6616B0BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="-16" y="0" name="inst_CF17382D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -118,6 +118,8 @@
     <instance objName="obj_Floor_White" x="640" y="272" name="inst_ABB29FE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="800" y="240" name="inst_9A9AC293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="640" y="176" name="inst_AEA5CB75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Spike_Blue_Left" x="848" y="32" name="inst_EFA9B88C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Powerup_Green" x="608" y="816" name="inst_780EA9BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
