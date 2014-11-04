@@ -14,6 +14,8 @@
       </sprites>
       <sprites name="Red">
         <sprite>sprites\spr_Spike_Red</sprite>
+        <sprite>sprites\spr_Spike_Red_Down</sprite>
+        <sprite>sprites\spr_Spike_Red_Left</sprite>
       </sprites>
       <sprites name="Green">
         <sprite>sprites\spr_Spike_Green</sprite>
@@ -88,6 +90,7 @@
       <sprite>sprites\spr_Powerup_Green</sprite>
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
+    <sprite>sprites\sprite42</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -120,12 +123,20 @@
     </objects>
     <objects name="Spike">
       <object>objects\obj_Spike</object>
-      <object>objects\obj_Spike_Blue</object>
       <object>objects\obj_Spike_White</object>
-      <object>objects\obj_Spike_Red</object>
-      <object>objects\obj_Spike_Green</object>
-      <object>objects\obj_Spike_Green_Down</object>
-      <object>objects\obj_Spike_Blue_Left</object>
+      <objects name="Red">
+        <object>objects\obj_Spike_Red</object>
+        <object>objects\obj_Spike_Red_Down</object>
+        <object>objects\obj_Spike_Red_Left</object>
+      </objects>
+      <objects name="Green">
+        <object>objects\obj_Spike_Green</object>
+        <object>objects\obj_Spike_Green_Down</object>
+      </objects>
+      <objects name="Blue">
+        <object>objects\obj_Spike_Blue</object>
+        <object>objects\obj_Spike_Blue_Left</object>
+      </objects>
     </objects>
     <objects name="Barrier">
       <object>objects\obj_Barrier_Blue</object>
@@ -167,7 +178,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41942.0553270718</constant>
+    <constant name="GM_build_date">41946.9624571181</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
