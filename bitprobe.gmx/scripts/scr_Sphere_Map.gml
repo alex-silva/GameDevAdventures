@@ -1,7 +1,6 @@
-/* Level Teste */
 global.map_Spheres = ds_map_create();
-// sphere 01
-ds_map_add(global.map_Spheres, "192,416", "464,176");
-// sphere 02
-ds_map_add(global.map_Spheres, "416,416", "096,160");
-/* Level Teste */
+/* Level 03 */
+ds_map_add(global.map_Spheres, "464,400", "592,144");
+ds_map_add(global.map_Spheres, "928,544", "720,544");
+ds_map_add(global.map_Spheres, "576,1008", "304,528");
+/* Level 03 */

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define cor da sphere
 scr_Initialize_Global_Variables();
-sphere_Cor = global.cor_Blue;
+sphere_Cor = global.cor_Red;
 </string>
           </argument>
         </arguments>

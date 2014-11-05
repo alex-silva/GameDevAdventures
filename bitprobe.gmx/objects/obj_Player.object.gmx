@@ -43,6 +43,36 @@ move_Speed = 7;
 //Sprite
 sprite_index = scr_Troca_Sprite();
 image_speed = 0.3;
+
+// cores habilitadas para room atual
+cor_Hab = ds_map_find_value(global.map_Cor_Level,room_get_name(room));
+if (cor_Hab == global.red_Green_Blue)
+{
+    global.player_Hab_R = true;
+    global.player_Hab_G = true;
+    global.player_Hab_B = true;
+}
+else if (cor_Hab == global.only_Red)
+    global.player_Hab_R = true;
+else if (cor_Hab == global.only_Blue)
+    global.player_Hab_B = true;
+else if (cor_Hab == global.only_Green)
+    global.player_Hab_G = true;
+else if (cor_Hab == global.red_Blue)
+{
+    global.player_Hab_R = true;
+    global.player_Hab_B = true;
+}
+else if (cor_Hab == global.red_Green)
+{
+    global.player_Hab_R = true;
+    global.player_Hab_G = true;
+}
+else if (cor_Hab == global.blue_Green)
+{
+    global.player_Hab_B = true;
+    global.player_Hab_G = true;
+}
 </string>
           </argument>
         </arguments>

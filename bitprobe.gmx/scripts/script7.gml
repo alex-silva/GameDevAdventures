@@ -1,1 +1,0 @@
-global.spike_Direction = 
