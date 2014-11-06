@@ -1,5 +1,4 @@
 global.player_Cor = global.cor_White;
-
 global.player_Vivo = true;
 global.player_Direction = global.right;
 global.player_Hab_W = true;

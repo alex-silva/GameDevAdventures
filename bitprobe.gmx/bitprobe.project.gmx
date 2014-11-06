@@ -11,6 +11,7 @@
       <sprites name="Blue">
         <sprite>sprites\spr_Spike_Blue</sprite>
         <sprite>sprites\spr_Spike_Blue_Left</sprite>
+        <sprite>sprites\spr_spike_Blue_Down</sprite>
       </sprites>
       <sprites name="Red">
         <sprite>sprites\spr_Spike_Red</sprite>
@@ -49,31 +50,30 @@
         <sprite>sprites\spr_Floor_Blue</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\spr_Bit_0</sprite>
     <sprites name="Player">
-      <sprites name="B">
-        <sprite>sprites\spr_Player_B_L</sprite>
-        <sprite>sprites\spr_Player_B_R</sprite>
-        <sprite>sprites\spr_Player_B_JL</sprite>
-        <sprite>sprites\spr_Player_B_JR</sprite>
+      <sprites name="Blue">
+        <sprite>sprites\spr_Player_Blue_Left</sprite>
+        <sprite>sprites\spr_Player_Blue_Right</sprite>
+        <sprite>sprites\spr_Player_Blue_Jump_Left</sprite>
+        <sprite>sprites\spr_Player_Blue_Jump_Right</sprite>
       </sprites>
-      <sprites name="R">
-        <sprite>sprites\spr_Player_R_L</sprite>
-        <sprite>sprites\spr_Player_R_R</sprite>
-        <sprite>sprites\spr_Player_R_JL</sprite>
-        <sprite>sprites\spr_Player_R_JR</sprite>
+      <sprites name="Red">
+        <sprite>sprites\spr_Player_Red_Left</sprite>
+        <sprite>sprites\spr_Player_Red_Right</sprite>
+        <sprite>sprites\spr_Player_Red_Jump_Left</sprite>
+        <sprite>sprites\spr_Player_Red_Jump_Right</sprite>
       </sprites>
-      <sprites name="G">
-        <sprite>sprites\spr_Player_G_L</sprite>
-        <sprite>sprites\spr_Player_G_R</sprite>
-        <sprite>sprites\spr_Player_G_JL</sprite>
-        <sprite>sprites\spr_Player_G_JR</sprite>
+      <sprites name="Green">
+        <sprite>sprites\spr_Player_Green_Left</sprite>
+        <sprite>sprites\spr_Player_Green_Right</sprite>
+        <sprite>sprites\spr_Player_Green_Jump_Left</sprite>
+        <sprite>sprites\spr_Player_Green_Jump_Right</sprite>
       </sprites>
-      <sprites name="W">
-        <sprite>sprites\spr_Player_W_L</sprite>
-        <sprite>sprites\spr_Player_W_R</sprite>
-        <sprite>sprites\spr_Player_W_JL</sprite>
-        <sprite>sprites\spr_Player_W_JR</sprite>
+      <sprites name="White">
+        <sprite>sprites\spr_Player_White_Left</sprite>
+        <sprite>sprites\spr_Player_White_Right</sprite>
+        <sprite>sprites\spr_Player_White_Jump_Left</sprite>
+        <sprite>sprites\spr_Player_White_Jump_Right</sprite>
       </sprites>
     </sprites>
     <sprites name="Sphere">
@@ -85,12 +85,12 @@
     <sprites name="Control">
       <sprite>sprites\spr_Death</sprite>
     </sprites>
-    <sprites name="Powerup">
+    <sprites name="Collectables">
+      <sprite>sprites\spr_Bit</sprite>
       <sprite>sprites\spr_Powerup_Red</sprite>
       <sprite>sprites\spr_Powerup_Green</sprite>
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
-    <sprite>sprites\sprite42</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -176,14 +176,14 @@
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_Level03</room>
     <room>rooms\rm_Level02</room>
+    <room>rooms\rm_Level03</room>
     <room>rooms\rm_Level01</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41948,0383249306</constant>
+    <constant name="GM_build_date">41949.03693875</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

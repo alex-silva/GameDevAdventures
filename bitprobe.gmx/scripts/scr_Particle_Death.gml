@@ -1,7 +1,7 @@
 Sname = part_system_create();
 
 particle1 = part_type_create();
-part_type_sprite(particle1,spr_Bit_0,1,1,1);
+part_type_sprite(particle1,spr_Bit,1,1,1);
 part_type_size(particle1,1,1,0,0);
 part_type_scale(particle1,1,1);
 part_type_color1(particle1,16777215);
