@@ -3,7 +3,7 @@
   <spriteName>spr_Player_White_Right</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-5000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -281,6 +281,50 @@ sprite_index = scr_Troca_Sprite();
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Colisão com spike
+
+/* Spike */
+if (place_meeting(x, y, obj_Spike))
+{
+    scr_Colide_Spike(obj_Spike.spike_Cor);
+}
+else if (place_meeting(x, y, obj_Moving_Up_Spike))
+{
+    scr_Colide_Spike(obj_Moving_Up_Spike.spike_Cor);
+}
+else if (place_meeting(x, y, obj_Moving_Down_Spike))
+{
+    scr_Colide_Spike(obj_Moving_Down_Spike.spike_Cor);
+}
+else if (place_meeting(x, y, obj_Moving_Left_Spike))
+{
+    scr_Colide_Spike(obj_Moving_Left_Spike.spike_Cor);
+}
+else if (place_meeting(x, y, obj_Moving_Right_Spike))
+{
+    scr_Colide_Spike(obj_Moving_Right_Spike.spike_Cor);
+}
+/* Spike */
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_Powerup">
       <action>
@@ -339,6 +383,150 @@ alarm[0] = global.alarm_Player_Death;
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_Moving_Circular_Reverse_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Moving_Right_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Moving_Left_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Moving_Down_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Moving_Up_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Moving_Circular_Sphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.initial_x, other.initial_y, true);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_Sphere">
       <action>
         <libid>1</libid>
@@ -356,17 +544,8 @@ alarm[0] = global.alarm_Player_Death;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Colide e teletransporta para sphere destino
-if (global.player_Cor == other.sphere_Cor)
-{
-    coordenadas = string(other.x) + "," + string(other.y)
-    coordenadas_Saida = string(ds_map_find_value(global.map_Spheres,coordenadas));
-    if (coordenadas_Saida != "0")
-    {
-        x = real(string_copy(coordenadas_Saida, 1, 3));
-        y = real(string_copy(coordenadas_Saida, 5, 3));
-    }
-}
+            <string>/// Colisão com sphere e teletransporta
+scr_Colide_Sphere(other.sphere_Cor, other.x, other.y, false);
 </string>
           </argument>
         </arguments>
@@ -422,41 +601,6 @@ if ( global.player_Cor  == other.barrier_Cor
     scr_Player_Death();
     alarm[0] = global.alarm_Player_Death;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Spike">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Colisão com spike
-
-if ((global.player_Cor == other.spike_Cor)
-  &amp;&amp; global.player_Vivo == true)
-{
-    scr_Player_Death();
-    alarm[0] = global.alarm_Player_Death;
-}
-else
-{
-    //atravessa (pode mudar cor do sprite aqui)
-}
-
 </string>
           </argument>
         </arguments>

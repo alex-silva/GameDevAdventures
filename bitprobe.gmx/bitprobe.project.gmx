@@ -11,15 +11,19 @@
       <sprites name="Blue">
         <sprite>sprites\spr_Spike_Blue</sprite>
         <sprite>sprites\spr_Spike_Blue_Left</sprite>
+        <sprite>sprites\spr_spike_Blue_Right</sprite>
         <sprite>sprites\spr_spike_Blue_Down</sprite>
       </sprites>
       <sprites name="Red">
         <sprite>sprites\spr_Spike_Red</sprite>
         <sprite>sprites\spr_Spike_Red_Down</sprite>
+        <sprite>sprites\spr_Spike_Red_Right</sprite>
         <sprite>sprites\spr_Spike_Red_Left</sprite>
       </sprites>
       <sprites name="Green">
         <sprite>sprites\spr_Spike_Green</sprite>
+        <sprite>sprites\spr_Spike_Green_Left</sprite>
+        <sprite>sprites\spr_Spike_Green_Right</sprite>
         <sprite>sprites\spr_Spike_Green_Down</sprite>
       </sprites>
       <sprites name="White">
@@ -101,6 +105,8 @@
       <script>scripts\scr_Initialize_Player.gml</script>
       <script>scripts\scr_Troca_Sprite.gml</script>
       <script>scripts\scr_Player_Death.gml</script>
+      <script>scripts\scr_Colide_Sphere.gml</script>
+      <script>scripts\scr_Colide_Spike.gml</script>
     </scripts>
     <scripts name="Global">
       <script>scripts\scr_Initialize_Global_Variables.gml</script>
@@ -109,9 +115,9 @@
       <script>scripts\scr_Particle_Death.gml</script>
     </scripts>
     <scripts name="Maps">
-      <script>scripts\scr_Sprite_Map.gml</script>
       <script>scripts\scr_Sphere_Map.gml</script>
       <script>scripts\scr_Cor_Level.gml</script>
+      <script>scripts\scr_Sprite_Map.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -124,26 +130,44 @@
     </objects>
     <objects name="Spike">
       <object>objects\obj_Spike</object>
+      <object>objects\obj_Moving_Down_Spike</object>
+      <object>objects\obj_Moving_Up_Spike</object>
+      <object>objects\obj_Moving_Left_Spike</object>
+      <object>objects\obj_Moving_Right_Spike</object>
       <object>objects\obj_Spike_White</object>
       <objects name="Red">
         <object>objects\obj_Spike_Red</object>
-        <object>objects\obj_Spike_Red_Down</object>
-        <object>objects\obj_Spike_Red_Left</object>
+        <object>objects\obj_Moving_Up_Spike_Red</object>
+        <object>objects\obj_Moving_Down_Spike_Red</object>
+        <object>objects\obj_Moving_Left_Spike_Red</object>
+        <object>objects\obj_Moving_Right_Spike_Red</object>
+        <object>objects\obj_Moving_Right_Spike_Blue</object>
       </objects>
       <objects name="Green">
         <object>objects\obj_Spike_Green</object>
-        <object>objects\obj_Spike_Green_Down</object>
+        <object>objects\obj_Moving_Up_Spike_Green</object>
+        <object>objects\obj_Moving_Down_Spike_Green</object>
+        <object>objects\obj_Moving_Left_Spike_Green</object>
+        <object>objects\obj_Moving_Right_Spike_Green</object>
       </objects>
       <objects name="Blue">
         <object>objects\obj_Spike_Blue</object>
-        <object>objects\obj_Spike_Blue_Left</object>
+        <object>objects\obj_Moving_Up_Spike_Blue</object>
+        <object>objects\obj_Moving_Down_Spike_Blue</object>
+        <object>objects\obj_Moving_Left_Spike_Blue</object>
       </objects>
     </objects>
     <objects name="Barrier">
-      <object>objects\obj_Barrier_Blue</object>
-      <object>objects\obj_Barrier_Red</object>
-      <object>objects\obj_Barrier_Green</object>
       <object>objects\obj_Barrier</object>
+      <objects name="Red">
+        <object>objects\obj_Barrier_Red</object>
+      </objects>
+      <objects name="Green">
+        <object>objects\obj_Barrier_Green</object>
+      </objects>
+      <objects name="Blue">
+        <object>objects\obj_Barrier_Blue</object>
+      </objects>
     </objects>
     <objects name="Door">
       <object>objects\obj_Door</object>
@@ -155,10 +179,40 @@
     </objects>
     <objects name="Sphere">
       <object>objects\obj_Sphere</object>
-      <object>objects\obj_Sphere_Blue</object>
       <object>objects\obj_Sphere_White</object>
-      <object>objects\obj_Sphere_Red</object>
-      <object>objects\obj_Sphere_Green</object>
+      <object>objects\obj_Moving_Circular_Sphere</object>
+      <object>objects\obj_Moving_Up_Sphere</object>
+      <object>objects\obj_Moving_Down_Sphere</object>
+      <object>objects\obj_Moving_Left_Sphere</object>
+      <object>objects\obj_Moving_Right_Sphere</object>
+      <object>objects\obj_Moving_Circular_Reverse_Sphere</object>
+      <objects name="Blue">
+        <object>objects\obj_Moving_Circular_Sphere_Blue</object>
+        <object>objects\obj_Moving_Up_Sphere_Blue</object>
+        <object>objects\obj_Moving_Down_Sphere_Blue</object>
+        <object>objects\obj_Moving_Left_Sphere_Blue</object>
+        <object>objects\obj_Moving_Right_Sphere_Blue</object>
+        <object>objects\obj_Moving_Circular_Reverse_Sphere_Blue</object>
+        <object>objects\obj_Sphere_Blue</object>
+      </objects>
+      <objects name="Red">
+        <object>objects\obj_Sphere_Red</object>
+        <object>objects\obj_Moving_Circular_Sphere_Red</object>
+        <object>objects\obj_Moving_Circular_Reverse_Sphere_Red</object>
+        <object>objects\obj_Moving_Up_Sphere_Red</object>
+        <object>objects\obj_Moving_Down_Sphere_Red</object>
+        <object>objects\obj_Moving_Left_Sphere_Red</object>
+        <object>objects\obj_Moving_Right_Sphere_Red</object>
+      </objects>
+      <objects name="Green">
+        <object>objects\obj_Moving_Circular_Sphere_Green</object>
+        <object>objects\obj_Moving_Circular_Reverse_Sphere_Green</object>
+        <object>objects\obj_Moving_Up_Sphere_Green</object>
+        <object>objects\obj_Moving_Left_Sphere_Green</object>
+        <object>objects\obj_Moving_Right_Sphere_Green</object>
+        <object>objects\obj_Moving_Down_Sphere_Green</object>
+        <object>objects\obj_Sphere_Green</object>
+      </objects>
     </objects>
     <objects name="Control">
       <object>objects\obj_Controller</object>
@@ -171,19 +225,28 @@
       <object>objects\obj_Powerup_Green</object>
       <object>objects\obj_Powerup_Blue</object>
     </objects>
+    <objects name="Moving">
+      <object>objects\obj_Moving</object>
+      <object>objects\obj_Moving_Down</object>
+      <object>objects\obj_Moving_Up</object>
+      <object>objects\obj_Moving_Left</object>
+      <object>objects\obj_Moving_Circular</object>
+      <object>objects\obj_Moving_Circular_Reverse</object>
+      <object>objects\obj_Moving_Right</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level03</room>
+    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level01</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41949.03693875</constant>
+    <constant name="GM_build_date">41950,0925082176</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

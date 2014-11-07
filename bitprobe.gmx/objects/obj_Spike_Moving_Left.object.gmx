@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_Spike_Blue</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Carrega variáveis globais
-scr_Initialize_Global_Variables();
+            <string>/// Move spike para esquerda
+x -= horizontal_Speed;
 </string>
           </argument>
         </arguments>

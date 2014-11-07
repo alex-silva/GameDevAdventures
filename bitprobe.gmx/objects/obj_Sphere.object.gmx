@@ -25,9 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define cor da sphere
+            <string>///Inicializa variáveis globais
 scr_Initialize_Global_Variables();
-sphere_Cor = global.cor_Red;
 </string>
           </argument>
         </arguments>

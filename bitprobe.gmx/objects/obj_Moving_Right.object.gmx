@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>-500</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_Spike_Blue</maskName>
+  <parentName>obj_Moving</parentName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Carrega variáveis globais
-scr_Initialize_Global_Variables();
+            <string>/// Move objeto para direita
+x += horizontal_Speed;
 </string>
           </argument>
         </arguments>

@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>-500</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_Spike_Blue</maskName>
+  <parentName>obj_Moving_Circular</parentName>
+  <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Carrega variáveis globais
-scr_Initialize_Global_Variables();
+            <string>/// Define sentido anti horario
+event_inherited();
+clockwise = false;
 </string>
           </argument>
         </arguments>
