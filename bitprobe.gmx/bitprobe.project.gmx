@@ -143,6 +143,7 @@
       <objects name="Blue">
         <object>objects\obj_Spike_Blue</object>
         <object>objects\obj_Moving_Up_Spike_Blue</object>
+        <object>objects\obj_Moving_Right_Spike_Blue</object>
         <object>objects\obj_Moving_Down_Spike_Blue</object>
         <object>objects\obj_Moving_Left_Spike_Blue</object>
       </objects>
@@ -155,11 +156,15 @@
       </objects>
       <objects name="Green">
         <object>objects\obj_Barrier_Green</object>
+        <object>objects\obj_Moving_Left_Barrier_Green</object>
       </objects>
       <objects name="Blue">
         <object>objects\obj_Barrier_Blue</object>
       </objects>
-      <object>objects\obj_Barrier_Moving_Down</object>
+      <object>objects\obj_Moving_Down_Barrier</object>
+      <object>objects\obj_Moving_Down_Left</object>
+      <object>objects\obj_Moving_Left_Barrier</object>
+      <object>objects\obj_Moving_Right_Barrier</object>
     </objects>
     <objects name="Door">
       <object>objects\obj_Door</object>
@@ -238,7 +243,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41951.8460919792</constant>
+    <constant name="GM_build_date">41951.8495805208</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
