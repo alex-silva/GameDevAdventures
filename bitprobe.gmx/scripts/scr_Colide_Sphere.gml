@@ -1,5 +1,5 @@
 // scr_Colide_Sphere(sphere_Cor, other.x, other.y, moving) 
-if (global.player_Cor == argument0)
+if (global.player_Cor == argument0 || global.player_Cor == cor_White)
 {
     coordenadas = string(argument1) + "," + string(argument2)
     coordenadas_Saida = string(ds_map_find_value(global.map_Spheres,coordenadas));

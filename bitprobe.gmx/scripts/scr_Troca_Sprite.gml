@@ -8,10 +8,10 @@ switch (global.player_Cor)
 }
 switch (global.player_Direction)
 {
-    case left       : sprite_Name += "Left"      ; break;
-    case right      : sprite_Name += "Right"     ; break;
-    case jump_Left  : sprite_Name += "Jump_Left" ; break;
-    case jump_Right : sprite_Name += "Jump_Right"; break;
+    case left       : sprite_Name += "Move"      ; image_xscale = -1; break;
+    case right      : sprite_Name += "Move"      ; image_xscale =  1; break;
+    case jump_Left  : sprite_Name += "Jump" ; image_xscale = -1; break;
+    case jump_Right : sprite_Name += "Jump" ; image_xscale =  1; break;
 }
 
 return ds_map_find_value(global.map_Sprites,sprite_Name);

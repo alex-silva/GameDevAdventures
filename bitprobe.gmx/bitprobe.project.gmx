@@ -56,28 +56,20 @@
     </sprites>
     <sprites name="Player">
       <sprites name="Blue">
-        <sprite>sprites\spr_Player_Blue_Left</sprite>
-        <sprite>sprites\spr_Player_Blue_Right</sprite>
-        <sprite>sprites\spr_Player_Blue_Jump_Left</sprite>
-        <sprite>sprites\spr_Player_Blue_Jump_Right</sprite>
+        <sprite>sprites\spr_Player_Blue_Move</sprite>
+        <sprite>sprites\spr_Player_Blue_Jump</sprite>
       </sprites>
       <sprites name="Red">
-        <sprite>sprites\spr_Player_Red_Left</sprite>
-        <sprite>sprites\spr_Player_Red_Right</sprite>
-        <sprite>sprites\spr_Player_Red_Jump_Left</sprite>
-        <sprite>sprites\spr_Player_Red_Jump_Right</sprite>
+        <sprite>sprites\spr_Player_Red_Move</sprite>
+        <sprite>sprites\spr_Player_Red_Jump</sprite>
       </sprites>
       <sprites name="Green">
-        <sprite>sprites\spr_Player_Green_Left</sprite>
-        <sprite>sprites\spr_Player_Green_Right</sprite>
-        <sprite>sprites\spr_Player_Green_Jump_Left</sprite>
-        <sprite>sprites\spr_Player_Green_Jump_Right</sprite>
+        <sprite>sprites\spr_Player_Green_Move</sprite>
+        <sprite>sprites\spr_Player_Green_Jump</sprite>
       </sprites>
       <sprites name="White">
-        <sprite>sprites\spr_Player_White_Left</sprite>
-        <sprite>sprites\spr_Player_White_Right</sprite>
-        <sprite>sprites\spr_Player_White_Jump_Left</sprite>
-        <sprite>sprites\spr_Player_White_Jump_Right</sprite>
+        <sprite>sprites\spr_Player_White_Move</sprite>
+        <sprite>sprites\spr_Player_White_Jump</sprite>
       </sprites>
     </sprites>
     <sprites name="Sphere">
@@ -102,9 +94,6 @@
     <scripts name="Player">
       <script>scripts\scr_Initialize_Player.gml</script>
       <script>scripts\scr_Troca_Sprite.gml</script>
-      <script>scripts\scr_Player_Death.gml</script>
-      <script>scripts\scr_Colide_Sphere.gml</script>
-      <script>scripts\scr_Colisao_Death.gml</script>
     </scripts>
     <scripts name="Global">
       <script>scripts\scr_Global_Initialize.gml</script>
@@ -116,6 +105,11 @@
       <script>scripts\scr_Sphere_Map.gml</script>
       <script>scripts\scr_Cor_Level.gml</script>
       <script>scripts\scr_Sprite_Map.gml</script>
+    </scripts>
+    <scripts name="Collision">
+      <script>scripts\scr_Collision_Cor.gml</script>
+      <script>scripts\scr_Colide_Sphere.gml</script>
+      <script>scripts\scr_Colisao_Death.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">

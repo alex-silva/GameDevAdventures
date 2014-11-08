@@ -253,6 +253,7 @@
     <instance objName="obj_Sphere_Red" x="928" y="544" name="inst_FA3B9B69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Death" x="528" y="1088" name="inst_D46BB9C5" locked="0" code="" scaleX="20" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_Moving_Circular_Reverse_Sphere_Green" x="880" y="656" name="inst_7766A0F7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Spike_Red" x="672" y="432" name="inst_9521D169" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
