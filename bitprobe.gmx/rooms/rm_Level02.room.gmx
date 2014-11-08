@@ -55,7 +55,7 @@
     <instance objName="obj_Barrier_Red" x="880" y="384" name="inst_E514C5C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="624" y="896" name="inst_1A564CF3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="816" y="144" name="inst_69239E3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Spike_Green" x="528" y="448" name="inst_4C1E1F04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="obj_Moving_Left_Spike_Red" x="912" y="32" name="inst_5566BC50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Red" x="336" y="416" name="inst_D6169305" locked="0" code="" scaleX="1" scaleY="0.200000002980232" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="368" y="448" name="inst_2EBE6310" locked="0" code="" scaleX="1" scaleY="0.200000002980232" colour="4294967295" rotation="90"/>
     <instance objName="obj_Barrier_Red" x="48" y="384" name="inst_34C193FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
@@ -119,7 +119,6 @@
     <instance objName="obj_Floor_White" x="800" y="240" name="inst_9A9AC293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Floor_White" x="640" y="176" name="inst_AEA5CB75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Moving_Down_Spike_Red" x="720" y="32" name="inst_0C133057" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Moving_Left_Spike_Red" x="912" y="32" name="inst_5566BC50" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define cor da sphere
 event_inherited();
-sphere_Cor = global.cor_Green;
+sphere_Cor = cor_Green;
 </string>
           </argument>
         </arguments>

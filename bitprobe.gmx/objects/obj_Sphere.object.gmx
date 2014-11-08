@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Inicializa variáveis globais
-scr_Initialize_Global_Variables();
+scr_Global_Initialize();
 </string>
           </argument>
         </arguments>

@@ -96,9 +96,7 @@
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background">
-    <background>background\background0</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Player">
@@ -106,10 +104,10 @@
       <script>scripts\scr_Troca_Sprite.gml</script>
       <script>scripts\scr_Player_Death.gml</script>
       <script>scripts\scr_Colide_Sphere.gml</script>
-      <script>scripts\scr_Colide_Spike.gml</script>
+      <script>scripts\scr_Colisao_Death.gml</script>
     </scripts>
     <scripts name="Global">
-      <script>scripts\scr_Initialize_Global_Variables.gml</script>
+      <script>scripts\scr_Global_Initialize.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scr_Particle_Death.gml</script>
@@ -134,14 +132,12 @@
       <object>objects\obj_Moving_Up_Spike</object>
       <object>objects\obj_Moving_Left_Spike</object>
       <object>objects\obj_Moving_Right_Spike</object>
-      <object>objects\obj_Spike_White</object>
       <objects name="Red">
         <object>objects\obj_Spike_Red</object>
         <object>objects\obj_Moving_Up_Spike_Red</object>
         <object>objects\obj_Moving_Down_Spike_Red</object>
         <object>objects\obj_Moving_Left_Spike_Red</object>
         <object>objects\obj_Moving_Right_Spike_Red</object>
-        <object>objects\obj_Moving_Right_Spike_Blue</object>
       </objects>
       <objects name="Green">
         <object>objects\obj_Spike_Green</object>
@@ -161,6 +157,7 @@
       <object>objects\obj_Barrier</object>
       <objects name="Red">
         <object>objects\obj_Barrier_Red</object>
+        <object>objects\obj_Moving_Down_Barrier_Red</object>
       </objects>
       <objects name="Green">
         <object>objects\obj_Barrier_Green</object>
@@ -168,6 +165,7 @@
       <objects name="Blue">
         <object>objects\obj_Barrier_Blue</object>
       </objects>
+      <object>objects\obj_Barrier_Moving_Down</object>
     </objects>
     <objects name="Door">
       <object>objects\obj_Door</object>
@@ -240,13 +238,13 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rm_Level03</room>
+    <room>rooms\rm_Teste</room>
     <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level01</room>
-    <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41950,0925082176</constant>
+    <constant name="GM_build_date">41951.8460919792</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

@@ -28,7 +28,7 @@
             <string>/// Inicializar player
 
 /// Inicializar variáveis globais
-scr_Initialize_Global_Variables();
+scr_Global_Initialize();
 scr_Initialize_Player();
 </string>
           </argument>

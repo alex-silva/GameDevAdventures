@@ -28,7 +28,7 @@
             <string>///Inicializar player
 
 /* Globais */
-scr_Initialize_Global_Variables();
+scr_Global_Initialize();
 scr_Initialize_Player();
 /* Globais */
 
@@ -46,29 +46,29 @@ image_speed = 0.3;
 
 // cores habilitadas para room atual
 cor_Hab = ds_map_find_value(global.map_Cor_Level,room_get_name(room));
-if (cor_Hab == global.red_Green_Blue)
+if (cor_Hab == red_Green_Blue)
 {
     global.player_Hab_R = true;
     global.player_Hab_G = true;
     global.player_Hab_B = true;
 }
-else if (cor_Hab == global.only_Red)
+else if (cor_Hab == only_Red)
     global.player_Hab_R = true;
-else if (cor_Hab == global.only_Blue)
+else if (cor_Hab == only_Blue)
     global.player_Hab_B = true;
-else if (cor_Hab == global.only_Green)
+else if (cor_Hab == only_Green)
     global.player_Hab_G = true;
-else if (cor_Hab == global.red_Blue)
+else if (cor_Hab == red_Blue)
 {
     global.player_Hab_R = true;
     global.player_Hab_B = true;
 }
-else if (cor_Hab == global.red_Green)
+else if (cor_Hab == red_Green)
 {
     global.player_Hab_R = true;
     global.player_Hab_G = true;
 }
-else if (cor_Hab == global.blue_Green)
+else if (cor_Hab == blue_Green)
 {
     global.player_Hab_B = true;
     global.player_Hab_G = true;
@@ -98,7 +98,6 @@ else if (cor_Hab == global.blue_Green)
             <string>///Destroi Instância do player e volta ao início
 instance_destroy();
 instance_create(obj_Door_Start.x, obj_Door_Start.y, obj_Player);
-room_restart();
 </string>
           </argument>
         </arguments>
@@ -128,10 +127,6 @@ visible = global.player_Vivo;
 
 if (global.player_Vivo)
 {
-    key_Right = keyboard_check(global.key_Right);
-    key_Left = -keyboard_check(global.key_Left);
-    key_Jump = keyboard_check_pressed(global.key_Jump);
-    
     // Define movimentação
     move = key_Right + key_Left;
     horizontal_Speed = move * move_Speed;
@@ -141,13 +136,13 @@ if (global.player_Vivo)
     if (place_meeting(x, y + 1, obj_Floor))
         vertical_Speed = key_Jump * -jump_Speed;
     else if (place_meeting(x, y + 1, obj_Barrier_Blue)
-        &amp;&amp; (global.player_Cor == global.cor_Blue || global.player_Cor == global.cor_White))
+        &amp;&amp; (global.player_Cor == cor_Blue || global.player_Cor == cor_White))
             vertical_Speed = key_Jump * -jump_Speed;
     else if (place_meeting(x, y + 1, obj_Barrier_Red)
-        &amp;&amp; (global.player_Cor == global.cor_Red || global.player_Cor == global.cor_White))
+        &amp;&amp; (global.player_Cor == cor_Red || global.player_Cor == cor_White))
             vertical_Speed = key_Jump * -jump_Speed;
     else if (place_meeting(x, y + 1, obj_Barrier_Green)
-        &amp;&amp; (global.player_Cor == global.cor_Green || global.player_Cor == global.cor_White))
+        &amp;&amp; (global.player_Cor == cor_Green || global.player_Cor == cor_White))
             vertical_Speed = key_Jump * -jump_Speed;
    
     
@@ -171,7 +166,7 @@ if (global.player_Vivo)
         vertical_Speed = 0;
     }
     
-    if (global.player_Cor == global.cor_Red || global.player_Cor == global.cor_White)
+    if (global.player_Cor == cor_Red || global.player_Cor == cor_White)
     {
         //Colisão Horizontal com barrier red
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Red))
@@ -192,7 +187,7 @@ if (global.player_Vivo)
             vertical_Speed = 0;
         }
     }
-    else if (global.player_Cor == global.cor_Green || global.player_Cor == global.cor_White)
+    else if (global.player_Cor == cor_Green || global.player_Cor == cor_White)
     {
         //Colisão Horizontal com barrier green
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Green))
@@ -213,7 +208,7 @@ if (global.player_Vivo)
             vertical_Speed = 0;
         }
     }
-    else if (global.player_Cor == global.cor_Blue || global.player_Cor == global.cor_White)
+    else if (global.player_Cor == cor_Blue || global.player_Cor == cor_White)
     {
         //Colisão Horizontal com barrier blue
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Blue))
@@ -235,7 +230,7 @@ if (global.player_Vivo)
         }
     }
     
-    // Define movimentação caos não colida com objetos    
+    // Define movimentação caso não colida com objetos    
     x += horizontal_Speed;    
     y += vertical_Speed;
 }
@@ -260,23 +255,26 @@ if (global.player_Vivo)
           <argument>
             <kind>1</kind>
             <string>///Anima sprite
-if (horizontal_Speed &gt; 0)
+if (global.player_Vivo)
 {
-    if vertical_Speed &lt; 0
-        global.player_Direction = global.jump_Right;      
-    else if vertical_Speed &gt;= 0 
-        global.player_Direction = global.right;
+    if (horizontal_Speed &gt; 0)
+    {
+        if vertical_Speed &lt; 0
+            global.player_Direction = jump_Right;      
+        else if vertical_Speed &gt;= 0 
+            global.player_Direction = right;
+    }
+    else if horizontal_Speed &lt; 0
+    {
+        if vertical_Speed &lt; 0
+           global.player_Direction = jump_Left
+        else if vertical_Speed &gt;= 0 
+           global.player_Direction = left;
+    }
+    else image_index = 0;
+    
+    sprite_index = scr_Troca_Sprite();
 }
-else if horizontal_Speed &lt; 0
-{
-    if vertical_Speed &lt; 0
-       global.player_Direction = global.jump_Left
-    else if vertical_Speed &gt;= 0 
-       global.player_Direction = global.left;
-}
-else image_index = 0;
-
-sprite_index = scr_Troca_Sprite();
 </string>
           </argument>
         </arguments>
@@ -299,28 +297,20 @@ sprite_index = scr_Troca_Sprite();
             <kind>1</kind>
             <string>///Colisão com spike
 
-/* Spike */
-if (place_meeting(x, y, obj_Spike))
+if (global.player_Vivo)
 {
-    scr_Colide_Spike(obj_Spike.spike_Cor);
+    if (place_meeting(x, y, obj_Spike))
+        scr_Colisao_Death(obj_Spike.spike_Cor);
+    else if (place_meeting(x, y, obj_Moving_Up_Spike))
+        scr_Colisao_Death(obj_Moving_Up_Spike.spike_Cor);
+    else if (place_meeting(x, y, obj_Moving_Down_Spike))
+        scr_Colisao_Death(obj_Moving_Down_Spike.spike_Cor);
+    else if (place_meeting(x, y, obj_Moving_Left_Spike))
+        scr_Colisao_Death(obj_Moving_Left_Spike.spike_Cor);
+    else if (place_meeting(x, y, obj_Moving_Right_Spike))
+        scr_Colisao_Death(obj_Moving_Right_Spike.spike_Cor);
+    /* Spike */
 }
-else if (place_meeting(x, y, obj_Moving_Up_Spike))
-{
-    scr_Colide_Spike(obj_Moving_Up_Spike.spike_Cor);
-}
-else if (place_meeting(x, y, obj_Moving_Down_Spike))
-{
-    scr_Colide_Spike(obj_Moving_Down_Spike.spike_Cor);
-}
-else if (place_meeting(x, y, obj_Moving_Left_Spike))
-{
-    scr_Colide_Spike(obj_Moving_Left_Spike.spike_Cor);
-}
-else if (place_meeting(x, y, obj_Moving_Right_Spike))
-{
-    scr_Colide_Spike(obj_Moving_Right_Spike.spike_Cor);
-}
-/* Spike */
 </string>
           </argument>
         </arguments>
@@ -346,9 +336,9 @@ else if (place_meeting(x, y, obj_Moving_Right_Spike))
             <string>///Habilita alternancia de cor
 switch(other.powerup_Cor)
 {
-    case global.cor_Red   : global.player_Hab_R = true; break;
-    case global.cor_Green : global.player_Hab_G = true; break;
-    case global.cor_Blue  : global.player_Hab_B = true; break;
+    case cor_Red   : global.player_Hab_R = true; break;
+    case cor_Green : global.player_Hab_G = true; break;
+    case cor_Blue  : global.player_Hab_B = true; break;
 }
 with (other) instance_destroy();
 </string>
@@ -374,10 +364,7 @@ with (other) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Adios muchacho
-scr_Player_Death();
-x -= 16;
-y -= 16;
-alarm[0] = global.alarm_Player_Death;
+scr_Colisao_Death(666);
 </string>
           </argument>
         </arguments>
@@ -595,12 +582,7 @@ room_goto_next();
             <string>///Colisão com barrier
    
 // Troca de cor dentro da barrier
-if ( global.player_Cor  == other.barrier_Cor
-  &amp;&amp; global.player_Vivo == true )
-{
-    scr_Player_Death();
-    alarm[0] = global.alarm_Player_Death;
-}
+scr_Colisao_Death(obj_Barrier.barrier_Cor);
 </string>
           </argument>
         </arguments>
@@ -624,13 +606,16 @@ if ( global.player_Cor  == other.barrier_Cor
           <argument>
             <kind>1</kind>
             <string>/// Ajusta posição para evitar que personagem fique preso
-if (global.player_Direction == global.jump_Right)
+if (global.player_Direction == jump_Right)
+{
     x -= 0.1;
     y -= 0.1;
-if (global.player_Direction == global.jump_Left)
+}
+if (global.player_Direction == jump_Left)
+{
     x += 0.1;
     y -= 0.1;
-    
+}   
 </string>
           </argument>
         </arguments>
@@ -656,7 +641,7 @@ if (global.player_Direction == global.jump_Left)
             <string>/// Muda cor para azul
 if(global.player_Hab_B)
 {
-    global.player_Cor = global.cor_Blue;
+    global.player_Cor = cor_Blue;
     sprite_index = scr_Troca_Sprite();
 }
 </string>
@@ -684,7 +669,7 @@ if(global.player_Hab_B)
             <string>/// Muda cor para verde
 if(global.player_Hab_G)
 {
-    global.player_Cor = global.cor_Green;
+    global.player_Cor = cor_Green;
     sprite_index = scr_Troca_Sprite();
 }
 </string>
@@ -712,7 +697,7 @@ if(global.player_Hab_G)
             <string>/// Muda cor para vermelho
 if(global.player_Hab_R)
 {
-    global.player_Cor = global.cor_Red;
+    global.player_Cor = cor_Red;
     sprite_index = scr_Troca_Sprite();
 }
 </string>

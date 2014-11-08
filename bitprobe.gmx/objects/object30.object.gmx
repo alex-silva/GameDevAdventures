@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Inicializa globais e spike
-scr_Initialize_Global_Variables();
+scr_Global_Initialize();
 spike_Direction = global.spike_Down;
 initial_x = x;
 initial_y = y;

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define cor do spike
 event_inherited();
-cor_Spike = global.cor_Green;
+cor_Spike = cor_Green;
 </string>
           </argument>
         </arguments>

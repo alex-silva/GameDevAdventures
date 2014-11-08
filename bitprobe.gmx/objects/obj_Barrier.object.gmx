@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// Define cor da barrier
-scr_Initialize_Global_Variables();
-barrier_Cor = global.cor_Red;
+scr_Global_Initialize();
+barrier_Cor = cor_Red;
 </string>
           </argument>
         </arguments>
