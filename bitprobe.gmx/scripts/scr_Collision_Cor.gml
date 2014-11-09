@@ -1,3 +1,4 @@
+// scr_Collision_Cor(obj_Cor)
 if (global.player_Vivo 
 && (global.player_Cor == argument0 
  || global.player_Cor == cor_White
@@ -5,4 +6,3 @@ if (global.player_Vivo
     return true;
 else
     return false;
-

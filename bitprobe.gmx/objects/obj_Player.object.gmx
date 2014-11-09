@@ -300,15 +300,15 @@ if (global.player_Vivo)
 if (global.player_Vivo)
 {
     if (place_meeting(x, y, obj_Spike))
-        scr_Colisao_Death(obj_Spike.spike_Cor);
+        scr_Collision_Death(obj_Spike.spike_Cor);
     else if (place_meeting(x, y, obj_Moving_Up_Spike))
-        scr_Colisao_Death(obj_Moving_Up_Spike.spike_Cor);
+        scr_Collision_Death(obj_Moving_Up_Spike.spike_Cor);
     else if (place_meeting(x, y, obj_Moving_Down_Spike))
-        scr_Colisao_Death(obj_Moving_Down_Spike.spike_Cor);
+        scr_Collision_Death(obj_Moving_Down_Spike.spike_Cor);
     else if (place_meeting(x, y, obj_Moving_Left_Spike))
-        scr_Colisao_Death(obj_Moving_Left_Spike.spike_Cor);
+        scr_Collision_Death(obj_Moving_Left_Spike.spike_Cor);
     else if (place_meeting(x, y, obj_Moving_Right_Spike))
-        scr_Colisao_Death(obj_Moving_Right_Spike.spike_Cor);
+        scr_Collision_Death(obj_Moving_Right_Spike.spike_Cor);
     /* Spike */
 }
 </string>
@@ -364,7 +364,7 @@ with (other) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Adios muchacho
-scr_Colisao_Death(cor_White);
+scr_Collision_Death(cor_White);
 </string>
           </argument>
         </arguments>
@@ -582,7 +582,7 @@ room_goto_next();
             <string>///Colisão com barrier
    
 // Troca de cor dentro da barrier
-scr_Colisao_Death(obj_Barrier.barrier_Cor);
+scr_Collision_Death(obj_Barrier.barrier_Cor);
 </string>
           </argument>
         </arguments>

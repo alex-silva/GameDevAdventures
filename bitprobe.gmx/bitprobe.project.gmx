@@ -109,7 +109,7 @@
     <scripts name="Collision">
       <script>scripts\scr_Collision_Cor.gml</script>
       <script>scripts\scr_Colide_Sphere.gml</script>
-      <script>scripts\scr_Colisao_Death.gml</script>
+      <script>scripts\scr_Collision_Death.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -152,19 +152,29 @@
       <object>objects\obj_Barrier</object>
       <objects name="Red">
         <object>objects\obj_Barrier_Red</object>
+        <object>objects\obj_Moving_Up_Barrier_Red</object>
         <object>objects\obj_Moving_Down_Barrier_Red</object>
+        <object>objects\obj_Moving_Left_Barrier_Red</object>
+        <object>objects\obj_Moving_Right_Barrier_Red</object>
       </objects>
       <objects name="Green">
         <object>objects\obj_Barrier_Green</object>
+        <object>objects\obj_Moving_Up_Barrier_Green</object>
+        <object>objects\obj_Moving_Down_Barrier_Green</object>
         <object>objects\obj_Moving_Left_Barrier_Green</object>
+        <object>objects\obj_Moving_Right_Barrier_Green</object>
       </objects>
       <objects name="Blue">
         <object>objects\obj_Barrier_Blue</object>
+        <object>objects\obj_Moving_Left_Barrier_Blue</object>
+        <object>objects\obj_Moving_Right_Barrier_Blue</object>
+        <object>objects\obj_Moving_Up_Barrier_Blue</object>
+        <object>objects\obj_Moving_Down_Barrier_Blue</object>
       </objects>
       <object>objects\obj_Moving_Down_Barrier</object>
-      <object>objects\obj_Moving_Down_Left</object>
       <object>objects\obj_Moving_Left_Barrier</object>
       <object>objects\obj_Moving_Right_Barrier</object>
+      <object>objects\obj_Moving_Up_Barrier</object>
     </objects>
     <objects name="Door">
       <object>objects\obj_Door</object>
@@ -236,14 +246,14 @@
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rm_Level01</room>
+    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level03</room>
     <room>rooms\rm_Teste</room>
-    <room>rooms\rm_Level02</room>
-    <room>rooms\rm_Level01</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41951.8495805208</constant>
+    <constant name="GM_build_date">41951.9051322454</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
