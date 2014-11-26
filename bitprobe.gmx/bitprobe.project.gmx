@@ -87,6 +87,7 @@
       <sprite>sprites\spr_Powerup_Green</sprite>
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
+    <sprite>sprites\spr_Spike_Red_Green</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -122,6 +123,7 @@
     </objects>
     <objects name="Spike">
       <object>objects\obj_Spike</object>
+      <object>objects\obj_Spike_Alternating</object>
       <object>objects\obj_Moving_Down_Spike</object>
       <object>objects\obj_Moving_Up_Spike</object>
       <object>objects\obj_Moving_Left_Spike</object>
@@ -146,6 +148,9 @@
         <object>objects\obj_Moving_Right_Spike_Blue</object>
         <object>objects\obj_Moving_Down_Spike_Blue</object>
         <object>objects\obj_Moving_Left_Spike_Blue</object>
+      </objects>
+      <objects name="Red_Green">
+        <object>objects\obj_Spike_Red_Green</object>
       </objects>
     </objects>
     <objects name="Barrier">
@@ -253,7 +258,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41951.9051322454</constant>
+    <constant name="GM_build_date">41969,0511327315</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
