@@ -112,6 +112,9 @@
       <script>scripts\scr_Colide_Sphere.gml</script>
       <script>scripts\scr_Collision_Death.gml</script>
     </scripts>
+    <scripts name="Spike">
+      <script>scripts\scr_Spike_Troca_Cor.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Floor">
@@ -124,6 +127,7 @@
     <objects name="Spike">
       <object>objects\obj_Spike</object>
       <object>objects\obj_Spike_Alternating</object>
+      <object>objects\obj_Spike_Alternating_Red_Green</object>
       <object>objects\obj_Moving_Down_Spike</object>
       <object>objects\obj_Moving_Up_Spike</object>
       <object>objects\obj_Moving_Left_Spike</object>
@@ -258,7 +262,7 @@
     <room>rooms\rm_GameOver</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41969,0511327315</constant>
+    <constant name="GM_build_date">41969,0573544792</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>

@@ -27,8 +27,7 @@
             <kind>1</kind>
             <string>///Define globais e tempo para alteração
 event_inherited();
-tempo_Espera = 90;
-alarm[0] = 0;
+tempo_Espera = 60;
 </string>
           </argument>
         </arguments>
@@ -52,16 +51,18 @@ alarm[0] = 0;
           <argument>
             <kind>1</kind>
             <string>///Alterna cores
-spike_Cor = scr_Spike_Troca_Cor(object_get_name(object_index), sprite_index);
-
-switch (spike_Cor)
+if (sprite_index == spr_Spike_Red)
 {
-    case cor_Red : sprite_index = spr_Spike_Red;
-    case cor_Green : sprite_index = spr_Spike_Green;
-    case cor_Blue : sprite_index = spr_Spike_Blue;
+    sprite_index = spr_Spike_Green;
+    spike_Cor = cor_Green;   
 }
-
-alarm[0] = tempo_Espera;
+else
+{
+    sprite_index = spr_Spike_Red;
+    spike_Cor = cor_Red;   
+}
+    
+alarm[0] = 60;
 </string>
           </argument>
         </arguments>
