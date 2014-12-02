@@ -255,9 +255,10 @@
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_Level01</room>
     <room>rooms\rm_Level02</room>
-    <room>rooms\rm_Level03</room>
+    <room>rooms\rm_Level02_Teste</room>
+    <room>rooms\rm_Level01</room>
+    <room>rooms\rm_Level03_Teste</room>
     <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
   </rooms>
