@@ -256,11 +256,13 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rm_Level02</room>
-    <room>rooms\rm_Level02_Teste</room>
-    <room>rooms\rm_Level01</room>
-    <room>rooms\rm_Level03_Teste</room>
-    <room>rooms\rm_Teste</room>
     <room>rooms\rm_GameOver</room>
+    <rooms name="Teste">
+      <room>rooms\rm_Level02_Teste</room>
+      <room>rooms\rm_Level03_Teste</room>
+      <room>rooms\rm_Teste</room>
+      <room>rooms\rm_Level01</room>
+    </rooms>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41969,0573544792</constant>
