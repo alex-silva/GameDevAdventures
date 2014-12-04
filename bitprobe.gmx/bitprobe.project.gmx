@@ -143,6 +143,7 @@
         <object>objects\obj_Spike_Green</object>
         <object>objects\obj_Moving_Up_Spike_Green</object>
         <object>objects\obj_Moving_Down_Spike_Green</object>
+        <object>objects\obj_Moving_Down_Spike_Green_Slow</object>
         <object>objects\obj_Moving_Left_Spike_Green</object>
         <object>objects\obj_Moving_Right_Spike_Green</object>
       </objects>
@@ -256,6 +257,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rm_Level02</room>
+    <room>rooms\rm_Level03</room>
     <room>rooms\rm_GameOver</room>
     <rooms name="Teste">
       <room>rooms\rm_Level02_Teste</room>

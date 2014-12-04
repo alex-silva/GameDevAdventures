@@ -1,4 +1,4 @@
-// scr_Colide_Spike(obj_Cor)
+// scr_Collision_Cor(obj_Cor)
 if (scr_Collision_Cor(argument0))
 {
     global.player_Vivo = false;

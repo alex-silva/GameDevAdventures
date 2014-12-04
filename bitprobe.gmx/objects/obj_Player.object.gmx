@@ -166,7 +166,7 @@ if (global.player_Vivo)
         vertical_Speed = 0;
     }
     
-    if (global.player_Cor == cor_Red || global.player_Cor == cor_White)
+    if (global.player_Cor == cor_Red)
     {
         //Colisão Horizontal com barrier red
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Red))
@@ -187,7 +187,7 @@ if (global.player_Vivo)
             vertical_Speed = 0;
         }
     }
-    else if (global.player_Cor == cor_Green || global.player_Cor == cor_White)
+    else if (global.player_Cor == cor_Green)
     {
         //Colisão Horizontal com barrier green
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Green))
@@ -208,7 +208,7 @@ if (global.player_Vivo)
             vertical_Speed = 0;
         }
     }
-    else if (global.player_Cor == cor_Blue || global.player_Cor == cor_White)
+    else if (global.player_Cor == cor_Blue)
     {
         //Colisão Horizontal com barrier blue
         if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Blue))
@@ -229,6 +229,60 @@ if (global.player_Vivo)
             vertical_Speed = 0;
         }
     }
+    else if (global.player_Cor == cor_White)
+    {
+        //Colisão Horizontal com qualquer barrier
+        if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Blue))
+        {
+            while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Blue))
+            {
+                x += sign(horizontal_Speed);
+            }
+            horizontal_Speed = 0;
+        }
+        else if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Red))
+        {
+            while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Red))
+            {
+                x += sign(horizontal_Speed);
+            }
+            horizontal_Speed = 0;
+        }
+        else if (place_meeting(x + horizontal_Speed, y, obj_Barrier_Green))
+        {
+            while(!place_meeting(x + sign(horizontal_Speed), y, obj_Barrier_Green))
+            {
+                x += sign(horizontal_Speed);
+            }
+            horizontal_Speed = 0;
+        }
+        //Colisão vertical com qualquer barrier
+        if (place_meeting(x, y + vertical_Speed, obj_Barrier_Blue))
+        {
+            while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Blue))
+            {
+                y += sign(vertical_Speed);
+            }
+            vertical_Speed = 0;
+        }
+        else if (place_meeting(x, y + vertical_Speed, obj_Barrier_Red))
+        {
+            while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Red))
+            {
+                y += sign(vertical_Speed);
+            }
+            vertical_Speed = 0;
+        }
+        else if (place_meeting(x, y + vertical_Speed, obj_Barrier_Green))
+        {
+            while(!place_meeting(x, y + sign(vertical_Speed), obj_Barrier_Green))
+            {
+                y += sign(vertical_Speed);
+            }
+            vertical_Speed = 0;
+        }
+    }
+    
     
     // Define movimentação caso não colida com objetos    
     x += horizontal_Speed;    
@@ -274,42 +328,6 @@ if (global.player_Vivo)
     else image_index = 0;
     
     sprite_index = scr_Troca_Sprite();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Colisão com spike
-
-if (global.player_Vivo)
-{
-    if (place_meeting(x, y, obj_Spike))
-        scr_Collision_Death(obj_Spike.spike_Cor);
-    else if (place_meeting(x, y, obj_Moving_Up_Spike))
-        scr_Collision_Death(obj_Moving_Up_Spike.spike_Cor);
-    else if (place_meeting(x, y, obj_Moving_Down_Spike))
-        scr_Collision_Death(obj_Moving_Down_Spike.spike_Cor);
-    else if (place_meeting(x, y, obj_Moving_Left_Spike))
-        scr_Collision_Death(obj_Moving_Left_Spike.spike_Cor);
-    else if (place_meeting(x, y, obj_Moving_Right_Spike))
-        scr_Collision_Death(obj_Moving_Right_Spike.spike_Cor);
-    /* Spike */
 }
 </string>
           </argument>
@@ -579,10 +597,31 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Colisão com barrier
-   
-// Troca de cor dentro da barrier
-scr_Collision_Death(obj_Barrier.barrier_Cor);
+            <string>///Troca de cor dentro da barrier, não faz nada
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Spike">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Colisão com spike
+scr_Collision_Death(other.spike_Cor);
 </string>
           </argument>
         </arguments>

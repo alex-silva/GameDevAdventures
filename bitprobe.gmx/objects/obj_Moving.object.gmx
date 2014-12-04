@@ -53,7 +53,7 @@ vertical_Speed = 10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Recria sprite na posição inicial
+            <string>///Recria objeto na posição inicial
 instance_create(initial_x, initial_y, object_index);
 </string>
           </argument>
