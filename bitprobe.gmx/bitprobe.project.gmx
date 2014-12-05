@@ -62,6 +62,9 @@
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
     <sprite>sprites\spr_Spike_Red_Green</sprite>
+    <sprites name="Propulsor">
+      <sprite>sprites\spr_Propulsor</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -149,6 +152,9 @@
       <object>objects\obj_Moving_Circular</object>
       <object>objects\obj_Moving_Circular_Reverse</object>
       <object>objects\obj_Moving_Right</object>
+    </objects>
+    <objects name="Propulsor">
+      <object>objects\obj_Propulsor</object>
     </objects>
   </objects>
   <timelines name="timelines">
