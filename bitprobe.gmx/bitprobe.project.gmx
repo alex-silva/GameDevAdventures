@@ -10,6 +10,7 @@
     <sprites name="Spike">
       <sprite>sprites\spr_Spike_Blue</sprite>
       <sprite>sprites\spr_Spike_Red</sprite>
+      <sprite>sprites\spr_Spike_Red_Green</sprite>
       <sprite>sprites\spr_Spike_Green</sprite>
       <sprite>sprites\spr_Spike_White</sprite>
     </sprites>
@@ -61,7 +62,6 @@
       <sprite>sprites\spr_Powerup_Green</sprite>
       <sprite>sprites\spr_Powerup_Blue</sprite>
     </sprites>
-    <sprite>sprites\spr_Spike_Red_Green</sprite>
     <sprites name="Propulsor">
       <sprite>sprites\spr_Propulsor</sprite>
     </sprites>
