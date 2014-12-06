@@ -961,6 +961,7 @@
     <instance objName="obj_Spike_Green" x="416" y="352" name="inst_15C065B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_Spike_Green" x="880" y="192" name="inst_F212A9BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="obj_Spike_Green" x="688" y="192" name="inst_E5B24B69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="obj_Propulsor" x="1024" y="928" name="inst_F3B0A8E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
