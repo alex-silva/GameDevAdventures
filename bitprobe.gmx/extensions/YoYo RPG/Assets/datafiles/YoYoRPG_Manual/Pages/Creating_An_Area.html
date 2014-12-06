@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Creating An Area</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Creating An Area</h1>
+
+<p>
+In this section, we will look at creating game areas (rooms). This section will concentrate mainly on the initial setup objects required and the placing of tiles as well as the creation of 
+animated tilesets.
+<br>
+<br>
+
+<a name="new_room"></a>
+<h3>Create A New Room</h3>
+<p>
+If you look at the main "over-world" room, <i>rm_TownNew</i>, you will see that there is a building to the left that has the door blocked by an NPC. We are going to move that character and open this 
+building to the player to explore, which requires us to add a new room to the game where we can create the area that we want to represent the inside of this building.
+<br>
+<br>
+
+Since we are making a aTavern and the building we are going to use from the town is a long one, you need to make a new room, call it "<i>rmTavern</i>" and set it to be <b>768</b>x<b>480</b> pixels in size. 
+You will also need to set the <b>room speed</b> to 60. We could set out background colour to black too, but we will leave it as the default grey for now, as we will be adding "wall" blocks to define the play area and 
+they are black, making it difficult to see if we misplace them if we change the background colour now. You should also tick the <b>persistent</b> flag for the room so that any changes made to the instances it 
+contains are perpetuated when the player leaves and enters.
+<br>
+<br>
+
+With that done, our first task is to lay down the tiles for the walls and the floor...
+<br>
+<br>
+
+<a name="floor_tiles"></a>
+<h3>Adding The Floor And Walls</h3>
+<p>
+To add the walls and floors (and later, other elements) we need to pick a <i>Tile set</i> to use. There are multiple tile sets to choose from that come bundled with the YoYo Games RPG engine, and more can be 
+bought from the GameMaker: marketplace, but for our tavern we need to use the Interior Tiles from the "<i>Recomended_Tile_Sheets</i>" as shown by the image below:
+
+<img class="center" src="../Images/Room_Tilesets.png"></img>
+
+Once you have selected the tile sheet, it's time to start to "paint" the background of the room with them. All tiles are added to a room at different <b>depths</b>, and managing these depths is very important to 
+the final look of your game. GameMaker: Studio draws things with a higher depth first, and a lower depth second, so you want to add tiles to your room from the highest depth to the lowest. That's why we are going 
+to start with the walls and floors, as they will appear under everything elese.
+<br>
+<br>
+
+You can set the depth from the "Tiles" tab (scroll the tab down a bit if you can't see it), but for the initial layer this is unnecessary as the default depth of 1000000 is fine. You can now start to add the walls and 
+floor tiles for your tavern. If you are not sure which ones to use, open the room "<i>rmWeaponShop</i> and look at how the tiles have been laid down there. After adding the walls and floor, the room should look 
+something like this:
+
+<img class="center" src="../Images/Room_FirstTiles.png"></img>
+
+While we are on this layer, we can also add some decoration to our tavern, as there are tiles for that too. Make sure that you have un-ticked the "<i>Delete Underlying</i>" option in the tiles settings for the rooms, 
+as this will enable you to "stack" tiles in the same layer, and add some details so the room looks a bit like this:
+
+<img class="center" src="../Images/Room_Decoration.png"></img>
+
+<a name="elements"></a>
+<h3>Adding Elements</h3>
+<p>
+You can now go ahead and add further elements to your tavern working from back to front to layer things correctly. To make this layering easier, you can create a new layer of tiles for each level of depth that you want 
+to add, so add another layer now at a depth of 900000 so that it will appear over the floor and wall tiles.
+<br>
+<br>
+
+On this new layer we want to add the next set of tiles, like some barrels or crates, against the back the wall. Note that you can press the <b>&lt;ALT&gt;</b> key to stop the tiles snapping to the grid resolution, 
+which permits you to create more natural and "organic" backgrounds.
+
+<img class="center" src="../Images/Room_Elements.png"></img>
+
+You can now continue to add layers and tiles (decreasing the layer depth each time) until you get a room that looks like this:
+
+<img class="center" src="../Images/Room_Finished.png"></img>
+
+<a name="animated_tiles"></a>
+<h3>Animated Tiles</h3>
+<p>
+One of the features of the YoYo Games RPG Engine is that it permits you to use <i>animated tilesets</i>. These are controlled by a couple of specific scripts which are explained in the section on 
+<a href="Animation.html">Animation</a>. So, since you are adding a tavern, let's add some candles and a torch or two to the place to give it some ambience.
+<br>
+<br>
+
+You will need to add a new tile layer below the ones you created for the basic room and its elements, then browse to the tile folder marked "<i>Animated Tiles</i>", then "<i>Torches</i>". From there you can pick
+a tileset to use (using different ones will mean that each item animation will start on a different index and so all will appear to be unique), and start to add tiles. Your room should now look a bit like this:
+
+<img class="center" src="../Images/Room_Animated.png"></img>
+
+<a name="limit"></a>
+<h3>Limiting The Area</h3>
+<p>
+The new area is almost complete, but we still haven't defined the areas that the player and NPC characters can move around in. For that we need to add our invisible wall objects, so go to the "Objects" tab in the 
+room editor and select the object "<i>objWallSquare</i>" from the "<i>Obstacles</i>" folder. You should now paint the room with these objects to create an area for the characters to move around in. The image 
+below shows an example of how this should look:
+
+<img class="center" src="../Images/Room_Limits.png"></img>
+
+Note that we don't need to outline the whole room around the edges or anything like that. If you check the image above, you can see that we have only placed wall objects to create an area around the visible 
+floor that the player can move in.
+<br>
+<br>
+
+When you are happy with the results you can set the room background colour to black now, as we won't be adding any further wall objects.
+<br>
+<br> 
+
+<a name="connect"></a>
+<h3>Connecting Rooms</h3>
+<p>
+Our new area complete now (graphically), but we still have to connect it to the game world and permit the player to enter and leave the room, just like any other area in the RPG. For that we need to add a door 
+instance to the room, specifically an instance of "<i>objBlank</i>" from the "<i>Transit</i>" folder of objects. This is an invisible object that detects the player collision and goes to the appropriate room. However 
+for that we need to give it a name and some instance creation code (you can find out more on these subjects from the section on <a href="Core_Concepts.html">Core Concepts</a>).
+<br>
+<br>
+
+Add an instance of this object to the bottom of the room where the tavern entrance is, then right-click on it and select "<b>Rename Object Instance</b>", naming it "<i>inst_TavernDoorExit</i>"
+
+<img class="center" src="../Images/Room_NameDoor.png"></img>
+
+You then need to right click on it again and select "<i>Creation Code</i>", which will open up the code editor where you should add the following:
+
+<p class="code">
+targetRoom = rmTownNew;<br>
+targetDoor = inst_TavernDoorEnter;<br>
+</p>
+
+<p>
+Here we tell the door which room it connects to, and then which specific door in that room it connects to. The connecting door doesn't exist yet, however, so let's go ahead and fix that.
+<br>
+<br>
+
+Open the room "<i>rmTownNew</i>" and go to the area to the left where the big house is with the NPC standing outside. Move the NPC character to another part of the room and then right-click on the door object 
+that was behind him, setting the instance name to "<i>inst_TavernDoorEnter</i>". We then need to add the following creation code:
+
+<p class="code">
+targetRoom = rmTavern;<br>
+targetDoor = inst_TavernDoorExit;<br>
+</p>
+
+<p>
+You can go ahead and test the game now, checking that the room is accessible from the overworld and the the defined area for the player to move in is adequate. Leave and enter a couple of times to make sure that 
+you are happy everything works and looks as it should.
+<br>
+<br>
+
+In the next section we will look at adding some instances to this room, including a barkeeper with a shop and an NPC to give you a quest!
+<br>
+<br>
+ 
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Modules.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Adding_Instances.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+<center><a href="../index.html">Index of Contents</a></center>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

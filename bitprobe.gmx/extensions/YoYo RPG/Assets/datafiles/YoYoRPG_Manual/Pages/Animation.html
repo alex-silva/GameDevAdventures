@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Animation</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Animation</h1>
+
+<p>
+The animation scripts are used to create animated backgrounds by switch between different tiles on fixed depth. This "tileset animation" works by creating an array of backgrounds, where the entry [0] is the one 
+currently being drawn and the other array entries contain the individual "frames" for the animation. Each time the animation is updated, [0] is replaced by copying one of the static frame array values into it. An 
+array is also created to determine in which order these frames should be played, providing extra control without having to double up on background resources.
+<br>
+<br>
+
+<a name="animation_init"></a>
+<h3>Initialising Animations</h3>
+
+<p>
+To create an animation set you will need a number of background resources, each with their own "frame" for the animation, as shown in the image below:
+
+<img class="center" src="../Images/AnimationSet.png"></img>
+
+To initialise a tileset animation, you will need to call the function <tt>AnimationInit()</tt> which takes the following arguments:
+<div class="param">
+	<table>
+		<tr><th>argument</th><th>Description</th></tr>
+
+		<tr><td>index</td><td>The index of the background array (starting at 0)</td></tr>
+		
+		<tr class="alt"><td>stretch</td><td>The number of steps to "stretch" each animation frame to</td></tr>
+		
+		<tr><td>type</td><td>The type of animation to use (see the constants below)</td></tr>
+		
+		<tr class="alt"><td>background1</td><td>The first background resource to use</td></tr>
+		
+		<tr><td>background2, etc...</td><td>The second background to use (add further background arguments as required)</td></tr>
+		
+	</table>
+</div>
+
+<p>
+The "index" value for the tileset animation is simply a value from 0 upwards and it will be used to define the array that is created for the backgrounds. The stretch value simply sets the number of game steps that 
+each animation frame should be shown, and the "type" defines the way that the animation will progress. The types of animation are defined as globalvar constants in the object "<i>objConstants</i>" and can be 
+any one of those shown below:
+
+<div class="param">
+	<table>
+		<tr><th>Globalvar</th><th>Description</th></tr>
+
+		<tr><td>ANIMATION_LOOP</td><td>Simple a&gt;b loop.</td></tr>
+		
+		<tr class="alt"><td>ANIMATION_BOUNCE</td><td>Bounces from the beginning to the end and back again as (a&gt;b, b&lt;a)</td></tr>
+		
+		<tr><td>ANIMATION_SWING</td><td>Similar to bounce, only with a pause, as (a&gt;b, b, b&lt;a, a)</td></tr>
+
+	</table>
+</div>
+
+<p>
+Note that when defining the background resources to use for each frame of the animation, you can only add a maximum of 13 backgrounds (ie: frames).
+<br>
+<br>
+
+
+<a name="animation_order"></a>
+<h3>Ordering Animations</h3>
+
+<p>
+As mentioned above, you can set the order of animations independently of how you initialise them (if you do not, then the argument order in which they have been initialised will be used), giving you more 
+control over them. This is a handy way to make the animation less obviously repetitive, which is something the player would quickly pick up on.
+<br>
+<br>
+
+To set the animation order you use the script <tt>AnimationOrder()</tt>, which takes as it's arguments the animation index, and then the array position of each frame you wish to show. For example, if you 
+have something like this:
+
+<p class="code">
+AnimationInit(1, 30, ANIMATION_LOOP, bckAnimationFlowers1, bckAnimationFlowers2);<br>
+AnimationOrder(1, 1, 2, 1, 1, 2);<br>
+</p>
+
+<p>
+In the above code, you are setting the tileset animation for the array [1] to show two backgrounds over 5 frames. You can see an example of how to set up the tileset animation system in the object 
+"<i>objGame</i>" <b>Create</b> event, where three different animations are initialised - one for the flowers, one for the torches and one for the water effects. Note that when setting the order of the 
+animation, you can only have up to 14 frames in a given set.
+<br>
+<br>
+
+<a name="animation_update"></a>
+<h3>Updating Animations</h3>
+
+<p>
+Tilesets won't animate themselves unfortunately, and so we need to use the script <tt>AnimationAnimate()</tt> to tell the engine which frame to show on any given step of the game. This script 
+simply takes the animation array index (as defined by the initialisation script, above) and should be called in the <b>Step</b> event of an object.
+<br>
+<br>
+
+You can see an example of this in the object "<i>objGame</i>" <b>Step</b> event, and we would recommend that if you are creating your own animated tilesets, you simply add to this object 
+rather than create your own.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Modules.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Dialogue.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+<center><a href="../index.html">Index of Contents</a></center>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Sprite Sets</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Sprite Sets</h1>
+
+<p>
+In this section we will discuss the sprites that the YoYo Games RPG engine requires and how the scripts that set them up for each instance are structured. These sprite sets are only applicable to objects that 
+move and can be interacted with, for example NPCs, the player, or enemies. Note that the variables used in these scripts provide an easy way to change the <i>graphics</i> used to display an instance, but they 
+do not affect the instance in any other way. This means that you could, if you wished, create an NPC that uses the "Scorpion" sprite set and so have a talking scorpion in your game!
+</p>
+
+<a name="required_sprites"></a>
+<h3>Required Sprites</h3>
+
+<p>
+The YoYo Games RPG engine is a top down engine and requires four sprites (one for each direction) for each of the three mobile character "states" (making a total of 12 directional sprites) as well as a couple of 
+extra sprites for the death particles and the character avatar (used in <a href="Dialogue.html">Dialogue</a>). These sprites and states correspond to the following:
+<div class="param">
+	<table>
+		<tr><th>State</th><th>Sprites</th></tr>
+
+		<tr><td>Walking</td><td>North, South, East, West</td></tr>
+		
+		<tr class="alt"><td>Fighting</td><td>North, South, East, West</td></tr>
+		
+		<tr><td>Staggering (when hit)</td><td>North, South, East, West</td></tr>
+		
+		<tr class="alt"><td>Death</td><td>Single sprite with multiple "bits" as sub-images</td></tr>
+		
+		<tr><td>Avatar</td><td>Single sprite of the "head" of the character</td></tr>
+
+	</table>
+</div>
+
+<p>
+These sprites will be assigned to a number of variables in the instance being created which will then be used in further scripts to correctly get your characters facing the required direction and have the correct 
+behaviour set for the circumstances.
+</p>
+
+<a name="sprite_scripts"></a>
+<h3>The Scripts</h3>
+<p>
+If you look in the "Scripts" folder of the resource tree, you will see a group of scripts titled "<b>Sprite Sets</b>". These scripts are where each instance or object will set up it's sprite properties. If you open up the 
+"<b>objTestNPC</b>" (from the <i>Mobiles</i>&gt;<i>NPCs</i> object folders), you can see that we call two scripts from the <b>Create Event</b>:
+<br>
+<br>
+</p>
+
+<p class="code">
+SetAvatar("J. Doe", -1);<br>
+SetSpritesNPCMale();<br>
+</p>
+
+<p>
+<br>
+The first script sets some <i>avatar</i> information and has the following arguments:
+<div class="param">
+	<table>
+		<tr><th>Argument</th><th>Description</th></tr>
+
+		<tr><td>name</td>
+		<td>The name of the NPC or character (use an empty string "" for no name).</td></tr>
+		
+		<tr class="alt"><td>avatar_sprite</td>
+		<td>The avatar sprite to use (-1 is no avatar).</td></tr>
+
+	</table>
+</div>
+
+Note that the avatar sprite is also set in the <tt>SetSprites*</tt> script, so you can use this to overwrite the base avatar with another. Using our "NPC as a scorpion" example for before, you could use the 
+<tt>SetAvatar</tt> script after the <tt>SetSprite*</tt> script to give the NPC a human avatar, indicating that even though you are talking to a scorpion, it's really a human!
+<br>
+<br>
+
+The second script will be unique to each of the chracters that you wish to animate, and sets variables for each of the directions and death particles. So, if you make a new character you should duplicate one 
+of the other <tt>SetSprite*</tt> scripts and simply fill in the sprite indices required.
+<br>
+<br>
+
+Note that in the demo game these scripts are often called from the <a href="Core_Concepts.html#creation_code">Creation Code</a> for an instance of an object (like NPCs) to give distinct sprites while 
+keeping the defined object behaviour.
+<br>
+<br>
+
+Before continuing, you should open some of these sprite set scripts now and see how they are structured.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Modules.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Items_And_Weapons.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+<center><a href="../index.html">Index of Contents</a></center>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Core Concepts</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Core Concepts</h1>
+
+<p>
+The YoYo Games RPG engine is programmed around two core concepts: Parenting and instance creation code. The combination of these two systems is what makes this engine so flexible and also what 
+makes it so easy to use. We will now explore each of these themes and explain in a bit more detail how they are used and why they are so important.
+<br>
+<br>
+
+<a name="parenting"></a>
+<h3>Parenting</h3>
+<p>
+GameMaker: Studio permits you to group objects together to form <i>parent/child hierarchies</i>. What this means is that you can create two objects and make one the <i>parent</i> of the other. The 
+other object would then become the first object's <i>child</i>. Child objects <i>inherit</i> the events that their parent object has, so if our parent has a Create Event, our child will too. However, if we then 
+add a Create Event to the child object, this will over-ride the parent create event and be run instead. If this is not what is required, you can have the child object run the parent event code <i>and</i> it's own 
+using the special function call <tt><a href="http://docs.yoyogames.com/source/dadiospice/002_reference/objects%20and%20instances/objects/generating%20events/event_inherited.html" target="_blank">
+event_inherited()</a></tt>.
+<blockquote>
+	<i><b>NOTE: </b>You can find further information on parenting from the GameMaker: Studio Manual - 
+	<a href="http://docs.yoyogames.com/source/dadiospice/001_advanced%20use/more%20about%20objects/parents.html" target="_blank">Parents</a></i>
+</blockquote>
+
+<p>
+In our RPG engine, parenting plays a very important part, and most objects are actually children of one or more parents. In this way the engine provides a large scale method for changing essential gameplay 
+elements from only a few basic parent objects, and then lets you fine tune and control more detailed options within the children objects themselves. This structure also helps greatly when it comes to doing 
+collision checks an other engine specific functions by permitting you to check for a single parent rather than a number different child objects.
+<br>
+<br>
+
+A good example of how this parenting hierarchy works can be found in the "<i>Mobile</i>" <b>Objects</b> folder in the resource tree:
+
+<img class="center" src="../Images/Core_Concepts_ObjParMobile.png"></img>
+
+This parent is itself the child of the object "<i>parObstacle</i>" and has two other parent objects (which have their own child obejcts too) as well as an object as it's children. The events that are in the 
+"<i>parObstacle</i>" instance will propagate down to this parent, which in turn adds it's own event and these will in turn be accessed by the child objects (or over-written if necessary).
+<br>
+<br>
+
+Parenting is a very powerful tool, and you should take a moment to look at the objects labelled with the "<i>par</i>" prefix to get an idea of how the heiarchy of the RPG engine is structured, as it will make 
+exploring the code later a simpler task.
+<br>
+<br>
+
+<a name="creation_code"></a>
+<h3>Creation Code</h3>
+<p>
+The second main core concept of the YoYo Games RPG engine is the use of the <b>Instance Creation Code</b>. Before explaining this further, you should open up the room editor for the room "<i>rmTownNew</i>". 
+Once you have the room open, zoom out a bit so you can see the whole area, and press the <b>&lt;C&gt;</b> on your keyboard which will highlight all the instances that have been assigned creation code to them:
+
+<img class="center" src="../Images/Core_Concepts_CreationCode.png"></img>
+
+The objects placed in the room that are highlighted in red are those that contain instance creation code to change their behaviour at the start of the room. This extra code is how you will control all that happens in 
+the game world and is your starting point for creating your own adventures using the YoYo Games RPG engine.
+<br>
+<br>
+
+We will cover this in more detail later in the user manual (as well as give the available objects and the parameters that you can change for them), but for now let's just see how we open the instance creation code 
+window to edit it's contents:
+<blockquote>
+	<ul>
+		<li>Open the room editor for the room "<i>rmTownNew</i>".
+		<li>Click on any instance of the object "<i>objTestNPC</i>" to select it.
+		<li>Now right click and select <i>Creation Code</i> from the pop up menu.
+	</ul>
+</blockquote>
+
+If you have followed the steps correctly, you should have opened a code editor onto the instance's creation code with something similar to the following:
+
+<img class="center" src="../Images/Core_Concepts_CreationCodeExample.png"></img>
+
+The green functions that you see are <b>scripts</b> (colours may vary, depending on the options you have, but scripts will still be coloured differently to built-in functions). Scripts are essentially code snippets 
+that work like the GameMaker: Studio built in functions and are used to control the main aspects of the YoYo Games RPG engine. If you are not familiar with scripts and how they work, then please see the GameMaker: 
+Studio manual - <a href="http://docs.yoyogames.com/source/dadiospice/001_advanced%20use/006_scripts.html" target="_blank">Scripts</a>.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Getting_Started.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Core_Concepts.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

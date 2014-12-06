@@ -406,7 +406,7 @@ scr_Collision_Death(cor_White);
           <argument>
             <kind>1</kind>
             <string>/// Colisão com sphere e teletransporta
-scr_Colide_Sphere(other.sphere_Cor, other.x, other.y, false);
+//scr_Colide_Sphere(other.sphere_Cor, other.x, other.y, false);
 </string>
           </argument>
         </arguments>
@@ -454,63 +454,6 @@ room_goto_next();
           <argument>
             <kind>1</kind>
             <string>///Troca de cor dentro da barrier, não faz nada
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Spike">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Colisão com spike
-scr_Collision_Death(other.spike_Cor);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Floor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Ajusta posição para evitar que personagem fique preso
-if (global.player_Direction == jump_Right)
-{
-    x -= 0.1;
-    y -= 0.1;
-}
-if (global.player_Direction == jump_Left)
-{
-    x += 0.1;
-    y -= 0.1;
-}   
 </string>
           </argument>
         </arguments>

@@ -3,16 +3,18 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\YoYo RPG</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
     <sprites name="Spike">
-      <sprite>sprites\spr_Spike_Blue</sprite>
-      <sprite>sprites\spr_Spike_Red</sprite>
+      <sprite>sprites\sprSpikeBlue</sprite>
+      <sprite>sprites\sprSpikeRed</sprite>
       <sprite>sprites\spr_Spike_Red_Green</sprite>
-      <sprite>sprites\spr_Spike_Green</sprite>
-      <sprite>sprites\spr_Spike_White</sprite>
+      <sprite>sprites\sprSpikeGreen</sprite>
+      <sprite>sprites\sprSpikeWhite</sprite>
     </sprites>
     <sprites name="Barrier">
       <sprite>sprites\spr_Barrier_Blue</sprite>
@@ -24,10 +26,10 @@
       <sprite>sprites\spr_Door_End</sprite>
     </sprites>
     <sprites name="Floor">
-      <sprite>sprites\spr_Floor_White</sprite>
-      <sprite>sprites\spr_Floor_Green</sprite>
-      <sprite>sprites\spr_Floor_Red</sprite>
-      <sprite>sprites\spr_Floor_Blue</sprite>
+      <sprite>sprites\sprFloorWhite</sprite>
+      <sprite>sprites\sprFloorGreen</sprite>
+      <sprite>sprites\sprFloorRed</sprite>
+      <sprite>sprites\sprFloorBlue</sprite>
     </sprites>
     <sprites name="Player">
       <sprites name="Blue">
@@ -86,38 +88,60 @@
       <script>scripts\scr_Cor_Level.gml</script>
       <script>scripts\scr_Sprite_Map.gml</script>
     </scripts>
-    <scripts name="Collision">
-      <script>scripts\scr_Collision_Cor.gml</script>
-      <script>scripts\scr_Colide_Sphere.gml</script>
-      <script>scripts\scr_Collision_Death.gml</script>
-    </scripts>
     <scripts name="Spike">
       <script>scripts\scr_Spike_Troca_Cor.gml</script>
+    </scripts>
+    <scripts name="Sprites">
+      <script>scripts\SetSprite.gml</script>
+      <script>scripts\SetSpritesFloor.gml</script>
+      <script>scripts\SetSpritesNPCMale.gml</script>
+      <script>scripts\SetSpritesNPCFemale.gml</script>
+      <script>scripts\SetSpritesSkraggleKlaw.gml</script>
+      <script>scripts\SetSpritesScorpion.gml</script>
+      <script>scripts\SetSpritesSnowScorpion.gml</script>
+      <script>scripts\SetSpritesDesertScorpion.gml</script>
+      <script>scripts\SetSpritesSnowMonster.gml</script>
+      <script>scripts\SetSpritesForestMonster.gml</script>
+    </scripts>
+    <scripts name="Items">
+      <script>scripts\ItemGetDefine.gml</script>
+      <script>scripts\ItemGetRubbishSword.gml</script>
+      <script>scripts\ItemGetAwesomeSword.gml</script>
+      <script>scripts\ItemGetGoldenSword.gml</script>
+      <script>scripts\ItemGetLifePotion.gml</script>
+    </scripts>
+    <scripts name="Saving">
+      <scripts name="Loading">
+        <script>scripts\SaveGame.gml</script>
+        <script>scripts\LoadGame.gml</script>
+        <script>scripts\PersistanceLog.gml</script>
+        <script>scripts\StringCompressZeros.gml</script>
+      </scripts>
+    </scripts>
+    <script>scripts\LocationName.gml</script>
+    <script>scripts\DrawPanel.gml</script>
+    <script>scripts\DrawButton.gml</script>
+    <script>scripts\DrawButtonLong.gml</script>
+    <script>scripts\StringSepNumber.gml</script>
+    <script>scripts\ConfirmSlot.gml</script>
+    <script>scripts\ConfirmSave.gml</script>
+    <script>scripts\ConfirmLoad.gml</script>
+    <scripts name="Collision">
+      <script>scripts\scr_Collision_Cor.gml</script>
+      <script>scripts\scr_Collision_Death.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Floor">
-      <object>objects\obj_Floor</object>
-      <object>objects\obj_Floor_White</object>
-      <object>objects\obj_Floor_Red</object>
-      <object>objects\obj_Floor_Green</object>
-      <object>objects\obj_Floor_Blue</object>
+      <object>objects\objFloor</object>
     </objects>
     <objects name="Spike">
-      <object>objects\obj_Spike</object>
       <object>objects\obj_Spike_Alternating</object>
       <object>objects\obj_Spike_Alternating_Red_Green</object>
-      <object>objects\obj_Spike_Red</object>
-      <object>objects\obj_Spike_White</object>
-      <object>objects\obj_Spike_Blue</object>
-      <object>objects\obj_Spike_Green</object>
-      <object>objects\obj_Spike_Red_Green</object>
+      <object>objects\objSpike</object>
     </objects>
     <objects name="Barrier">
       <object>objects\obj_Barrier</object>
-      <object>objects\obj_Barrier_Green</object>
-      <object>objects\obj_Barrier_Red</object>
-      <object>objects\obj_Barrier_Blue</object>
     </objects>
     <objects name="Door">
       <object>objects\obj_Door</object>
@@ -129,10 +153,6 @@
     </objects>
     <objects name="Sphere">
       <object>objects\obj_Sphere</object>
-      <object>objects\obj_Sphere_White</object>
-      <object>objects\obj_Sphere_Green</object>
-      <object>objects\obj_Sphere_Red</object>
-      <object>objects\obj_Sphere_Blue</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_Controller</object>
@@ -141,9 +161,6 @@
     </objects>
     <objects name="Powerup">
       <object>objects\obj_Powerup</object>
-      <object>objects\obj_Powerup_Red</object>
-      <object>objects\obj_Powerup_Green</object>
-      <object>objects\obj_Powerup_Blue</object>
     </objects>
     <objects name="Moving">
       <object>objects\obj_Moving</object>
@@ -157,11 +174,15 @@
     <objects name="Propulsor">
       <object>objects\obj_Propulsor</object>
     </objects>
+    <objects name="Game">
+      <object>objects\objConstants</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rm_Teste</room>
     <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level03</room>
     <room>rooms\rm_Level04</room>
@@ -170,7 +191,6 @@
     <rooms name="Teste">
       <room>rooms\rm_Level02_Teste</room>
       <room>rooms\rm_Level03_Teste</room>
-      <room>rooms\rm_Teste</room>
       <room>rooms\rm_Level01</room>
     </rooms>
   </rooms>

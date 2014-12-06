@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Adding Instances</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Adding Instances</h1>
+
+<p>
+Once you have created a room using the YoYoGames RPG tilesets, you will want to populate the room with NPC's and interactive objects. If you have done the previous tutorial on 
+<a href="Creating_An_Area.html">Creating an Area</a>, then you should have a new tavern room for the player to enter from the main room <i>rm_TownNew</i>. In this tutorial, we are going 
+to add a tavern owner with an inventory to buy from, a regular NPC to chat with, a special NPC which will offer you a quest and a chest for the player to open.
+<br>
+<br>
+
+<a name="add_npc"></a>
+<h3>Adding an NPC</h3>
+<p>
+Our first task in our new tavern is to add an NPC. This character does nothing but simply adds "colour" to the establishment and makes things look and feel a bit more alive. So, in the room editor,
+in the "Objects" tab, select the "<i>obj_TestNPC</i>" and place a copy in the room. This is our base NPC object and we need to give it some details now by using the instance creation code to customise it 
+and give it a small piece of dialogue (place the instance in the room, then <i>right-click</i> it and open the <a href="Core_Concepts.html"><b>creation code</b></a> as shown below). 
+
+<img class="center" src="../Images/Instance_NPC.png"></img>
+
+The scripts we call first define whether the NPC is male or female, then we give the NPC a name (a string) and a sprite to use as the avatar for conversations. In this case we simply set the default variable 
+for the avatar as we don't require anything different for this NPC. next we create a dialogue for him so that when the player approaches and presses the action key there is a bit of text. The full code looks like
+this:
+
+<p class="code">
+SetSpritesNPCMale();<br>
+SetAvatar("Dim Frank", avatarSprite);<br>
+DialogueBegin(0);<br>
+Dialogue("I'm dim because of all the beer I drink... *hic!*");<br>
+DialogueResponse(1, "Then don't drink!.");<br>
+DialogueResponse(2, "Somehow I doubt that...");<br>
+DialogueBegin(1);<br>
+Dialogue("Good *hic!* idea! After I finish this one... *hic!*");<br>
+DialogueBegin(2);<br>
+Dialogue("I'm not *hic!* dim? I'll have another one to celebrate... *hic!*");<br>
+Dialogue("");<br>
+</p>
+
+<p>
+Here we have a simple dialogue in which the player can repsond in one of two ways, with each response soliciting a different answer from the NPC. As we have not specified any further dialogues, after the last NPC 
+line, the dialogue will end. You can test the game now and you should be able to talk to this NPC.
+<br>
+<br>
+
+<a name="add_chest"></a>
+<h3>Adding a Chest</h3>
+<p>
+It's time now to add an instance for the player to interact with, and in this case we are going to create a chest which will reward the player when opened. in this case, since it's a tavern we have created, we'll make 
+the chest give the player a healing potion. So, open the tavern room then in the <b>Objects</b> tab select <i>Objects</i> &lt; <i>Interactables</i> &lt; "<i>objChest</i>" and place it somewhere in the room. 
+<br>
+<br>
+
+By default the chest objects will drop nothing so we need to tell it what to drop. For that we need to open its <b>creation code</b> editor in the room and add the following code:
+
+<p class="code">
+containsItem = true;<br>
+item = ItemGetLifePotion();<br>
+</p>
+
+<p>
+You tell the chest to spawn, then tell it what to spawn from the <a href="Items_And_Weapons.html">item sets scripts</a> (you can invent more items by adding more scripts as explained previously in this 
+manual), and this item will be placed directly into the player inventory. If you want to spawn multiple items, like gems for example, and you want them to appear on the ground, you would do this instead:
+
+<p class="code">
+containsItem = true;<br>
+canDropOnGround = true;<br>
+item[ITEM_OBJECT]=objGreenGem;<br>
+item[ITEM_COUNT]=10;<br>
+</p>
+
+<p>
+Here we tell the chest that it contains items as before, but now also set the "canDropOnGround" variable to <tt>true</tt> to make sure the items are spawned around the chest and not in the player inventory. After 
+that we set the "item" array to point ot the green gem and we tell it to spawn 10 of them. In this way you can customise each chest to behave differently.
+<br>
+<br>
+
+<a name="add_store"></a>
+<h3>Adding a Store</h3>
+<p>
+Adding a store character starts the same as adding an NPC. You place an instance of the "<i>obj_TestNPC</i>" in your room (behind the bar in this case) and then open its instance <b>creation code</b>. Here, as 
+before, we set the sprite afor the avatar, and give the NPC a name. We also need to tell the NPC that they can't walk around or move, so we set a variable for that too.
+
+<p class="code">
+SetAvatar("Tavernkeeper Tim", avatarSprite);<br>
+canMove = false;<br>
+</p>
+
+<p>
+Now we need to add the <a href="Dialogue.html">dialogue options</a>. to start with we want to give the player the option to browse the store, or to leave, in which case we will have two options to make the 
+player feel like the game world has a bit more freedom, even though the outcome will be the same. Remember that dialogues are defined in a linear manner to start with, with user responses being assigned an 
+integer index value. So each response will lead to another dialogue which we will need to define too. So, we would have something like this to start the conversation:
+
+<p class="code">
+DialogueBegin(0);<br>
+Dialogue("Welcome to The Tavern Of Tim! I don't just sell drinks, y'know!");<br>
+DialogueResponse(3, "You don't? Okay, show me your wares then, please.");<br>
+DialogueResponse(1, "Sell? You mean you don't give stuff away?");<br>
+DialogueResponse(2, "No thanks! I doubt you have anything I need right now.");<br>
+</p>
+
+<p>
+Here we have defined the start of the dialogue, and added three possible responses, with the first one taking us to the store, while the other two will simply finish the dialogue. The next task is to add in the 
+responses, and we'll start with the two that close the dialogue:
+
+<p class="code">
+DialogueBegin(1);<br>
+Dialogue("Nothing in life is free, y'know! And certainly not in The Tavern Of Tim...");<br>
+DialogueBegin(2);<br>
+Dialogue("Okay, but if you ever need a health potion or a trinket, I'm always here, y'know!");<br>
+</p>
+
+<p>
+The scripts will now run and after that dialogue line is shown the dialogue will end since we haven't added further lines or any responses. That just leaves the store itself to add, which we do with the following code:
+
+<p class="code">
+DialogueBegin(3);<br>
+Dialogue("By all means, I have nothing to hide!");<br>
+DialogueItem(ItemGetLifePotion, 1);<br>
+DialogueItem(ItemGetLifePotion, 5);<br>
+DialogueItem(ItemGetRubbishSword, 1);<br>
+DialogueResponse(-1, "I think I've finished for today, thanks!");<br>
+</p>
+
+<p>
+As with all dialogues, we first define the text that the character speaks. After that we define the items that are to be shown in the inventory using the <a href="Items_And_Weapons.html">item sets scripts</a> 
+to tell the store what to sell, and then a quantity of each. We then add a final dialogue, but this time a response (it will be shown after the store list) with an index value of -1. This means that the response will 
+spawn no further dialogue. We could if we wished change this to 0 for example and so the player would not exit the dialogue, but rather re-start it from dialogue 0, and so have the same choices presented again to 
+browse the store or leave.
+<br>
+<br>
+
+<a name="add_quest"></a>
+<h3>Adding A Quest</h3>
+<p>
+Quests are structured exactly like dialogues and are just as easy to set up. In this example, we are going to add another NPC to the tavern, and if you talk to them they are going to tell you about a golden sword you 
+can find somewhere. You will then be able to go and get the sword and complete the quest or refuse and continue on your way.
+<br>
+<br>
+
+So, add an NPC instance into the corner of your tavern room, then open the <b>creation code</b> and add the following:
+
+<p class="code">
+SetSpritesNPCFemale();<br>
+SetAvatar("Slim Shady", avatarSprite);<br>
+canMove = false;<br>
+DialogueBegin(0);<br>
+Dialogue("Don't bother me I'm up to no good!");<br>
+DialogueResponse(1, "Sorry, didn't mean to disturb you.");<br>
+DialogueResponse(2, "Can I join in?");<br>
+DialogueBegin(1);<br>
+Dialogue("Then go away.");<br>
+DialogueBegin(2);<br>
+Dialogue("No. Go away.");<br>
+</p>
+
+<p>
+This is a simple dialogue and not part of the quest. We add it in to give some more life to the game and to have the character still be interactive even if no quest is available. The player will see this dialogue when 
+the quest either can't be done yet (because the player doesn't meet the requisites) or the quest has been finished. You can close this code window now and then <i>right-click</i> on the instance to bring up the 
+context menu. We need to change the <b>instance name</b> within the room of the instance to have our quest scripts work correctly, so click the option "Rename Instance" and call the instance "inst_ShadyClient".
+
+<img class="center" src="../Images/Instance_Name.png"></img>
+
+The quest itself will be created in a script and added to our game via the <a href="Quests.html">Quest Manager</a>. This means that all your quests can be scripted in parts and then referenced in that one object, 
+making the whole process very easy to add to. So, create a new script in the <i>Quests</i> &lt; <i>Questlines</i> folder and call it "Quest_ShadyBusiness". We will now start to define the quest with the following:
+
+<p class="code">
+QuestNew("Shady Business", "Shady Business");<br>
+QuestGiver(instShadyClient);<br>
+</p>
+
+<p>
+This gives our current quest a name, as well as the name of the overall quest line that it forms a part of. In this case we use the same name as it's not part of a larger quest. We also define the quest giver, which is 
+the instance name we gave for the NPC instance in the tavern room. Now we need to add the different <b>contexts</b> for each of the stages of the quest, starting with the <tt>Context.intro</tt>:
+
+<p class="code">
+QuestDialogueContext(Context.intro);<br>
+QuestDialogueBegin(0);<br>
+QuestDialogue("What do you want? If you are looking for work I have some business for you...");<br>
+QuestDialogueAccept(1, 2, "That sounds intriguing, tell me more.", "That sounds a bit shady. No thanks!");<br>
+QuestDialogueBegin(1);<br>
+QuestDialogue("I lost a sword in town, but I can't leave this tavern or I'll be in trouble.");<br>
+QuestDialogue("So, I need you to go and get it for me. It's beside the chapel somewhere I'm sure.");<br>
+QuestDialogue("Now go. I need that sword.");<br>
+QuestDialogueBegin(2);<br>
+QuestDialogue("Go away then. Loser.");<br>
+</p>
+
+<p>
+This is the introduction to our quest. Here we first offer the player the quest and they have a choice of accepting or rejecting. The accepting text is quest dialogue 1 and the rejection text is dialogue 2. Now we 
+need to set the <tt>Context.progress</tt> which is the text that will appear when the player has accepted the quest, but not yet completed it:
+
+<p class="code">
+QuestDialogueContext(Context.progress);<br>
+QuestDialogueBegin(0);<br>
+QuestDialogue("Where's my sword?");<br>
+</p>
+
+<p>
+With that done, you will then have to add the <tt>Context.ending</tt>, which is the dialogue for when the player has completed the quest:
+
+<p class="code">
+QuestDialogueContext(Context.ending);<br>
+QuestDialogueBegin(0);<br>
+QuestDialogue("Ha! You did it! Good work kid... You are now part of the Slim Shady gang.");<br>
+QuestDialogue("Oh, and keep the sword.");<br>
+</p>
+
+<p>
+The final thing we want to define are the quest conditions that have to met before the quest is complete. You can have as many of these as you wish, but for this small quest we just need to check that the item 
+being requested is in the inventory of the player:
+
+<p class="code">
+QuestCondition(CheckItemInventory, ItemGetGoldenSword());<br>
+</p>
+
+<p>
+Our small quest is almost complete! You can close the script now, and open the object "<i>obj_QuestManager</b>", then open the code block in the Create Event. At the end of the quest list, you need to add 
+your new custom quest so it looks something like the image below:
+
+<img class="center" src="../Images/Quest_Manager.png"></img>
+
+One final thing to do is add an instance of the golden sword into the main "rmTownNew" beside the chapel so that the player can pick it up. If you look you'll see that there is already a chest there, so you can open 
+that and remove the code from its room creation code and add the following:
+
+<p class="code">
+containsItem = true;<br>
+item = ItemGetGoldenSword();<br>
+</p>
+
+<p>
+now you can test the game and see that your quest works correctly.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Modules.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Reference.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+<center><a href="../index.html">Index of Contents</a></center>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

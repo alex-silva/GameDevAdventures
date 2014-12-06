@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Items And Weapons</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+<body>
+
+<h1>Items And Weapons</h1>
+
+<p>
+There are a number of scripts available to you to define items and weapons that your player character can use. These scripts are used to define the item properties and to assign sprite sets where 
+appropriate. For example, a weapon will require a sprite set for the various directions that it can be used in, but a quest item will not. note that these scripts are only for use with weapons or <i>unique</i> 
+items and any consumable item that can appear various times in the game (like a healing potion or a magic scroll) should be created as instances.
+<br>
+<br>
+
+These scripts return arrays that are then used in the inventory and by the player to show what the player has or is currently using.
+<br>
+<br>
+
+<a name="items"></a>
+<h3>Items</h3>
+
+<p>
+An item is defined using the script <tt>ItemGetDefine</tt> which returns an array of values that the instance can use for drawing etc... if you look at the <b>Create Event</b> of the object "<i>objChest</i>" 
+(in the "<i>Interactables"</i> object folder) you will see the script called like this:
+<br>
+<br>
+</p>
+
+<p class="code">
+item = ItemGetDefine("NO NAME", -1, 1, -1, -1, "NO DESCRIPTION", -1, 0, 0);
+</p>
+
+<p>
+<br>
+This simply initialises the chest "<tt>item</tt>" array, and the arguments that this script takes are as follows:
+<div class="param">
+	<table>
+		<tr><th>argument</th><th>Description</th></tr>
+
+		<tr><td>name</td><td>The name of the item (a string)</td></tr>
+		
+		<tr class="alt"><td>type</td><td>The type of weapon that it is as defined by the given globalvar (-1 for no type, use one of the globalvars listed below otherwise)</td></tr>
+		
+		<tr><td>count</td><td>The number of items to add</td></tr>
+		
+		<tr class="alt"><td>object</td><td>The object index to associate with this item (for when it is "dropped", see the globalvars below).</td></tr>
+		
+		<tr><td>icon</td><td>The sprite index of the icon sprite for the item</td></tr>
+		
+		<tr class="alt"><td>description</td><td>The description of the item or weapon (a string)</td></tr>
+		
+		<tr><td>spriteSet</td><td>The sprite-set to use for the item or weapon</td></tr>
+		
+		<tr class="alt"><td>effect</td><td>The magic effect that the sword has (currently can only be 1, or -1 for none)</td></tr>
+
+		<tr><td>value</td><td>The "gold" value of the item or weapon</td></tr>
+
+	</table>
+</div>
+
+<p>
+Note that there are a number of pre-defined item sets in the scripts folder, but they all define the same properties as above. The engine is adapted to use these individual scripts rather than the generic
+<tt>ItemGetDefine</tt> and we recommend that you create new scripts for each item rather than use the generic define as it will help keep your code clear and easy to follow. You can see an example 
+of a pre-defined script being used in the <a href="Core_Concepts.html#creation_code">Creation Code</a> of one of the chests in the room editor:
+
+<img class="center" src="../Images/ChestCreationCode.png"></img>
+
+Note that there are some globalvars defined as constants in the object "<i>objConstants</i>" which are used in the engine to set item types. These are:
+<div class="param">
+	<table>
+		<tr><th>Globalvar</th><th>Description</th></tr>
+
+		<tr><td>ITEM_TYPE_WEAPON</td><td>Item is a weapon (will require a weapon set, see below).</td></tr>
+		
+		<tr class="alt"><td>ITEM_TYPE_PLACEABLE</td><td>The item is a placeable object (will require and object to be associated the function, see above)</td></tr>
+		
+		<tr><td>ITEM_TYPE_POTION_HEALTH</td><td>A health potion</td></tr>
+
+	</table>
+</div>
+
+<p>
+If you are adding further items that can be used in the inventory, then you will have to create an item type for them, unless they can only be picked up and dropped (but not used) in which case you can use the 
+pre-defined globalvar.
+<br>
+<br>
+
+<a name="weapons"></a>
+<h3>Weapon Sets</h3>
+
+<p>
+The idea of weapon sets is that they provide an easy way to set up the sprites required by your player character for any weapon item that you choose to define in the game. The demo game has two weapons 
+defined for the player, but using the item scripts you can easily create more. Once you have defined the weapon, you will need to assign it a weapon set script for the engine to get the correct sprites for the 
+direction the player is facing.
+<br>
+<br>
+
+You can find an example script in the "Weapon sets" folder of the scripts resources, and you can see that it takes four arguments, corresponding to the sprites required for the directions North, South, East and West.
+<br>
+<br>
+
+<p>
+<br>
+</p>
+
+<br>
+<br>
+<div class="clear">
+	<div style="float:left">
+		<a href="Modules.html">
+			<div id="button-prev"></div>
+		</a>
+	</div>
+	<div style="float:right">
+		<a href="Animation.html">
+			<div id="button-next"></div>
+		</a>
+	</div>
+<center><a href="../index.html">Index of Contents</a></center>
+</div>
+
+<h5>&copy; Copyright YoYo Games Ltd. 2014 All Rights Reserved</h5></body>
+</html>

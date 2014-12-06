@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>-500</depth>
   <persistent>0</persistent>
-  <parentName>obj_Spike</parentName>
-  <maskName>spr_Spike_Blue</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <maskName>sprSpikeBlue</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
