@@ -3,27 +3,24 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <NewExtensions>
-    <extension index="0">extensions\YoYo RPG</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
     <sprites name="Spike">
       <sprite>sprites\sprSpikeBlue</sprite>
       <sprite>sprites\sprSpikeRed</sprite>
-      <sprite>sprites\spr_Spike_Red_Green</sprite>
       <sprite>sprites\sprSpikeGreen</sprite>
       <sprite>sprites\sprSpikeWhite</sprite>
     </sprites>
     <sprites name="Barrier">
-      <sprite>sprites\spr_Barrier_Blue</sprite>
-      <sprite>sprites\spr_Barrier_Green</sprite>
-      <sprite>sprites\spr_Barrier_Red</sprite>
+      <sprite>sprites\sprBarrierBlue</sprite>
+      <sprite>sprites\sprBarrierGreen</sprite>
+      <sprite>sprites\sprBarrierRed</sprite>
     </sprites>
     <sprites name="Door">
-      <sprite>sprites\spr_Door_Start</sprite>
-      <sprite>sprites\spr_Door_End</sprite>
+      <sprite>sprites\sprDoorStart</sprite>
+      <sprite>sprites\sprDoorEnd</sprite>
     </sprites>
     <sprites name="Floor">
       <sprite>sprites\sprFloorWhite</sprite>
@@ -33,39 +30,36 @@
     </sprites>
     <sprites name="Player">
       <sprites name="Blue">
-        <sprite>sprites\spr_Player_Blue_Move</sprite>
-        <sprite>sprites\spr_Player_Blue_Jump</sprite>
+        <sprite>sprites\sprPlayerBlueMove</sprite>
+        <sprite>sprites\sprPlayerBlueJump</sprite>
       </sprites>
       <sprites name="Red">
-        <sprite>sprites\spr_Player_Red_Move</sprite>
-        <sprite>sprites\spr_Player_Red_Jump</sprite>
+        <sprite>sprites\sprPlayerRedMove</sprite>
+        <sprite>sprites\sprPlayerRedJump</sprite>
       </sprites>
       <sprites name="Green">
-        <sprite>sprites\spr_Player_Green_Move</sprite>
-        <sprite>sprites\spr_Player_Green_Jump</sprite>
+        <sprite>sprites\sprPlayerGreenMove</sprite>
+        <sprite>sprites\sprPlayerGreenJump</sprite>
       </sprites>
       <sprites name="White">
-        <sprite>sprites\spr_Player_White_Move</sprite>
-        <sprite>sprites\spr_Player_White_Jump</sprite>
+        <sprite>sprites\sprPlayerWhiteMove</sprite>
+        <sprite>sprites\sprPlayerWhiteJump</sprite>
       </sprites>
     </sprites>
     <sprites name="Sphere">
-      <sprite>sprites\spr_Sphere_Blue</sprite>
-      <sprite>sprites\spr_Sphere_Red</sprite>
-      <sprite>sprites\spr_Sphere_Green</sprite>
-      <sprite>sprites\spr_Sphere_White</sprite>
-    </sprites>
-    <sprites name="Control">
-      <sprite>sprites\spr_Death</sprite>
+      <sprite>sprites\sprSphereBlue</sprite>
+      <sprite>sprites\sprSphereRed</sprite>
+      <sprite>sprites\sprSphereGreen</sprite>
+      <sprite>sprites\sprSphereWhite</sprite>
     </sprites>
     <sprites name="Collectables">
-      <sprite>sprites\spr_Bit</sprite>
-      <sprite>sprites\spr_Powerup_Red</sprite>
-      <sprite>sprites\spr_Powerup_Green</sprite>
-      <sprite>sprites\spr_Powerup_Blue</sprite>
+      <sprite>sprites\sprBit</sprite>
+      <sprite>sprites\sprPowerupRed</sprite>
+      <sprite>sprites\sprPowerupGreen</sprite>
+      <sprite>sprites\sprPowerupBlue</sprite>
     </sprites>
     <sprites name="Propulsor">
-      <sprite>sprites\spr_Propulsor</sprite>
+      <sprite>sprites\sprPropulsor</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -73,26 +67,17 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\SetObject.gml</script>
     <scripts name="Player">
-      <script>scripts\scr_Initialize_Player.gml</script>
-      <script>scripts\scr_Troca_Sprite.gml</script>
-    </scripts>
-    <scripts name="Global">
-      <script>scripts\scr_Global_Initialize.gml</script>
+      <script>scripts\scrTrocaSprite.gml</script>
     </scripts>
     <scripts name="Particles">
-      <script>scripts\scr_Particle_Death.gml</script>
-    </scripts>
-    <scripts name="Maps">
-      <script>scripts\scr_Sphere_Map.gml</script>
-      <script>scripts\scr_Cor_Level.gml</script>
-      <script>scripts\scr_Sprite_Map.gml</script>
+      <script>scripts\scrParticleDeath.gml</script>
     </scripts>
     <scripts name="Spike">
       <script>scripts\scr_Spike_Troca_Cor.gml</script>
     </scripts>
     <scripts name="Sprites">
-      <script>scripts\SetSprite.gml</script>
       <script>scripts\SetSpritesFloor.gml</script>
       <script>scripts\SetSpritesNPCMale.gml</script>
       <script>scripts\SetSpritesNPCFemale.gml</script>
@@ -110,25 +95,9 @@
       <script>scripts\ItemGetGoldenSword.gml</script>
       <script>scripts\ItemGetLifePotion.gml</script>
     </scripts>
-    <scripts name="Saving">
-      <scripts name="Loading">
-        <script>scripts\SaveGame.gml</script>
-        <script>scripts\LoadGame.gml</script>
-        <script>scripts\PersistanceLog.gml</script>
-        <script>scripts\StringCompressZeros.gml</script>
-      </scripts>
-    </scripts>
-    <script>scripts\LocationName.gml</script>
-    <script>scripts\DrawPanel.gml</script>
-    <script>scripts\DrawButton.gml</script>
-    <script>scripts\DrawButtonLong.gml</script>
-    <script>scripts\StringSepNumber.gml</script>
-    <script>scripts\ConfirmSlot.gml</script>
-    <script>scripts\ConfirmSave.gml</script>
-    <script>scripts\ConfirmLoad.gml</script>
     <scripts name="Collision">
-      <script>scripts\scr_Collision_Cor.gml</script>
-      <script>scripts\scr_Collision_Death.gml</script>
+      <script>scripts\scrCollisionCor.gml</script>
+      <script>scripts\scrCollisionDeath.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -141,15 +110,15 @@
       <object>objects\objSpike</object>
     </objects>
     <objects name="Barrier">
-      <object>objects\obj_Barrier</object>
+      <object>objects\objBarrier</object>
     </objects>
     <objects name="Door">
-      <object>objects\obj_Door</object>
-      <object>objects\obj_Door_Start</object>
-      <object>objects\obj_Door_End</object>
+      <object>objects\objDoor</object>
+      <object>objects\objDoorStart</object>
+      <object>objects\objDoorEnd</object>
     </objects>
     <objects name="Player">
-      <object>objects\obj_Player</object>
+      <object>objects\objPlayer</object>
     </objects>
     <objects name="Sphere">
       <object>objects\obj_Sphere</object>
@@ -177,13 +146,16 @@
     <objects name="Game">
       <object>objects\objConstants</object>
     </objects>
+    <object>objects\objColorido</object>
+    <object>objects\objTransition</object>
+    <object>objects\objSplashScreen</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rmSplash</room>
     <room>rooms\rm_Teste</room>
-    <room>rooms\rm_Level02</room>
     <room>rooms\rm_Level03</room>
     <room>rooms\rm_Level04</room>
     <room>rooms\rm_Level05</room>

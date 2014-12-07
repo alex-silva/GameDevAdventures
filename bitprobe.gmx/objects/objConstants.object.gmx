@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -32,7 +32,8 @@ enum Cor
 {
     Red,
     Green,
-    Blue
+    Blue,
+    White
 }
 // DIREÇÕES DE QUALQUER PERSONAGEMS
 enum Direcao
@@ -44,22 +45,57 @@ enum Direcao
     JumpLeft,
     JumpRight    
 }
-
+// COMBINAÇÕES DE CORES
+enum Combinacao
+{
+    Red,
+    Green,
+    Blue,
+    White,
+    RedGreen,
+    RedBlue,
+    RedWhite,
+    BlueGreen,
+    BlueWhite,
+    GreenWhite,
+    RedGreenWhite,
+    RedBlueWhite,
+    RedGreenBlue,
+    RedGreenBlueWhite      
+}
 // Variáveis globais
 
 // Tempo de espera até player renascer após morte
-globalvar ALARM_PLAYER_DEATH; ALARM_PLAYER_DEATH = 15;
-//Keys
-globalvar KEY_LEFT; KEY_LEFT   = -keyboard_check(vk_left);
-globalvar KEY_RIGHT; KEY_RIGHT = keyboard_check(vk_right);
-globalvar KEY_SPACE; KEY_SPACE = keyboard_check_pressed(vk_space);
-globalvar KEY_1; KEY_1         = keyboard_check(ord("1"));
-globalvar KEY_2; KEY_2         = keyboard_check(ord("2"));
-globalvar KEY_3; KEY_3         = keyboard_check(ord("3"));
-//Keys
+globalvar alarmPlayerDeath; ALARM_PLAYER_DEATH = 15;
+// Direcao do Player
+globalvar playerDirecao; playerDirecao = Direcao.Right;
+//Player Vivo
+globalvar playerVivo; playerVivo = true;
+//Cores Habilitadas para o player
+globalvar playerRed; playerRed = true;
+globalvar playerGreen; playerGreen = true;
+globalvar playerBlue; playerBlue = true;
+globalvar playerWhite; playerWhite = false;
+//Cores Habilitadas para o player
+
+//Map Sprites
+global.mapSprites = ds_map_create();
+
+ds_map_add(global.mapSprites, "sprPlayerWhiteMove", sprPlayerWhiteMove);
+ds_map_add(global.mapSprites, "sprPlayerWhiteJump", sprPlayerWhiteJump);
+
+ds_map_add(global.mapSprites, "sprPlayerRedMove", sprPlayerRedMove);
+ds_map_add(global.mapSprites, "sprPlayerRedJump", sprPlayerRedJump);
+
+ds_map_add(global.mapSprites, "sprPlayerGreenMove", sprPlayerGreenMove);
+ds_map_add(global.mapSprites, "sprPlayerGreenJump", sprPlayerGreenJump);
+
+ds_map_add(global.mapSprites, "sprPlayerBlueMove", sprPlayerBlueMove);
+ds_map_add(global.mapSprites, "sprPlayerBlueJump", sprPlayerBlueJump);
+//Map Sprites
 
 // Carregar configurações
-//ini_open("yyrpg.ini");
+//iniopen("yyrpg.ini");
 //global.enableAudio = ini_read_real("settings", "audio", true);
 //global.enableMusic = ini_read_real("settings", "music", true);
 //ini_close();

@@ -428,31 +428,13 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="24">
-      <constant name="cor_Blue">3</constant>
-      <constant name="cor_Green">2</constant>
-      <constant name="cor_Red">1</constant>
-      <constant name="cor_White">0</constant>
-      <constant name="key_Left">-keyboard_check(vk_left)</constant>
-      <constant name="key_Right">keyboard_check(vk_right)</constant>
-      <constant name="key_Jump">keyboard_check_pressed(vk_space)</constant>
-      <constant name="key_1">keyboard_check(ord("1"))</constant>
-      <constant name="key_2">keyboard_check(ord("2"))</constant>
-      <constant name="key_3">keyboard_check(ord("3"))</constant>
-      <constant name="up">1</constant>
-      <constant name="down">2</constant>
-      <constant name="left">3</constant>
-      <constant name="right">4</constant>
-      <constant name="jump_Left">5</constant>
-      <constant name="jump_Right">6</constant>
-      <constant name="alarm_Player_Death">15</constant>
-      <constant name="only_Red">1</constant>
-      <constant name="only_Blue">2</constant>
-      <constant name="only_Green">3</constant>
-      <constant name="red_Blue">4</constant>
-      <constant name="red_Green">5</constant>
-      <constant name="blue_Green">6</constant>
-      <constant name="red_Green_Blue">7</constant>
+    <constants number="6">
+      <constant name="KEY_LEFT">keyboard_check(vk_left)</constant>
+      <constant name="KEY_RIGHT">keyboard_check(vk_right)</constant>
+      <constant name="KEY_JUMP">keyboard_check_pressed(vk_space)</constant>
+      <constant name="KEY_1">keyboard_check(ord("1"))</constant>
+      <constant name="KEY_2">keyboard_check(ord("2"))</constant>
+      <constant name="KEY_3">keyboard_check(ord("3"))</constant>
     </constants>
   </ConfigConstants>
 </Config>

@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Define variáveis padrão do objeto moving
-scr_Global_Initialize();
 initial_x = x;
 initial_y = y;
 horizontal_Speed = 5;
@@ -55,31 +54,6 @@ vertical_Speed = 10;
             <kind>1</kind>
             <string>///Recria objeto na posição inicial
 instance_create(initial_x, initial_y, object_index);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_Barrier">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Para moving objects: destrói quando colide
-instance_destroy();
-scr_Particle_Death();
 </string>
           </argument>
         </arguments>

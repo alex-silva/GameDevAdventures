@@ -61,7 +61,7 @@ scr_Particle_Death();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Floor_White">
+    <event eventtype="4" ename="objFloor_White">
       <action>
         <libid>1</libid>
         <id>603</id>

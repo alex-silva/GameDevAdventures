@@ -7,7 +7,7 @@
   <hsnap>16</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code></code>
@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="obj_Player" xview="15" yview="80" wview="650" hview="420" xport="0" yport="0" wport="512" hport="512" hborder="512" vborder="128" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="objPlayer" xview="15" yview="80" wview="650" hview="420" xport="0" yport="0" wport="512" hport="512" hborder="512" vborder="128" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="650" yview="75" wview="1024" hview="420" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -86,7 +86,7 @@
     <instance objName="objFloor" x="32" y="416" name="inst_879C3939" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="32" y="448" name="inst_DFE06FAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="32" y="480" name="inst_B3356A93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="64" y="480" name="inst_11D59949" locked="0" code="SetSprite(object_index, cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="64" y="480" name="inst_11D59949" locked="0" code="//cor = SetObject(object_index, Cor.Blue);&#xA;SetObject(Cor.Blue);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="96" y="480" name="inst_7310F539" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="128" y="480" name="inst_C4E3D0FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="160" y="480" name="inst_D9B164BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -185,12 +185,9 @@
     <instance objName="objFloor" x="1984" y="96" name="inst_C0D9DC35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="2016" y="96" name="inst_97FCAA44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="736" y="96" name="inst_97E5FB74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Door_Start" x="80" y="400" name="inst_511DEDCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Door_End" x="2000" y="400" name="inst_617AB7AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Death" x="960" y="528" name="inst_4FA7391D" locked="0" code="" scaleX="3.5" scaleY="0.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Player" x="80" y="400" name="inst_26464E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objConstants" x="208" y="176" name="inst_3ED41E81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="368" y="400" name="inst_DF786265" locked="0" code="SetSprite(object_index, cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayer" x="128" y="352" name="inst_26464E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="368" y="400" name="inst_DF786265" locked="0" code="//cor = SetObject(object_index, Cor.Green);&#xA;SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
