@@ -429,7 +429,7 @@
   </Options>
   <ConfigConstants>
     <constants number="6">
-      <constant name="KEY_LEFT">keyboard_check(vk_left)</constant>
+      <constant name="KEY_LEFT">-keyboard_check(vk_left)</constant>
       <constant name="KEY_RIGHT">keyboard_check(vk_right)</constant>
       <constant name="KEY_JUMP">keyboard_check_pressed(vk_space)</constant>
       <constant name="KEY_1">keyboard_check(ord("1"))</constant>

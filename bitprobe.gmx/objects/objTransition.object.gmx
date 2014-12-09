@@ -29,7 +29,7 @@
 
 fadeOut = true;                 // Fade in/Fade out
 color = c_black;                // Cor para fade
-steps = 1*room_speed;           // Velocidade da transição
+steps = 0.1*room_speed;           // Velocidade da transição
 destRoom = room_next(room);     // Vai para próxima room
 transition = 1;
 </string>

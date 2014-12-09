@@ -4,6 +4,6 @@
 //
 //
 
-global.player_Vivo = false;
+global.playerVivo = false;
 scrParticleDeath();
 alarm[0] = global.alarmPlayerDeath;

@@ -5,15 +5,15 @@
 //*****************************************************************************
 
 sprite = sprFloorWhite;
-cor = argument0;
+corObj = argument0;
 
 if (object_get_name(object_index) == "objFloor")
 {
-    if (argument0 == Cor.Red)
+    if (corObj == Cor.Red)
         sprite = sprFloorRed;
-    else if (argument0== Cor.Green)
+    else if (corObj== Cor.Green)
         sprite = sprFloorGreen;
-    else if (argument0 == Cor.Blue)
+    else if (corObj == Cor.Blue)
         sprite = sprFloorBlue;
     else
         sprite = sprFloorWhite;
@@ -21,14 +21,61 @@ if (object_get_name(object_index) == "objFloor")
 
 else if (object_get_name(object_index) == "objSpike")
 {
-    if (argument0 == Cor.Red)
+    if (corObj == Cor.Red)
         sprite = sprSpikeRed;
-    else if (argument0 == Cor.Green)
+    else if (corObj == Cor.Green)
         sprite = sprSpikeGreen;
-    else if (argument0 == Cor.Blue)
+    else if (corObj == Cor.Blue)
         sprite = sprSpikeBlue;
     else
         sprite = sprSpikeWhite;
 }
+else if (object_get_name(object_index) == "objMovingSpike")
+{
+    if (corObj == Cor.Red)
+        sprite = sprSpikeRed;
+    else if (corObj == Cor.Green)
+        sprite = sprSpikeGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprSpikeBlue;
+    else
+        sprite = sprSpikeWhite;
+}
+
+else if (object_get_name(object_index) == "objPowerUp")
+{
+    if (corObj == Cor.Red)
+        sprite = sprPowerUpRed;
+    else if (corObj == Cor.Green)
+        sprite = sprPowerUpGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprPowerUpBlue
+    else
+        sprite = sprPowerupWhite;
+}
+
+else if (object_get_name(object_index) == "objBarrier")
+{
+    if (corObj == Cor.Red)
+        sprite = sprBarrierRed;
+    else if (corObj == Cor.Green)
+        sprite = sprBarrierGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprBarrierBlue
+    else
+        sprite = sprBarrierWhite;
+}
+else if (object_get_name(object_index) == "objSphere")
+{
+    if (corObj == Cor.Red)
+        sprite = sprSphereRed;
+    else if (corObj == Cor.Green)
+        sprite = sprSphereGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprSphereBlue
+    else
+        sprite = sprSphereWhite;
+}
+
 sprite_index = sprite;
-self.cor = cor;
+self.cor = corObj;

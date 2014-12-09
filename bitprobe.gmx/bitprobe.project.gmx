@@ -15,6 +15,7 @@
     </sprites>
     <sprites name="Barrier">
       <sprite>sprites\sprBarrierBlue</sprite>
+      <sprite>sprites\sprBarrierBlueBig</sprite>
       <sprite>sprites\sprBarrierGreen</sprite>
       <sprite>sprites\sprBarrierRed</sprite>
     </sprites>
@@ -54,9 +55,9 @@
     </sprites>
     <sprites name="Collectables">
       <sprite>sprites\sprBit</sprite>
-      <sprite>sprites\sprPowerupRed</sprite>
-      <sprite>sprites\sprPowerupGreen</sprite>
-      <sprite>sprites\sprPowerupBlue</sprite>
+      <sprite>sprites\sprPowerUpRed</sprite>
+      <sprite>sprites\sprPowerUpGreen</sprite>
+      <sprite>sprites\sprPowerUpBlue</sprite>
     </sprites>
     <sprites name="Propulsor">
       <sprite>sprites\sprPropulsor</sprite>
@@ -69,7 +70,7 @@
   <scripts name="scripts">
     <script>scripts\SetObject.gml</script>
     <scripts name="Player">
-      <script>scripts\scrTrocaSprite.gml</script>
+      <script>scripts\TrocaSpritePlayer.gml</script>
     </scripts>
     <scripts name="Particles">
       <script>scripts\scrParticleDeath.gml</script>
@@ -101,6 +102,9 @@
     </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="Sphere">
+      <object>objects\objSphere</object>
+    </objects>
     <objects name="Floor">
       <object>objects\objFloor</object>
     </objects>
@@ -108,9 +112,11 @@
       <object>objects\obj_Spike_Alternating</object>
       <object>objects\obj_Spike_Alternating_Red_Green</object>
       <object>objects\objSpike</object>
+      <object>objects\objMovingSpike</object>
     </objects>
     <objects name="Barrier">
       <object>objects\objBarrier</object>
+      <object>objects\objMovingBarrier</object>
     </objects>
     <objects name="Door">
       <object>objects\objDoor</object>
@@ -120,16 +126,13 @@
     <objects name="Player">
       <object>objects\objPlayer</object>
     </objects>
-    <objects name="Sphere">
-      <object>objects\obj_Sphere</object>
-    </objects>
     <objects name="Control">
       <object>objects\obj_Controller</object>
       <object>objects\obj_Death</object>
       <object>objects\obj_Spike_Timeline</object>
     </objects>
     <objects name="Powerup">
-      <object>objects\obj_Powerup</object>
+      <object>objects\objPowerUp</object>
     </objects>
     <objects name="Moving">
       <object>objects\obj_Moving</object>
@@ -145,9 +148,9 @@
     </objects>
     <objects name="Game">
       <object>objects\objConstants</object>
+      <object>objects\objTransition</object>
     </objects>
     <object>objects\objColorido</object>
-    <object>objects\objTransition</object>
     <object>objects\objSplashScreen</object>
   </objects>
   <timelines name="timelines">
