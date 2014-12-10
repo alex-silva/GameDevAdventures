@@ -122,6 +122,7 @@
       <object>objects\objSpike</object>
       <object>objects\objAlternatingSpike</object>
       <object>objects\objMovingSpike</object>
+      <object>objects\objMovingAlternatingSpike</object>
     </objects>
     <objects name="Barrier">
       <object>objects\objBarrier</object>
@@ -180,6 +181,9 @@
       <room>rooms\rm_Level03_Teste</room>
       <room>rooms\rm_Level01</room>
     </rooms>
+    <room>rooms\room4</room>
+    <room>rooms\room6</room>
+    <room>rooms\room11</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41969,0573544792</constant>
