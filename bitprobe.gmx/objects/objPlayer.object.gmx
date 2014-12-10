@@ -40,6 +40,7 @@ playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
 jumpSpeed = 12;
+jumpSpeedPadrao = 12;
 moveSpeed = 7;
 hspCarry = 0;
 
@@ -105,13 +106,18 @@ if (global.playerVivo)
     move = KEY_RIGHT + KEY_LEFT;
     horizontalSpeed = move * moveSpeed;
     
-    if (verticalSpeed &lt; 10) verticalSpeed += playerGravity;
+    // faz personagem cair gradativamente
+    if (verticalSpeed &lt; 10) 
+        verticalSpeed += playerGravity;
     
-    
-    // Faz personagem Pular se cor for igual a parede
-    if (place_meeting(x, y + 1, objFloor))
+    // pula mais alto se tocar em propulsor, pular normal se tocar em floor
+    if (place_meeting(x, y + 1, objPropulsor)
+      || place_meeting(x, y + 1, objFloor))
         verticalSpeed = KEY_JUMP * -jumpSpeed;
-                
+    // retorna velocidade de pulo ao normal após utilizar propulsor
+    if !(place_meeting(x, y + 1, objPropulsor))
+        jumpSpeed = jumpSpeedPadrao;
+
     //mantém personagem acima da barrier
     var hspFinal = horizontalSpeed + hspCarry;
     hspCarry = 0;
@@ -286,8 +292,8 @@ if (global.playerVivo)
             <string>/// Colisão com sphere e teletransporta
 if (scrCollisionCor(self.cor, other.cor))
 {
-    x = other.destinoX;
-    y = other.destinoY;
+    x = objPortais.portais[other.portalDestino].x + sprite_get_width(other.sprite_index)/2;
+    y = objPortais.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
 }
 </string>
           </argument>

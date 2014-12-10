@@ -516,7 +516,7 @@
     <instance objName="objFloor" x="160" y="800" name="inst_D7D8539D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="160" y="832" name="inst_DEDBB17D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="288" y="960" name="inst_7DD8C2A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Propulsor" x="1024" y="928" name="inst_F3B0A8E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPropulsor" x="1024" y="928" name="inst_F3B0A8E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="192" y="960" name="inst_8AAC6F83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="224" y="960" name="inst_6E0F3BC0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="256" y="960" name="inst_A7C674D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

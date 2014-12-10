@@ -241,7 +241,7 @@
     <instance objName="objFloor" x="672" y="992" name="inst_98109142" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="672" y="1024" name="inst_416C8DF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="640" y="1024" name="inst_5ED83F25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Propulsor" x="32" y="1024" name="inst_CBDC8C24" locked="0" code="" scaleX="1" scaleY="1" colour="4278255360" rotation="0"/>
+    <instance objName="objPropulsor" x="32" y="1024" name="inst_CBDC8C24" locked="0" code="" scaleX="1" scaleY="1" colour="4278255360" rotation="0"/>
     <instance objName="objFloor" x="768" y="800" name="inst_D3017DF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="768" y="832" name="inst_8441F392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="768" y="864" name="inst_4FDC5C93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -268,7 +268,7 @@
     <instance objName="objFloor" x="448" y="1152" name="inst_BFFAEAD1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="448" y="1120" name="inst_E4C3996F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="448" y="1088" name="inst_F4A5DACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Propulsor" x="448" y="1280" name="inst_80E1F54E" locked="0" code="" scaleX="1" scaleY="1" colour="4294901760" rotation="180"/>
+    <instance objName="objPropulsor" x="448" y="1280" name="inst_80E1F54E" locked="0" code="" scaleX="1" scaleY="1" colour="4294901760" rotation="180"/>
     <instance objName="objSpike" x="384" y="1344" name="inst_A6DE2BFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="448" y="1344" name="inst_44C75856" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="768" y="1312" name="inst_BD7342ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -300,7 +300,7 @@
     <instance objName="objFloor" x="0" y="1376" name="inst_22F0EA0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="224" y="1344" name="inst_37DF8978" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="640" y="1184" name="inst_1E03C441" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="obj_Propulsor" x="704" y="1344" name="inst_AE2B7392" locked="0" code="" scaleX="1" scaleY="1" colour="4294901760" rotation="0"/>
+    <instance objName="objPropulsor" x="704" y="1344" name="inst_AE2B7392" locked="0" code="" scaleX="1" scaleY="1" colour="4294901760" rotation="0"/>
     <instance objName="objFloor" x="0" y="1088" name="inst_2CF0834F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="1120" name="inst_334130B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="1152" name="inst_5152B78D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

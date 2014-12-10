@@ -92,6 +92,9 @@ ds_map_add(global.mapSprites, "sprPlayerGreenJump", sprPlayerGreenJump);
 
 ds_map_add(global.mapSprites, "sprPlayerBlueMove", sprPlayerBlueMove);
 ds_map_add(global.mapSprites, "sprPlayerBlueJump", sprPlayerBlueJump);
+
+//variáveis de controles de portais;
+globalvar portal;
 //Map Sprites
 
 // Carregar configurações
