@@ -3,7 +3,11 @@
   <caption></caption>
   <width>2048</width>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   <height>768</height>
+=======
+  <height>2000</height>
+>>>>>>> Stashed changes
 =======
   <height>2000</height>
 >>>>>>> Stashed changes
@@ -55,6 +59,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
     <instance objName="obj_Floor_White" x="32" y="96" name="inst_FD8D1010" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Barrier_Blue" x="640" y="208" name="inst_A09EF221" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -217,6 +222,8 @@
     <instance objName="obj_Death" x="960" y="528" name="inst_4FA7391D" locked="0" code="" scaleX="3.5" scaleY="0.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_Player" x="80" y="400" name="inst_26464E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
 =======
+=======
+>>>>>>> Stashed changes
     <instance objName="objFloor" x="-16" y="1488" name="inst_FD8D1010" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="-16" y="1520" name="inst_CDE2C645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="-16" y="1552" name="inst_2CBDB8D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -454,6 +461,9 @@
     <instance objName="objMovingSphere" x="976" y="1328" name="inst_869CA6FD" locked="0" code="SetObject(Cor.Blue);&#xA;objPortais.portais[4] = id;&#xA;portalDestino = 5;&#xA;direcao = Direction.Down;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objAlternatingSpike" x="976" y="1840" name="inst_10D239FC" locked="0" code="SetObject(Combinacao.RedGreenBlue);&#xA;spd = 0.01;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRooms" x="144" y="320" name="inst_E2C8C936" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   </instances>
   <tiles/>
