@@ -30,6 +30,11 @@ else if (object_get_name(object_index) == "objSpike")
     else
         sprite = sprSpikeWhite;
 }
+else if (object_get_name(object_index) == "objAlternatingSpike")
+{
+    if (corObj == Combinacao.RedGreenBlue)
+        sprite = sprSpikeRedGreenBlue;
+}
 else if (object_get_name(object_index) == "objMovingSpike")
 {
     if (corObj == Cor.Red)
