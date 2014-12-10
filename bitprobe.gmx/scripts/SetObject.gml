@@ -76,6 +76,17 @@ else if (object_get_name(object_index) == "objSphere")
     else
         sprite = sprSphereWhite;
 }
+else if (object_get_name(object_index) == "objMovingSphere")
+{
+    if (corObj == Cor.Red)
+        sprite = sprSphereRed;
+    else if (corObj == Cor.Green)
+        sprite = sprSphereGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprSphereBlue
+    else
+        sprite = sprSphereWhite;
+}
 
 sprite_index = sprite;
 self.cor = corObj;

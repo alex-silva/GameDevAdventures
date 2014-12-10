@@ -292,7 +292,7 @@ if (global.playerVivo)
             <string>/// Colisão com sphere e teletransporta
 if (scrCollisionCor(self.cor, other.cor))
 {
-    x = objPortais.portais[other.portalDestino].x + sprite_get_width(other.sprite_index)/2;
+    x = objPortais.portais[other.portalDestino].x;
     y = objPortais.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
 }
 </string>
