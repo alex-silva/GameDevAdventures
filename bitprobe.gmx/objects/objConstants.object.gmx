@@ -61,6 +61,8 @@ globalvar playerBlue; playerBlue = false;
 globalvar playerWhite; playerWhite = true;
 //Cores Habilitadas para o player
 
+//Cor atual do player
+globalvar playerCor; playerCor = Cor.White;
 // COMBINAÇÕES DE CORES
 enum Combinacao
 {

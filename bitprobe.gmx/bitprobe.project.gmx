@@ -177,14 +177,12 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmLevel04</room>
+    <room>rooms\rmLevel03</room>
     <room>rooms\rmLevel01</room>
     <room>rooms\rmLevel02</room>
-    <room>rooms\rmLevel03</room>
-    <room>rooms\rmLevel04</room>
+    <room>rooms\rm_Teste</room>
     <room>rooms\rmLevel05</room>
-    <rooms name="Teste">
-      <room>rooms\rm_Teste</room>
-    </rooms>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41969,0573544792</constant>

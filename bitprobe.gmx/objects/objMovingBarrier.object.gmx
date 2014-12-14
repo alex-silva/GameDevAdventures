@@ -30,10 +30,29 @@ sprite_index = -1;
 barrierSprite = sprBarrierRed;
 cor = Cor.White;
 
-direcao = -1;
+//direcao e sentido (1-horizontal, -1-vertical)
+direcao = Direction.Right;
+sentido = 1;
+switch (direcao)
+{
+    case (Direction.Up)    : { direcao = -1; sentido = -1; break; }
+    case (Direction.Down)  : { direcao = 1 ; sentido = -1; break; }
+    case (Direction.Left)  : { direcao = -1; sentido =  1; break; }
+    case (Direction.Right) : { direcao = 1 ; sentido =  1; break; }
+}
+
 moveSpeed = 3;
 horizontalSpeed = 0;
 verticalSpeed = 0;
+
+//distancia a se percorrer
+distancia = room_width;
+distanciaPercorrida = 0;
+
+//escala e rotação
+scaleX = 1;
+scaleY = 1;
+rot = 0;
 </string>
           </argument>
         </arguments>
@@ -60,15 +79,40 @@ verticalSpeed = 0;
 mask_index = barrierSprite;
 
 horizontalSpeed = direcao * moveSpeed;
+distanciaPercorrida += sign(x - distanciaPercorrida);
 
-if (place_meeting(x + horizontalSpeed, y, objFloor))
+//se percorreu distancia, retorna na direção oposta
+if (distanciaPercorrida &gt;= distancia)
+{
+    horizontalSpeed = 0;
+    direcao *= -1;
+    distanciaPercorrida = 0;
+}
+//colisão horizontal com floor
+else if (place_meeting(x + horizontalSpeed, y, objFloor))
 {
     while(!place_meeting(x+sign(horizontalSpeed),y,objFloor))
         x+=sign(horizontalSpeed);
     horizontalSpeed = 0;
     direcao *= -1;
+    distanciaPercorrida = 0;
 }
-x+=horizontalSpeed;
+//colisão vertical com floor
+else if (place_meeting(x, y + horizontalSpeed, objFloor))
+{
+    while(!place_meeting(x, y + sign(horizontalSpeed),objFloor))
+        y+=sign(horizontalSpeed);
+    horizontalSpeed = 0;
+    direcao *= -1;
+    distanciaPercorrida = 0;
+}
+
+//anda horizontal ou vertical
+if (sentido == 1)
+    x+=horizontalSpeed;
+else
+    y+=horizontalSpeed;
+    
 if (instance_exists(objPlayer))
 {
     // se player está dentro da barrier
@@ -109,7 +153,10 @@ if (instance_exists(objPlayer))
             //mantém personagem acima da barrier
             if (place_meeting(x,y-1,objPlayer))
             {
-                objPlayer.hspCarry = horizontalSpeed;
+                if (sentido == 1)
+                    objPlayer.hspCarry = horizontalSpeed;
+                else
+                    objPlayer.verCarry = horizontalSpeed;
             }
             mask_index = barrierSprite;
         }
@@ -140,7 +187,7 @@ if (instance_exists(objPlayer))
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão
-draw_sprite(barrierSprite, 0, x, y);
+draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
 </string>
           </argument>
         </arguments>

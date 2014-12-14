@@ -29,6 +29,10 @@
 sprite_index = -1;
 barrierSprite = sprBarrierRed;
 cor = Cor.White;
+//Parâmetros para drawing: escala e rotação
+scaleX = 1;
+scaleY = 1;
+rot = 0;
 </string>
           </argument>
         </arguments>
@@ -116,7 +120,7 @@ if (instance_exists(objPlayer))
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão
-draw_sprite(barrierSprite, 0, x, y);
+draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
 </string>
           </argument>
         </arguments>

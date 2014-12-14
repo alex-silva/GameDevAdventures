@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-5000</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,11 +27,17 @@
             <kind>1</kind>
             <string>///Variáveis do player
 global.playerVivo = true;
-if (global.playerRed)
+
+
+
+global.playerCor = Cor.Red;
+global.playerRed = true;
+
+if (global.playerCor == Cor.Red)
     cor = Cor.Red
-else if (global.playerGreen)
+else if (global.playerCor == Cor.Green)
     cor = Cor.Green
-else if (global.playerBlue)
+else if (global.playerCor == Cor.Blue)
     cor = Cor.Blue
 else
     cor = Cor.White
@@ -42,7 +48,10 @@ verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
 moveSpeed = 7;
+//variáveis que permitem que player siga moving barriers
+//quando estiver acima das mesmas
 hspCarry = 0;
+verCarry = 0;
 
 image_speed = 0.3;
 global.playerDirection = Direction.Right;
@@ -107,8 +116,8 @@ if (global.playerVivo)
     horizontalSpeed = move * moveSpeed;
     
     // faz personagem cair gradativamente
-    if (verticalSpeed &lt; 10) 
-        verticalSpeed += playerGravity;
+    if (verticalSpeed &lt; 100) 
+        verticalSpeed += playerGravity + 0.1;
     
     // pula mais alto se tocar em propulsor, pular normal se tocar em floor
     if (place_meeting(x, y + 1, objPropulsor)
@@ -121,6 +130,8 @@ if (global.playerVivo)
     //mantém personagem acima da barrier
     var hspFinal = horizontalSpeed + hspCarry;
     hspCarry = 0;
+    var verFinal = verticalSpeed + verCarry;
+    verCarry = 0;
     
     //Colisão Horizontal com floor
     if (place_meeting(x + hspFinal, y, objFloor))
@@ -134,12 +145,13 @@ if (global.playerVivo)
     }
     
     //Colisão vertical com floor
-    if (place_meeting(x, y + verticalSpeed, objFloor))
+    if (place_meeting(x, y + verFinal, objFloor))
     {
-        while(!place_meeting(x, y + sign(verticalSpeed), objFloor))
+        while(!place_meeting(x, y + sign(verFinal), objFloor))
         {
-            y += sign(verticalSpeed);
+            y += sign(verFinal);
         }
+        verFinal = 0;
         verticalSpeed = 0;
     }
     
@@ -212,12 +224,38 @@ TrocaSpritePlayer();
             <string>///Habilita alternancia de cor
 switch(other.cor)
 {
-    case Cor.Red   : global.playerRed = true; break;
-    case Cor.Green : global.playerGreen = true; break;
-    case Cor.Blue  : global.playerBlue = true; break;
-    case Cor.White : global.playerWhite = true; break;
+    case Cor.Red   : { global.playerRed   = true; cor = Cor.Red;   break; }
+    case Cor.Green : { global.playerGreen = true; cor = Cor.Green; break; }
+    case Cor.Blue  : { global.playerBlue  = true; cor = Cor.Blue;  break; }
+    case Cor.White : { global.playerWhite = true; cor = Cor.White; break; }
 }
+sprite_index = TrocaSpritePlayer();
+global.playerCor = cor;
 with (other) instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objDoorEnd">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Vai para próximo level
+room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -345,6 +383,7 @@ if(global.playerBlue)
 {
     self.cor = Cor.Blue;
     sprite_index = TrocaSpritePlayer();
+    global.playerCor = Cor.Blue;
 }
 </string>
           </argument>
@@ -373,6 +412,7 @@ if(global.playerGreen)
 {
     self.cor = Cor.Green;
     sprite_index = TrocaSpritePlayer();
+    global.playerCor = Cor.Green;
 }
 </string>
           </argument>
@@ -401,6 +441,7 @@ if(global.playerRed)
 {
     self.cor = Cor.Red;
     sprite_index = TrocaSpritePlayer();
+    global.playerCor = Cor.Red;
 }
 </string>
           </argument>

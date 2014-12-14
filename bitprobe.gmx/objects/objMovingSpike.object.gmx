@@ -61,7 +61,7 @@ switch (direcao)
     case Direction.Up    : y-=moveSpeedIncr; break;
     case Direction.Down  : y+=moveSpeedIncr; break;
     case Direction.Left  : x-=moveSpeedIncr; break;
-    case Direction.Right : x-=moveSpeedIncr; break;
+    case Direction.Right : x+=moveSpeedIncr; break;
 }
 </string>
           </argument>
