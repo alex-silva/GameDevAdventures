@@ -102,5 +102,16 @@ else if (object_get_name(object_index) == "objMovingAlternatingSphere")
     if (corObj == Combinacao.RedGreenBlue)
         sprite = sprSpikeRedGreenBlue;
 }
+else if (object_get_name(object_index) == "objPropulsor")
+{
+    if (corObj == Cor.Red)
+        sprite = sprPropulsorRed;
+    else if (corObj == Cor.Green)
+        sprite = sprPropulsorGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprPropulsorBlue;
+    else
+        sprite = sprPropulsor;
+}
 sprite_index = sprite;
 self.cor = corObj;

@@ -121,7 +121,7 @@
     <instance objName="objFloor" x="1952" y="1616" name="inst_C0D9DC35" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="1984" y="1616" name="inst_97FCAA44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="704" y="1616" name="inst_97E5FB74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="1376" y="1936" name="inst_26464E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPlayer" x="1344" y="1488" name="inst_26464E9C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="80" y="1936" name="inst_DF786265" locked="0" code="//cor = SetObject(object_index, Cor.Green);&#xA;SetObject(Cor.Green);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorStart" x="64" y="1712" name="inst_D86E5264" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="160" y="1968" name="inst_9FF7B497" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -221,9 +221,9 @@
     <instance objName="objFloor" x="1952" y="432" name="inst_C405370C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="1984" y="432" name="inst_811A1E9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="2016" y="432" name="inst_69432237" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSphere" x="1216" y="1952" name="inst_3E610705" locked="0" code="SetObject(Cor.Blue);&#xA;objPortais.portais[5] = id;&#xA;portalDestino = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSphere" x="1024" y="1904" name="inst_3E610705" locked="0" code="SetObject(Cor.Blue);&#xA;objPortais.portais[5] = id;&#xA;portalDestino = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSphere" x="992" y="1456" name="inst_869CA6FD" locked="0" code="SetObject(Cor.Blue);&#xA;objPortais.portais[4] = id;&#xA;portalDestino = 5;&#xA;direcao = Direction.Down;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingAlternatingSpike" x="1344" y="1712" name="inst_1B9D0244" locked="0" code="SetObject(Combinacao.RedGreenBlue);&#xA;direcao = Direction.Down;&#xA;spd = 0.05;&#xA;combinacao = Combinacao.RedGreenBlue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="64" y="1968" name="inst_9DA56F47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="800" y="1968" name="inst_066D64A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="832" y="1984" name="inst_C7D0B428" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="864" y="1984" name="inst_5B0A3C2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -307,7 +307,8 @@
     <instance objName="objFloor" x="512" y="1968" name="inst_BBDCF142" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="496" y="1968" name="inst_901AA6C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="480" y="1968" name="inst_C2A13E9E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="64" y="1968" name="inst_9DA56F47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingBarrier" x="1200" y="1760" name="inst_1C7A7D98" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;direcao = 1;&#xA;sentido = -1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1248" y="1536" name="inst_C831BC85" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Velocidade para jump do player
+            <string>///Velocidade para jump do player, e cor
+cor = Cor.White;
 spd  = 24;
 </string>
           </argument>
@@ -49,9 +50,10 @@ spd  = 24;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Muda velocidade de pulo do player se colidir com player
+            <string>/// Muda velocidade de pulo do player se colidir com player, se cor igual
 if (instance_exists(objPlayer))
-    if (place_meeting(x, y - 16, objPlayer))
+    if (scrCollisionCor(self.cor, objPlayer.cor)
+    &amp;&amp; (place_meeting(x, y - 16, objPlayer)))
         objPlayer.jumpSpeed = spd;
 </string>
           </argument>

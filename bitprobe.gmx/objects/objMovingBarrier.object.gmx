@@ -31,15 +31,8 @@ barrierSprite = sprBarrierRed;
 cor = Cor.White;
 
 //direcao e sentido (1-horizontal, -1-vertical)
-direcao = Direction.Right;
+direcao = 1;
 sentido = 1;
-switch (direcao)
-{
-    case (Direction.Up)    : { direcao = -1; sentido = -1; break; }
-    case (Direction.Down)  : { direcao = 1 ; sentido = -1; break; }
-    case (Direction.Left)  : { direcao = -1; sentido =  1; break; }
-    case (Direction.Right) : { direcao = 1 ; sentido =  1; break; }
-}
 
 moveSpeed = 3;
 horizontalSpeed = 0;
