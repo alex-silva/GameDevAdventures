@@ -31,6 +31,7 @@ direcao = Direction.Right;
 moveSpeed = 3;
 initialX = x;
 initialY = y;
+moveSpeedIncr = moveSpeed;
 </string>
           </argument>
         </arguments>
@@ -54,12 +55,13 @@ initialY = y;
           <argument>
             <kind>1</kind>
             <string>///Movimenta spike
+moveSpeedIncr += 0.05;
 switch (direcao)
 {
-    case Direction.Up    : y-=moveSpeed; break;
-    case Direction.Down  : y+=moveSpeed; break;
-    case Direction.Left  : x-=moveSpeed; break;
-    case Direction.Right : x-=moveSpeed; break;
+    case Direction.Up    : y-=moveSpeedIncr; break;
+    case Direction.Down  : y+=moveSpeedIncr; break;
+    case Direction.Left  : x-=moveSpeedIncr; break;
+    case Direction.Right : x-=moveSpeedIncr; break;
 }
 </string>
           </argument>
@@ -87,6 +89,7 @@ switch (direcao)
 scrParticleDeath();
 x = initialX;
 y = initialY;
+moveSpeedIncr = moveSpeed;
 </string>
           </argument>
         </arguments>
