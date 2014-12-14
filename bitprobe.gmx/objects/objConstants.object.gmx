@@ -45,6 +45,22 @@ enum Direction
     JumpLeft,
     JumpRight    
 }
+
+// Variáveis globais
+
+// Tempo de espera até player renascer após morte
+globalvar alarmPlayerDeath; alarmPlayerDeath = 15;
+// Direcao do Player
+globalvar playerDirection; playerDirection = Direction.Right;
+//Player Vivo
+globalvar playerVivo; playerVivo = true;
+//Cores Habilitadas para o player
+globalvar playerRed; playerRed = false;
+globalvar playerGreen; playerGreen = false;
+globalvar playerBlue; playerBlue = false;
+globalvar playerWhite; playerWhite = true;
+//Cores Habilitadas para o player
+
 // COMBINAÇÕES DE CORES
 enum Combinacao
 {
@@ -61,22 +77,9 @@ enum Combinacao
     RedGreenWhite,
     RedBlueWhite,
     RedGreenBlue,
-    RedGreenBlueWhite      
+    RedGreenBlueWhite  
 }
-// Variáveis globais
-
-// Tempo de espera até player renascer após morte
-globalvar alarmPlayerDeath; alarmPlayerDeath = 15;
-// Direcao do Player
-globalvar playerDirection; playerDirection = Direction.Right;
-//Player Vivo
-globalvar playerVivo; playerVivo = true;
-//Cores Habilitadas para o player
-globalvar playerRed; playerRed = false;
-globalvar playerGreen; playerGreen = false;
-globalvar playerBlue; playerBlue = false;
-globalvar playerWhite; playerWhite = true;
-//Cores Habilitadas para o player
+// COMBINAÇÕES DE CORES
 
 //Map Sprites
 global.mapSprites = ds_map_create();
@@ -93,15 +96,16 @@ ds_map_add(global.mapSprites, "sprPlayerGreenJump", sprPlayerGreenJump);
 ds_map_add(global.mapSprites, "sprPlayerBlueMove", sprPlayerBlueMove);
 ds_map_add(global.mapSprites, "sprPlayerBlueJump", sprPlayerBlueJump);
 
-//variáveis de controles de portais;
-globalvar portal;
 //Map Sprites
 
+//Cria mapa para Save/Load
+MapasSaveLoad();
+
 // Carregar configurações
-//iniopen("yyrpg.ini");
-//global.enableAudio = ini_read_real("settings", "audio", true);
-//global.enableMusic = ini_read_real("settings", "music", true);
-//ini_close();
+ini_open("bitprobe.ini");
+global.enableAudio = ini_read_real("settings", "audio", true);
+global.enableMusic = ini_read_real("settings", "music", true);
+ini_close();
 </string>
           </argument>
         </arguments>

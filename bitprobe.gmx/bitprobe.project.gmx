@@ -9,6 +9,7 @@
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
     <sprites name="Spike">
       <sprite>sprites\sprSpikeBlue</sprite>
+      <sprite>sprites\sprSpikeRedGreenBlue</sprite>
       <sprite>sprites\sprSpikeRed</sprite>
       <sprite>sprites\sprSpikeGreen</sprite>
       <sprite>sprites\sprSpikeWhite</sprite>
@@ -100,6 +101,12 @@
       <script>scripts\scrCollisionCor.gml</script>
       <script>scripts\scrCollisionDeath.gml</script>
     </scripts>
+    <script>scripts\PlaySound.gml</script>
+    <scripts name="SaveLoad">
+      <script>scripts\SaveGame.gml</script>
+      <script>scripts\LoadGame.gml</script>
+      <script>scripts\MapasSaveLoad.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Sphere">
@@ -113,7 +120,9 @@
       <object>objects\obj_Spike_Alternating</object>
       <object>objects\obj_Spike_Alternating_Red_Green</object>
       <object>objects\objSpike</object>
+      <object>objects\objAlternatingSpike</object>
       <object>objects\objMovingSpike</object>
+      <object>objects\objMovingAlternatingSpike</object>
     </objects>
     <objects name="Barrier">
       <object>objects\objBarrier</object>
@@ -132,6 +141,7 @@
       <object>objects\obj_Death</object>
       <object>objects\obj_Spike_Timeline</object>
       <object>objects\objPortais</object>
+      <object>objects\objRooms</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -151,6 +161,7 @@
     <objects name="Game">
       <object>objects\objConstants</object>
       <object>objects\objTransition</object>
+      <object>objects\objLoadGame</object>
     </objects>
     <object>objects\objColorido</object>
     <object>objects\objSplashScreen</object>
@@ -170,6 +181,9 @@
       <room>rooms\rm_Level03_Teste</room>
       <room>rooms\rm_Level01</room>
     </rooms>
+    <room>rooms\room4</room>
+    <room>rooms\room6</room>
+    <room>rooms\room11</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41969,0573544792</constant>

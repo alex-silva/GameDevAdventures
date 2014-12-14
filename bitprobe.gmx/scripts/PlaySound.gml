@@ -1,8 +1,8 @@
 /// PlaySound();
 //
-//  Just a conditional sound playing script...
+//  Toca som que já não estiver tocando
 //
-//*****************************************************************************
+//
 
 if (global.enableAudio)
     {

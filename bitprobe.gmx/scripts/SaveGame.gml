@@ -1,28 +1,44 @@
-/// SaveGame(filename);
 //
-//  Saves all the data we need to load the game mostly the same later on. Uses
-//  an INI to keep thing simple.
+// Salva todas as variáveis necessárias no ini especificado
 //
-//  NOTE: Some things are saved containing asset indexes. When more assets are
-//      added, those indexes can change... This is fixed with the rooms however, 
-//      so that may serve as a template.
-//
-//  ToDo: Some kind of basic compression,  we have a lot of zeros everywhere,
-//  we could shrink that a lot.
-//
-//*****************************************************************************
 
 show_debug_message("Saving game ("+string(argument0)+")...");
 
-global.lastSaveGame = argument0;
 
 ini_open(argument0);
 
-// Associated file (in case of autosave)
-ini_write_string("File", "Save", global.saveFile);
+ini_write_real("Rooms", "RoomAtual", global.rooms[? "RoomAtual"]);
 
-// Save current room
-ini_write_string("Location", "Room", room_get_name(objGame.lastCheckpointRoom));
+ini_close()
+/*
+//global.lastSaveGame = argument0;
+
+// Salva stats gerais
+with (objStats)
+    {
+    ini_write_string("Stats", "MundoAtual", ds_list_write(manager[? "MundoAtual"]));
+    ini_write_string("Stats", "FasesCompletadas", ds_list_write(manager[? "FasesCompletadas"]));
+    }
+    
+// Salva rooms habilitadas
+with (objRooms)
+    {
+    ini_write_string("Rooms", "rmLevel01", ds_list_write(manager[? "HabilitarmLevel01"]));
+    ini_write_string("Rooms", "rmLevel02", ds_list_write(manager[? "HabilitarmLevel02"]));
+    }
+    
+// Salva stats das rooms
+/*with (objStats)
+    {
+    ini_write_string("TempoRoom", "rmLevel01", ds_list_write(manager[? "TempormLevel01"]));
+    ini_write_string("TempoRoom", "rmLevel02", ds_list_write(manager[? "TempormLevel02"]));
+    ini_write_string("scoreRoom", "rmLevel01", ds_list_write(manager[? "ScorermLevel01"]));
+    ini_write_string("scoreRoom", "rmLevel02", ds_list_write(manager[? "ScorermLevel02"]));
+    }
+    
+/*
+// room atual
+ini_write_string("Location", "Room", room_get_name(room));
 
 // Save stats.
 ini_write_real("Player", "Gems", objPlayer.coins);
@@ -49,5 +65,5 @@ with (objQuestManager)
 
 // Save persistant changes
 ini_write_string("Persistance", "Instances", ds_list_write(objGame.persistanceEvents));
-
+*/
 ini_close();

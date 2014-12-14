@@ -30,6 +30,16 @@ else if (object_get_name(object_index) == "objSpike")
     else
         sprite = sprSpikeWhite;
 }
+else if (object_get_name(object_index) == "objAlternatingSpike")
+{
+    if (corObj == Combinacao.RedGreenBlue)
+        sprite = sprSpikeRedGreenBlue;
+}
+else if (object_get_name(object_index) == "objMovingAlternatingSpike")
+{
+    if (corObj == Combinacao.RedGreenBlue)
+        sprite = sprSpikeRedGreenBlue;
+}
 else if (object_get_name(object_index) == "objMovingSpike")
 {
     if (corObj == Cor.Red)
@@ -87,6 +97,10 @@ else if (object_get_name(object_index) == "objMovingSphere")
     else
         sprite = sprSphereWhite;
 }
-
+else if (object_get_name(object_index) == "objMovingAlternatingSphere")
+{
+    if (corObj == Combinacao.RedGreenBlue)
+        sprite = sprSpikeRedGreenBlue;
+}
 sprite_index = sprite;
 self.cor = corObj;
