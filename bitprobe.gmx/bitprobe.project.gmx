@@ -63,9 +63,15 @@
     <sprites name="Propulsor">
       <sprite>sprites\sprPropulsor</sprite>
     </sprites>
+    <sprites name="Menus">
+      <sprite>sprites\sprSplash</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\FloorColors_ON</background>
+    <background>background\FloorColorsOff</background>
+    <background>background\Fundo</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -170,20 +176,14 @@
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rmSplash</room>
-    <room>rooms\rm_Teste</room>
-    <room>rooms\rm_Level03</room>
-    <room>rooms\rm_Level04</room>
-    <room>rooms\rm_Level05</room>
-    <room>rooms\rm_GameOver</room>
+    <room>rooms\rmLevel01</room>
+    <room>rooms\rmLevel02</room>
+    <room>rooms\rmLevel03</room>
+    <room>rooms\rmLevel04</room>
+    <room>rooms\rmLevel05</room>
     <rooms name="Teste">
-      <room>rooms\rm_Level02_Teste</room>
-      <room>rooms\rm_Level03_Teste</room>
-      <room>rooms\rm_Level01</room>
+      <room>rooms\rm_Teste</room>
     </rooms>
-    <room>rooms\room4</room>
-    <room>rooms\room6</room>
-    <room>rooms\room11</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41969,0573544792</constant>
