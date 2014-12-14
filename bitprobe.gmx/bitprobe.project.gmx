@@ -176,6 +176,7 @@
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rmSplash</room>
     <room>rooms\rmLevel01</room>
     <room>rooms\rmLevel02</room>
     <room>rooms\rmLevel03</room>
