@@ -110,7 +110,7 @@
     <instance objName="objFloor" x="832" y="768" name="inst_8278EB84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="832" y="800" name="inst_6F66CEBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="832" y="832" name="inst_C835F9FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="416" y="896" name="inst_18AF5579" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="1120" y="256" name="inst_14F640F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="864" y="800" name="inst_839B7F4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="864" y="768" name="inst_3749FAF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="864" y="736" name="inst_E6B6A874" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -392,7 +392,6 @@
     <instance objName="objFloor" x="1184" y="224" name="inst_892018AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="1152" y="256" name="inst_98AB49FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="1184" y="256" name="inst_1D70883B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="1120" y="256" name="inst_14F640F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="32" y="320" w="32" h="32" xo="32" yo="128" id="10004172" name="inst_D491CA78" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

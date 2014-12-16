@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-5000</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -29,9 +29,12 @@
 global.playerVivo = true;
 
 
-
-global.playerCor = Cor.Red;
 global.playerRed = true;
+global.playerGreen = true;
+global.playerBlue = true;
+
+
+
 
 if (global.playerCor == Cor.Red)
     cor = Cor.Red
@@ -130,7 +133,7 @@ if (global.playerVivo)
     //mantém personagem acima da barrier
     var hspFinal = horizontalSpeed + hspCarry;
     hspCarry = 0;
-    var verFinal = verticalSpeed + verCarry;
+    var verFinal = verticalSpeed;
     verCarry = 0;
     
     //Colisão Horizontal com floor
@@ -157,7 +160,7 @@ if (global.playerVivo)
     
     // Define movimentação caso não colida com objetos
     x += hspFinal;    
-    y += verticalSpeed;
+    y += verFinal;
 }
 </string>
           </argument>
@@ -328,7 +331,7 @@ if (global.playerVivo)
           <argument>
             <kind>1</kind>
             <string>/// Colisão com sphere e teletransporta
-if (scrCollisionCor(self.cor, other.cor))
+if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 {
     x = objPortais.portais[other.portalDestino].x;
     y = objPortais.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;

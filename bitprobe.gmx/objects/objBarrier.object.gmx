@@ -58,44 +58,17 @@ rot = 0;
             <string>///Ativa ou desativa máscara de colisão de acordo com cor
 if (instance_exists(objPlayer))
 {
-    // se o player está abaixo da barrier
-    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y)
+    // se o player está acima ou abaixo da barrier
+    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y
+    || (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y))
     {
         if (scrCollisionCor(self.cor, objPlayer.cor))
-            sprite_index = barrierSprite;
+            mask_index = barrierSprite;
         else
-            sprite_index = -1;
+            mask_index = -1;
     }
-    // se o player está acima da barrier
-    else if (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt; y)
-    {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            sprite_index = barrierSprite;
-        else
-            sprite_index = -1;
-    }
-    // se o player está a esquerda da barrier
-    else if (round(objPlayer.x + (objPlayer.sprite_width/2)) &lt; x)
-    {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            sprite_index = barrierSprite;
-        else
-            sprite_index = -1;
-    }
-    // se o player está acima da barrier
-        else if (round(objPlayer.x + (objPlayer.sprite_width/2)) &gt; x)
-    {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            sprite_index = barrierSprite;
-        else
-            sprite_index = -1;
-    }
-    // se player está dentro da barrier
     else
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            sprite_index = barrierSprite;
-        else
-            sprite_index = -1;
+        mask_index = -1;
 }
 </string>
           </argument>

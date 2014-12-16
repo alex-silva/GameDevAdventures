@@ -108,6 +108,10 @@ ini_open("bitprobe.ini");
 global.enableAudio = ini_read_real("settings", "audio", true);
 global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
+
+//Cria player persistente
+instance_create(x, y, objPlayer);
+objPlayer.visible = false;
 </string>
           </argument>
         </arguments>

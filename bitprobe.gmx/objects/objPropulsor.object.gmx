@@ -26,8 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Velocidade para jump do player, e cor
-cor = Cor.White;
 spd  = 24;
+//Retira máscaras de colisão, define sprite e cor
+sprite_index = -1;
+propulsorSprite = sprPropulsor;
+cor = Cor.White;
+//Parâmetros para drawing: escala e rotação
+scaleX = 1;
+scaleY = 1;
+rot = 0;
 </string>
           </argument>
         </arguments>
@@ -52,9 +59,47 @@ spd  = 24;
             <kind>1</kind>
             <string>/// Muda velocidade de pulo do player se colidir com player, se cor igual
 if (instance_exists(objPlayer))
+{
+    // se o player está acima ou abaixo da barrier
+    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y
+    || (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y))
+    {
+        if (scrCollisionCor(self.cor, objPlayer.cor))
+            mask_index = propulsorSprite;
+        else
+            mask_index = -1;
+    }
+    else
+        mask_index = -1;
+
     if (scrCollisionCor(self.cor, objPlayer.cor)
     &amp;&amp; (place_meeting(x, y - 16, objPlayer)))
         objPlayer.jumpSpeed = spd;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Apenas desenha o sprite, sem máscaras de colisão
+draw_sprite_ext(propulsorSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
 </string>
           </argument>
         </arguments>

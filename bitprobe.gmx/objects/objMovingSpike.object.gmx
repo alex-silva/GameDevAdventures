@@ -86,10 +86,13 @@ switch (direcao)
           <argument>
             <kind>1</kind>
             <string>///Retorna a posição inicial
-scrParticleDeath();
-x = initialX;
-y = initialY;
-moveSpeedIncr = moveSpeed;
+if (scrCollisionCor(self.cor, other.cor))
+{
+    scrParticleDeath();
+    x = initialX;
+    y = initialY;
+    moveSpeedIncr = moveSpeed;
+}
 </string>
           </argument>
         </arguments>

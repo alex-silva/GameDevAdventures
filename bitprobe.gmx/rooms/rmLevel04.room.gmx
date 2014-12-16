@@ -53,7 +53,7 @@
   <instances>
     <instance objName="objSpike" x="192" y="704" name="inst_575DF2A8" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorStart" x="64" y="672" name="inst_3A10F153" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="1312" y="288" name="inst_9D522180" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="688" y="232" name="inst_A53BE534" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorEnd" x="64" y="96" name="inst_3231F4D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="576" name="inst_805CF804" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="608" name="inst_8A5F8935" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -362,7 +362,7 @@
     <instance objName="objSpike" x="1040" y="432" name="inst_C25831A0" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1072" y="432" name="inst_BABFF19C" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="1120" y="448" name="inst_18FAB949" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.37;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.370000004768372" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
-    <instance objName="objMovingBarrier" x="1232" y="392" name="inst_0DCF146E" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.50;&#xA;distancia = 200;&#xA;direcao = -1;&#xA;sentido = -1;&#xA;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingBarrier" x="1232" y="472" name="inst_0DCF146E" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.50;&#xA;distancia = 60;&#xA;direcao = -1;&#xA;sentido = -1;&#xA;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1344" y="704" name="inst_3048CB11" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1280" y="704" name="inst_1B62B4A0" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1216" y="704" name="inst_214D3DC4" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -372,7 +372,6 @@
     <instance objName="objBarrier" x="256" y="160" name="inst_AA649ADF" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.50;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.5" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="160" y="160" name="inst_E55B6F6F" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.5" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="776" y="176" name="inst_E2240935" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.10;&#xA;" scaleX="0.100000001490116" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="688" y="232" name="inst_A53BE534" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="576" w="32" h="32" xo="0" yo="96" id="10005192" name="inst_65FDD867" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

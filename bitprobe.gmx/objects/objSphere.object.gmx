@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Define destino da sphere
 event_inherited();
-portalDestino = id;
+portalDestino = 999;
 </string>
           </argument>
         </arguments>
