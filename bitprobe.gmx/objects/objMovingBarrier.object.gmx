@@ -108,30 +108,54 @@ else
     
 if (instance_exists(objPlayer))
 {
-    // se o player está acima ou abaixo da barrier
-    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y)
+    // se player está dentro da barrier
+    //if ((objPlayer.x - objPlayer.sprite_width/2) &amp;gt; x)
+ //       if (scrCollisionCor(self.cor, objPlayer.cor))
+   //         sprite_index = barrierSprite;
+     //   else
+     //       mask_index = -1;
+    // se o player está a esquerda da barrier
+  /*  if (round(objPlayer.x + (objPlayer.sprite_width/2)) &amp;lt; x)
+    {
+      //  if (scrCollisionCor(self.cor, objPlayer.cor))
+        //    sprite_index = barrierSprite;
+       // else
+            mask_index = -1;
+    }
+    // se o player está a direita da barrier
+    else if (round(objPlayer.x + (objPlayer.sprite_width/2)) &amp;gt; x)
+    {
+     //   if (scrCollisionCor(self.cor, objPlayer.cor))
+       //     sprite_index = barrierSprite;
+       // else
+            mask_index = -1;
+    }*/
+    // se o player está abaixo da barrier
+    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y)
+    {
+        if (scrCollisionCor(self.cor, objPlayer.cor))
+            mask_index = barrierSprite;
+        else
+            mask_index = -1;
+    }
+    // se o player está acima da barrier
+    else//if (round(objPlayer.y + (objPlayer.sprite_height/2)) &amp;lt;= y)
     {
         if (scrCollisionCor(self.cor, objPlayer.cor))
         {
             //mantém personagem acima da barrier
-            if (sentido == 1)
-                objPlayer.hspCarry = horizontalSpeed;
-            //else
-             //   objPlayer.verCarry = horizontalSpeed;
+            if (place_meeting(x,y-1,objPlayer))
+            {
+                if (sentido == 1)
+                    objPlayer.hspCarry = horizontalSpeed;
+                else
+                    objPlayer.verCarry = horizontalSpeed;
+            }
             mask_index = barrierSprite;
         }
         else
             mask_index = -1;
     }
-    else if(round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y)
-    {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            mask_index = barrierSprite;
-        else
-            mask_index = -1;
-    }
-    else
-        mask_index = -1;
 }
 </string>
           </argument>

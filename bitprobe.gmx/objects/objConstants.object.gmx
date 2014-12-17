@@ -54,15 +54,7 @@ globalvar alarmPlayerDeath; alarmPlayerDeath = 15;
 globalvar playerDirection; playerDirection = Direction.Right;
 //Player Vivo
 globalvar playerVivo; playerVivo = true;
-//Cores Habilitadas para o player
-globalvar playerRed; playerRed = false;
-globalvar playerGreen; playerGreen = false;
-globalvar playerBlue; playerBlue = false;
-globalvar playerWhite; playerWhite = true;
-//Cores Habilitadas para o player
 
-//Cor atual do player
-globalvar playerCor; playerCor = Cor.White;
 // COMBINAÇÕES DE CORES
 enum Combinacao
 {
@@ -84,7 +76,7 @@ enum Combinacao
 // COMBINAÇÕES DE CORES
 
 //Map Sprites
-global.mapSprites = ds_map_create();
+globalvar mapSprites; global.mapSprites = ds_map_create();
 
 ds_map_add(global.mapSprites, "sprPlayerWhiteMove", sprPlayerWhiteMove);
 ds_map_add(global.mapSprites, "sprPlayerWhiteJump", sprPlayerWhiteJump);
@@ -110,7 +102,7 @@ global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
 //Cria player persistente
-instance_create(x, y, objPlayer);
+instance_create(352, 32, objPlayer);
 objPlayer.visible = false;
 </string>
           </argument>

@@ -28,22 +28,7 @@
             <string>///Variáveis do player
 global.playerVivo = true;
 
-
-global.playerRed = true;
-global.playerGreen = true;
-global.playerBlue = true;
-
-
-
-
-if (global.playerCor == Cor.Red)
-    cor = Cor.Red
-else if (global.playerCor == Cor.Green)
-    cor = Cor.Green
-else if (global.playerCor == Cor.Blue)
-    cor = Cor.Blue
-else
-    cor = Cor.White
+cor = Cor.White
 
 playerGravity = 0.75;
 horizontalSpeed = 0;
@@ -227,13 +212,12 @@ TrocaSpritePlayer();
             <string>///Habilita alternancia de cor
 switch(other.cor)
 {
-    case Cor.Red   : { global.playerRed   = true; cor = Cor.Red;   break; }
-    case Cor.Green : { global.playerGreen = true; cor = Cor.Green; break; }
-    case Cor.Blue  : { global.playerBlue  = true; cor = Cor.Blue;  break; }
-    case Cor.White : { global.playerWhite = true; cor = Cor.White; break; }
+    case Cor.Red   : { global.playerStats[? "PlayerRed"] = true; cor = Cor.Red;   break; }
+    case Cor.Green : { global.playerStats[? "PlayerGreen"] = true; cor = Cor.Green; break; }
+    case Cor.Blue  : { global.playerStats[? "PlayerBlue"]  = true; cor = Cor.Blue;  break; }
+    case Cor.White : { global.playerStats[? "PlayerWhite"] = true; cor = Cor.White; break; }
 }
 sprite_index = TrocaSpritePlayer();
-global.playerCor = cor;
 with (other) instance_destroy();
 </string>
           </argument>
@@ -382,11 +366,10 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
           <argument>
             <kind>1</kind>
             <string>/// Muda cor para azul
-if(global.playerBlue)
+if(global.playerStats[? "PlayerBlue"])
 {
     self.cor = Cor.Blue;
     sprite_index = TrocaSpritePlayer();
-    global.playerCor = Cor.Blue;
 }
 </string>
           </argument>
@@ -411,11 +394,10 @@ if(global.playerBlue)
           <argument>
             <kind>1</kind>
             <string>/// Muda cor para verde
-if(global.playerGreen)
+if(global.playerStats[? "PlayerGreen"])
 {
     self.cor = Cor.Green;
     sprite_index = TrocaSpritePlayer();
-    global.playerCor = Cor.Green;
 }
 </string>
           </argument>
@@ -440,11 +422,10 @@ if(global.playerGreen)
           <argument>
             <kind>1</kind>
             <string>/// Muda cor para vermelho
-if(global.playerRed)
+if(global.playerStats[? "PlayerRed"])
 {
     self.cor = Cor.Red;
     sprite_index = TrocaSpritePlayer();
-    global.playerCor = Cor.Red;
 }
 </string>
           </argument>
