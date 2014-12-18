@@ -28,7 +28,7 @@
             <string>///Carrega configurações e vai para mapa
 LoadGame("bitprobe.ini");
 //futuramente vai para mundo atual, por enquanto para fase atual
-room_goto(global.rooms[? "RoomAtual"]);
+room_goto(global.rooms[? "MundoAtual"]);
 </string>
           </argument>
         </arguments>

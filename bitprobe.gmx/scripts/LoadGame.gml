@@ -6,9 +6,8 @@ show_debug_message("Loading game ("+string(argument0)+")...");
 
 ini_open(argument0);
 
-global.rooms[? "RoomAtual"] = ini_read_real("Rooms", "RoomAtual", 2);
-global.rooms[? "HabilitarmLevel01"] = ini_read_real("Rooms", "HabilitarmLevel01", false);
-global.rooms[? "HabilitarmLevel02"] = ini_read_real("Rooms", "HabilitarmLevel02", false);
+global.rooms[? "RoomAtual"] = ini_read_real("Rooms", "RoomAtual", rmLevel01);
+global.rooms[? "MundoAtual"] = ini_read_real("Rooms", "MundoAtual", rmMapa11);
 
 if (ini_read_real("PlayerStats", "PlayerRed", 0) == 0)
     global.playerStats[? "PlayerRed"] = false;

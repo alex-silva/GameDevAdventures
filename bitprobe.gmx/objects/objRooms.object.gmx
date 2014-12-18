@@ -52,9 +52,13 @@ show_debug_message("Criando estrutura com info das rooms...");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Grava room atual
-global.rooms[? "RoomAtual"] = room;
-SaveGame("bitprobe.ini");
+            <string>/// Grava level mais avançado
+if (room != rmSplash &amp;&amp; room != rmMenuInicial &amp;&amp; room != rmMapa11
+ &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
+{
+    global.rooms[? "RoomAtual"] = room;
+    SaveGame("bitprobe.ini");
+}
 </string>
           </argument>
         </arguments>

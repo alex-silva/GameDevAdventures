@@ -74,13 +74,17 @@
       <sprite>sprites\sprSettings</sprite>
       <sprite>sprites\sprSplashProbe</sprite>
       <sprite>sprites\sprPlayButton</sprite>
+      <sprite>sprites\sprMapa11</sprite>
     </sprites>
+    <sprite>sprites\sprLevel</sprite>
+    <sprite>sprites\sprBack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\FloorColors_ON</background>
     <background>background\FloorColorsOff</background>
     <background>background\Fundo</background>
+    <background>background\bgdMapa11</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -122,6 +126,7 @@
       <script>scripts\LoadGame.gml</script>
       <script>scripts\MapasSaveLoad.gml</script>
     </scripts>
+    <script>scripts\IsLevel.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Sphere">
@@ -150,13 +155,15 @@
     </objects>
     <objects name="Player">
       <object>objects\objPlayer</object>
+      <object>objects\objPlayerMapa</object>
     </objects>
     <objects name="Control">
       <object>objects\obj_Controller</object>
       <object>objects\obj_Death</object>
       <object>objects\obj_Spike_Timeline</object>
-      <object>objects\objPortais</object>
-      <object>objects\objRooms</object>
+      <object>objects\objRoom</object>
+      <object>objects\objLevel</object>
+      <object>objects\objPause</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -184,6 +191,8 @@
       <object>objects\objSplashProbe</object>
       <object>objects\objPlayButton</object>
       <object>objects\objMouseCursor</object>
+      <object>objects\objMapa11</object>
+      <object>objects\objBackMapMenu</object>
     </objects>
   </objects>
   <timelines name="timelines">
@@ -192,11 +201,13 @@
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
     <room>rooms\rmMenuInicial</room>
+    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel01</room>
     <room>rooms\rmLevel02</room>
     <room>rooms\rmLevel03</room>
     <room>rooms\rmLevel04</room>
     <room>rooms\rmLevel05</room>
+    <room>rooms\rmLevel0B</room>
     <room>rooms\rm_Teste</room>
   </rooms>
   <constants number="2">

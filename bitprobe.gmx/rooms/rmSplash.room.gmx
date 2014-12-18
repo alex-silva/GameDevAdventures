@@ -53,9 +53,9 @@
   <instances>
     <instance objName="objConstants" x="224" y="256" name="inst_CE4B1848" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSplashScreen" x="64" y="96" name="inst_16E9EB76" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPortais" x="64" y="320" name="inst_98BAB13A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRooms" x="320" y="416" name="inst_A7BBD0BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSplashProbe" x="-64" y="96" name="inst_8F177431" locked="0" code="" scaleX="0.349999994039536" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRoom" x="64" y="32" name="inst_59E1781A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPause" x="256" y="0" name="inst_F01B6575" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

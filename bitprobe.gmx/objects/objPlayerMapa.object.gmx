@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-50</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,50 +26,14 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-global.playerVivo = true;
-
+objPlayer.visible = false;
 cor = Cor.White
 
-playerGravity = 0.75;
 horizontalSpeed = 0;
-verticalSpeed = 0;
-jumpSpeed = 12;
-jumpSpeedPadrao = 12;
 moveSpeed = 7;
-//variáveis que permitem que player siga moving barriers
-//quando estiver acima das mesmas
-hspCarry = 0;
-verCarry = 0;
-
 image_speed = 0.3;
 global.playerDirection = Direction.Right;
 TrocaSpritePlayer();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Recomeça nível, "matando" player, mas não destruímos a instância
-global.playerVivo = true;
-x = objDoorStart.x
-y = objDoorStart.y;
 </string>
           </argument>
         </arguments>
@@ -92,90 +56,14 @@ y = objDoorStart.y;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Define velocidade e colisões com paredes
-if (global.pause)
-{
-    image_index = 0;
-    exit;
-}
-
-// player visível apenas quando vivo
-visible = global.playerVivo;
-
-if (global.playerVivo)
-{
-   // Define movimentação
-    move = KEY_RIGHT + KEY_LEFT;
-    horizontalSpeed = move * moveSpeed;
-    
-    // faz personagem cair gradativamente
-    if (verticalSpeed &lt; 100) 
-        verticalSpeed += playerGravity + 0.1;
-    
-    // pula mais alto se tocar em propulsor, pular normal se tocar em floor
-    if (place_meeting(x, y + 1, objPropulsor)
-      || place_meeting(x, y + 1, objFloor))
-        verticalSpeed = KEY_JUMP * -jumpSpeed;
-    // retorna velocidade de pulo ao normal após utilizar propulsor
-    if !(place_meeting(x, y + 1, objPropulsor))
-        jumpSpeed = jumpSpeedPadrao;
-
-    //mantém personagem acima da barrier
-    var hspFinal = horizontalSpeed + hspCarry;
-    hspCarry = 0;
-    var verFinal = verticalSpeed;
-    verCarry = 0;
-    
-    //Colisão Horizontal com floor
-    if (place_meeting(x + hspFinal, y, objFloor))
-    {
-        while(!place_meeting(x + sign(hspFinal), y, objFloor))
-        {
-            x += sign(hspFinal);
-        }
-        hspFinal = 0;
-        horizontalSpeed = 0;
-    }
-    
-    //Colisão vertical com floor
-    if (place_meeting(x, y + verFinal, objFloor))
-    {
-        while(!place_meeting(x, y + sign(verFinal), objFloor))
-        {
-            y += sign(verFinal);
-        }
-        verFinal = 0;
-        verticalSpeed = 0;
-    }
-    
-    // Define movimentação caso não colida com objetos
-    x += hspFinal;    
-    y += verFinal;
-    
-    //Anima sprite
-    if (horizontalSpeed &gt; 0)
-    {
-        if verticalSpeed &lt; 0
-            global.playerDirection = Direction.JumpRight;      
-        else if verticalSpeed &gt;= 0 
-            global.playerDirection = Direction.Right;
-    }
-    else if horizontalSpeed &lt; 0
-    {
-        if verticalSpeed &lt; 0
-           global.playerDirection = Direction.JumpLeft;
-        else if verticalSpeed &gt;= 0 
-           global.playerDirection = Direction.Left
-    }
-    else image_index = 0;
-    TrocaSpritePlayer();
-}
+            <string>/// Define velocidade e colisões com levels
+move = KEY_RIGHT + KEY_LEFT;
+horizontalSpeed = move * moveSpeed;
+x += horizontalSpeed;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="4" ename="objPowerUp">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -192,22 +80,19 @@ if (global.playerVivo)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Habilita alternancia de cor
-switch(other.cor)
-{
-    case Cor.Red   : { global.playerStats[? "PlayerRed"] = true; cor = Cor.Red;   break; }
-    case Cor.Green : { global.playerStats[? "PlayerGreen"] = true; cor = Cor.Green; break; }
-    case Cor.Blue  : { global.playerStats[? "PlayerBlue"]  = true; cor = Cor.Blue;  break; }
-    case Cor.White : { global.playerStats[? "PlayerWhite"] = true; cor = Cor.White; break; }
-}
-sprite_index = TrocaSpritePlayer();
-with (other) instance_destroy();
+            <string>///Anima sprite
+global.playerDirection = Direction.Right;
+if horizontalSpeed &lt; 0
+    global.playerDirection = Direction.Left
+else image_index = 0;
+TrocaSpritePlayer();
+sprite_index = object_get_sprite(objPlayer);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objDoorEnd">
+    <event eventtype="4" ename="objLevel">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -224,14 +109,14 @@ with (other) instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Vai para próximo level
-room_goto_next();
+            <string>///vai para level
+room_goto(other.level);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSpike">
+    <event eventtype="5" enumb="13">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -248,61 +133,7 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Colisão com spike
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        scrCollisionDeath();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objFloor">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//fazer algo interessante quando a cor for a mesma
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSphere">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com sphere e teletransporta
-if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
-{
-    x = objRoom.portais[other.portalDestino].x;
-    y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
-}
+            <string>///Vai para menu de pausa
 </string>
           </argument>
         </arguments>
@@ -329,7 +160,9 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 if(global.playerStats[? "PlayerBlue"])
 {
     self.cor = Cor.Blue;
-    sprite_index = TrocaSpritePlayer();
+    objPlayer.cor = Cor.Blue;
+    TrocaSpritePlayer();
+    sprite_index = object_get_sprite(objPlayer);
 }
 </string>
           </argument>
@@ -357,7 +190,9 @@ if(global.playerStats[? "PlayerBlue"])
 if(global.playerStats[? "PlayerGreen"])
 {
     self.cor = Cor.Green;
-    sprite_index = TrocaSpritePlayer();
+    objPlayer.cor = Cor.Green;
+    TrocaSpritePlayer();
+    sprite_index = object_get_sprite(objPlayer);
 }
 </string>
           </argument>
@@ -385,7 +220,9 @@ if(global.playerStats[? "PlayerGreen"])
 if(global.playerStats[? "PlayerRed"])
 {
     self.cor = Cor.Red;
-    sprite_index = TrocaSpritePlayer();
+    objPlayer.cor = Cor.Red;
+    TrocaSpritePlayer();
+    sprite_index = object_get_sprite(objPlayer);
 }
 </string>
           </argument>

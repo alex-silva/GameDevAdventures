@@ -2,36 +2,32 @@
 // Salva todas as variáveis necessárias no ini especificado
 //
 
-//Somente salva configurações do player e room em levels
-if (room_get_name(global.rooms[? "RoomAtual"]) != "rmSplash" &&
-    room_get_name(global.rooms[? "RoomAtual"]) != "rmMenuInicial")
-{
-    show_debug_message("Saving game ("+string(argument0)+")...");
+show_debug_message("Saving game ("+string(argument0)+")...");
+
+
+ini_open(argument0);
+
+ini_write_real("Rooms", "RoomAtual", global.rooms[? "RoomAtual"]);
+ini_write_real("Rooms", "MundoAtual", global.rooms[? "MundoAtual"]);
+
+var PlayerRed = 0;
+if (global.playerStats[? "PlayerRed"] == true) PlayerRed = 1;
+var PlayerGreen = 0;
+if (global.playerStats[? "PlayerGreen"] == true) PlayerGreen = 1;
+var PlayerBlue = 0;
+if (global.playerStats[? "PlayerBlue"] == true) PlayerBlue = 1;
+var PlayerWhite = 0;
+if (global.playerStats[? "PlayerWhite"] == true) PlayerWhite = 1;
+ini_write_real("PlayerStats", "PlayerRed", PlayerRed);
+ini_write_real("PlayerStats", "PlayerGreen", PlayerGreen);
+ini_write_real("PlayerStats", "PlayerBlue", PlayerBlue);
+ini_write_real("PlayerStats", "PlayerWhite", PlayerWhite);
+
+if (instance_exists(objPlayer))
+    ini_write_real("PlayerStats", "CorAtual", objPlayer.cor);
     
-    
-    ini_open(argument0);
-    
-    ini_write_real("Rooms", "RoomAtual", global.rooms[? "RoomAtual"]);
-    
-    var PlayerRed = 0;
-    if (global.playerStats[? "PlayerRed"] == true) PlayerRed = 1;
-    var PlayerGreen = 0;
-    if (global.playerStats[? "PlayerGreen"] == true) PlayerGreen = 1;
-    var PlayerBlue = 0;
-    if (global.playerStats[? "PlayerBlue"] == true) PlayerBlue = 1;
-    var PlayerWhite = 0;
-    if (global.playerStats[? "PlayerWhite"] == true) PlayerWhite = 1;
-    ini_write_real("PlayerStats", "PlayerRed", PlayerRed);
-    ini_write_real("PlayerStats", "PlayerGreen", PlayerGreen);
-    ini_write_real("PlayerStats", "PlayerBlue", PlayerBlue);
-    ini_write_real("PlayerStats", "PlayerWhite", PlayerWhite);
-    
-    if (instance_exists(objPlayer))
-        ini_write_real("PlayerStats", "CorAtual", objPlayer.cor);
-        
-      
-    ini_close();
-}    
+  
+ini_close();
 /*
 //global.lastSaveGame = argument0;
 

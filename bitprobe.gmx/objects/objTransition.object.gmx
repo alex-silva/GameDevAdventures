@@ -90,8 +90,6 @@ if (transition &gt; 0)
             <string>/// Usar fade in em nova room
 fadeOut = false;
 transition = 1;
-// Salvar jogo
-SaveGame("bitprobe.ini");
 </string>
           </argument>
         </arguments>
