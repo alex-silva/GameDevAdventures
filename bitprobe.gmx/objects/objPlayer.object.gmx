@@ -123,8 +123,6 @@ if (global.playerVivo)
     //mantém personagem acima da barrier
     var hspFinal = horizontalSpeed + hspCarry;
     hspCarry = 0;
-    var verFinal = verticalSpeed;
-    verCarry = 0;
     
     //Colisão Horizontal com floor
     if (place_meeting(x + hspFinal, y, objFloor))
@@ -138,19 +136,19 @@ if (global.playerVivo)
     }
     
     //Colisão vertical com floor
-    if (place_meeting(x, y + verFinal, objFloor))
+    if (place_meeting(x, y + verticalSpeed, objFloor))
     {
-        while(!place_meeting(x, y + sign(verFinal), objFloor))
+        while(!place_meeting(x, y + sign(verticalSpeed), objFloor))
         {
-            y += sign(verFinal);
+            y += sign(verticalSpeed);
         }
-        verFinal = 0;
         verticalSpeed = 0;
     }
     
-    // Define movimentação caso não colida com objetos
+    // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
     x += hspFinal;    
-    y += verFinal;
+    if (verCarry == 0 || KEY_JUMP)
+        y += verticalSpeed;
     
     //Anima sprite
     if (horizontalSpeed &gt; 0)

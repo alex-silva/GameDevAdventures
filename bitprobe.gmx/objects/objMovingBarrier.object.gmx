@@ -46,6 +46,9 @@ distanciaPercorrida = 0;
 scaleX = 1;
 scaleY = 1;
 rot = 0;
+
+//carregando player verticalmente
+isCarryingPlayer = false;
 </string>
           </argument>
         </arguments>
@@ -68,7 +71,8 @@ rot = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.pause) exit;
+            <string>///Movimenta barrier
+if (global.pause) exit;
 mask_index = barrierSprite;
 
 horizontalSpeed = direcao * moveSpeed;
@@ -108,6 +112,20 @@ else
     
 if (instance_exists(objPlayer))
 {
+    //está carregando player verticalmente
+    if (isCarryingPlayer)
+    {
+        if (scrCollisionCor(self.cor, objPlayer.cor) &amp;&amp; place_meeting(x,y-10, objPlayer))
+        {
+            objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
+            objPlayer.verCarry = 1;
+            exit;
+        }
+        else
+            objPlayer.verCarry = 0;
+    }
+    isCarryingPlayer = false;
+    //player abaixo da barrier
     if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
     {
         //apenas colide se estiver totalmente fora da barrier
@@ -122,12 +140,16 @@ if (instance_exists(objPlayer))
         if (scrCollisionCor(self.cor, objPlayer.cor))
         {
             //mantém personagem acima da barrier
-            if (place_meeting(x,y-1,objPlayer))
+            
+            if (place_meeting(x,y-10,objPlayer))
             {
                 if (sentido == 1)
                     objPlayer.hspCarry = horizontalSpeed;
                 else
-                    objPlayer.verCarry = horizontalSpeed;
+                {
+                    isCarryingPlayer = true;
+                    objPlayer.verCarry = 1;
+                }
             }
             mask_index = barrierSprite;
         }
@@ -136,6 +158,7 @@ if (instance_exists(objPlayer))
     }
     else
         mask_index = -1;
+       
 }
 </string>
           </argument>
