@@ -59,26 +59,24 @@ rot = 0;
 if (global.pause) exit;
 if (instance_exists(objPlayer))
 {
-    // se o player está acima ou abaixo da barrier
-    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y)
+    // se o player está abaixo da barrier
+    if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
     {
-        //apenas colide se estiver totalmente fora da barrier
-        if (round(objPlayer.y - (objPlayer.sprite_height/2)) &gt; round(y + (sprite_height))
-          &amp;&amp; scrCollisionCor(self.cor, objPlayer.cor))
+        if scrCollisionCor(self.cor, objPlayer.cor)
             mask_index = barrierSprite;
         else
             mask_index = -1;
     }
     // se o player está acima da barrier
-    else if (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y)
+    else if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y)
     {
         if (scrCollisionCor(self.cor, objPlayer.cor))
-        {
             mask_index = barrierSprite;
-        }
         else
             mask_index = -1;
     }
+    else
+        mask_index = -1;
 }
 </string>
           </argument>

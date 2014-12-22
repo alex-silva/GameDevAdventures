@@ -68,8 +68,7 @@ rot = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movimenta barrier
-if (global.pause) exit;
+            <string>if (global.pause) exit;
 mask_index = barrierSprite;
 
 horizontalSpeed = direcao * moveSpeed;
@@ -109,47 +108,16 @@ else
     
 if (instance_exists(objPlayer))
 {
-    // se player está dentro da barrier
-    //if ((objPlayer.x - objPlayer.sprite_width/2) &amp;gt; x)
- //       if (scrCollisionCor(self.cor, objPlayer.cor))
-   //         sprite_index = barrierSprite;
-     //   else
-     //       mask_index = -1;
-    // se o player está a esquerda da barrier
-  /*  if (round(objPlayer.x + (objPlayer.sprite_width/2)) &amp;lt; x)
-    {
-      //  if (scrCollisionCor(self.cor, objPlayer.cor))
-        //    sprite_index = barrierSprite;
-       // else
-            mask_index = -1;
-    }
-    // se o player está a direita da barrier
-    else if (round(objPlayer.x + (objPlayer.sprite_width/2)) &amp;gt; x)
-    {
-     //   if (scrCollisionCor(self.cor, objPlayer.cor))
-       //     sprite_index = barrierSprite;
-       // else
-            mask_index = -1;
-    }*/
-    // se o player está abaixo da barrier
-    if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y)
+    if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
     {
         //apenas colide se estiver totalmente fora da barrier
         if (scrCollisionCor(self.cor, objPlayer.cor))
-        {
-            //mantém personagem abaixo da barrier
-            if (place_meeting(x,y+sprite_height+1,objPlayer))
-            {
-                if (sentido == -1)
-                    objPlayer.verCarry = horizontalSpeed;
-            }
             mask_index = barrierSprite;
-        }
         else
             mask_index = -1;
     }
     // se o player está acima da barrier
-    else if (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y)
+    else if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y)
     {
         if (scrCollisionCor(self.cor, objPlayer.cor))
         {
@@ -166,6 +134,8 @@ if (instance_exists(objPlayer))
         else
             mask_index = -1;
     }
+    else
+        mask_index = -1;
 }
 </string>
           </argument>
