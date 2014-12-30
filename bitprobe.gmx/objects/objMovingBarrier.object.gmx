@@ -115,11 +115,16 @@ if (instance_exists(objPlayer))
     //está carregando player verticalmente
     if (isCarryingPlayer)
     {
-        if (scrCollisionCor(self.cor, objPlayer.cor) &amp;&amp; place_meeting(x,y-10, objPlayer))
+        if (scrCollisionCor(self.cor, objPlayer.cor) &amp;&amp; place_meeting(x,y-6, objPlayer))
         {
             objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
             objPlayer.verCarry = 1;
             exit;
+        }
+        else if (KEY_JUMP)
+        {
+            objPlayer.y -= objPlayer.jumpSpeed;
+            objPlayer.verCarry = 0;
         }
         else
             objPlayer.verCarry = 0;
@@ -141,7 +146,7 @@ if (instance_exists(objPlayer))
         {
             //mantém personagem acima da barrier
             
-            if (place_meeting(x,y-10,objPlayer))
+            if (place_meeting(x,y-6,objPlayer) &amp;&amp; !KEY_JUMP)
             {
                 if (sentido == 1)
                     objPlayer.hspCarry = horizontalSpeed;
