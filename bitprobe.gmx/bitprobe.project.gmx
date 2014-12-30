@@ -78,6 +78,9 @@
     </sprites>
     <sprite>sprites\sprLevel</sprite>
     <sprite>sprites\sprBack</sprite>
+    <sprites name="Trojan">
+      <sprite>sprites\sprTrojanMove</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -88,10 +91,9 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\TrocaSpritePlayer.gml</script>
+    <script>scripts\TrocaSpriteBoss.gml</script>
     <script>scripts\SetObject.gml</script>
-    <scripts name="Player">
-      <script>scripts\TrocaSpritePlayer.gml</script>
-    </scripts>
     <scripts name="Particles">
       <script>scripts\scrParticleDeath.gml</script>
     </scripts>
@@ -194,6 +196,12 @@
       <object>objects\objMapa11</object>
       <object>objects\objBackMapMenu</object>
     </objects>
+    <objects name="Boss">
+      <object>objects\objTrojan</object>
+    </objects>
+    <objects name="Triggers">
+      <object>objects\objTriggerTrojan</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
@@ -202,12 +210,12 @@
     <room>rooms\rmSplash</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa11</room>
-    <room>rooms\rmLevel01</room>
-    <room>rooms\rmLevel02</room>
-    <room>rooms\rmLevel03</room>
-    <room>rooms\rmLevel04</room>
-    <room>rooms\rmLevel05</room>
-    <room>rooms\rmLevel0B</room>
+    <room>rooms\rmLevel11</room>
+    <room>rooms\rmLevel12</room>
+    <room>rooms\rmLevel13</room>
+    <room>rooms\rmLevel14</room>
+    <room>rooms\rmLevel15</room>
+    <room>rooms\rmLevel1B</room>
     <room>rooms\rm_Teste</room>
   </rooms>
   <constants number="2">

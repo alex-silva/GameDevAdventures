@@ -52,6 +52,8 @@ enum Direction
 globalvar alarmPlayerDeath; alarmPlayerDeath = 15;
 // Direcao do Player
 globalvar playerDirection; playerDirection = Direction.Right;
+// Direcao do Boss
+globalvar bossDirection; bossDirection = Direction.Right;
 //Player Vivo
 globalvar playerVivo; playerVivo = true;
 

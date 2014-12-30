@@ -1,6 +1,6 @@
 //cria mapas para gravar informações do jogo
 globalvar rooms; global.rooms = ds_map_create();
-global.rooms[? "RoomAtual"] = rmLevel01;
+global.rooms[? "RoomAtual"] = rmLevel11;
 global.rooms[? "MundoAtual"] = rmMapa11;
 
 globalvar playerStats; global.playerStats = ds_map_create();

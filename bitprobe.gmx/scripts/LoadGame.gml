@@ -6,7 +6,7 @@ show_debug_message("Loading game ("+string(argument0)+")...");
 
 ini_open(argument0);
 
-global.rooms[? "RoomAtual"] = ini_read_real("Rooms", "RoomAtual", rmLevel01);
+global.rooms[? "RoomAtual"] = ini_read_real("Rooms", "RoomAtual", rmLevel11);
 global.rooms[? "MundoAtual"] = ini_read_real("Rooms", "MundoAtual", rmMapa11);
 
 if (ini_read_real("PlayerStats", "PlayerRed", 0) == 0)

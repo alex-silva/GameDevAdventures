@@ -54,14 +54,14 @@ SaveGame("bitprobe.ini");</code>
   </views>
   <instances>
     <instance objName="objMouseCursor" x="64" y="256" name="inst_765EA585" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="160" y="112" name="inst_0C50DD09" locked="0" code="level = rmLevel01;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="160" y="112" name="inst_0C50DD09" locked="0" code="level = rmLevel11;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
     <instance objName="objPlayerMapa" x="48" y="144" name="inst_B13E72A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMapa11" x="0" y="0" name="inst_C0433ECF" locked="0" code="" scaleX="0.800000011920929" scaleY="0.949999988079071" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="512" y="112" name="inst_271EF9BC" locked="0" code="level = rmLevel02;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="864" y="112" name="inst_AE22DEE4" locked="0" code="level = rmLevel03;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="864" y="496" name="inst_3A425AF6" locked="0" code="level = rmLevel0B;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="512" y="496" name="inst_4A7D9DAE" locked="0" code="level = rmLevel05;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
-    <instance objName="objLevel" x="160" y="496" name="inst_F1B04995" locked="0" code="level = rmLevel04;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="512" y="112" name="inst_271EF9BC" locked="0" code="level = rmLevel12;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="864" y="112" name="inst_AE22DEE4" locked="0" code="level = rmLevel13;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="864" y="496" name="inst_3A425AF6" locked="0" code="level = rmLevel1B;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="512" y="496" name="inst_4A7D9DAE" locked="0" code="level = rmLevel15;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="objLevel" x="160" y="496" name="inst_F1B04995" locked="0" code="level = rmLevel14;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
