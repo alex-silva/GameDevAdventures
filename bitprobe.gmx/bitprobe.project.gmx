@@ -89,7 +89,11 @@
     <background>background\Fundo</background>
     <background>background\bgdMapa11</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+    <path>paths\pathTrojanSubir</path>
+    <path>paths\path2</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\TrocaSpritePlayer.gml</script>
     <script>scripts\TrocaSpriteBoss.gml</script>
@@ -200,7 +204,8 @@
       <object>objects\objTrojan</object>
     </objects>
     <objects name="Triggers">
-      <object>objects\objTriggerTrojan</object>
+      <object>objects\objTriggerTrojanParar</object>
+      <object>objects\objTriggerTrojanSubir</object>
     </objects>
   </objects>
   <timelines name="timelines">

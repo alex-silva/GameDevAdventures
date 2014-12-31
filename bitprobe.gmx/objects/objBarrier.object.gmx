@@ -58,14 +58,18 @@ rot = 0;
             <string>///Ativa ou desativa máscara de colisão de acordo com cor
 if (global.pause) exit;
 
-//colide com boss Trojan
-if (objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &gt;= x
- &amp;&amp; objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &lt;= x +
- sprite_get_width(barrierSprite) * scaleX)
+//colide com boss Trojan, se existir
+if (instance_exists(objTrojan))
 {
-    mask_index = barrierSprite;
-    exit;
+    if (objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &gt;= x
+     &amp;&amp; objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &lt;= x +
+     sprite_get_width(barrierSprite) * scaleX)
+    {
+        mask_index = barrierSprite;
+        exit;
+    }
 }
+
 if (instance_exists(objPlayer))
 {
     // se o player está abaixo da barrier
