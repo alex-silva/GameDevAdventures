@@ -28,12 +28,15 @@
             <string>///Variáveis do boss
 cor = Cor.Red
 
+initialX = x;
+initialY = y;
+
 bossGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
-moveSpeed = 4;
+moveSpeed = 6.5;
 
 image_speed = 0.3;
 global.bossDirection = Direction.Right;
@@ -41,6 +44,9 @@ global.bossDirection = Direction.Right;
 //na segunda parte do level, boss para
 isMoving = true;
 //TrocaSpriteBoss();
+//captura última imagem, para quando mudar de cor para branco
+imgIndexAnt = 0;
+pertoPlayer = false;
 </string>
           </argument>
         </arguments>
@@ -69,11 +75,25 @@ if (global.pause)
     image_index = 0;
     exit;
 }
-
+      
 if (isMoving == true)
     x+=moveSpeed;
     
 global.bossDirection = Direction.Right;
+
+//troca para cor branca se estiver perto do player
+if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 64 &amp;&amp; image_index &lt; 24)
+{
+    pertoPlayer = true;
+    imgIndexAnt = image_index;
+    image_index = 24;
+    cor = Cor.White;
+}
+else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; 64 &amp;&amp; pertoPlayer)
+{
+    pertoPlayer = false;
+    image_index = imgIndexAnt;
+}
 //Determina cor atual
 if (image_speed &gt; 0)
 {
@@ -81,8 +101,12 @@ if (image_speed &gt; 0)
         cor = Cor.Red;
     else if (image_index &lt; 16)
         cor = Cor.Green;
-    else
+    else if (image_index &lt; 24)
         cor = Cor.Blue;
+    else if (!pertoPlayer)
+        image_index = 0;
+    else if (pertoPlayer)
+        cor = Cor.White;
 }
 //TrocaSpriteBoss();
 </string>
