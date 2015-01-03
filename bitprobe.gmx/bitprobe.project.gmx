@@ -136,6 +136,8 @@
     </scripts>
     <script>scripts\IsLevel.gml</script>
     <script>scripts\LoadScreen.gml</script>
+    <script>scripts\scr_mouse_gui_x.gml</script>
+    <script>scripts\scr_mouse_gui_y.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Sphere">

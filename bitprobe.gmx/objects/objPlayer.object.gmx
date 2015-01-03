@@ -26,6 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
+gui_x[0] = 64;
+gui_y[0] = (display_get_gui_height() - 64); 
+gui_x[1] = (display_get_gui_width() - 64); 
+gui_y[1] = (display_get_gui_height() - 64); 
+stick_x[0] = gui_x[0]; 
+stick_y[0] = gui_y[0]; 
+stick_x[1] = gui_x[1]; 
+stick_y[1] = gui_y[1]; 
+st_pressed[0] = -1; 
+st_pressed[1] = -1; 
+st_radius = 40; 
+vdir = 0;
+
 global.playerVivo = true;
 
 cor = Cor.White
@@ -97,7 +110,49 @@ if (global.pause)
     image_index = 0;
     exit;
 }
+//Analog Stick
+stick_x[0] = gui_x[0];
+stick_y[0] = gui_y[0];
+if st_pressed[0] = -1
+   {
+   for (i = 0; i &lt; 5; i++;)
+      {
+      if device_mouse_check_button(i, mb_left)
+         {
+         var tx, ty;
+         tx = scr_mouse_gui_x(device_mouse_raw_x(i));
+         ty = scr_mouse_gui_y(device_mouse_raw_y(i));
+         if point_distance(tx, ty, gui_x[0], gui_y[0]) &lt; st_radius
+            {
+            if st_pressed[1] != i                {
+               st_pressed[0] = i;
+               break;
+               }             }
+         }
+      }
+   }
+if device_mouse_check_button(st_pressed[0], mb_left)
+   {
+   var spd, vdist, mx, my;
+   mx = scr_mouse_gui_x(device_mouse_raw_x(st_pressed[0]));
+   my = scr_mouse_gui_y(device_mouse_raw_y(st_pressed[0]));
 
+   vdist = min(st_radius, point_distance(mx, my, gui_x[0], gui_y[0]));
+   vdir = point_direction(gui_x[0], gui_y[0], mx, my);
+
+
+   //spd = min(b_spd, vdist / 10);
+   //h_spd = lengthdir_x(spd, vdir);
+   //v_spd = lengthdir_y(spd, vdir);
+
+   stick_x[0] = gui_x[0] + lengthdir_x(vdist, vdir);
+   stick_y[0] = gui_y[0] + lengthdir_y(vdist, vdir);
+   }
+else st_pressed[0] = -1
+   
+   
+   
+   
 // player visível apenas quando vivo
 visible = global.playerVivo;
 
@@ -326,6 +381,39 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
     x = objRoom.portais[other.portalDestino].x;
     y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_alpha(0.75);
+draw_circle_color(gui_x[0], gui_y[0], st_radius, c_lime, c_lime, true);
+draw_circle_color(stick_x[0], stick_y[0], 20, c_lime, c_lime, true);
+draw_circle_color(gui_x[1], gui_y[1], st_radius, c_lime, c_lime, true);
+draw_circle_color(stick_x[1], stick_y[1], 20, c_lime, c_lime, true);
+draw_set_alpha(0.25);
+draw_circle_color(gui_x[0], gui_y[0], st_radius, c_lime, c_lime, false);
+draw_circle_color(stick_x[0], stick_y[0], 20, c_lime, c_lime, false);
+draw_circle_color(gui_x[1], gui_y[1], st_radius, c_lime, c_lime, false);
+draw_circle_color(stick_x[1], stick_y[1], 20, c_lime, c_lime, false);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
