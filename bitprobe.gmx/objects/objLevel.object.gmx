@@ -50,8 +50,9 @@ level = rmLevel11;
           <argument>
             <kind>1</kind>
             <string>///transporta para level, se desbloqueado
-if (global.rooms[? "RoomAtual"] &gt;= level)
-    room_goto(level);
+if (!mouse_check_button_pressed(mb_left))
+    if (global.rooms[? "RoomAtual"] &gt;= level)
+        room_goto(level);
 </string>
           </argument>
         </arguments>
