@@ -133,6 +133,7 @@
       <script>scripts\MapasSaveLoad.gml</script>
     </scripts>
     <script>scripts\IsLevel.gml</script>
+    <script>scripts\LoadScreen.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="Sphere">
@@ -170,6 +171,7 @@
       <object>objects\objRoom</object>
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
+      <object>objects\objAnalog</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
