@@ -13,6 +13,8 @@
     <sound>sound\sndDying</sound>
     <sound>sound\sndPowerUp</sound>
     <sound>sound\sndNextLevel</sound>
+    <sound>sound\sound8</sound>
+    <sound>sound\sndStringCrash</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
@@ -91,6 +93,7 @@
       <sprite>sprites\sprTrojanMove</sprite>
     </sprites>
     <sprite>sprites\sprController</sprite>
+    <sprite>sprites\sprite46</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>

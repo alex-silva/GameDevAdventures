@@ -124,6 +124,12 @@ if (delay &lt;= 0)
 if (scrCollisionCor(self.cor, other.cor))
 {
     scrParticleDeath();
+    if !(audio_is_playing(sndStringCrash) &amp;&amp; point_distance(x, y, objPlayer.x, objPlayer.y) &lt;= 128)
+    {
+        
+        PlaySound(sndStringCrash,false);
+        sound_volume(sndStringCrash,0.4);
+    }
     x = initialX;
     y = initialY;
     moveSpeedIncr = moveSpeed;
