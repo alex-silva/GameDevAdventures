@@ -11,7 +11,6 @@
   <colour>33023</colour>
   <showcolour>0</showcolour>
   <code>global.playerVivo = false;
-LoadScreen();
 global.rooms[? "MundoAtual"] = room;
 SaveGame("bitprobe.ini");</code>
   <enableViews>-1</enableViews>
@@ -63,6 +62,7 @@ SaveGame("bitprobe.ini");</code>
     <instance objName="objLevel" x="864" y="496" name="inst_3A425AF6" locked="0" code="level = rmLevel1B;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
     <instance objName="objLevel" x="512" y="496" name="inst_4A7D9DAE" locked="0" code="level = rmLevel15;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
     <instance objName="objLevel" x="160" y="496" name="inst_F1B04995" locked="0" code="level = rmLevel14;&#xA;" scaleX="0.75" scaleY="0.899999976158142" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Controller" x="0" y="0" name="inst_2EF0DC34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

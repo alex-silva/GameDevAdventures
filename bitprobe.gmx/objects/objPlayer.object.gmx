@@ -26,17 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-gui_x[0] = 64;
-gui_y[0] = (display_get_gui_height() - 64); 
-gui_x[1] = (display_get_gui_width() - 64); 
-gui_y[1] = (display_get_gui_height() - 64); 
+gui_x[0] = 96;
+gui_y[0] = (display_get_gui_height() - 96); 
+gui_x[1] = (display_get_gui_width() - 96); 
+gui_y[1] = (display_get_gui_height() - 96); 
 stick_x[0] = gui_x[0]; 
 stick_y[0] = gui_y[0]; 
 stick_x[1] = gui_x[1]; 
 stick_y[1] = gui_y[1]; 
 st_pressed[0] = -1; 
 st_pressed[1] = -1; 
-st_radius = 40; 
+st_radius = 80; 
 vdir = 0;
 
 global.playerVivo = true;
@@ -110,6 +110,7 @@ if (global.pause)
     image_index = 0;
     exit;
 }
+//##########################################################################
 //Analog Stick
 stick_x[0] = gui_x[0];
 stick_y[0] = gui_y[0];
@@ -149,8 +150,44 @@ if device_mouse_check_button(st_pressed[0], mb_left)
    stick_y[0] = gui_y[0] + lengthdir_y(vdist, vdir);
    }
 else st_pressed[0] = -1
-   
-   
+//##########################################################################
+//stick de mudança de cor
+if st_pressed[1] = -1
+   {
+   for (i = 0; i &lt; 5; i++;)
+      {
+      if device_mouse_check_button(i, mb_left)
+         {
+         var tx, ty;
+         tx = scr_mouse_gui_x(device_mouse_raw_x(i));
+         ty = scr_mouse_gui_y(device_mouse_raw_y(i));
+         if point_distance(tx, ty, gui_x[1], gui_y[1]) &lt; st_radius
+            {
+            if st_pressed[0] != i                {
+               st_pressed[1] = i;
+               break;
+               }             }
+         }
+      }
+   }
+if device_mouse_check_button(st_pressed[1], mb_left)
+   {
+   var spd, vdist, mx, my;
+   mx = scr_mouse_gui_x(device_mouse_raw_x(st_pressed[1]));
+   my = scr_mouse_gui_y(device_mouse_raw_y(st_pressed[1]));
+
+   vdist = min(st_radius, point_distance(mx, my, gui_x[1], gui_y[1]));
+   vdir = point_direction(gui_x[1], gui_y[1], mx, my);
+
+
+   //spd = min(b_spd, vdist / 10);
+   //h_spd = lengthdir_x(spd, vdir);
+   //v_spd = lengthdir_y(spd, vdir);
+
+   stick_x[1] = gui_x[1] + lengthdir_x(vdist, vdir);
+   stick_y[1] = gui_y[1] + lengthdir_y(vdist, vdir);
+   }
+else st_pressed[1] = -1
    
    
 // player visível apenas quando vivo
@@ -160,6 +197,13 @@ if (global.playerVivo)
 {
    // Define movimentação
     move = KEY_RIGHT + KEY_LEFT;
+    
+    // Define movimentação por stick
+    if (stick_x[0] &gt; gui_x[0]+20 )
+        move = 1;
+    else if (stick_x[0] &lt; gui_x[0]-20 )
+        move = -1;
+        
     horizontalSpeed = move * moveSpeed;
     
     // faz personagem cair gradativamente
@@ -169,7 +213,12 @@ if (global.playerVivo)
     // pula mais alto se tocar em propulsor, pular normal se tocar em floor
     if (place_meeting(x, y + 1, objPropulsor)
       || place_meeting(x, y + 1, objFloor))
-        verticalSpeed = KEY_JUMP * -jumpSpeed;
+    {
+        if (stick_y[0] &lt; gui_y[0]-50)//(display_get_gui_height() - 100))
+            verticalSpeed = -jumpSpeed;
+        else
+            verticalSpeed = KEY_JUMP * -jumpSpeed;
+    }
     // retorna velocidade de pulo ao normal após utilizar propulsor
     if !(place_meeting(x, y + 1, objPropulsor))
         jumpSpeed = jumpSpeedPadrao;
