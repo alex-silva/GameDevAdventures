@@ -26,17 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-gui_x[0] = 64;
-gui_y[0] = (display_get_gui_height() - 64); 
-gui_x[1] = (display_get_gui_width() - 64); 
-gui_y[1] = (display_get_gui_height() - 64); 
+gui_x[0] = 96;
+gui_y[0] = (display_get_gui_height() - 96); 
+gui_x[1] = (display_get_gui_width() - 96); 
+gui_y[1] = (display_get_gui_height() - 96); 
 stick_x[0] = gui_x[0]; 
 stick_y[0] = gui_y[0]; 
 stick_x[1] = gui_x[1]; 
 stick_y[1] = gui_y[1]; 
 st_pressed[0] = -1; 
 st_pressed[1] = -1; 
-st_radius = 40; 
+st_radius = 80; 
 vdir = 0;
 
 global.playerVivo = true;
@@ -110,6 +110,7 @@ if (global.pause)
     image_index = 0;
     exit;
 }
+//##########################################################################
 //Analog Stick
 stick_x[0] = gui_x[0];
 stick_y[0] = gui_y[0];
@@ -198,9 +199,9 @@ if (global.playerVivo)
     move = KEY_RIGHT + KEY_LEFT;
     
     // Define movimentação por stick
-    if (stick_x[0] &gt; 64)
+    if (stick_x[0] &gt; gui_x[0]+20 )
         move = 1;
-    else if (stick_x[0] &lt; 64)
+    else if (stick_x[0] &lt; gui_x[0]-20 )
         move = -1;
         
     horizontalSpeed = move * moveSpeed;
@@ -213,8 +214,9 @@ if (global.playerVivo)
     if (place_meeting(x, y + 1, objPropulsor)
       || place_meeting(x, y + 1, objFloor))
     {
-        if (stick_y[0] &lt; (display_get_gui_height() - 100) || KEY_JUMP)
+        if (stick_y[0] &lt; gui_y[0]-50 || KEY_JUMP)
         {
+        //(display_get_gui_height() - 100))
             verticalSpeed = -jumpSpeed;
             if (jumpSpeed == jumpSpeedPadrao)
                 PlaySound(sndJump, false);

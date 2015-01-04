@@ -90,6 +90,7 @@
     <sprites name="Trojan">
       <sprite>sprites\sprTrojanMove</sprite>
     </sprites>
+    <sprite>sprites\sprController</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -227,8 +228,8 @@
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
     <room>rooms\rmMenuInicial</room>
-    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel11</room>
+    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>
     <room>rooms\rmLevel14</room>
