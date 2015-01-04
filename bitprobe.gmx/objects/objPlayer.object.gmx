@@ -269,7 +269,23 @@ if (global.playerVivo)
            global.playerDirection = Direction.Left
     }
     else image_index = 0;
+    
+    //verifica se trocou de cor pelo stick
+    if (stick_x[1] &lt; 64 &amp;&amp; stick_y[1] &gt;= (display_get_gui_height() - 100))
+    {
+        if(global.playerStats[? "PlayerRed"])
+            self.cor = Cor.Red;
+    }
+    else if (stick_x[1] &gt; 64 &amp;&amp; stick_y[1] &gt;= (display_get_gui_height() - 100))
+    {
+        if(global.playerStats[? "PlayerBlue"])
+            self.cor = Cor.Blue;
+    }
+    else if (stick_y[1] &lt; (display_get_gui_height() - 100))
+        if(global.playerStats[? "PlayerGreen"])
+            self.cor = Cor.Green;    
     TrocaSpritePlayer();
+
 }
 </string>
           </argument>
