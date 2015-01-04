@@ -108,6 +108,7 @@ ini_close();
 
 //toca música de abertura
 PlaySound(sndAbertura, true);
+sound_volume(sndAbertura, 0.7);
 //Cria player persistente
 instance_create(352, 32, objPlayer);
 objPlayer.visible = false;

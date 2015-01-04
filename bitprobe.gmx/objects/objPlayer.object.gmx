@@ -213,10 +213,21 @@ if (global.playerVivo)
     if (place_meeting(x, y + 1, objPropulsor)
       || place_meeting(x, y + 1, objFloor))
     {
-        if (stick_y[0] &lt; (display_get_gui_height() - 100))
+        if (stick_y[0] &lt; (display_get_gui_height() - 100) || KEY_JUMP)
+        {
             verticalSpeed = -jumpSpeed;
+            if (jumpSpeed == jumpSpeedPadrao)
+                PlaySound(sndJump, false);
+            else
+                PlaySound(sndBoost, false);
+        }
         else
-            verticalSpeed = KEY_JUMP * -jumpSpeed;
+        {
+            //som do step do player, se estiver movimentando-se
+            if (move != 0 &amp;&amp; !audio_is_playing(sndStep1))
+                PlaySound(sndStep1, false);
+            verticalSpeed = 0;
+        }
     }
     // retorna velocidade de pulo ao normal após utilizar propulsor
     if !(place_meeting(x, y + 1, objPropulsor))
@@ -344,6 +355,7 @@ switch(other.cor)
 }
 sprite_index = TrocaSpritePlayer();
 with (other) instance_destroy();
+PlaySound(sndPowerUp,false);
 </string>
           </argument>
         </arguments>
@@ -505,6 +517,7 @@ if(global.playerStats[? "PlayerBlue"])
 {
     self.cor = Cor.Blue;
     sprite_index = TrocaSpritePlayer();
+     PlaySound(sndColorShift,false)
 }
 </string>
           </argument>
@@ -533,6 +546,7 @@ if(global.playerStats[? "PlayerGreen"])
 {
     self.cor = Cor.Green;
     sprite_index = TrocaSpritePlayer();
+     PlaySound(sndColorShift,false)
 }
 </string>
           </argument>
@@ -561,6 +575,7 @@ if(global.playerStats[? "PlayerRed"])
 {
     self.cor = Cor.Red;
     sprite_index = TrocaSpritePlayer();
+    PlaySound(sndColorShift,false)
 }
 </string>
           </argument>

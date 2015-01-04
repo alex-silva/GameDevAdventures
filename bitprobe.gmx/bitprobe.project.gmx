@@ -6,6 +6,13 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\sndAbertura</sound>
+    <sound>sound\sndColorShift</sound>
+    <sound>sound\sndJump</sound>
+    <sound>sound\sndStep1</sound>
+    <sound>sound\sndBoost</sound>
+    <sound>sound\sndDying</sound>
+    <sound>sound\sndPowerUp</sound>
+    <sound>sound\sndNextLevel</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
