@@ -107,7 +107,7 @@ global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
 //toca música de abertura
-PlaySound(sndAbertura);
+PlaySound(sndAbertura, true);
 //Cria player persistente
 instance_create(352, 32, objPlayer);
 objPlayer.visible = false;
