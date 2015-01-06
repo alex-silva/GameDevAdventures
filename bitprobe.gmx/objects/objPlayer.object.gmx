@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-gui_x[0] = 96;
-gui_y[0] = (display_get_gui_height() - 96); 
-gui_x[1] = (display_get_gui_width() - 96); 
-gui_y[1] = (display_get_gui_height() - 96); 
+gui_x[0] = 150;
+gui_y[0] = (display_get_gui_height() - 150); 
+gui_x[1] = (display_get_gui_width() - 150); 
+gui_y[1] = (display_get_gui_height() - 150); 
 stick_x[0] = gui_x[0]; 
 stick_y[0] = gui_y[0]; 
 stick_x[1] = gui_x[1]; 
@@ -38,8 +38,16 @@ st_pressed[0] = -1;
 st_pressed[1] = -1; 
 st_radius = 80; 
 vdir = 0;
+stick_offset=40;
+stick_direction = point_direction(gui_x[0], gui_y[0], stick_x[0], stick_y[0]);
+stick_distance = point_distance(gui_x[0], gui_y[0], stick_x[0], stick_y[0]);
+
+//virtual_key_add(gui_x[0],gui_y[0],64,64,vk_left);
+//virtual_key_add(gui_x[0]+64,gui_y[0],64,64,vk_right);
 
 global.playerVivo = true;
+
+
 
 cor = Cor.White
 
@@ -110,10 +118,13 @@ if (global.pause)
     image_index = 0;
     exit;
 }
+
 //##########################################################################
 //Analog Stick
 stick_x[0] = gui_x[0];
 stick_y[0] = gui_y[0];
+stick_x[1] = gui_x[1];
+stick_y[1] = gui_y[1];
 if st_pressed[0] = -1
    {
    for (i = 0; i &lt; 5; i++;)
@@ -123,12 +134,13 @@ if st_pressed[0] = -1
          var tx, ty;
          tx = scr_mouse_gui_x(device_mouse_raw_x(i));
          ty = scr_mouse_gui_y(device_mouse_raw_y(i));
-         if point_distance(tx, ty, gui_x[0], gui_y[0]) &lt; st_radius
+         if point_distance(tx, ty, gui_x[0], gui_y[0]) &lt; st_radius+300
             {
             if st_pressed[1] != i                {
                st_pressed[0] = i;
                break;
-               }             }
+               }            
+               }
          }
       }
    }
@@ -161,7 +173,7 @@ if st_pressed[1] = -1
          var tx, ty;
          tx = scr_mouse_gui_x(device_mouse_raw_x(i));
          ty = scr_mouse_gui_y(device_mouse_raw_y(i));
-         if point_distance(tx, ty, gui_x[1], gui_y[1]) &lt; st_radius
+         if point_distance(tx, ty, gui_x[1], gui_y[1]) &lt; st_radius +300
             {
             if st_pressed[0] != i                {
                st_pressed[1] = i;
@@ -199,11 +211,15 @@ if (global.playerVivo)
     move = KEY_RIGHT + KEY_LEFT;
     
     // Define movimentação por stick
-    if (stick_x[0] &gt; gui_x[0]+20 )
-        move = 1;
-    else if (stick_x[0] &lt; gui_x[0]-20 )
-        move = -1;
-        
+    stick_direction = point_direction(gui_x[0], gui_y[0], stick_x[0], stick_y[0]);
+    stick_distance = point_distance(gui_x[0], gui_y[0], stick_x[0], stick_y[0]);
+    
+    if (stick_distance &gt; stick_offset){
+        if (stick_direction &gt;= 300 ||  stick_direction &lt;= 60)
+            move = 1;
+        else if (stick_direction &gt;= 120 &amp;&amp;  stick_direction &lt;= 240)
+            move = -1;
+    }    
     horizontalSpeed = move * moveSpeed;
     
     // faz personagem cair gradativamente
@@ -214,22 +230,25 @@ if (global.playerVivo)
     if (place_meeting(x, y + 1, objPropulsor)
       || place_meeting(x, y + 1, objFloor))
     {
-        if (stick_y[0] &lt; gui_y[0]-50 || KEY_JUMP)
-        {
-        //(display_get_gui_height() - 100))
-            verticalSpeed = -jumpSpeed;
-            if (jumpSpeed == jumpSpeedPadrao)
-                PlaySound(sndJump, false);
+        if ((stick_distance &gt; stick_offset)|| KEY_JUMP){
+            if ((stick_direction &gt; 20 &amp;&amp;  stick_direction &lt; 160) || KEY_JUMP)
+            {
+            //(display_get_gui_height() - 100))
+                verticalSpeed = -jumpSpeed;
+                if (jumpSpeed == jumpSpeedPadrao)
+                    PlaySound(sndJump, false);
+                else
+                    PlaySound(sndBoost, false);
+            }
             else
-                PlaySound(sndBoost, false);
+            {
+                //som do step do player, se estiver movimentando-se
+                if (move != 0 &amp;&amp; !audio_is_playing(sndStep1))
+                    PlaySound(sndStep1, false);
+                verticalSpeed = 0;
+            }
         }
-        else
-        {
-            //som do step do player, se estiver movimentando-se
-            if (move != 0 &amp;&amp; !audio_is_playing(sndStep1))
-                PlaySound(sndStep1, false);
-            verticalSpeed = 0;
-        }
+        
     }
     // retorna velocidade de pulo ao normal após utilizar propulsor
     if !(place_meeting(x, y + 1, objPropulsor))
@@ -283,21 +302,24 @@ if (global.playerVivo)
     else image_index = 0;
     
     //verifica se trocou de cor pelo stick
-    if (stick_x[1] &lt; 64 &amp;&amp; stick_y[1] &gt;= (display_get_gui_height() - 100))
-    {
-        if(global.playerStats[? "PlayerRed"])
-            self.cor = Cor.Red;
+    stick_direction = point_direction(gui_x[1], gui_y[1], stick_x[1], stick_y[1]);
+    stick_distance = point_distance(gui_x[1], gui_y[1], stick_x[1], stick_y[1]);
+    if (stick_distance &gt; stick_offset){
+        if (stick_direction &gt; 150 &amp;&amp;  stick_direction &lt; 270)
+        {
+            if(global.playerStats[? "PlayerRed"])
+                self.cor = Cor.Red;
+        }
+        else if (stick_direction &lt; 30 ||  stick_direction &gt;= 270)
+        {
+            if(global.playerStats[? "PlayerBlue"])
+                self.cor = Cor.Blue;
+        }
+        else if (stick_direction &gt;= 30 &amp;&amp;  stick_direction &lt;= 150)
+            if(global.playerStats[? "PlayerGreen"])
+                self.cor = Cor.Green;    
     }
-    else if (stick_x[1] &gt; 64 &amp;&amp; stick_y[1] &gt;= (display_get_gui_height() - 100))
-    {
-        if(global.playerStats[? "PlayerBlue"])
-            self.cor = Cor.Blue;
-    }
-    else if (stick_y[1] &lt; (display_get_gui_height() - 100))
-        if(global.playerStats[? "PlayerGreen"])
-            self.cor = Cor.Green;    
     TrocaSpritePlayer();
-
 }
 </string>
           </argument>
@@ -492,6 +514,9 @@ draw_circle_color(stick_x[0], stick_y[0], 20, c_lime, c_lime, false);
 draw_circle_color(gui_x[1], gui_y[1], st_radius, c_lime, c_lime, false);
 draw_circle_color(stick_x[1], stick_y[1], 20, c_lime, c_lime, false);
 draw_set_alpha(1);
+
+//draw_sprite(sprLeft,0,gui_x[0], gui_y[0]);
+//draw_sprite(sprRight,0,gui_x[0]+64, gui_y[0]);
 </string>
           </argument>
         </arguments>

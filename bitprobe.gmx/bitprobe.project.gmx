@@ -94,6 +94,8 @@
     </sprites>
     <sprite>sprites\sprController</sprite>
     <sprite>sprites\sprite46</sprite>
+    <sprite>sprites\sprLeft</sprite>
+    <sprite>sprites\sprRight</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -149,6 +151,9 @@
     <script>scripts\LoadScreen.gml</script>
     <script>scripts\scr_mouse_gui_x.gml</script>
     <script>scripts\scr_mouse_gui_y.gml</script>
+    <scripts name="Controlls">
+      <script>scripts\AnalogStick.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <objects name="Sphere">
@@ -230,9 +235,9 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmMapa11</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel11</room>
-    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>
     <room>rooms\rmLevel14</room>
@@ -240,10 +245,6 @@
     <room>rooms\rmLevel1B</room>
     <room>rooms\rm_Teste</room>
   </rooms>
-  <constants number="2">
-    <constant name="GM_build_date">41969,0573544792</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
