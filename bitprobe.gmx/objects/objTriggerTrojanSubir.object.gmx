@@ -31,7 +31,8 @@ if (instance_exists(objTrojan))
     with (objTrojan)
     {
         isMoving = false;
-        path_start(pathTrojanSubir, moveSpeed, 2, true);
+        path_start(pathTrojanSubir, moveSpeed, 0, true);
+        path_clear_points(pathTrojanSubir);
     }
 }
 </string>

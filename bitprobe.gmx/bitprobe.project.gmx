@@ -103,9 +103,7 @@
     <background>background\bgdMapa11</background>
   </backgrounds>
   <paths name="paths">
-    <path>paths\path0</path>
     <path>paths\pathTrojanSubir</path>
-    <path>paths\path2</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\TrocaSpritePlayer.gml</script>
