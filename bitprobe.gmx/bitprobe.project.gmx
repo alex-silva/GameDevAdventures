@@ -96,6 +96,11 @@
     <sprite>sprites\sprite46</sprite>
     <sprite>sprites\sprLeft</sprite>
     <sprite>sprites\sprRight</sprite>
+    <sprites name="Ball">
+      <sprite>sprites\sprBallBlue</sprite>
+      <sprite>sprites\sprBallGreen</sprite>
+      <sprite>sprites\sprBallRed</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -154,24 +159,8 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <objects name="Sphere">
-      <object>objects\objSphere</object>
-      <object>objects\objMovingSphere</object>
-    </objects>
     <objects name="Floor">
       <object>objects\objFloor</object>
-    </objects>
-    <objects name="Spike">
-      <object>objects\obj_Spike_Alternating</object>
-      <object>objects\obj_Spike_Alternating_Red_Green</object>
-      <object>objects\objSpike</object>
-      <object>objects\objAlternatingSpike</object>
-      <object>objects\objMovingSpike</object>
-      <object>objects\objMovingAlternatingSpike</object>
-    </objects>
-    <objects name="Barrier">
-      <object>objects\objBarrier</object>
-      <object>objects\objMovingBarrier</object>
     </objects>
     <objects name="Door">
       <object>objects\objDoor</object>
@@ -227,14 +216,36 @@
       <object>objects\objTriggerTrojanParar</object>
       <object>objects\objTriggerTrojanSubir</object>
     </objects>
+    <objects name="Interactives">
+      <objects name="Ball">
+        <object>objects\objBall</object>
+      </objects>
+      <objects name="Barrier">
+        <object>objects\objBarrier</object>
+        <object>objects\objAlternatingBarrier</object>
+        <object>objects\objMovingBarrier</object>
+      </objects>
+      <objects name="Spike">
+        <object>objects\obj_Spike_Alternating</object>
+        <object>objects\obj_Spike_Alternating_Red_Green</object>
+        <object>objects\objSpike</object>
+        <object>objects\objAlternatingSpike</object>
+        <object>objects\objMovingSpike</object>
+        <object>objects\objMovingAlternatingSpike</object>
+      </objects>
+      <objects name="Sphere">
+        <object>objects\objSphere</object>
+        <object>objects\objMovingSphere</object>
+      </objects>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmMapa11</room>
     <room>rooms\rmMenuInicial</room>
+    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>

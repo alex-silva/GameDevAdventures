@@ -26,7 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///faz trojan parar
-other.isMoving = false;
+if (instance_exists(objTrojan))
+{
+    objTrojan.isMoving = false;
+}
+//destrói trigger pois este só deve ser acionado uma vez
+instance_destroy();
 </string>
           </argument>
         </arguments>
