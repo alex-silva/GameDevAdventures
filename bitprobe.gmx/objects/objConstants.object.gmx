@@ -112,6 +112,15 @@ sound_volume(sndAbertura, 0.7);
 //Cria player persistente
 instance_create(352, 32, objPlayer);
 objPlayer.visible = false;
+
+
+//Variáveis de controle
+globalvar keyLeft;keyLeft = 0;
+globalvar keyRight;keyRight = 0;
+globalvar keyJump;keyJump = 0;
+globalvar keyRed;keyRed = 0;
+globalvar keyGreen;keyGreen = 0;
+globalvar keyBlue;keyBlue = 0;
 </string>
           </argument>
         </arguments>

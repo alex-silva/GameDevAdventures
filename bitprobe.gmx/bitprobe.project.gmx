@@ -183,13 +183,13 @@
       <object>objects\objPlayerMapa</object>
     </objects>
     <objects name="Control">
-      <object>objects\obj_Controller</object>
+      <object>objects\objController</object>
       <object>objects\obj_Death</object>
       <object>objects\obj_Spike_Timeline</object>
       <object>objects\objRoom</object>
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
-      <object>objects\objAnalog</object>
+      <object>objects\objAnalogStick</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -234,13 +234,13 @@
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
     <room>rooms\rmMapa11</room>
-    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>
     <room>rooms\rmLevel14</room>
     <room>rooms\rmLevel15</room>
     <room>rooms\rmLevel1B</room>
+    <room>rooms\rmMenuInicial</room>
     <room>rooms\rm_Teste</room>
   </rooms>
   <help>

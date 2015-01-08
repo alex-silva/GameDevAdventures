@@ -357,7 +357,6 @@
     <instance objName="objFloor" x="32" y="384" name="inst_901C609E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="64" y="384" name="inst_8BC13D33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="176" y="256" name="inst_E8C5CD3C" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.50;&#xA;scaleY = 2.70;&#xA;" scaleX="0.439999997615814" scaleY="2.70000004768372" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Controller" x="0" y="0" name="inst_D006046B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="1376" w="32" h="32" xo="0" yo="160" id="10005644" name="inst_74C7C435" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
