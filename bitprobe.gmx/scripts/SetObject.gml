@@ -113,5 +113,16 @@ else if (object_get_name(object_index) == "objPropulsor")
     else
         sprite = sprPropulsor;
 }
+else if (object_get_name(object_index) == "objBall")
+{
+    if (corObj == Cor.Red)
+        sprite = sprBallRed;
+    else if (corObj == Cor.Green)
+        sprite = sprBallGreen;
+    else if (corObj == Cor.Blue)
+        sprite = sprBallBlue;
+//    else
+//        sprite = sprBallWhite;
+}
 sprite_index = sprite;
 self.cor = corObj;

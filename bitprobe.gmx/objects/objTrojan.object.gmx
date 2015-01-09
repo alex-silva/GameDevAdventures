@@ -47,6 +47,7 @@ isMoving = true;
 //captura última imagem, para quando mudar de cor para branco
 imgIndexAnt = 0;
 pertoPlayer = false;
+isRage = false;
 </string>
           </argument>
         </arguments>
@@ -75,9 +76,40 @@ if (global.pause)
     image_index = 0;
     exit;
 }
-      
+
+//Determina cor atual
+if (image_speed &gt; 0)
+{
+    if (image_index &lt; 8)
+        cor = Cor.Red;
+    else if (image_index &lt; 16)
+        cor = Cor.Green;
+    else if (image_index &lt; 24)
+        cor = Cor.Blue;
+    else if (!pertoPlayer)
+        image_index = 0;
+    else if (pertoPlayer)
+        cor = Cor.White;
+}
+
+if (isRage)
+{
+    //ativa cabeça que troca de cores lentamente
+    objTrojanHead.visible = true;
+    //diminui velocidade se estiver perto do player
+    if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 64 &amp;&amp; image_index &lt; 24)
+        image_speed = 0.3;
+    else
+        image_speed = 1;
+    exit;
+}
 if (isMoving == true)
     x+=moveSpeed;
+else
+{
+    image_index = 8;
+    cor = Cor.Green;
+}
     
 global.bossDirection = Direction.Right;
 
@@ -93,20 +125,6 @@ else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; 64 &amp;&amp; pertoP
 {
     pertoPlayer = false;
     image_index = imgIndexAnt;
-}
-//Determina cor atual
-if (image_speed &gt; 0)
-{
-    if (image_index &lt; 8)
-        cor = Cor.Red;
-    else if (image_index &lt; 16)
-        cor = Cor.Green;
-    else if (image_index &lt; 24)
-        cor = Cor.Blue;
-    else if (!pertoPlayer)
-        image_index = 0;
-    else if (pertoPlayer)
-        cor = Cor.White;
 }
 //TrocaSpriteBoss();
 </string>

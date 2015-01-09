@@ -29,17 +29,11 @@
 if (instance_exists(objAlternatingBarrier))
 {
     objAlternatingBarrier.triggered = true;
+    if (instance_exists(objBall))
+        objBall.triggered = true;
 }
 
-//faz trojan subir para segundo nivel
-/*if (instance_exists(objTrojan))
-{
-    with (objTrojan)
-    {
-        isMoving = false;
-        path_start(pathTrojanSubir, moveSpeed, 0, true);
-    }
-}*/
+
 //destrói trigger pois este só deve ser acionado uma vez
 instance_destroy();
 </string>

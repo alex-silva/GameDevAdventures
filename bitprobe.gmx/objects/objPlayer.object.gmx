@@ -210,6 +210,32 @@ if (global.playerVivo)
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="objTrojanHead">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com cabeça do boss, VICTORY!
+if (global.playerVivo)
+    if (scrCollisionCor(cor, other.cor))
+        room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="objSphere">
       <action>
         <libid>1</libid>
@@ -281,7 +307,7 @@ if (global.playerVivo)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Colisão com boss, restarta room
+            <string>/// Colisão com boss, restarta room 
 if (global.playerVivo)
     if (scrCollisionCor(cor, other.cor))
         scrCollisionDeath();
@@ -462,8 +488,9 @@ global.keyJump = !global.keyJump;
             <string>/// Muda cor para azul
 if(global.playerStats[? "PlayerBlue"])
 {
-    self.cor = Cor.Blue;
-    sprite_index = TrocaSpritePlayer();
+     global.keyBlue = true;
+     global.keyRed = false;
+     global.keyGreen = false;
      PlaySound(sndColorShift,false)
 }
 </string>
@@ -491,8 +518,9 @@ if(global.playerStats[? "PlayerBlue"])
             <string>/// Muda cor para verde
 if(global.playerStats[? "PlayerGreen"])
 {
-    self.cor = Cor.Green;
-    sprite_index = TrocaSpritePlayer();
+     global.keyGreen = true;
+     global.keyRed = false;
+     global.keyBlue = false;
      PlaySound(sndColorShift,false)
 }
 </string>
@@ -520,8 +548,9 @@ if(global.playerStats[? "PlayerGreen"])
             <string>/// Muda cor para vermelho
 if(global.playerStats[? "PlayerRed"])
 {
-    self.cor = Cor.Red;
-    sprite_index = TrocaSpritePlayer();
+    global.keyRed = true;
+    global.keyBlue = false;
+    global.keyGreen = false;
     PlaySound(sndColorShift,false)
 }
 </string>
