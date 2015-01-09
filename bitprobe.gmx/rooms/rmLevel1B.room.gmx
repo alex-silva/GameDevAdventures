@@ -53,12 +53,12 @@
   <instances>
     <instance objName="objBarrier" x="480" y="432" name="inst_296AEED0" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.25;&#xA;scaleY = 4;&#xA;" scaleX="0.25" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerTrojanSubir" x="2240" y="148" name="inst_3872B1B9" locked="0" code="" scaleX="1" scaleY="0.75" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorStart" x="320" y="416" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDoorStart" x="1856" y="96" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="2272" y="32" name="inst_A4A04212" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerTrojanParar" x="2048" y="352" name="inst_1D41B065" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrojan" x="64" y="464" name="inst_5996AEE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="976" y="432" name="inst_914424F6" locked="0" code="barrierSprite = sprBarrierBlue;&#xA;cor = Cor.Blue;&#xA;scaleX = 0.25;&#xA;scaleY = 4;&#xA;" scaleX="0.25" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="0" y="64" name="inst_90453E2C" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
+    <instance objName="objAlternatingBarrier" x="2048" y="192" name="inst_2EA10B23" locked="0" code="barrierSprite = sprBarrierRed;&#xA;combinacao = Combinacao.RedGreen;&#xA;cor = Cor.Red;&#xA;scaleX = 0.25;&#xA;isTriggerActivated = true;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="-16" y="0" name="inst_25D47F0A" locked="0" code="" scaleX="100" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="32" name="inst_A44496C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="480" name="inst_8C57A24D" locked="0" code="" scaleX="100" scaleY="1" colour="4294967295" rotation="0"/>
@@ -81,7 +81,18 @@
     <instance objName="objBarrier" x="1920" y="160" name="inst_29F734EF" locked="0" code="barrierSprite = sprBarrierGreen;//white&#xA;cor = Cor.White;&#xA;scaleX = 0.50;&#xA;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBall" x="2080" y="128" name="inst_E969F273" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="2112" y="160" name="inst_67C0327B" locked="0" code="barrierSprite = sprBarrierGreen;//white&#xA;cor = Cor.White;&#xA;scaleX = 0.625;&#xA;" scaleX="0.625" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objAlternatingBarrier" x="2048" y="160" name="inst_2EA10B23" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;combinacao = Combinacao.RedGreen;&#xA;image_index = 1;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;isTriggerActivated = true;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="64" name="inst_E1C0CADA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="96" name="inst_93666E63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="160" name="inst_6A43E73A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="192" name="inst_68E61B00" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="224" name="inst_1CCDD893" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="256" name="inst_D9EE15FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="288" name="inst_D3B567D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="320" name="inst_1596B959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="352" name="inst_55FC045C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="384" name="inst_0855F6FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="416" name="inst_6B339729" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objFloor" x="0" y="448" name="inst_A88F62C8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="0" w="32" h="32" xo="0" yo="96" id="10005646" name="inst_B3040658" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

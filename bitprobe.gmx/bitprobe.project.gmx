@@ -244,6 +244,7 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel11</room>
     <room>rooms\rmLevel12</room>
@@ -251,7 +252,6 @@
     <room>rooms\rmLevel14</room>
     <room>rooms\rmLevel15</room>
     <room>rooms\rmLevel1B</room>
-    <room>rooms\rmMenuInicial</room>
     <room>rooms\rm_Teste</room>
   </rooms>
   <help>

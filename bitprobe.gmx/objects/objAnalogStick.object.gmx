@@ -62,8 +62,7 @@ stick_distance = point_distance(gui_x[0], gui_y[0], stick_x[0], stick_y[0]);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//##########################################################################
-//Analog Stick
+            <string>///Analog Stick
 stick_x[0] = gui_x[0];
 stick_y[0] = gui_y[0];
 stick_x[1] = gui_x[1];

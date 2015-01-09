@@ -39,6 +39,8 @@ if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
         
 }
 //considerar
+
+///pq criar o objeto toda fase se podemos executar o código dele aqui?
 instance_create(0,0,objController);
 //LoadScreen();
 </string>

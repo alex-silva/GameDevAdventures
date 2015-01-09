@@ -26,23 +26,20 @@
           <argument>
             <kind>1</kind>
             <string>///faz plataforma mudar de cor e bola cair no trojan
-/*if (instance_exists(objAlternatingBarrier))
+if (instance_exists(objAlternatingBarrier))
 {
     objAlternatingBarrier.triggered = true;
 }
 
-exit;
-
-*/
 //faz trojan subir para segundo nivel
-if (instance_exists(objTrojan))
+/*if (instance_exists(objTrojan))
 {
     with (objTrojan)
     {
         isMoving = false;
         path_start(pathTrojanSubir, moveSpeed, 0, true);
     }
-}
+}*/
 //destrói trigger pois este só deve ser acionado uma vez
 instance_destroy();
 </string>
