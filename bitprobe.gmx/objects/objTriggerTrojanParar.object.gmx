@@ -29,6 +29,7 @@
 if (instance_exists(objTrojan))
 {
     objTrojan.isMoving = false;
+    objTrojan.x = round(objTrojan.x);
 }
 //destrói trigger pois este só deve ser acionado uma vez
 instance_destroy();

@@ -58,8 +58,6 @@ if (image_speed &gt; 0)
         cor = Cor.Green;
     else if (image_index &lt; 3)
         cor = Cor.Blue;
-    else
-        cor = Cor.White;
 }
 </string>
           </argument>

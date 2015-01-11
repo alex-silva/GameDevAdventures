@@ -79,9 +79,11 @@ if (triggered)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///destrói ball e ativa mode RAGE do boss
+            <string>///destrói ball e ativa modo RAGE do boss
 instance_destroy();
 other.isRage = true;
+//cria cabeca, que muda de cor lentamente
+instance_create(other.x, other.y, objTrojanHead);
 //faz trojan subir para segundo nivel
 /*if (instance_exists(objTrojan))
 {

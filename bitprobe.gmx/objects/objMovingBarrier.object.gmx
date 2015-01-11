@@ -109,7 +109,7 @@ if (sentido == 1)
     x+=horizontalSpeed;
 else
     y+=horizontalSpeed;
-    
+
 if (instance_exists(objPlayer))
 {
     objPlayer.verCarry = 0;
@@ -120,13 +120,13 @@ if (instance_exists(objPlayer))
         mask_index = -1;
     
     // se o player está acima da barrier atual
-    if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y
+    if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y + 6
      &amp;&amp; place_meeting(x,y-1,objPlayer))
     {
         if (global.keyJump)
         {
             objPlayer.y -= objPlayer.jumpSpeed;
-            objPlayer.verCarry = 0;
+
         }
         else
         {
