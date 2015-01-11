@@ -91,11 +91,7 @@
     <sprite>sprites\sprBack</sprite>
     <sprites name="Trojan">
       <sprite>sprites\sprTrojanMove</sprite>
-<<<<<<< HEAD
-      <sprite>sprites\sprTrojanStatic</sprite>
-=======
       <sprite>sprites\sprTrojanHead</sprite>
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
     </sprites>
     <sprite>sprites\sprController</sprite>
     <sprite>sprites\sprite46</sprite>

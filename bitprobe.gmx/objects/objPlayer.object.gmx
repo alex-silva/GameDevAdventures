@@ -210,9 +210,6 @@ if (global.playerVivo)
         </arguments>
       </action>
     </event>
-<<<<<<< HEAD
-    <event eventtype="4" ename="objSphere">
-=======
     <event eventtype="4" ename="objTrojanHead">
       <action>
         <libid>1</libid>
@@ -294,7 +291,6 @@ if (global.playerVivo)
       </action>
     </event>
     <event eventtype="4" ename="objTrojan">
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -311,81 +307,16 @@ if (global.playerVivo)
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
-            <string>/// Colisão com sphere e teletransporta
-if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
-{
-    x = objRoom.portais[other.portalDestino].x;
-    y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
-}
-=======
             <string>/// Colisão com boss, restarta room 
 if (global.playerVivo)
     if (scrCollisionCor(cor, other.cor))
         scrCollisionDeath();
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objSpike">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com spike
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-         scrCollisionDeath();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objTrojan">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com boss, restarta room
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        scrCollisionDeath();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-<<<<<<< HEAD
     <event eventtype="4" ename="objPowerUp">
-=======
-    <event eventtype="4" ename="objFloor">
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -402,7 +333,6 @@ if (global.playerVivo)
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>///Habilita alternancia de cor
 switch(other.cor)
 {
@@ -414,19 +344,12 @@ switch(other.cor)
 sprite_index = TrocaSpritePlayer();
 with (other) instance_destroy();
 PlaySound(sndPowerUp,false);
-=======
-            <string>//fazer algo interessante quando a cor for a mesma
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-<<<<<<< HEAD
     <event eventtype="4" ename="objDoorEnd">
-=======
-    <event eventtype="5" enumb="39">
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -443,23 +366,14 @@ PlaySound(sndPowerUp,false);
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>///Vai para próximo level
 room_goto_next();
-=======
-            <string>///ativa variável de movimentação
-global.keyRight = !global.keyRight;
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-<<<<<<< HEAD
     <event eventtype="4" ename="objFloor">
-=======
-    <event eventtype="5" enumb="37">
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -476,12 +390,55 @@ global.keyRight = !global.keyRight;
         <arguments>
           <argument>
             <kind>1</kind>
-<<<<<<< HEAD
             <string>//fazer algo interessante quando a cor for a mesma
-=======
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///ativa variável de movimentação
+global.keyRight = !global.keyRight;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="5" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///ativa variável de movimentação
 global.keyLeft = !global.keyLeft;
->>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
 </string>
           </argument>
         </arguments>
