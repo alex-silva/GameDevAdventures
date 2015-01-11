@@ -203,6 +203,7 @@ if (stick_distance &gt; stick_offset){
         global.keyGreen = 1;
         global.keyBlue = 0;  
     }
+    PlaySound(sndColorShift, false, false);
 }
 </string>
           </argument>
