@@ -31,7 +31,7 @@ direcao = Direction.Right;
 moveSpeed = 3;
 initialX = x;
 initialY = y;
-moveSpeedIncr = moveSpeed;
+moveSpeedIncr = 0;
 delay = 0;
 delayed = false;
 </string>
@@ -92,10 +92,10 @@ if (delay &lt;= 0)
     moveSpeedIncr += 0.05;
     switch (direcao)
     {
-        case Direction.Up    : y-=moveSpeedIncr; break;
-        case Direction.Down  : y+=moveSpeedIncr; break;
-        case Direction.Left  : x-=moveSpeedIncr; break;
-        case Direction.Right : x+=moveSpeedIncr; break;
+        case Direction.Up    : y-=moveSpeed - moveSpeedIncr; break;
+        case Direction.Down  : y+=moveSpeed + moveSpeedIncr; break;
+        case Direction.Left  : x-=moveSpeed - moveSpeedIncr; break;
+        case Direction.Right : x+=moveSpeed + moveSpeedIncr; break;
     }
 }
 </string>
@@ -132,7 +132,7 @@ if (scrCollisionCor(self.cor, other.cor))
     }
     x = initialX;
     y = initialY;
-    moveSpeedIncr = moveSpeed;
+    moveSpeedIncr = 0;
 }
 </string>
           </argument>

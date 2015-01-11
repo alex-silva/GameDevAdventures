@@ -72,8 +72,12 @@ if (global.pause) exit;
 
 if (instance_exists(objPlayer))
 {
+    if scrCollisionCor(self.cor, objPlayer.cor)
+            mask_index = barrierSprite;
+        else
+            mask_index = -1;
     // se o player está abaixo da barrier
-    if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
+/*    if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
     {
         if scrCollisionCor(self.cor, objPlayer.cor)
             mask_index = barrierSprite;
@@ -89,7 +93,7 @@ if (instance_exists(objPlayer))
             mask_index = -1;
     }
     else
-        mask_index = -1;
+        mask_index = -1;*/
 }
 </string>
           </argument>
