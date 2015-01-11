@@ -80,11 +80,11 @@ if (global.pause)
 //Determina cor atual
 if (image_speed &gt; 0)
 {
-    if (image_index &lt; 8)
+    if (image_index &lt; 1)
         cor = Cor.Red;
-    else if (image_index &lt; 16)
+    else if (image_index &lt; 2)
         cor = Cor.Green;
-    else if (image_index &lt; 24)
+    else if (image_index &lt; 3)
         cor = Cor.Blue;
     else if (!pertoPlayer)
         image_index = 0;
@@ -97,7 +97,7 @@ if (isRage)
     //ativa cabeça que troca de cores lentamente
     objTrojanHead.visible = true;
     //diminui velocidade se estiver perto do player
-    if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 64 &amp;&amp; image_index &lt; 24)
+    if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128 &amp;&amp; image_index &lt; 3)
         image_speed = 0.3;
     else
         image_speed = 1;
@@ -107,21 +107,21 @@ if (isMoving == true)
     x+=moveSpeed;
 else
 {
-    image_index = 8;
+    image_index = 1;
     cor = Cor.Green;
 }
     
 global.bossDirection = Direction.Right;
 
 //troca para cor branca se estiver perto do player
-if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 64 &amp;&amp; image_index &lt; 24)
+if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128 &amp;&amp; image_index &lt; 3)
 {
     pertoPlayer = true;
     imgIndexAnt = image_index;
-    image_index = 24;
+    image_index = 3;
     cor = Cor.White;
 }
-else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; 64 &amp;&amp; pertoPlayer)
+else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; 128 &amp;&amp; pertoPlayer)
 {
     pertoPlayer = false;
     image_index = imgIndexAnt;

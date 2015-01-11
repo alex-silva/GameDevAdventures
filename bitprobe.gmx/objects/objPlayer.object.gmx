@@ -210,32 +210,6 @@ if (global.playerVivo)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objTrojanHead">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com cabeça do boss, VICTORY!
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        room_goto_next();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objSphere">
       <action>
         <libid>1</libid>
@@ -258,6 +232,7 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 {
     x = objRoom.portais[other.portalDestino].x;
     y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
+    PlaySound(sndPortal,false);
 }
 </string>
           </argument>
@@ -285,6 +260,32 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 if (global.playerVivo)
     if (scrCollisionCor(cor, other.cor))
          scrCollisionDeath();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objTrojanHead">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com cabeça do boss, VICTORY!
+if (global.playerVivo)
+    if (scrCollisionCor(cor, other.cor))
+        room_goto_next();
 </string>
           </argument>
         </arguments>
