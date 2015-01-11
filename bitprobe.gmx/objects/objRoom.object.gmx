@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///Armazena variáveis das rooms
 // Grava level mais avançado
+if(IsLevel())
+    instance_create(0,0,objAnalogStick);
+
 if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
 {
     global.rooms[? "RoomAtual"] = room;
@@ -36,6 +39,9 @@ if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
         
 }
 //considerar
+
+///pq criar o objeto toda fase se podemos executar o código dele aqui?
+instance_create(0,0,objController);
 //LoadScreen();
 </string>
           </argument>

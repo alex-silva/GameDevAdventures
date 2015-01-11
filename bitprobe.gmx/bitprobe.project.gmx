@@ -91,7 +91,11 @@
     <sprite>sprites\sprBack</sprite>
     <sprites name="Trojan">
       <sprite>sprites\sprTrojanMove</sprite>
+<<<<<<< HEAD
       <sprite>sprites\sprTrojanStatic</sprite>
+=======
+      <sprite>sprites\sprTrojanHead</sprite>
+>>>>>>> e8358406f35dd4a2c25351c347094b08b39d11fc
     </sprites>
     <sprite>sprites\sprController</sprite>
     <sprite>sprites\sprite46</sprite>
@@ -123,24 +127,6 @@
     <scripts name="Spike">
       <script>scripts\scr_Spike_Troca_Cor.gml</script>
     </scripts>
-    <scripts name="Sprites">
-      <script>scripts\SetSpritesFloor.gml</script>
-      <script>scripts\SetSpritesNPCMale.gml</script>
-      <script>scripts\SetSpritesNPCFemale.gml</script>
-      <script>scripts\SetSpritesSkraggleKlaw.gml</script>
-      <script>scripts\SetSpritesScorpion.gml</script>
-      <script>scripts\SetSpritesSnowScorpion.gml</script>
-      <script>scripts\SetSpritesDesertScorpion.gml</script>
-      <script>scripts\SetSpritesSnowMonster.gml</script>
-      <script>scripts\SetSpritesForestMonster.gml</script>
-    </scripts>
-    <scripts name="Items">
-      <script>scripts\ItemGetDefine.gml</script>
-      <script>scripts\ItemGetRubbishSword.gml</script>
-      <script>scripts\ItemGetAwesomeSword.gml</script>
-      <script>scripts\ItemGetGoldenSword.gml</script>
-      <script>scripts\ItemGetLifePotion.gml</script>
-    </scripts>
     <scripts name="Collision">
       <script>scripts\scrCollisionCor.gml</script>
       <script>scripts\scrCollisionDeath.gml</script>
@@ -155,7 +141,7 @@
     <script>scripts\LoadScreen.gml</script>
     <script>scripts\scr_mouse_gui_x.gml</script>
     <script>scripts\scr_mouse_gui_y.gml</script>
-    <scripts name="Controlls">
+    <scripts name="Controls">
       <script>scripts\AnalogStick.gml</script>
     </scripts>
   </scripts>
@@ -173,13 +159,13 @@
       <object>objects\objPlayerMapa</object>
     </objects>
     <objects name="Control">
-      <object>objects\obj_Controller</object>
+      <object>objects\objController</object>
       <object>objects\obj_Death</object>
       <object>objects\obj_Spike_Timeline</object>
       <object>objects\objRoom</object>
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
-      <object>objects\objAnalog</object>
+      <object>objects\objAnalogStick</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -212,6 +198,7 @@
     </objects>
     <objects name="Boss">
       <object>objects\objTrojan</object>
+      <object>objects\objTrojanHead</object>
     </objects>
     <objects name="Triggers">
       <object>objects\objTriggerTrojanParar</object>
@@ -253,6 +240,7 @@
     <room>rooms\rmLevel14</room>
     <room>rooms\rmLevel15</room>
     <room>rooms\rmLevel1B</room>
+    <room>rooms\rmMapa22</room>
     <room>rooms\rm_Teste</room>
   </rooms>
   <help>

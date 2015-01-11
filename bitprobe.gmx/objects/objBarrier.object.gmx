@@ -59,7 +59,7 @@ rot = 0;
 if (global.pause) exit;
 
 //colide com boss Trojan, se existir
-if (instance_exists(objTrojan))
+/*if (instance_exists(objTrojan))
 {
     if (objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &gt;= x
      &amp;&amp; objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &lt;= x +
@@ -68,7 +68,7 @@ if (instance_exists(objTrojan))
         mask_index = barrierSprite;
         exit;
     }
-}
+}*/
 
 if (instance_exists(objPlayer))
 {

@@ -345,7 +345,7 @@
     <instance objName="objSpike" x="512" y="448" name="inst_7E45E4C0" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="448" y="448" name="inst_0738FDEC" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="448" y="448" name="inst_153112C6" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingBarrier" x="320" y="288" name="inst_43DBCECA" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;&#xA;distancia = 200;&#xA;direcao = 1;&#xA;sentido = 1;&#xA;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingBarrier" x="488" y="288" name="inst_43DBCECA" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;&#xA;distancia = 200;&#xA;direcao = 1;&#xA;sentido = 1;&#xA;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="528" y="416" name="inst_E13950A9" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;" scaleX="0.5" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="736" y="416" name="inst_331DF825" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="800" y="416" name="inst_2215C057" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.37;&#xA;scaleY = 2.4;&#xA;rot = 90;" scaleX="0.370000004768372" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
@@ -372,7 +372,6 @@
     <instance objName="objBarrier" x="256" y="160" name="inst_AA649ADF" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.50;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.5" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="160" y="160" name="inst_E55B6F6F" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.5" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="776" y="176" name="inst_E2240935" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.10;&#xA;" scaleX="0.100000001490116" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Controller" x="0" y="0" name="inst_F24B85CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="576" w="32" h="32" xo="0" yo="96" id="10005192" name="inst_65FDD867" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
