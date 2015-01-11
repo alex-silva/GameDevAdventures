@@ -123,7 +123,7 @@ if (global.playerVivo)
     if (place_meeting(x, y + 1, objPropulsor)
       || place_meeting(x, y + 1, objFloor))
     {
-        if (global.keyJump|| KEY_JUMP){
+        if (global.keyJump){
             verticalSpeed = -jumpSpeed;
             if (jumpSpeed == jumpSpeedPadrao)
                 PlaySound(sndJump, false);
@@ -171,7 +171,7 @@ if (global.playerVivo)
     
     // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
     x += hspFinal;    
-    if (verCarry == 0 || KEY_JUMP)
+    if (verCarry == 0 || global.keyJump)
         y += verticalSpeed;
     
     //Anima sprite
@@ -205,32 +205,6 @@ if (global.playerVivo)
     }
     TrocaSpritePlayer();
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objTrojanHead">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com cabeça do boss, VICTORY!
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -285,6 +259,32 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 if (global.playerVivo)
     if (scrCollisionCor(cor, other.cor))
          scrCollisionDeath();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objTrojanHead">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com cabeça do boss, VICTORY!
+if (global.playerVivo)
+    if (scrCollisionCor(cor, other.cor))
+        room_goto_next();
 </string>
           </argument>
         </arguments>

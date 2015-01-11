@@ -53,7 +53,7 @@
   <instances>
     <instance objName="objBarrier" x="480" y="432" name="inst_296AEED0" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.25;&#xA;scaleY = 4;" scaleX="0.25" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerTrojanSubir" x="2240" y="148" name="inst_3872B1B9" locked="0" code="" scaleX="1" scaleY="0.75" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorStart" x="320" y="320" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDoorStart" x="320" y="416" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="2272" y="32" name="inst_A4A04212" locked="0" code="" scaleX="1" scaleY="14" colour="4294967295" rotation="0"/>
     <instance objName="objTriggerTrojanParar" x="2048" y="352" name="inst_1D41B065" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objTrojan" x="64" y="464" name="inst_5996AEE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -63,7 +63,7 @@
     <instance objName="objFloor" x="0" y="32" name="inst_A44496C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objFloor" x="0" y="480" name="inst_8C57A24D" locked="0" code="" scaleX="100" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="736" y="432" name="inst_35D20971" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;scaleY = 4;&#xA;" scaleX="0.25" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="640" y="192" name="inst_7C6C3D8A" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Down;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objMovingSpike" x="640" y="192" name="inst_7C6C3D8A" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Down;&#xA;moveSpeed = 10;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objFloor" x="0" y="128" name="inst_101A6E4B" locked="0" code="" scaleX="55" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="896" y="192" name="inst_D502563B" locked="0" code="SetObject(Cor.Green);&#xA;direcao = Direction.Down;&#xA;delay = 30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objMovingSpike" x="1152" y="192" name="inst_996604BC" locked="0" code="SetObject(Cor.Blue);&#xA;direcao = Direction.Down;&#xA;delay = 60;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>

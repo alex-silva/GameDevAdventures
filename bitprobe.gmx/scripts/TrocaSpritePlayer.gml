@@ -14,5 +14,4 @@ switch (global.playerDirection)
     case Direction.JumpRight  : sprite += "Jump"; image_xscale =  1; break;
 }
 
-show_debug_message("sprite porra " + sprite);
 sprite_index = ds_map_find_value(global.mapSprites, sprite);
