@@ -232,10 +232,8 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 {
     x = objRoom.portais[other.portalDestino].x;
     y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
-<<<<<<< HEAD
-=======
     PlaySound(sndPortal,false);
->>>>>>> 5982428c91a312e332568b727cb421a0fbcd73b4
+
 }
 </string>
           </argument>

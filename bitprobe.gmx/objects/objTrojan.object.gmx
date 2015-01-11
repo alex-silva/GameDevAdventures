@@ -37,8 +37,8 @@ verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
 moveSpeed = 6.5;
-
-image_speed = 0.3;
+imageSpeed = 0.025;
+image_speed = imageSpeed;
 global.bossDirection = Direction.Right;
 
 //na segunda parte do level, boss para
@@ -97,10 +97,10 @@ if (isRage)
     //ativa cabeça que troca de cores lentamente
     objTrojanHead.visible = true;
     //diminui velocidade se estiver perto do player
-    if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128 &amp;&amp; image_index &lt; 3)
-        image_speed = 0.3;
+    if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128)
+        image_speed = imageSpeed;
     else
-        image_speed = 1;
+        image_speed = 0.065;
     exit;
 }
 if (isMoving == true)
@@ -114,7 +114,7 @@ else
 global.bossDirection = Direction.Right;
 
 //troca para cor branca se estiver perto do player
-if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128 &amp;&amp; image_index &lt; 3)
+if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= 128)
 {
     pertoPlayer = true;
     imgIndexAnt = image_index;
