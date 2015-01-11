@@ -91,6 +91,7 @@
     <sprite>sprites\sprBack</sprite>
     <sprites name="Trojan">
       <sprite>sprites\sprTrojanMove</sprite>
+      <sprite>sprites\sprTrojanStatic</sprite>
     </sprites>
     <sprite>sprites\sprController</sprite>
     <sprite>sprites\sprite46</sprite>
