@@ -13,7 +13,7 @@
     <sound>sound\sndDying</sound>
     <sound>sound\sndPowerUp</sound>
     <sound>sound\sndNextLevel</sound>
-    <sound>sound\sound8</sound>
+    <sound>sound\sndPortal</sound>
     <sound>sound\sndStringCrash</sound>
   </sounds>
   <sprites name="sprites">
