@@ -124,10 +124,10 @@ if (delay &lt;= 0)
 if (scrCollisionCor(self.cor, other.cor))
 {
     scrParticleDeath();
-    if !(audio_is_playing(sndStringCrash) &amp;&amp; point_distance(x, y, objPlayer.x, objPlayer.y) &lt;= 128)
+    if !(audio_is_playing(sndStringCrash))
     {
-        
-        PlaySound(sndStringCrash,false);
+        audio_play_sound_at(sndStringCrash, x, y, 0, 100, 300, 1, 0, 0);
+        PlaySound(sndStringCrash,false, false);
         sound_volume(sndStringCrash,0.4);
     }
     x = initialX;

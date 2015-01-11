@@ -15,6 +15,7 @@
     <sound>sound\sndNextLevel</sound>
     <sound>sound\sndPortal</sound>
     <sound>sound\sndStringCrash</sound>
+    <sound>sound\sndLevelBgm</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
@@ -128,6 +129,7 @@
       <script>scripts\scrCollisionDeath.gml</script>
     </scripts>
     <script>scripts\PlaySound.gml</script>
+    <script>scripts\StopSound.gml</script>
     <scripts name="SaveLoad">
       <script>scripts\SaveGame.gml</script>
       <script>scripts\LoadGame.gml</script>

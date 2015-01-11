@@ -126,15 +126,15 @@ if (global.playerVivo)
         if (global.keyJump){
             verticalSpeed = -jumpSpeed;
             if (jumpSpeed == jumpSpeedPadrao)
-                PlaySound(sndJump, false);
+                PlaySound(sndJump, false, false);
             else
-                PlaySound(sndBoost, false);
+                PlaySound(sndBoost, false, false);
         }
         else
         {
             //som do step do player, se estiver movimentando-se
-            if (move != 0 &amp;&amp; !audio_is_playing(sndStep1))
-                PlaySound(sndStep1, false);
+            if (move != 0 )
+                PlaySound(sndStep1, false, true);
             verticalSpeed = 0;
         }
         
@@ -232,7 +232,7 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
 {
     x = objRoom.portais[other.portalDestino].x;
     y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
-    PlaySound(sndPortal,false);
+    PlaySound(sndPortal,false, true);
 
 }
 </string>
@@ -345,7 +345,7 @@ switch(other.cor)
 }
 sprite_index = TrocaSpritePlayer();
 with (other) instance_destroy();
-PlaySound(sndPowerUp,false);
+PlaySound(sndPowerUp,false, false);
 </string>
           </argument>
         </arguments>
@@ -493,7 +493,8 @@ if(global.playerStats[? "PlayerBlue"])
      global.keyBlue = true;
      global.keyRed = false;
      global.keyGreen = false;
-     PlaySound(sndColorShift,false)
+     
+    PlaySound(sndColorShift, false, false);
 }
 </string>
           </argument>
@@ -523,7 +524,8 @@ if(global.playerStats[? "PlayerGreen"])
      global.keyGreen = true;
      global.keyRed = false;
      global.keyBlue = false;
-     PlaySound(sndColorShift,false)
+     
+    PlaySound(sndColorShift, false, false);
 }
 </string>
           </argument>
@@ -553,7 +555,8 @@ if(global.playerStats[? "PlayerRed"])
     global.keyRed = true;
     global.keyBlue = false;
     global.keyGreen = false;
-    PlaySound(sndColorShift,false)
+    
+    PlaySound(sndColorShift, false, false);
 }
 </string>
           </argument>
