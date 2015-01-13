@@ -92,10 +92,10 @@ if (delay &lt;= 0)
     moveSpeedIncr += 0.05;
     switch (direcao)
     {
-        case Direction.Up    : y-=moveSpeed - moveSpeedIncr; break;
-        case Direction.Down  : y+=moveSpeed + moveSpeedIncr; break;
-        case Direction.Left  : x-=moveSpeed - moveSpeedIncr; break;
-        case Direction.Right : x+=moveSpeed + moveSpeedIncr; break;
+        case Direction.Up    : y-=(moveSpeed + moveSpeedIncr); break;
+        case Direction.Down  : y+=(moveSpeed + moveSpeedIncr); break;
+        case Direction.Left  : x-=(moveSpeed + moveSpeedIncr); break;
+        case Direction.Right : x+=(moveSpeed + moveSpeedIncr); break;
     }
 }
 </string>

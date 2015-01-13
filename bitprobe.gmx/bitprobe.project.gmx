@@ -168,15 +168,6 @@
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
     </objects>
-    <objects name="Moving">
-      <object>objects\obj_Moving</object>
-      <object>objects\obj_Moving_Down</object>
-      <object>objects\obj_Moving_Up</object>
-      <object>objects\obj_Moving_Left</object>
-      <object>objects\obj_Moving_Circular</object>
-      <object>objects\obj_Moving_Circular_Reverse</object>
-      <object>objects\obj_Moving_Right</object>
-    </objects>
     <objects name="Propulsor">
       <object>objects\objPropulsor</object>
     </objects>

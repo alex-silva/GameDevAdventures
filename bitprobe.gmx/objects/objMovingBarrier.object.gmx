@@ -49,6 +49,8 @@ rot = 0;
 
 //carregando player verticalmente
 isCarryingPlayer = false;
+//pulando (para barreiras verticais)
+isJumping = false;
 </string>
           </argument>
         </arguments>
@@ -109,46 +111,61 @@ if (sentido == 1)
     x+=horizontalSpeed;
 else
     y+=horizontalSpeed;
-
+                        
 if (instance_exists(objPlayer))
 {
-    objPlayer.verCarry = 0;
-  ////   isCarryingPlayer = false;
     if (scrCollisionCor(self.cor, objPlayer.cor))
-        mask_index = barrierSprite;
-    else
-        mask_index = -1;
-    
-    // se o player está acima da barrier atual
-    if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y + 6
-     &amp;&amp; place_meeting(x,y-1,objPlayer))
     {
-        if (global.keyJump)
+        mask_index = barrierSprite;
+        if (isCarryingPlayer)
+            objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
+        if ((isJumping) &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y + 6)
+            exit;
+        if ((isJumping) &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &gt; y + 6)
+            isJumping = false;
+         
+        // se o player está acima da barrier atual
+        if (place_meeting(x,y-1,objPlayer))
         {
-            objPlayer.y -= objPlayer.jumpSpeed;
-
-        }
-        else
-        {
-            //está carregando player verticalmente
-   //         if (isCarryingPlayer)
-     //       {
-       //         objPlayer.verCarry = 1;
-         //   }
-           // else
-             //   objPlayer.verCarry = 0;
+            //show_debug_message("meeting" + string(i));
+            if (global.keyJump || KEY_JUMP)
+            {
+                objPlayer.y -= objPlayer.jumpSpeed;  
+                isJumping = true;
+                isCarryingPlayer = false;
+                exit;
+            }
+            isCarryingPlayer = false;
             //mantém personagem acima da barrier
             
             if (sentido == 1)
                 objPlayer.hspCarry = horizontalSpeed;
             else
             {
+                isCarryingPlayer = true;
                 objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
- //               isCarryingPlayer = true;
                 objPlayer.verCarry = 1;
             }
         }
-    }       
+        else
+        {
+            objPlayer.verCarry = 0;
+            isCarryingPlayer = false;
+            isJumping = false;
+        }
+        //player a direita e barrier vindo a esquerda
+ //       if (objPlayer.x + sprite_get_width(sprPlayerBlueMove)/2 + 1
+   //     == x - 1)
+     //       objPlayer.x = x - 1;
+            //player abaixo e barrier descendo
+       // if (objPlayer.y - sprite_get_height(sprPlayerBlueMove)/2 - 1
+       // == y + sprite_get_height(sprite_index) + 1)
+         //   objPlayer.y = y + sprite_get_height(sprite_index) + 1;
+    }
+    else
+    {
+        mask_index = -1;
+    }      
 }
 </string>
           </argument>
