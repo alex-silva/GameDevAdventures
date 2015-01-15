@@ -134,6 +134,8 @@
       <script>scripts\SaveGame.gml</script>
       <script>scripts\LoadGame.gml</script>
       <script>scripts\MapasSaveLoad.gml</script>
+      <script>scripts\Encrypt.gml</script>
+      <script>scripts\Decrypt.gml</script>
     </scripts>
     <script>scripts\IsLevel.gml</script>
     <script>scripts\LoadScreen.gml</script>
@@ -221,7 +223,6 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rm_Teste</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel11</room>
@@ -231,6 +232,7 @@
     <room>rooms\rmLevel15</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
+    <room>rooms\rm_Teste</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

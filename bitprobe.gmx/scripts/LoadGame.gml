@@ -4,34 +4,37 @@
 
 show_debug_message("Loading game ("+string(argument0)+")...");
 
+if (!file_exists(argument0))
+    SaveGame(argument0);
+
 ini_open(argument0);
 
-global.rooms[? "RoomAtual"] = ini_read_real("Rooms", "RoomAtual", rmLevel11);
-global.rooms[? "MundoAtual"] = ini_read_real("Rooms", "MundoAtual", rmMapa11);
+global.rooms[? "RoomAtual"] = Decrypt(ini_read_string("Rooms", "RoomAtual", rmLevel11), 2);
+global.rooms[? "MundoAtual"] = Decrypt(ini_read_string("Rooms", "MundoAtual", rmMapa11), 5);
 
-if (ini_read_real("PlayerStats", "PlayerRed", 0) == 0)
+if (Decrypt(ini_read_string("PlayerStats", "PlayerRed", 0), 7) == 0)
     global.playerStats[? "PlayerRed"] = false;
 else
     global.playerStats[? "PlayerRed"] = true;
 
-if (ini_read_real("PlayerStats", "PlayerGreen", 0) == 0)
+if (Decrypt(ini_read_string("PlayerStats", "PlayerGreen", 0), 3) == 0)
     global.playerStats[? "PlayerGreen"] = false;
 else
     global.playerStats[? "PlayerGreen"] = true;
 
-if (ini_read_real("PlayerStats", "PlayerBlue", 0) == 0)
+if (Decrypt(ini_read_string("PlayerStats", "PlayerBlue", 0), 8) == 0)
     global.playerStats[? "PlayerBlue"] = false;
 else
     global.playerStats[? "PlayerBlue"] = true;
 
-if (ini_read_real("PlayerStats", "PlayerWhite", 0) == 0)
+if (Decrypt(ini_read_string("PlayerStats", "PlayerWhite", 0), 6) == 0)
     global.playerStats[? "PlayerWhite"] = false;
 else
     global.playerStats[? "PlayerWhite"] = true;
     
 if (instance_exists(objPlayer))
 {
-    objPlayer.cor = ini_read_real("PlayerStats", "CorAtual", Cor.White)
+    objPlayer.cor = Decrypt(ini_read_string("PlayerStats", "CorAtual", Cor.White), 11);
     TrocaSpritePlayer();
 }
 ini_close();
