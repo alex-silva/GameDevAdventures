@@ -110,7 +110,7 @@ visible = global.playerVivo;
 if (global.playerVivo)
 {
    // Define movimentação
-    move = global.keyRight + (global.keyLeft * -1);
+    move = global.keyRight + (global.keyLeft * -1) ;
     
     
     horizontalSpeed = move * moveSpeed;

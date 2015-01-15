@@ -156,7 +156,7 @@ if (stick_distance &gt; stick_offset){
     }
     else if (stick_direction &gt;= 120 &amp;&amp;  stick_direction &lt;= 240)
     {
-        global.keyLeft = -1;
+        global.keyLeft = 1;
         global.keyRight = 0;
     }
     else
