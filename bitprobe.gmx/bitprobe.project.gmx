@@ -96,12 +96,20 @@
     </sprites>
     <sprite>sprites\sprController</sprite>
     <sprite>sprites\sprite46</sprite>
-    <sprite>sprites\sprLeft</sprite>
-    <sprite>sprites\sprRight</sprite>
     <sprites name="Ball">
       <sprite>sprites\sprBallBlue</sprite>
       <sprite>sprites\sprBallGreen</sprite>
       <sprite>sprites\sprBallRed</sprite>
+    </sprites>
+    <sprites name="Controllers">
+      <sprites name="Digital">
+        <sprite>sprites\sprButtonLeft</sprite>
+        <sprite>sprites\sprButtonRight</sprite>
+        <sprite>sprites\sprButtonRed</sprite>
+        <sprite>sprites\sprButtonGreen</sprite>
+        <sprite>sprites\sprButtonBlue</sprite>
+        <sprite>sprites\sprButtonJump</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -142,7 +150,7 @@
     <script>scripts\scr_mouse_gui_x.gml</script>
     <script>scripts\scr_mouse_gui_y.gml</script>
     <scripts name="Controls">
-      <script>scripts\AnalogStick.gml</script>
+      <script>scripts\ControllerSelector.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -165,7 +173,6 @@
       <object>objects\objRoom</object>
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
-      <object>objects\objAnalogStick</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -217,9 +224,15 @@
         <object>objects\objMovingSphere</object>
       </objects>
     </objects>
+    <objects name="Controllers">
+      <object>objects\objDigitalController</object>
+      <object>objects\objAnalogStick</object>
+      <object>objects\objKeyboard</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tml_Spikes_Up_Down</timeline>
+    <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>

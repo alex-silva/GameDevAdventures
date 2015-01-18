@@ -110,8 +110,14 @@ visible = global.playerVivo;
 if (global.playerVivo)
 {
    // Define movimentação
-    move = global.keyRight + (global.keyLeft * -1) ;
-    
+    if(global.keyRight || global.keyLeft)
+    {
+        move = global.keyRight + (global.keyLeft * -1);
+    }
+    else
+    {
+        move = 0;
+    }
     
     horizontalSpeed = move * moveSpeed;
     
@@ -415,8 +421,7 @@ room_goto_next();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///ativa variável de movimentação
-global.keyRight = !global.keyRight;
+            <string>global.keyRight = 1
 </string>
           </argument>
         </arguments>
@@ -439,8 +444,7 @@ global.keyRight = !global.keyRight;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///ativa variável de movimentação
-global.keyLeft = !global.keyLeft;
+            <string>global.keyLeft = 1
 </string>
           </argument>
         </arguments>
@@ -464,7 +468,7 @@ global.keyLeft = !global.keyLeft;
           <argument>
             <kind>1</kind>
             <string>///ativa variável de movimentação
-global.keyRight = !global.keyRight;
+global.keyRight = 1
 </string>
           </argument>
         </arguments>
@@ -488,7 +492,7 @@ global.keyRight = !global.keyRight;
           <argument>
             <kind>1</kind>
             <string>///ativa variável de movimentação
-global.keyLeft = !global.keyLeft;
+global.keyLeft = 1
 </string>
           </argument>
         </arguments>
@@ -512,7 +516,7 @@ global.keyLeft = !global.keyLeft;
           <argument>
             <kind>1</kind>
             <string>///ativa variável de movimentação
-global.keyJump = true;
+global.keyJump = 1;
 </string>
           </argument>
         </arguments>
@@ -606,6 +610,123 @@ if(global.playerStats[? "PlayerRed"])
     
     PlaySound(sndColorShift, false, false);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.keyRight = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.keyLeft = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="39">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.keyRight = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="37">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.keyLeft = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="10" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.keyJump = 0;
 </string>
           </argument>
         </arguments>

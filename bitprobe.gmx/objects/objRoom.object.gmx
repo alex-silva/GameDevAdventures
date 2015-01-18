@@ -60,7 +60,7 @@ if(IsLevel())
     {
         StopSound(sndAbertura);
         PlaySound(sndLevelBgm,true,true);
-        instance_create(0,0,objAnalogStick);
+        ControllerSelector();
     }
 if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
 {
