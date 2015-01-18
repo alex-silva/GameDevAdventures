@@ -58,8 +58,8 @@ gap_lr = abs((kright_x-(kleft_x+sprite_get_width(sprButtonLeft)))/2);
 
 //[Mapeamento Touch]
 //Virtual keys lado esquerdo
-kleft = virtual_key_add(kleft_x, kleft_y,sprite_get_width(sprButtonLeft)+gap_lr,sprite_get_height(sprButtonLeft), vk_left);
-kright = virtual_key_add(kright_x-gap_lr, kright_y, sprite_get_width(sprButtonRight)+gap_lr ,sprite_get_height(sprButtonRight), vk_right);
+kleft = virtual_key_add(0, kleft_y,sprite_get_width(sprButtonLeft)+gap_lr+kleft_x,sprite_get_height(sprButtonLeft), vk_left);
+kright = virtual_key_add(kright_x-gap_lr, kright_y, sprite_get_width(sprButtonRight)+gap_lr+ sprite_get_width(sprButtonRight)/2,sprite_get_height(sprButtonRight), vk_right);
 //Virtual keys lado direito
 kjump = virtual_key_add(kjump_x, kjump_y,sprite_get_width(sprButtonJump) ,sprite_get_height(sprButtonJump), vk_space);
 kred = virtual_key_add(kred_x, kred_y,sprite_get_width(sprButtonRed) ,sprite_get_height(sprButtonRed), ord('1'));
