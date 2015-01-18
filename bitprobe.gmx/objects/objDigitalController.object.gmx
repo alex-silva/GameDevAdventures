@@ -31,12 +31,12 @@
 //------------------------------------
 //Posição esquerda do controle
 gui_x[0] = 150;
-gui_y[0] = (display_get_gui_height() - 150); 
+gui_y[0] = (display_get_gui_height() - 100); 
 //Posição direita do controle
-gui_x[1] = (display_get_gui_width() - 150); 
-gui_y[1] = (display_get_gui_height() - 150); 
+gui_x[1] = (display_get_gui_width() - (sprite_get_width(sprButtonJump)/2) - 100 ); 
+gui_y[1] = (display_get_gui_height() - (sprite_get_height(sprButtonJump)/2) - 100); 
 //Gap entre botão esquerdo e direito
-gap = 64;
+gap = 96;
 //Posição botões lado esquerdo 
 kleft_x = gui_x[0]-sprite_get_width(sprButtonLeft)/2-gap/2;
 kleft_y = gui_y[0]-sprite_get_height(sprButtonLeft)/2;
@@ -94,9 +94,9 @@ kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite
 draw_sprite(sprButtonLeft,0,kleft_x, kleft_y);
 draw_sprite(sprButtonRight,0,kright_x, kright_y);
 draw_sprite(sprButtonJump,0,kjump_x, kjump_y);
-draw_sprite(sprButtonRed,0,kred_x, kred_y);
-draw_sprite(sprButtonGreen,0,kgreen_x, kgreen_y);
-draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
+if(global.playerStats[? "PlayerRed"])draw_sprite(sprButtonRed,0,kred_x, kred_y);
+if(global.playerStats[? "PlayerGreen"])draw_sprite(sprButtonGreen,0,kgreen_x, kgreen_y);
+if(global.playerStats[? "PlayerBlue"])draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
 </string>
           </argument>
         </arguments>
