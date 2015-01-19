@@ -26,13 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-//virtual_key_add(gui_x[0],gui_y[0],64,64,vk_left);
-//virtual_key_add(gui_x[0]+64,gui_y[0],64,64,vk_right);
-
 global.playerVivo = true;
-
-
-
 cor = Cor.White
 
 playerGravity = 0.75;
@@ -41,6 +35,9 @@ verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
 moveSpeed = 7;
+//controle de inércia
+acelerando = true;
+inercia = 0;
 //variáveis que permitem que player siga moving barriers
 //quando estiver acima das mesmas
 hspCarry = 0;
@@ -71,9 +68,20 @@ TrocaSpritePlayer();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Recomeça nível, "matando" player, mas não destruímos a instância
+            <string>///Recomeça nível ou checkpoint, "matando" player, mas não destruímos a instância
 global.playerVivo = true;
-room_restart();
+if (instance_exists(objRoom))
+{
+    if (objRoom.checkpointX != 0 &amp;&amp; objRoom.checkpointY != 0)
+    {
+            objPlayer.x = objRoom.checkpointX;
+            objPlayer.y = objRoom.checkpointY;
+    }
+    else
+        room_restart();
+}
+else
+    room_restart();
 </string>
           </argument>
         </arguments>
@@ -112,14 +120,33 @@ if (global.playerVivo)
    // Define movimentação
     if(global.keyRight || global.keyLeft)
     {
+        moveAtual = move;
         move = global.keyRight + (global.keyLeft * -1);
+        if (moveAtual != move)
+            acelerando = false;
+        else
+            acelerando = true;
+    }
+    else if (inercia &lt;= moveSpeed &amp;&amp; inercia &gt; 0)
+    {
+        acelerando = false;
+    }
+    else
+        move = 0;
+    
+    if (acelerando)
+    {
+        inercia+=0.33*1.2;
+        if (inercia &gt; moveSpeed)
+            inercia = moveSpeed;
     }
     else
     {
-        move = 0;
+        inercia-=0.33*1.2;;
+        if (inercia &lt;= 0)
+            inercia = 0;
     }
-    
-    horizontalSpeed = move * moveSpeed;
+    horizontalSpeed = move * inercia;
     
     // faz personagem cair gradativamente
     if (verticalSpeed &lt; 100) 

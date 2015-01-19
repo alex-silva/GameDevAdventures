@@ -46,6 +46,9 @@ pertoPlayer = false;
 isRage = false;
 //distancia do player para ser considerado perto
 distanciaPlayer = 256;
+//barreira do segundo nível, branca para prender player, vermelha
+//para liberar passagem após switch
+barreira = 0;
 </string>
           </argument>
         </arguments>

@@ -7,4 +7,4 @@
 global.playerVivo = false;
 scrParticleDeath();
 alarm[0] = global.alarmPlayerDeath;
-PlaySound(sndDying,false,true);
+PlaySound(sndDying,false,false);

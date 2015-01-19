@@ -33,7 +33,17 @@ if (instance_exists(objAlternatingBarrier))
         objBall.triggered = true;
 }
 
-
+if (instance_exists(objTrojan))
+{
+    with (objTrojan)
+    {
+        if (barreira &gt; 0)
+        {
+            barreira.barrierSprite = sprBarrierRed;
+            barreira.cor = Cor.Red;
+        }
+    }
+}
 //destrói trigger pois este só deve ser acionado uma vez
 instance_destroy();
 </string>

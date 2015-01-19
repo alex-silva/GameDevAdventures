@@ -89,6 +89,7 @@
       <sprite>sprites\sprMapa11</sprite>
     </sprites>
     <sprite>sprites\sprLevel</sprite>
+    <sprite>sprites\sprBarreiraInvisivel</sprite>
     <sprite>sprites\sprBack</sprite>
     <sprites name="Trojan">
       <sprite>sprites\sprTrojanMove</sprite>
@@ -173,6 +174,7 @@
       <object>objects\objRoom</object>
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
+      <object>objects\objBarreiraInvisivel</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
@@ -201,6 +203,7 @@
     <objects name="Triggers">
       <object>objects\objTriggerTrojanParar</object>
       <object>objects\objTriggerTrojanSubir</object>
+      <object>objects\objCheckpoint</object>
     </objects>
     <objects name="Interactives">
       <objects name="Ball">
