@@ -33,10 +33,10 @@ cor = Cor.White;
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>0</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
@@ -45,7 +45,9 @@ cor = Cor.White;
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,16</point>
+    <point>0,0</point>
+    <point>32,0</point>
+    <point>32,32</point>
+    <point>0,32</point>
   </PhysicsShapePoints>
 </object>

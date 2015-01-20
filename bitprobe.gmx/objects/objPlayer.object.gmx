@@ -28,13 +28,20 @@
             <string>///Variáveis do player
 global.playerVivo = true;
 cor = Cor.White
+//########Physics Test############
+phy_fixed_rotation = true;
+max_speed = 8;
+move_speed = 300;
 
+jumping = false;
+jump_force = -320;
+//################################
 playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
-moveSpeed = 7;
+
 //controle de inércia
 acelerando = true;
 inercia = 0;
@@ -87,6 +94,30 @@ else
         </arguments>
       </action>
     </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>x = phy_position_x
+y = phy_position_y
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -105,6 +136,8 @@ else
           <argument>
             <kind>1</kind>
             <string>/// Define velocidade e colisões com paredes
+phy_speed_x = max(min(phy_speed_x, max_speed),-max_speed);
+/*
 if (global.pause)
 {
     image_index = 0;
@@ -238,6 +271,7 @@ if (global.playerVivo)
     }
     TrocaSpritePlayer();
 }
+*/
 </string>
           </argument>
         </arguments>
@@ -290,10 +324,9 @@ if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Colisão com spike
-if (global.playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-         scrCollisionDeath();
+            <string>    if (global.playerVivo)
+        if (scrCollisionCor(cor, other.cor))
+            scrCollisionDeath();
 </string>
           </argument>
         </arguments>
@@ -402,7 +435,7 @@ PlaySound(sndPowerUp,false, false);
           <argument>
             <kind>1</kind>
             <string>///Vai para próximo level
-room_goto_next();
+    room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -499,6 +532,8 @@ global.keyLeft = 1;
           <argument>
             <kind>1</kind>
             <string>///ativa variável de movimentação
+image_xscale = 1;
+physics_apply_force(x,y,move_speed,-20);
 global.keyLeft = 0;
 global.keyRight = 1;
 </string>
@@ -524,6 +559,8 @@ global.keyRight = 1;
           <argument>
             <kind>1</kind>
             <string>///ativa variável de movimentação
+image_xscale = -1;
+physics_apply_force(x,y,-move_speed,-20);
 global.keyRight = 0;
 global.keyLeft = 1;
 </string>
@@ -678,6 +715,32 @@ if(global.playerStats[? "PlayerRed"])
         </arguments>
       </action>
     </event>
+    <event eventtype="9" enumb="32">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(place_meeting(x,y+1,objFloor)){
+    jumping = true;
+    physics_apply_impulse(x,y,0,jump_force);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="10" enumb="68">
       <action>
         <libid>1</libid>
@@ -796,19 +859,21 @@ if(global.playerStats[? "PlayerRed"])
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
-  <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectDensity>2</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>1</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
-  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectFriction>0.100000001490116</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,16</point>
+    <point>8,0</point>
+    <point>24,0</point>
+    <point>24,32</point>
+    <point>8,32</point>
   </PhysicsShapePoints>
 </object>

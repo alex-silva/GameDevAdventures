@@ -27,9 +27,12 @@
             <kind>1</kind>
             <string>///Move player para DoorStart
 global.playerVivo = true;
-objPlayer.visible = true;
-objPlayer.x = x;
-objPlayer.y = y;
+//objPlayer.visible = true;
+//objPlayer.x = x;
+//bjPlayer.y = y;
+objPlayer.phy_position_x = x;
+objPlayer.phy_position_y = y;
+
 </string>
           </argument>
         </arguments>
