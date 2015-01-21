@@ -29,15 +29,18 @@
 global.playerVivo = true;
 cor = Cor.White
 
+//1 - direita -1 - esquerda 0 - não movimenta-se
+move = 0;
 playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
 jumpSpeed = 12;
 jumpSpeedPadrao = 12;
-moveSpeed = 7;
+moveSpeed = 8;
 //controle de inércia
 acelerando = true;
 inercia = 0;
+isJumping = false;
 //variáveis que permitem que player siga moving barriers
 //quando estiver acima das mesmas
 hspCarry = 0;
@@ -117,40 +120,63 @@ visible = global.playerVivo;
 
 if (global.playerVivo)
 {
-   // Define movimentação
+    //pulando
+    
+    if (!place_meeting(x, y+1, objFloor) &amp;&amp; !place_meeting(x, y+1, objBarrier) &amp;&amp; !place_meeting(x, y+1, objMovingBarrier))
+    {
+        isJumping = true;
+    }
+    else
+        isJumping = false;
+    // Define movimentação
     if(global.keyRight || global.keyLeft)
     {
         moveAtual = move;
         move = global.keyRight + (global.keyLeft * -1);
-        if (moveAtual != move)
+        if (moveAtual != move || (moveAtual == 0 &amp;&amp; move != 0))
+        {
+            if (isJumping) inercia = 0;
+            else inercia/=2;
             acelerando = false;
+        }
         else
-            acelerando = true;
+               acelerando = true;
     }
     else if (inercia &lt;= moveSpeed &amp;&amp; inercia &gt; 0)
-    {
+    { 
         acelerando = false;
     }
     else
-        move = 0;
-    
-    if (acelerando)
     {
-        inercia+=0.33*1.2;
-        if (inercia &gt; moveSpeed)
-            inercia = moveSpeed;
+        inercia = 0;
+        move = 0;
+    }
+    
+    if (acelerando || isJumping)
+    {
+        //if (place_meeting(x, y+1, objFloor) || place_meeting(x,y+1, objBarrier) || place_meeting(x, y+1, objMovingBarrier))
+        //{
+           
+            inercia+=0.396;
+            if (inercia &gt; moveSpeed)
+                inercia = moveSpeed;
+        //}
+        //else
+          //  inercia+=0.01;        
     }
     else
-    {
-        inercia-=0.33*1.2;;
+    {   
+        inercia-=0.396;
         if (inercia &lt;= 0)
             inercia = 0;
     }
-    horizontalSpeed = move * inercia;
+    horizontalSpeed = round(move * inercia);
     
     // faz personagem cair gradativamente
-    if (verticalSpeed &lt; 100) 
+    if (verticalSpeed &lt; 100)
+    {
         verticalSpeed += playerGravity + 0.1;
+    }
     
     // pula mais alto se tocar em propulsor, pular normal se tocar em floor
     if (place_meeting(x, y + 1, objPropulsor)
@@ -171,7 +197,6 @@ if (global.playerVivo)
             verticalSpeed = 0;
         }
         
-        
     }
     // retorna velocidade de pulo ao normal após utilizar propulsor
     if !(place_meeting(x, y + 1, objPropulsor))
@@ -190,6 +215,7 @@ if (global.playerVivo)
         }
         hspFinal = 0;
         horizontalSpeed = 0;
+        inercia = 0;
     }
     
     //Colisão vertical com floor
@@ -203,7 +229,8 @@ if (global.playerVivo)
     }
     
     // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
-    x += hspFinal;    
+    x += hspFinal;  
+    
     if (verCarry == 0)
         y += verticalSpeed;
     
