@@ -117,17 +117,20 @@ if (instance_exists(objPlayer))
     if (scrCollisionCor(self.cor, objPlayer.cor))
     {
         mask_index = barrierSprite;
-        if (isCarryingPlayer)
-            objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
-        else if ((isJumping) &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &gt;= y) // + 6
-            isJumping = false;
-        else if ((isJumping))// &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y + 6)
-            exit;
+        if (sentido == 0)
+        {
+            if (isCarryingPlayer)
+                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
+            else if ((isJumping) &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &gt;= y)
+                isJumping = false;
+            else if ((isJumping))
+                exit;
+        }
          
         // se o player está acima da barrier atual
         if (place_meeting(x,y-1,objPlayer))
         {
-            if (global.keyJump || KEY_JUMP)
+            if (global.keyJump || KEY_JUMP &amp;&amp; sentido == 0)
             {
                 objPlayer.y -= objPlayer.jumpSpeed;  
                 isJumping = true;
