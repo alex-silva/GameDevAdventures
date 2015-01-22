@@ -265,6 +265,8 @@ if (global.playerVivo)
     }
     TrocaSpritePlayer();
 }
+background_x[] = -view_xview[0]/4;
+background_y[] = -view_yview[0]/4;
 </string>
           </argument>
         </arguments>
