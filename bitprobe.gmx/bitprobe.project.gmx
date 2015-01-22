@@ -71,12 +71,28 @@
       <sprite>sprites\sprPowerUpRed</sprite>
       <sprite>sprites\sprPowerUpGreen</sprite>
       <sprite>sprites\sprPowerUpBlue</sprite>
+      <sprite>sprites\sprPowerUpGreenOld</sprite>
+      <sprite>sprites\sprPowerUpBlueOld</sprite>
     </sprites>
     <sprites name="Propulsor">
-      <sprite>sprites\sprPropulsor</sprite>
       <sprite>sprites\sprPropulsorRed</sprite>
       <sprite>sprites\sprPropulsorGreen</sprite>
       <sprite>sprites\sprPropulsorBlue</sprite>
+      <sprite>sprites\sprPropulsorChargeGreen</sprite>
+      <sprite>sprites\sprPropulsorChargeBlue</sprite>
+      <sprite>sprites\sprPropulsorChargeRed</sprite>
+      <sprite>sprites\sprPropulsorDischargeRed</sprite>
+      <sprite>sprites\sprPropulsorDischargeGreen</sprite>
+      <sprite>sprites\sprPropulsorDischargeBlue</sprite>
+      <sprite>sprites\sprPropulsorChargedRed</sprite>
+      <sprite>sprites\sprPropulsorChargedGreen</sprite>
+      <sprite>sprites\sprPropulsorChargedBlue</sprite>
+      <sprites name="PropulsorBranco">
+        <sprite>sprites\sprPropulsorIdle</sprite>
+        <sprite>sprites\sprPropulsorCharge</sprite>
+        <sprite>sprites\sprPropulsorCharged</sprite>
+        <sprite>sprites\sprPropulsorDischarge</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menus">
       <sprite>sprites\sprSplash</sprite>
@@ -107,11 +123,16 @@
         <sprite>sprites\sprButtonLeft</sprite>
         <sprite>sprites\sprButtonRight</sprite>
         <sprite>sprites\sprButtonRed</sprite>
+        <sprite>sprites\sprButtonRedDown</sprite>
         <sprite>sprites\sprButtonGreen</sprite>
+        <sprite>sprites\sprButtonGreenDown</sprite>
         <sprite>sprites\sprButtonBlue</sprite>
+        <sprite>sprites\sprButtonBlueDown</sprite>
         <sprite>sprites\sprButtonJump</sprite>
+        <sprite>sprites\sprPause</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sprBgController</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -175,11 +196,13 @@
       <object>objects\objLevel</object>
       <object>objects\objPause</object>
       <object>objects\objBarreiraInvisivel</object>
+      <object>objects\objBgController</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>
     </objects>
     <objects name="Propulsor">
+      <object>objects\objPropulsorRed</object>
       <object>objects\objPropulsor</object>
     </objects>
     <objects name="Game">
