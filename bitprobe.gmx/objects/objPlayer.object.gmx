@@ -31,10 +31,10 @@ cor = Cor.White
 //########Physics Test############
 phy_fixed_rotation = true;
 max_speed = 8;
-move_speed = 300;
+move_speed = 250;
 
 jumping = false;
-jump_force = -320;
+jump_force = -250;
 //################################
 playerGravity = 0.75;
 horizontalSpeed = 0;
@@ -862,7 +862,7 @@ if(global.playerStats[? "PlayerRed"])
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
-  <PhysicsObjectDensity>2</PhysicsObjectDensity>
+  <PhysicsObjectDensity>1</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>1</PhysicsObjectLinearDamping>
