@@ -94,6 +94,8 @@ else
 if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
 {
     global.rooms[? "RoomAtual"] = room;
+    show_debug_message("room save");
+show_debug_message(global.rooms[? "RoomAtual"]);
     SaveGame("bitprobe.ini");
     //Cria array para armazenar portais na tela
     portais[instance_number(objSphere)] = id;

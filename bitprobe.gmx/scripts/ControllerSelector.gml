@@ -7,7 +7,5 @@ switch (os_type)
     case os_ios:
     case os_winphone:
     case os_android: 
-        instance_create(0,0,objDigitalController);
-        //instance_create(0,0,objAnalogStick);
-        break;
+        instance_create(0,0,objDigitalController);     break;
 }       

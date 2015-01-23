@@ -32,7 +32,6 @@ cor = Cor.White;
 //Parâmetros para drawing: escala e rotação
 scaleX = 1;
 scaleY = 1;
-rot = 0;
 </string>
           </argument>
         </arguments>
@@ -58,42 +57,27 @@ rot = 0;
             <string>///Ativa ou desativa máscara de colisão de acordo com cor
 if (global.pause) exit;
 
-//colide com boss Trojan, se existir
-/*if (instance_exists(objTrojan))
-{
-    if (objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &gt;= x
-     &amp;&amp; objTrojan.x + sprite_get_height(sprPlayerBlueMove)/2 &lt;= x +
-     sprite_get_width(barrierSprite) * scaleX)
-    {
-        mask_index = barrierSprite;
-        exit;
-    }
-}*/
-
 if (instance_exists(objPlayer))
 {
     if scrCollisionCor(self.cor, objPlayer.cor)
-            mask_index = barrierSprite;
-        else
-            mask_index = -1;
-    // se o player está abaixo da barrier
-/*    if (round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2)) &gt; round(y + sprite_get_height(barrierSprite) * scaleY))
     {
-        if scrCollisionCor(self.cor, objPlayer.cor)
-            mask_index = barrierSprite;
-        else
+        mask_index = barrierSprite;
+        var barrierXDireita = round(x + sprite_get_width(barrierSprite) * scaleX);
+        var barrierYAbaixo = round(y + sprite_get_height(barrierSprite) * scaleY);
+        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerBlueMove)/2));
+        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerBlueMove)/2));
+        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2));
+        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2));
+         // atravessa se player estiver com parte do corpo na barrier
+         if (place_meeting(x, y, objPlayer) 
+          &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
+           || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
+         
             mask_index = -1;
-    }
-    // se o player está acima da barrier
-    else if (round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &lt;= y)
-    {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
-            mask_index = barrierSprite;
-        else
-            mask_index = -1;
+         
     }
     else
-        mask_index = -1;*/
+        mask_index = -1;
 }
 </string>
           </argument>
@@ -118,7 +102,7 @@ if (instance_exists(objPlayer))
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão
-draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
+draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, 0, c_white, 1);
 </string>
           </argument>
         </arguments>

@@ -10,6 +10,9 @@ if (!file_exists(argument0))
 ini_open(argument0);
 
 global.rooms[? "RoomAtual"] = Decrypt(ini_read_string("Rooms", "RoomAtual", rmLevel11), 2);
+show_debug_message("room load");
+show_debug_message(global.rooms[? "RoomAtual"]);
+
 global.rooms[? "MundoAtual"] = Decrypt(ini_read_string("Rooms", "MundoAtual", rmMapa11), 5);
 
 if (Decrypt(ini_read_string("PlayerStats", "PlayerRed", 0), 7) == 0)

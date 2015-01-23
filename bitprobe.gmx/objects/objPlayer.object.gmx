@@ -154,15 +154,9 @@ if (global.playerVivo)
     
     if (acelerando || isJumping)
     {
-        //if (place_meeting(x, y+1, objFloor) || place_meeting(x,y+1, objBarrier) || place_meeting(x, y+1, objMovingBarrier))
-        //{
-           
-            inercia+=0.396;
-            if (inercia &gt; moveSpeed)
-                inercia = moveSpeed;
-        //}
-        //else
-          //  inercia+=0.01;        
+        inercia+=0.396;
+        if (inercia &gt; moveSpeed)
+            inercia = moveSpeed;
     }
     else
     {   
