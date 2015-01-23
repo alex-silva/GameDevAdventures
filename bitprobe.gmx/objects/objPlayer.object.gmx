@@ -200,6 +200,11 @@ if (global.playerVivo)
     var hspFinal = horizontalSpeed + hspCarry;
     hspCarry = 0;
     
+    //Colisão com quinas
+    ;;;;if (x + s
+    
+    
+    
     //Colisão Horizontal com floor
     if (place_meeting(x + hspFinal, y, objFloor))
     {
