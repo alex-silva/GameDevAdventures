@@ -46,7 +46,7 @@ isJumping = false;
 hspCarry = 0;
 verCarry = 0;
 
-image_speed = 0.3;
+image_speed = 1;
 global.playerDirection = Direction.Right;
 TrocaSpritePlayer();
 </string>
@@ -201,7 +201,7 @@ if (global.playerVivo)
     hspCarry = 0;
     
     //Colisão com quinas
-    ;;;;if (x + s
+   // ;;;;if (x + s
     
     
     
@@ -248,7 +248,7 @@ if (global.playerVivo)
         else if verticalSpeed &gt;= 0 
            global.playerDirection = Direction.Left
     }
-    else image_index = 0;
+    else image_index = 5;
     
     if(global.playerStats[? "PlayerRed"]&amp;&amp;global.keyRed)
     {

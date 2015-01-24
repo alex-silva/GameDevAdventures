@@ -44,14 +44,17 @@
     </sprites>
     <sprites name="Player">
       <sprites name="Blue">
+        <sprite>sprites\sprPlayerBlueMove_old</sprite>
         <sprite>sprites\sprPlayerBlueMove</sprite>
         <sprite>sprites\sprPlayerBlueJump</sprite>
       </sprites>
       <sprites name="Red">
+        <sprite>sprites\sprPlayerRedMove_Old</sprite>
         <sprite>sprites\sprPlayerRedMove</sprite>
         <sprite>sprites\sprPlayerRedJump</sprite>
       </sprites>
       <sprites name="Green">
+        <sprite>sprites\sprPlayerGreenMove_old</sprite>
         <sprite>sprites\sprPlayerGreenMove</sprite>
         <sprite>sprites\sprPlayerGreenJump</sprite>
       </sprites>
