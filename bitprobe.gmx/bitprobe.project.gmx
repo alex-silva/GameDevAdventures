@@ -179,6 +179,7 @@
       <object>objects\objPause</object>
       <object>objects\objBarreiraInvisivel</object>
       <object>objects\objScore</object>
+      <object>objects\objHUD</object>
     </objects>
     <objects name="Powerup">
       <object>objects\objPowerUp</object>

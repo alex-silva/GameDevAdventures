@@ -25,13 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed/10; 
+            <string>//mydatetime = date_create_datetime(2011, 9, 15, 9, 43, 30);
+//score = date_time_string( mydatetime );
+//alarm[0] = room_speed/10; 
+m = 0;
+s = 0;
+ms = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -48,8 +53,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>score += 1;
-alarm[0] = room_speed/10; 
+            <string>time = get_timer();
+//if(init&gt;time)
+ms =  floor((time-init)/1000)- (s + m*60)*1000;
+if(ms&gt;= 1000) 
+{
+    s++;
+    ms=0;
+}
+s = floor((time-init)/1000000) - m*60;
+//s =  s - m*60;
+if(s&gt;=60) 
+{
+    m++;
+    s=0;
+}
+//
+//
+
+
+
 </string>
           </argument>
         </arguments>
@@ -72,8 +95,9 @@ alarm[0] = room_speed/10;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//highscore_add("Time", score);
-score = 0;
+            <string>init = get_timer();
+//highscore_add("Time", score);
+//score = 0;
 
 </string>
           </argument>
@@ -97,36 +121,16 @@ score = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_highscore(100, 100, room_width - 100, room_height - 100); 
+            <string>str_m = string(m);
+str_s = string(s);
+str_ms = string(ms);
+if(m&lt;10) str_m = "0"+str_m; 
+if(s&lt;10) str_s = "0"+str_s; 
+if(ms&lt;100) str_ms = "0"+str_ms; 
+if(ms&lt;10) str_ms = "0"+str_ms; 
+draw_text(objPlayer.x+20,objPlayer.y,str_m+":"+str_s+":"+str_ms);
+//draw_highscore(100, 100, room_width - 100, room_height - 100); 
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>703</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_draw_score</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>objPlayer.x</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>objPlayer.y</string>
-          </argument>
-          <argument>
-            <kind>1</kind>
-            <string>Score: </string>
           </argument>
         </arguments>
       </action>

@@ -82,8 +82,7 @@ if(IsLevel())
 {
     StopSound(sndAbertura);
     PlaySound(sndLevelBgm,true,true);
-    ControllerSelector();
-    instance_create(0,0,objScore);
+    instance_create(0,0,objHUD);
 }
 else
 {
