@@ -1,3 +1,6 @@
+if (!instance_exists(objPlayer))
+    exit;
+
 var sprite = "sprPlayer"
 switch (objPlayer.cor)
 {
@@ -6,6 +9,13 @@ switch (objPlayer.cor)
     case Cor.Green : sprite += "Green"; break;
     case Cor.Blue  : sprite += "Blue" ; break; 
 }
+if (objPlayer.move == 0)
+{
+    sprite+= "Idle";
+    exit;
+}
+
+
 switch (global.playerDirection)
 {
     case Direction.Left       : sprite += "Move"; image_xscale = -1; break;

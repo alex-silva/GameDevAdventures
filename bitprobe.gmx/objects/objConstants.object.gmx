@@ -90,9 +90,11 @@ ds_map_add(global.mapSprites, "sprPlayerRedMove", sprPlayerRedMove);
 ds_map_add(global.mapSprites, "sprPlayerRedJump", sprPlayerRedJump);
 
 ds_map_add(global.mapSprites, "sprPlayerGreenMove", sprPlayerGreenMove);
+ds_map_add(global.mapSprites, "sprPlayerGreenIdle", sprPlayerGreenIdle);
 ds_map_add(global.mapSprites, "sprPlayerGreenJump", sprPlayerGreenJump);
 
 ds_map_add(global.mapSprites, "sprPlayerBlueMove", sprPlayerBlueMove);
+//ds_map_add(global.mapSprites, "sprPlayerBlueIdle", sprPlayerBlueIdle);
 ds_map_add(global.mapSprites, "sprPlayerBlueJump", sprPlayerBlueJump);
 
 //Map Sprites

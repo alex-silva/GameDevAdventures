@@ -56,7 +56,14 @@
       <sprites name="Green">
         <sprite>sprites\sprPlayerGreenMove_old</sprite>
         <sprite>sprites\sprPlayerGreenMove</sprite>
-        <sprite>sprites\sprPlayerGreenJump</sprite>
+        <sprite>sprites\sprPlayerGreenJump_old</sprite>
+        <sprite>sprites\sprPlayerGreenIdle</sprite>
+        <sprite>sprites\sprPlayerGreenJumpStart</sprite>
+        <sprite>sprites\sprPlayerGreenRun</sprite>
+        <sprite>sprites\sprPlayerGreenDie</sprite>
+        <sprite>sprites\sprPlayerGreenJumpEnd</sprite>
+        <sprite>sprites\sprPlayerGreenAscend</sprite>
+        <sprite>sprites\sprPlayerGreenDescend</sprite>
       </sprites>
       <sprites name="White">
         <sprite>sprites\sprPlayerWhiteMove</sprite>
@@ -168,7 +175,6 @@
     </objects>
     <objects name="Player">
       <object>objects\objPlayer</object>
-      <object>objects\objPlayerMapa</object>
     </objects>
     <objects name="Control">
       <object>objects\objController</object>
