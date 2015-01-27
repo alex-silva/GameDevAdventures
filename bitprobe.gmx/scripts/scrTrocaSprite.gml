@@ -1,12 +1,15 @@
 var sprite = "sprPlayer"
-switch (objPlayer.cor)
+if (instance_exists(objPlayer))
+            {
+            with (objPlayer){
+switch (cor)
 {
     case Cor.White : sprite += "White"; break;
     case Cor.Red   : sprite += "Red"  ; break;
     case Cor.Green : sprite += "Green"; break;
     case Cor.Blue  : sprite += "Blue" ; break; 
 }
-switch (global.playerDirection)
+switch (playerDirection)
 {
     case Direcao.Left       : sprite += "Move"; image_xscale = -1; break;
     case Direcao.Right      : sprite += "Move"; image_xscale =  1; break;
@@ -15,3 +18,5 @@ switch (global.playerDirection)
 }
 
 sprite_index = ds_map_find_value(global.mapSprites, sprite);
+}
+}

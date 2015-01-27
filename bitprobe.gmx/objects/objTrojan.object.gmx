@@ -35,7 +35,6 @@ bossGravity = 0.75;
 moveSpeed = 6.5;
 imageSpeed = 0.025;
 image_speed = imageSpeed;
-//global.bossDirection = Direction.Right;
 
 //na segunda parte do level, boss para
 isMoving = true;
@@ -114,7 +113,7 @@ else
     cor = Cor.Green;
 }
     
-global.bossDirection = Direction.Right;
+bossDirection = Direction.Right;
 
 //troca para cor branca se estiver perto do player
 if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= distanciaPlayer)

@@ -1,4 +1,4 @@
-var sprite = "sprPlayer"
+/*var sprite = "sprPlayer"
 switch (objTrojan.cor)
 {
     case Cor.White : sprite += "White"; break;
