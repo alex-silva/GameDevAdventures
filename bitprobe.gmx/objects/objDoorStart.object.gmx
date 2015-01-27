@@ -26,10 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Move player para DoorStart
-global.playerVivo = true;
-objPlayer.visible = true;
-objPlayer.x = x;
-objPlayer.y = y;
+            if (instance_exists(objPlayer))
+            {
+            with (objPlayer)
+            {
+playerVivo = true;
+visible = true;
+x = objDoorStart.x;
+y = objDoorStart.y;}
+}
 </string>
           </argument>
         </arguments>
