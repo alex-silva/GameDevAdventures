@@ -43,7 +43,9 @@ enum Direction
     Left,
     Right,
     JumpLeft,
-    JumpRight    
+    JumpRight,
+    Horizontal,
+    Vertical
 }
 
 // COMBINAÇÕES DE CORES

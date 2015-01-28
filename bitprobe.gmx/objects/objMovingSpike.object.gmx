@@ -103,7 +103,7 @@ if (delay &lt;= 0)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objFloor">
+    <event eventtype="4" ename="objCollision">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -121,9 +121,9 @@ if (delay &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>///Retorna a posição inicial
-if (scrCollisionCor(self.cor, other.cor))
+if (CollisionCor(self.cor, other.cor))
 {
-    scrParticleDeath();
+    ParticleDeath();
     if !(audio_is_playing(sndStringCrash))
     {
         if (instance_exists(objPlayer))

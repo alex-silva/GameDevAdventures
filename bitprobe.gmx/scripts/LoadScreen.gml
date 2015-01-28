@@ -1,3 +1,4 @@
+///ajusta view de acordo com orientação
 var base_w = 960;
 var base_h = 640;
 var max_w = display_get_width();

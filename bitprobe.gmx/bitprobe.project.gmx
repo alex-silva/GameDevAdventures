@@ -18,30 +18,7 @@
     <sound>sound\sndLevelBgm</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\spr_Monster_nunca_deletar_porque_este_foi_o_primeiro_sprite_da_historia_da_apel_soft</sprite>
-    <sprites name="Spike">
-      <sprite>sprites\sprSpikeBlue</sprite>
-      <sprite>sprites\sprSpikeRedGreenBlue</sprite>
-      <sprite>sprites\sprSpikeRed</sprite>
-      <sprite>sprites\sprSpikeGreen</sprite>
-      <sprite>sprites\sprSpikeWhite</sprite>
-    </sprites>
-    <sprites name="Barrier">
-      <sprite>sprites\sprBarrierBlue</sprite>
-      <sprite>sprites\sprBarrierBlueBig</sprite>
-      <sprite>sprites\sprBarrierGreen</sprite>
-      <sprite>sprites\sprBarrierRed</sprite>
-    </sprites>
-    <sprites name="Door">
-      <sprite>sprites\sprDoorStart</sprite>
-      <sprite>sprites\sprDoorEnd</sprite>
-    </sprites>
-    <sprites name="Floor">
-      <sprite>sprites\sprFloorWhite</sprite>
-      <sprite>sprites\sprFloorGreen</sprite>
-      <sprite>sprites\sprFloorRed</sprite>
-      <sprite>sprites\sprFloorBlue</sprite>
-    </sprites>
+    <sprite>sprites\sprMonsterNuncaDeletarFirstApel</sprite>
     <sprites name="Player">
       <sprites name="Blue">
         <sprite>sprites\sprPlayerBlueMove_old</sprite>
@@ -84,85 +61,99 @@
         <sprite>sprites\sprPlayerWhiteJump_old</sprite>
       </sprites>
     </sprites>
-    <sprites name="Sphere">
-      <sprite>sprites\sprSphereBlue</sprite>
-      <sprite>sprites\sprSphereRed</sprite>
-      <sprite>sprites\sprSphereGreen</sprite>
-      <sprite>sprites\sprSphereWhite</sprite>
-    </sprites>
     <sprites name="Collectables">
       <sprite>sprites\sprBit</sprite>
       <sprite>sprites\sprPowerUpRed</sprite>
       <sprite>sprites\sprPowerUpGreen</sprite>
       <sprite>sprites\sprPowerUpBlue</sprite>
     </sprites>
-    <sprites name="Propulsor">
-      <sprite>sprites\sprPropulsor</sprite>
-      <sprite>sprites\sprPropulsorRed</sprite>
-      <sprite>sprites\sprPropulsorGreen</sprite>
-      <sprite>sprites\sprPropulsorBlue</sprite>
-    </sprites>
-    <sprites name="Menus">
-      <sprite>sprites\sprSplash</sprite>
-    </sprites>
-    <sprite>sprites\sprCursor</sprite>
     <sprites name="Menu">
       <sprite>sprites\sprSettings</sprite>
       <sprite>sprites\sprSplashProbe</sprite>
       <sprite>sprites\sprPlayButton</sprite>
       <sprite>sprites\sprMapa11</sprite>
+      <sprite>sprites\sprLevel</sprite>
+      <sprite>sprites\sprBack</sprite>
+      <sprite>sprites\sprCursor</sprite>
+      <sprite>sprites\sprSplash</sprite>
     </sprites>
-    <sprite>sprites\sprLevel</sprite>
-    <sprite>sprites\sprBarreiraInvisivel</sprite>
-    <sprite>sprites\sprBack</sprite>
-    <sprites name="Trojan">
-      <sprite>sprites\sprTrojanMove</sprite>
-      <sprite>sprites\sprTrojanHead</sprite>
+    <sprites name="Gameplay">
+      <sprite>sprites\sprButtonLeft</sprite>
+      <sprite>sprites\sprButtonRight</sprite>
+      <sprite>sprites\sprButtonRed</sprite>
+      <sprite>sprites\sprButtonGreen</sprite>
+      <sprite>sprites\sprButtonBlue</sprite>
+      <sprite>sprites\sprButtonJump</sprite>
     </sprites>
-    <sprite>sprites\sprController</sprite>
-    <sprite>sprites\sprite46</sprite>
-    <sprites name="Ball">
-      <sprite>sprites\sprBallBlue</sprite>
-      <sprite>sprites\sprBallGreen</sprite>
-      <sprite>sprites\sprBallRed</sprite>
+    <sprites name="Control">
+      <sprite>sprites\sprBarreiraInvisivel</sprite>
+      <sprite>sprites\sprController</sprite>
     </sprites>
-    <sprites name="Controllers">
-      <sprites name="Digital">
-        <sprite>sprites\sprButtonLeft</sprite>
-        <sprite>sprites\sprButtonRight</sprite>
-        <sprite>sprites\sprButtonRed</sprite>
-        <sprite>sprites\sprButtonGreen</sprite>
-        <sprite>sprites\sprButtonBlue</sprite>
-        <sprite>sprites\sprButtonJump</sprite>
+    <sprites name="Interactives">
+      <sprites name="Ball">
+        <sprite>sprites\sprBallBlue</sprite>
+        <sprite>sprites\sprBallGreen</sprite>
+        <sprite>sprites\sprBallRed</sprite>
+      </sprites>
+      <sprites name="Spike">
+        <sprite>sprites\sprSpikeBlue</sprite>
+        <sprite>sprites\sprSpikeRedGreenBlue</sprite>
+        <sprite>sprites\sprSpikeRed</sprite>
+        <sprite>sprites\sprSpikeGreen</sprite>
+        <sprite>sprites\sprSpikeWhite</sprite>
+      </sprites>
+      <sprites name="Sphere">
+        <sprite>sprites\sprSphereBlue</sprite>
+        <sprite>sprites\sprSphereRed</sprite>
+        <sprite>sprites\sprSphereGreen</sprite>
+        <sprite>sprites\sprSphereWhite</sprite>
+      </sprites>
+      <sprites name="Barrier">
+        <sprite>sprites\sprBarrierBlue</sprite>
+        <sprite>sprites\sprBarrierGreen</sprite>
+        <sprite>sprites\sprBarrierRed</sprite>
+      </sprites>
+      <sprites name="Propulsor">
+        <sprite>sprites\sprPropulsor</sprite>
+        <sprite>sprites\sprPropulsorRed</sprite>
+        <sprite>sprites\sprPropulsorGreen</sprite>
+        <sprite>sprites\sprPropulsorBlue</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Bosses">
+      <sprites name="Trojan">
+        <sprite>sprites\sprTrojanMove</sprite>
+        <sprite>sprites\sprTrojanHead</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Room">
+      <sprites name="Door">
+        <sprite>sprites\sprDoorStart</sprite>
+        <sprite>sprites\sprDoorEnd</sprite>
+      </sprites>
+      <sprites name="Floor">
+        <sprite>sprites\sprCollision</sprite>
+        <sprite>sprites\sprFloorGreen</sprite>
+        <sprite>sprites\sprFloorRed</sprite>
+        <sprite>sprites\sprFloorBlue</sprite>
       </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
     <background>background\FloorColors_ON</background>
     <background>background\FloorColorsOff</background>
     <background>background\Fundo</background>
     <background>background\bgdMapa11</background>
   </backgrounds>
-  <paths name="paths">
-    <path>paths\pathTrojanSubir</path>
-  </paths>
+  <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\TrocaSpritePlayer.gml</script>
-    <script>scripts\TrocaSpriteBoss.gml</script>
-    <script>scripts\SetObject.gml</script>
     <scripts name="Particles">
-      <script>scripts\scrParticleDeath.gml</script>
-    </scripts>
-    <scripts name="Spike">
-      <script>scripts\scr_Spike_Troca_Cor.gml</script>
+      <script>scripts\ParticleDeath.gml</script>
     </scripts>
     <scripts name="Collision">
-      <script>scripts\scrCollisionCor.gml</script>
-      <script>scripts\scrCollisionDeath.gml</script>
+      <script>scripts\CollisionCor.gml</script>
+      <script>scripts\CollisionDeath.gml</script>
     </scripts>
-    <script>scripts\PlaySound.gml</script>
-    <script>scripts\StopSound.gml</script>
     <scripts name="SaveLoad">
       <script>scripts\SaveGame.gml</script>
       <script>scripts\LoadGame.gml</script>
@@ -170,63 +161,50 @@
       <script>scripts\Encrypt.gml</script>
       <script>scripts\Decrypt.gml</script>
     </scripts>
-    <script>scripts\IsLevel.gml</script>
-    <script>scripts\LoadScreen.gml</script>
-    <script>scripts\scr_mouse_gui_x.gml</script>
-    <script>scripts\scr_mouse_gui_y.gml</script>
-    <scripts name="Controls">
+    <scripts name="Gameplay">
       <script>scripts\ControllerSelector.gml</script>
+    </scripts>
+    <scripts name="Sprite">
+      <script>scripts\TrocaSpritePlayer.gml</script>
+      <script>scripts\SetObject.gml</script>
+    </scripts>
+    <scripts name="Sound">
+      <script>scripts\StopSound.gml</script>
+      <script>scripts\PlaySound.gml</script>
+    </scripts>
+    <scripts name="Control">
+      <script>scripts\IsLevel.gml</script>
+      <script>scripts\LoadScreen.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
-    <objects name="Floor">
-      <object>objects\objFloor</object>
-    </objects>
-    <objects name="Door">
-      <object>objects\objDoor</object>
-      <object>objects\objDoorStart</object>
-      <object>objects\objDoorEnd</object>
-    </objects>
     <objects name="Player">
       <object>objects\objPlayer</object>
     </objects>
     <objects name="Control">
-      <object>objects\objController</object>
-      <object>objects\obj_Death</object>
-      <object>objects\obj_Spike_Timeline</object>
-      <object>objects\objRoom</object>
-      <object>objects\objLevel</object>
-      <object>objects\objPause</object>
       <object>objects\objBarreiraInvisivel</object>
-    </objects>
-    <objects name="Powerup">
-      <object>objects\objPowerUp</object>
-    </objects>
-    <objects name="Propulsor">
-      <object>objects\objPropulsor</object>
-    </objects>
-    <objects name="Game">
+      <object>objects\objCollision</object>
+      <object>objects\objCheckpoint</object>
+      <object>objects\objColorido</object>
       <object>objects\objConstants</object>
-      <object>objects\objTransition</object>
-      <object>objects\objLoadGame</object>
     </objects>
-    <object>objects\objColorido</object>
-    <object>objects\objSplashScreen</object>
     <objects name="Menu">
       <object>objects\objSplashProbe</object>
       <object>objects\objPlayButton</object>
       <object>objects\objMouseCursor</object>
       <object>objects\objMapa11</object>
       <object>objects\objBackMapMenu</object>
+      <object>objects\objLevel</object>
     </objects>
     <objects name="Boss">
       <object>objects\objTrojan</object>
       <object>objects\objTrojanHead</object>
     </objects>
     <objects name="Triggers">
-      <object>objects\objTriggerTrojanParar</object>
-      <object>objects\objTriggerTrojanSubir</object>
-      <object>objects\objCheckpoint</object>
+      <objects name="Trojan">
+        <object>objects\objTriggerTrojanParar</object>
+        <object>objects\objTriggerTrojanSubir</object>
+      </objects>
     </objects>
     <objects name="Interactives">
       <objects name="Ball">
@@ -234,12 +212,10 @@
       </objects>
       <objects name="Barrier">
         <object>objects\objBarrier</object>
-        <object>objects\objAlternatingBarrier</object>
         <object>objects\objMovingBarrier</object>
+        <object>objects\objAlternatingBarrier</object>
       </objects>
       <objects name="Spike">
-        <object>objects\obj_Spike_Alternating</object>
-        <object>objects\obj_Spike_Alternating_Red_Green</object>
         <object>objects\objSpike</object>
         <object>objects\objAlternatingSpike</object>
         <object>objects\objMovingSpike</object>
@@ -249,19 +225,30 @@
         <object>objects\objSphere</object>
         <object>objects\objMovingSphere</object>
       </objects>
+      <objects name="Propulsor">
+        <object>objects\objPropulsor</object>
+      </objects>
+      <objects name="Door">
+        <object>objects\objDoorStart</object>
+        <object>objects\objDoorEnd</object>
+      </objects>
     </objects>
-    <objects name="Controllers">
+    <objects name="Gameplay">
       <object>objects\objDigitalController</object>
-      <object>objects\objAnalogStick</object>
-      <object>objects\objKeyboard</object>
+    </objects>
+    <objects name="Room">
+      <object>objects\objPause</object>
+      <object>objects\objRoom</object>
+      <object>objects\objSplashScreen</object>
+      <object>objects\objTransition</object>
+    </objects>
+    <objects name="Collectables">
+      <object>objects\objPowerUp</object>
     </objects>
   </objects>
-  <timelines name="timelines">
-    <timeline>timelines\tml_Spikes_Up_Down</timeline>
-    <timeline>timelines\timeline1</timeline>
-  </timelines>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmTeste</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel11</room>
@@ -270,7 +257,6 @@
     <room>rooms\rmLevel14</room>
     <room>rooms\rmLevel15</room>
     <room>rooms\rmLevel1B</room>
-    <room>rooms\rm_Teste</room>
     <room>rooms\rmMapa22</room>
   </rooms>
   <help>

@@ -64,7 +64,7 @@ switch (direcao)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objFloor">
+    <event eventtype="4" ename="objCollision">
       <action>
         <libid>1</libid>
         <id>603</id>

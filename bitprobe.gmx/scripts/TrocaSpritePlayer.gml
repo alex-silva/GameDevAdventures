@@ -1,3 +1,4 @@
+///Troca sprite do player baseado em seu estado
 if (!instance_exists(objPlayer))
     exit;
 

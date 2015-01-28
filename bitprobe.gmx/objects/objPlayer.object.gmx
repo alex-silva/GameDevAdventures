@@ -186,7 +186,7 @@ else
     isFalling = false;
 // pula mais alto se tocar em propulsor, pular normal se tocar em floor
 if (place_meeting(x, y + 1, objPropulsor)
-  || place_meeting(x, y + 1, objFloor))
+  || place_meeting(x, y + 1, objCollision))
 {
     if (global.keyJump){
         verticalSpeed = -jumpSpeed;
@@ -218,9 +218,9 @@ hspCarry = 0;
  
  
 //Colisão Horizontal com floor
-if (place_meeting(x + hspFinal, y, objFloor))
+if (place_meeting(x + hspFinal, y, objCollision))
 {
-    while(!place_meeting(x + sign(hspFinal), y, objFloor))
+    while(!place_meeting(x + sign(hspFinal), y, objCollision))
     {
         x += sign(hspFinal);
     }
@@ -230,9 +230,9 @@ if (place_meeting(x + hspFinal, y, objFloor))
 }
 
 //Colisão vertical com floor
-if (place_meeting(x, y + verticalSpeed, objFloor))
+if (place_meeting(x, y + verticalSpeed, objCollision))
 {
-    while(!place_meeting(x, y + sign(verticalSpeed), objFloor))
+    while(!place_meeting(x, y + sign(verticalSpeed), objCollision))
     {
         y += sign(verticalSpeed);
     }
@@ -276,114 +276,6 @@ TrocaSpritePlayer();
 
 background_x[] = -view_xview[0]/4;
 background_y[] = -view_yview[0]/4;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSphere">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com sphere e teletransporta
-if (scrCollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
-{
-    x = objRoom.portais[other.portalDestino].x;
-    y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
-    PlaySound(sndPortal,false, true);
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objSpike">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com spike
-if (playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-         scrCollisionDeath();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objTrojanHead">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com cabeça do boss, VICTORY!
-if (playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        room_goto_next();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objTrojan">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// Colisão com boss, restarta room 
-if (playerVivo)
-    if (scrCollisionCor(cor, other.cor))
-        scrCollisionDeath();
 </string>
           </argument>
         </arguments>
@@ -446,7 +338,115 @@ room_goto_next();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objFloor">
+    <event eventtype="4" ename="objSphere">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com sphere e teletransporta
+if (CollisionCor(self.cor, other.cor) &amp;&amp; other.portalDestino != 999)
+{
+    x = objRoom.portais[other.portalDestino].x;
+    y = objRoom.portais[other.portalDestino].y + sprite_get_height(other.sprite_index)/2;
+    PlaySound(sndPortal,false, true);
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objSpike">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com spike
+if (playerVivo)
+    if (CollisionCor(cor, other.cor))
+         CollisionDeath();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objTrojanHead">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com cabeça do boss, VICTORY!
+if (playerVivo)
+    if (CollisionCor(cor, other.cor))
+        room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objTrojan">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Colisão com boss, restarta room 
+if (playerVivo)
+    if (CollisionCor(cor, other.cor))
+        CollisionDeath();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="objCollision">
       <action>
         <libid>1</libid>
         <id>603</id>

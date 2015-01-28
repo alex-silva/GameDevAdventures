@@ -1,22 +1,22 @@
-/// SetObject(objeto, cor);
+/// SetObject(cor);
 //
 //  Define cor (sprite e variável) para determinado objeto 
 //
 //*****************************************************************************
 
-sprite = sprFloorWhite;
+sprite = sprCollision;
 corObj = argument0;
 
-if (object_get_name(object_index) == "objFloor")
+if (object_get_name(object_index) == "objCollision")
 {
     if (corObj == Cor.Red)
         sprite = sprFloorRed;
-    else if (corObj== Cor.Green)
+    else if (corObj == Cor.Green)
         sprite = sprFloorGreen;
     else if (corObj == Cor.Blue)
         sprite = sprFloorBlue;
-    else
-        sprite = sprFloorWhite;
+   // else
+    //    sprite = sprFloorWhite;
 }
 
 else if (object_get_name(object_index) == "objSpike")
@@ -60,8 +60,8 @@ else if (object_get_name(object_index) == "objPowerUp")
         sprite = sprPowerUpGreen;
     else if (corObj == Cor.Blue)
         sprite = sprPowerUpBlue
-    else
-        sprite = sprPowerupWhite;
+   // else
+    //    sprite = sprPowerupWhite;
 }
 
 else if (object_get_name(object_index) == "objBarrier")
@@ -72,8 +72,8 @@ else if (object_get_name(object_index) == "objBarrier")
         sprite = sprBarrierGreen;
     else if (corObj == Cor.Blue)
         sprite = sprBarrierBlue
-    else
-        sprite = sprBarrierWhite;
+ //   else
+   //     sprite = sprBarrierWhite;
 }
 else if (object_get_name(object_index) == "objSphere")
 {
@@ -121,8 +121,6 @@ else if (object_get_name(object_index) == "objBall")
         sprite = sprBallGreen;
     else if (corObj == Cor.Blue)
         sprite = sprBallBlue;
-//    else
-//        sprite = sprBallWhite;
 }
 sprite_index = sprite;
-self.cor = corObj;
+cor = corObj;

@@ -134,37 +134,6 @@ else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; distanciaPlayer &amp
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objMovingBarrier">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destrói qualquer objeto que colidir (exceto player)
-if (scrCollisionCor(cor, other.cor))
-{
-    with (other)
-    {
-        instance_destroy();
-        scrParticleDeath();
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="4" ename="objBarrier">
       <action>
         <libid>1</libid>
@@ -185,13 +154,13 @@ if (scrCollisionCor(cor, other.cor))
             <string>///Destrói qualquer objeto que colidir (exceto player)
 show_debug_message("boss" + string(cor));
         show_debug_message("barrier" + string(other.cor));
-if (scrCollisionCor(cor, other.cor))
+if (CollisionCor(cor, other.cor))
 {
     
     with (other)
     {
         instance_destroy();
-        scrParticleDeath();
+        ParticleDeath();
     }
 }
 </string>
@@ -217,12 +186,12 @@ if (scrCollisionCor(cor, other.cor))
           <argument>
             <kind>1</kind>
             <string>///Destrói qualquer objeto que colidir (exceto player)
-if (scrCollisionCor(cor, other.cor))
+if (CollisionCor(cor, other.cor))
 {
     with (other)
     {
         instance_destroy();
-        scrParticleDeath();
+        ParticleDeath();
     }
 }
 </string>

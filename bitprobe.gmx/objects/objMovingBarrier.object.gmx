@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objFloor</parentName>
+  <parentName>objCollision</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -30,8 +30,8 @@ sprite_index = -1;
 barrierSprite = sprBarrierRed;
 cor = Cor.White;
 
-//direcao e sentido (1-horizontal, -1-vertical)
-direcao = 1;
+//direcao e sentido (1 - adiante 2 - atrás)
+direcao = Direction.Horizontal;
 sentido = 1;
 
 moveSpeed = 3;
@@ -76,44 +76,44 @@ isJumping = false;
 if (global.pause) exit;
 mask_index = barrierSprite;
 
-horizontalSpeed = direcao * moveSpeed;
+horizontalSpeed = sentido * moveSpeed;
 distanciaPercorrida += sign(x - distanciaPercorrida);
 
 //se percorreu distancia, retorna na direção oposta
 if (distanciaPercorrida &gt;= distancia)
 {
     horizontalSpeed = 0;
-    direcao *= -1;
+    sentido *= -1;
     distanciaPercorrida = 0;
 }
 //colisão horizontal com floor
-else if (place_meeting(x + horizontalSpeed, y, objFloor))
+else if (place_meeting(x + horizontalSpeed, y, objCollision))
 {
-    while(!place_meeting(x+sign(horizontalSpeed),y,objFloor))
+    while(!place_meeting(x+sign(horizontalSpeed),y,objCollision))
         x+=sign(horizontalSpeed);
     horizontalSpeed = 0;
-    direcao *= -1;
+    sentido *= -1;
     distanciaPercorrida = 0;
 }
 //colisão vertical com floor
-else if (place_meeting(x, y + horizontalSpeed, objFloor))
+else if (place_meeting(x, y + horizontalSpeed, objCollision))
 {
-    while(!place_meeting(x, y + sign(horizontalSpeed),objFloor))
+    while(!place_meeting(x, y + sign(horizontalSpeed),objCollision))
         y+=sign(horizontalSpeed);
     horizontalSpeed = 0;
-    direcao *= -1;
+    sentido *= -1;
     distanciaPercorrida = 0;
 }
 
 //anda horizontal ou vertical
-if (sentido == 1)
+if (direcao == Direction.Horizontal)
     x+=horizontalSpeed;
 else
     y+=horizontalSpeed;
                         
 if (instance_exists(objPlayer))
 {
-    if (scrCollisionCor(self.cor, objPlayer.cor))
+    if (CollisionCor(self.cor, objPlayer.cor))
     {
         mask_index = barrierSprite;
         var barrierXDireita = round(x + sprite_get_width(barrierSprite) * scaleX);
@@ -130,7 +130,7 @@ if (instance_exists(objPlayer))
             mask_index = -1;
             exit;
          }
-        if (sentido == 0)
+        if (direcao == Direction.Vertical)
         {
             if (isCarryingPlayer)
                 objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
@@ -154,7 +154,7 @@ if (instance_exists(objPlayer))
             isCarryingPlayer = false;
             //mantém personagem acima da barrier
             
-            if (sentido == 1)
+            if (direcao == Direction.Horizontal)
                 objPlayer.hspCarry = horizontalSpeed;
             else
             {
@@ -168,9 +168,6 @@ if (instance_exists(objPlayer))
             objPlayer.verCarry = 0;
             isCarryingPlayer = false;
             isJumping = false;
-            // se player esta com parte do corpo dentro da barrier, e barrier nao for maior que player
-            //if (sprite_get_width(sprite_index) &lt; sprite_get_width(sprPlayerBlueMove))
-            //{
         }
     }
     else

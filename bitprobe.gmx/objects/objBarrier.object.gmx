@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objFloor</parentName>
+  <parentName>objCollision</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -59,7 +59,7 @@ if (global.pause) exit;
 
 if (instance_exists(objPlayer))
 {
-    if scrCollisionCor(self.cor, objPlayer.cor)
+    if CollisionCor(self.cor, objPlayer.cor)
     {
         mask_index = barrierSprite;
         var barrierXDireita = round(x + sprite_get_width(barrierSprite) * scaleX);
@@ -79,6 +79,9 @@ if (instance_exists(objPlayer))
     else
         mask_index = -1;
 }
+
+
+
 </string>
           </argument>
         </arguments>

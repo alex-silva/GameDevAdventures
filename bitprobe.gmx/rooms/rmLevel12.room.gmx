@@ -103,20 +103,20 @@
     <instance objName="objSpike" x="1440" y="832" name="inst_593927CC" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSpike" x="1440" y="768" name="inst_97A6C3DC" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="544" y="1696" name="inst_91B81C9E" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.37;&#xA;" scaleX="0.370000004768372" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="0" y="1248" name="inst_74602BC3" locked="0" code="" scaleX="16" scaleY="17" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="512" y="1120" name="inst_57E47366" locked="0" code="" scaleX="21" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="864" y="832" name="inst_93DDF902" locked="0" code="" scaleX="10" scaleY="9" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="864" y="672" name="inst_6FE6BE8B" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="864" y="640" name="inst_D6A70264" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="1472" y="672" name="inst_5D890497" locked="0" code="" scaleX="1" scaleY="27" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="832" y="1504" name="inst_D0829A89" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="832" y="1536" name="inst_CC78FAE7" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="576" y="2032" name="inst_06AF31AE" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="384" y="1984" name="inst_87C23A7A" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="192" y="2032" name="inst_943AA159" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="32" y="1984" name="inst_2AD270ED" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="0" y="1792" name="inst_B73DFD6E" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
-    <instance objName="objFloor" x="384" y="1792" name="inst_D337D3E4" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="0" y="1248" name="inst_74602BC3" locked="0" code="" scaleX="16" scaleY="17" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="512" y="1120" name="inst_57E47366" locked="0" code="" scaleX="21" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="864" y="832" name="inst_93DDF902" locked="0" code="" scaleX="10" scaleY="9" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="864" y="672" name="inst_6FE6BE8B" locked="0" code="" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="864" y="640" name="inst_D6A70264" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="1472" y="672" name="inst_5D890497" locked="0" code="" scaleX="1" scaleY="27" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="832" y="1504" name="inst_D0829A89" locked="0" code="" scaleX="20" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="832" y="1536" name="inst_CC78FAE7" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="576" y="2032" name="inst_06AF31AE" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="384" y="1984" name="inst_87C23A7A" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="192" y="2032" name="inst_943AA159" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="32" y="1984" name="inst_2AD270ED" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="0" y="1792" name="inst_B73DFD6E" locked="0" code="" scaleX="1" scaleY="8" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="384" y="1792" name="inst_D337D3E4" locked="0" code="" scaleX="4" scaleY="3" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="32" y="1216" w="32" h="32" xo="32" yo="128" id="10001583" name="inst_40A28016" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
