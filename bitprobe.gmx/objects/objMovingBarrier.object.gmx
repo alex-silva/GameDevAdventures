@@ -105,76 +105,79 @@ else if (place_meeting(x, y + horizontalSpeed, objCollision))
     distanciaPercorrida = 0;
 }
 
-//anda horizontal ou vertical
-if (direcao == Direction.Horizontal)
-    x+=horizontalSpeed;
-else
-    y+=horizontalSpeed;
-                        
 if (instance_exists(objPlayer))
 {
     if (CollisionCor(self.cor, objPlayer.cor))
     {
+        //barrier fica solida
         mask_index = barrierSprite;
+
+        if (direcao == Direction.Vertical)
+        {
+            //mantem personagem acima da barrier
+            if (isCarryingPlayer &amp;&amp; !isJumping)
+                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)+6;
+            //desativa pulo caso sai da barrier
+            else if ((isJumping) &amp;&amp; !place_meeting(x,y-6,objPlayer))
+                isJumping = false;
+        }
+        /* atravessa se player estiver com parte do corpo na barrier */
         var barrierXDireita = round(x + sprite_get_width(barrierSprite) * scaleX);
         var barrierYAbaixo = round(y + sprite_get_height(barrierSprite) * scaleY);
         var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerBlueMove)/2));
         var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerBlueMove)/2));
         var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2));
         var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2));
-         // atravessa se player estiver com parte do corpo na barrier
-         if (place_meeting(x, y, objPlayer) 
+        
+         if (place_meeting(x, y, objPlayer) &amp;&amp; !isCarryingPlayer
           &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
            || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
          {
             mask_index = -1;
-            exit;
          }
-        if (direcao == Direction.Vertical)
-        {
-            if (isCarryingPlayer)
-                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
-            else if ((isJumping) &amp;&amp; round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2)) &gt;= y)
-                isJumping = false;
-            else if ((isJumping))
-                exit;
-        }
+        /* atravessa se player estiver com parte do corpo na barrier */        
          
         // se o player está acima da barrier atual
-        if (place_meeting(x,y-1,objPlayer))
+        if (place_meeting(x,y-6,objPlayer) &amp;&amp; !isJumping)
         {
-            //objPlayer.y+=1;
-            if (global.keyJump || KEY_JUMP &amp;&amp; sentido == 0)
-            {
-                objPlayer.y -= objPlayer.jumpSpeed;  
-                isJumping = true;
-                isCarryingPlayer = false;
-                exit;
-            }
-            isCarryingPlayer = false;
+            //pulo
+       //     if (global.keyJump || KEY_JUMP)
+         //   {
+           //     objPlayer.y -= objPlayer.jumpSpeed;  
+             //   isJumping = true;
+               // isCarryingPlayer = false;
+         //   }
             //mantém personagem acima da barrier
-            
             if (direcao == Direction.Horizontal)
                 objPlayer.hspCarry = horizontalSpeed;
-            else
+            else if (direcao = Direction.Vertical &amp;&amp; !isJumping)
             {
                 isCarryingPlayer = true;
-                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2);
+                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)+6;
                 objPlayer.verCarry = 1;
             }
         }
         else
         {
+            // abaixo da barrier, desativa variaveis verticais
             objPlayer.verCarry = 0;
             isCarryingPlayer = false;
-            isJumping = false;
         }
     }
     else
     {
+        
+        //atravessa barrier se for de cor oposta
+        isCarryingPlayer = false;
         mask_index = -1;
     }      
 }
+
+//anda horizontal ou vertical
+if (direcao == Direction.Horizontal)
+    x+=horizontalSpeed;
+else
+    y+=horizontalSpeed;
 </string>
           </argument>
         </arguments>

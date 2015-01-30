@@ -58,7 +58,6 @@
     <instance objName="objTriggerTrojanParar" x="2592" y="200" name="inst_1D41B065" locked="0" code="" scaleX="1" scaleY="2.10500001907349" colour="4294967295" rotation="0"/>
     <instance objName="objTrojan" x="160" y="352" name="inst_5996AEE3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="1408" y="428" name="inst_914424F6" locked="0" code="barrierSprite = sprBarrierBlue;&#xA;cor = Cor.Blue;&#xA;scaleX = 0.25;&#xA;scaleY = 4;&#xA;" scaleX="0.25" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="2544" y="160" name="inst_2EA10B23" locked="0" code="barrierSprite = sprBarrierRed;&#xA;combinacao = Combinacao.RedGreen;&#xA;cor = Cor.Red;&#xA;scaleX = 0.25;&#xA;isTriggerActivated = true;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="0" y="0" name="inst_25D47F0A" locked="0" code="" scaleX="100" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="0" y="32" name="inst_A44496C7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="0" y="480" name="inst_8C57A24D" locked="0" code="" scaleX="75" scaleY="1" colour="4294967295" rotation="0"/>
