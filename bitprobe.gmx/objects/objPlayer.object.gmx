@@ -31,8 +31,11 @@ cor = Cor.White
 playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
-jumpSpeed = 12;
-jumpSpeedPadrao = 12;
+//jumpSpeed e jumpSpeedPadrao devem ser sempre os mesmos
+//jumpSpeed altera-se quando utiliza propulsores, voltando
+//eventualmente ao jumpSpeedPadrao
+jumpSpeed = 15;
+jumpSpeedPadrao = 15;
 //variáveis que permitem que player siga moving barriers
 //quando estiver acima das mesmas
 hspCarry = 0;

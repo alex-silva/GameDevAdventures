@@ -122,7 +122,7 @@
     <instance objName="objCollision" x="1984" y="1616" name="inst_97FCAA44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="704" y="1616" name="inst_97E5FB74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorStart" x="1664" y="1280" name="inst_C48F56CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="80" y="1936" name="inst_DF786265" locked="0" code="//cor = SetObject(object_index, Cor.Green);&#xA;SetObject(Cor.Green);" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="1440" y="1616" name="inst_96BEDF23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1024" y="1632" name="inst_2B83D1EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1872" y="1504" name="inst_9FF7B497" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1872" y="1536" name="inst_AAA41409" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -131,7 +131,7 @@
     <instance objName="objCollision" x="896" y="1632" name="inst_5A14EE7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="832" y="1632" name="inst_8B23FC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="800" y="1632" name="inst_55C2E919" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="160" y="1712" name="inst_F78E61ED" locked="0" code="SetObject(Cor.Blue);&#xA;direcao = Direction.Down;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objMovingBarrier" x="1520" y="1536" name="inst_DAAC7443" locked="0" code="barrierSprite = sprBarrierBlue;&#xA;cor = Cor.Blue;&#xA;direcao = Direction.Vertical;&#xA;distancia = 50;&#xA;sentido = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorStart" x="1888" y="1424" name="inst_6DD01F4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="2016" y="1616" name="inst_40A360EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="768" y="1648" name="inst_6748A307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -311,9 +311,6 @@
     <instance objName="objCollision" x="1056" y="1632" name="inst_1EFE74C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1120" y="1648" name="inst_01D5E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1472" y="1616" name="inst_DB437416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCollision" x="1440" y="1616" name="inst_96BEDF23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingBarrier" x="1536" y="1536" name="inst_BF92C0DB" locked="0" code="barrierSprite = sprBarrierBlue;&#xA;cor = Cor.Blue;&#xA;direcao = Direction.Horizontal;&#xA;distancia = 50;&#xA;sentido = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingBarrier" x="1152" y="1488" name="inst_DAAC7443" locked="0" code="barrierSprite = sprBarrierBlue;&#xA;cor = Cor.Blue;&#xA;direcao = Direction.Vertical;&#xA;distancia = 50;&#xA;sentido = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="1312" y="1648" w="32" h="32" xo="96" yo="128" id="10006167" name="inst_A3723BE7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

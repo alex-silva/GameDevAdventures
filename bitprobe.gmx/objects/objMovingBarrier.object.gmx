@@ -118,7 +118,7 @@ if (instance_exists(objPlayer))
             if (isCarryingPlayer &amp;&amp; !isJumping)
                 objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)+6;
             //desativa pulo caso sai da barrier
-            else if ((isJumping) &amp;&amp; !place_meeting(x,y-6,objPlayer))
+            if ((isJumping) &amp;&amp; !place_meeting(x,y,objPlayer))
                 isJumping = false;
         }
         /* atravessa se player estiver com parte do corpo na barrier */
@@ -141,12 +141,13 @@ if (instance_exists(objPlayer))
         if (place_meeting(x,y-6,objPlayer) &amp;&amp; !isJumping)
         {
             //pulo
-       //     if (global.keyJump || KEY_JUMP)
-         //   {
-           //     objPlayer.y -= objPlayer.jumpSpeed;  
-             //   isJumping = true;
-               // isCarryingPlayer = false;
-         //   }
+            if (global.keyJump || KEY_JUMP || isJumping)
+           {
+                if (!isJumping)
+                    objPlayer.verticalSpeed = -objPlayer.jumpSpeed;
+                isJumping = true;
+                isCarryingPlayer = false;
+            }
             //mantém personagem acima da barrier
             if (direcao == Direction.Horizontal)
                 objPlayer.hspCarry = horizontalSpeed;
@@ -161,6 +162,7 @@ if (instance_exists(objPlayer))
         {
             // abaixo da barrier, desativa variaveis verticais
             objPlayer.verCarry = 0;
+            //isJumping = false;
             isCarryingPlayer = false;
         }
     }
@@ -172,7 +174,6 @@ if (instance_exists(objPlayer))
         mask_index = -1;
     }      
 }
-
 //anda horizontal ou vertical
 if (direcao == Direction.Horizontal)
     x+=horizontalSpeed;

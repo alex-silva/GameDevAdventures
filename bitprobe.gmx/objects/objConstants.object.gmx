@@ -113,7 +113,7 @@ global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
 //toca música de abertura
-PlaySound(sndAbertura, true, true);
+//////PlaySound(sndAbertura, true, true);
 sound_volume(sndAbertura, 0.7);
 //Cria player persistente
 instance_create(352, 32, objPlayer);
