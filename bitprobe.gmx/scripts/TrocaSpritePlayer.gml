@@ -7,6 +7,10 @@ with(objPlayer)
     image_speed = 1;
     var sprite = "sprPlayer"
   
+    if (cor == Cor.White)
+        cor = Cor.Green;
+    
+    
     switch (cor)
     {
         case Cor.White : sprite += "White"; break;
