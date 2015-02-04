@@ -107,10 +107,9 @@ if (instance_exists(objPlayer))
     objPlayer.inercia = 0;
 ///pq criar o objeto toda fase se podemos executar o código dele aqui?
 //ajusta view
-instance_create(0,0,objController);
 //Controlador de movimentação de backgrounds
 instance_create(0,0,objBgController);
-//LoadScreen();
+LoadScreen();
 </string>
           </argument>
         </arguments>
