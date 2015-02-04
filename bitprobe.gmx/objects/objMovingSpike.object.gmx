@@ -103,7 +103,7 @@ if (delay &lt;= 0)
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="objFloor">
+    <event eventtype="4" ename="objCollision">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -121,14 +121,22 @@ if (delay &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>///Retorna a posição inicial
-if (scrCollisionCor(self.cor, other.cor))
+if (CollisionCor(self.cor, other.cor))
 {
-    scrParticleDeath();
+    ParticleDeath();
     if !(audio_is_playing(sndStringCrash))
     {
-        audio_play_sound_at(sndStringCrash, x, y, 0, 100, 300, 1, 0, 0);
-        PlaySound(sndStringCrash,false, false);
-        sound_volume(sndStringCrash,0.4);
+        if (instance_exists(objPlayer))
+        {
+            distancia = point_distance(x,y,objPlayer.x, objPlayer.y);
+            if (distancia &lt;= 200)
+            {
+                volume = abs((0.005 * distancia) - 1);
+                
+                sound = PlaySound(sndStringCrash,false, false);
+                sound_volume(sound,volume);
+            }
+        }
     }
     x = initialX;
     y = initialY;

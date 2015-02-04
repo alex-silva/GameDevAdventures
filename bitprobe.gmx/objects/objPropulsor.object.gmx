@@ -76,24 +76,24 @@ if (instance_exists(objPlayer))
    /* if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y
     || (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y))
     {
-        if (scrCollisionCor(self.cor, objPlayer.cor))
+        if (CollisionCor(self.cor, objPlayer.cor))
             mask_index = propulsorSprite;
         else
             mask_index = -1;
-            
+
     }
     else
     {
-       
+
        mask_index = -1;
     }
 */
-    if (scrCollisionCor(self.cor, objPlayer.cor)
+    if (CollisionCor(self.cor, objPlayer.cor)
     &amp;&amp; (place_meeting(x, y - 16, objPlayer)))
     {
-        
+
         objPlayer.jumpSpeed = spd;
-    }     
+    }
 }
 </string>
           </argument>
@@ -121,7 +121,7 @@ else isOn = false;
 if (isOn == true)
 {
     if(isCharged == false &amp;&amp; isCharging = false)
-    {   
+    {
         isCharged = false;
         isDischarging = false;
         image_speed = 0;
@@ -130,8 +130,8 @@ if (isOn == true)
         //spritePropulsor = sprPropulsorCharge;
         image_speed = animSpeed;
         isCharging = true;
-        
-    }    
+
+    }
     if(image_index &gt;= 9 &amp;&amp; isCharged == false)
     {
          isDischarging = false;
@@ -142,14 +142,14 @@ if (isOn == true)
          sprite_index = sprPropulsorCharged;
         // spritePropulsor = sprPropulsorCharged;
          image_speed = animSpeed;
-        
+
     }
-} 
+}
 else
 {
     if((isCharged == true || isCharging == true) &amp;&amp; isDischarging == false)
     {
-        
+
         image_speed = 0;
         if(isCharging == true) image_index = 9 - image_index;
         else image_index = 0;
@@ -169,7 +169,7 @@ else
         image_index = 0;
         sprite_index = sprPropulsorIdle;
      // spritePropulsor = sprPropulsorIdle;
-    } 
+    }
 }
 </string>
           </argument>

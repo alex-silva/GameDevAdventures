@@ -35,7 +35,6 @@ bossGravity = 0.75;
 moveSpeed = 6.5;
 imageSpeed = 0.025;
 image_speed = imageSpeed;
-//global.bossDirection = Direction.Right;
 
 //na segunda parte do level, boss para
 isMoving = true;
@@ -114,7 +113,7 @@ else
     cor = Cor.Green;
 }
     
-global.bossDirection = Direction.Right;
+bossDirection = Direction.Right;
 
 //troca para cor branca se estiver perto do player
 if (point_distance(x,y, objPlayer.x, objPlayer.y) &lt;= distanciaPlayer)
@@ -130,37 +129,6 @@ else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; distanciaPlayer &amp
     image_index = imgIndexAnt;
 }
 //TrocaSpriteBoss();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objMovingBarrier">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destrói qualquer objeto que colidir (exceto player)
-if (scrCollisionCor(cor, other.cor))
-{
-    with (other)
-    {
-        instance_destroy();
-        scrParticleDeath();
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -186,13 +154,13 @@ if (scrCollisionCor(cor, other.cor))
             <string>///Destrói qualquer objeto que colidir (exceto player)
 show_debug_message("boss" + string(cor));
         show_debug_message("barrier" + string(other.cor));
-if (scrCollisionCor(cor, other.cor))
+if (CollisionCor(cor, other.cor))
 {
     
     with (other)
     {
         instance_destroy();
-        scrParticleDeath();
+        ParticleDeath();
     }
 }
 </string>
@@ -218,12 +186,12 @@ if (scrCollisionCor(cor, other.cor))
           <argument>
             <kind>1</kind>
             <string>///Destrói qualquer objeto que colidir (exceto player)
-if (scrCollisionCor(cor, other.cor))
+if (CollisionCor(cor, other.cor))
 {
     with (other)
     {
         instance_destroy();
-        scrParticleDeath();
+        ParticleDeath();
     }
 }
 </string>

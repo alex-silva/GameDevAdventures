@@ -119,7 +119,7 @@ if (image_speed &gt; 0)
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão
-draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
+draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, 0, c_white, 1);
 </string>
           </argument>
         </arguments>

@@ -43,19 +43,10 @@ enum Direction
     Left,
     Right,
     JumpLeft,
-    JumpRight    
+    JumpRight,
+    Horizontal,
+    Vertical
 }
-
-// Variáveis globais
-
-// Tempo de espera até player renascer após morte
-globalvar alarmPlayerDeath; alarmPlayerDeath = 15;
-// Direcao do Player
-globalvar playerDirection; playerDirection = Direction.Right;
-// Direcao do Boss
-globalvar bossDirection; bossDirection = Direction.Right;
-//Player Vivo
-globalvar playerVivo; playerVivo = true;
 
 // COMBINAÇÕES DE CORES
 enum Combinacao
@@ -80,22 +71,37 @@ enum Combinacao
 //Variável controle de pausa
 globalvar pause; pause = false;
 
-//Map Sprites
+//Map Sprites Player
 globalvar mapSprites; global.mapSprites = ds_map_create();
 
-ds_map_add(global.mapSprites, "sprPlayerWhiteMove", sprPlayerWhiteMove);
-ds_map_add(global.mapSprites, "sprPlayerWhiteJump", sprPlayerWhiteJump);
-
 ds_map_add(global.mapSprites, "sprPlayerRedMove", sprPlayerRedMove);
-ds_map_add(global.mapSprites, "sprPlayerRedJump", sprPlayerRedJump);
+ds_map_add(global.mapSprites, "sprPlayerRedIdle", sprPlayerRedIdle);
+ds_map_add(global.mapSprites, "sprPlayerRedJumpStart", sprPlayerRedJumpStart);
+ds_map_add(global.mapSprites, "sprPlayerRedRun", sprPlayerRedRun);
+ds_map_add(global.mapSprites, "sprPlayerRedDie", sprPlayerRedDie);
+ds_map_add(global.mapSprites, "sprPlayerRedJumpEnd", sprPlayerRedJumpEnd);
+ds_map_add(global.mapSprites, "sprPlayerRedAscend", sprPlayerRedAscend);
+ds_map_add(global.mapSprites, "sprPlayerRedDescend", sprPlayerRedDescend);
 
 ds_map_add(global.mapSprites, "sprPlayerGreenMove", sprPlayerGreenMove);
-ds_map_add(global.mapSprites, "sprPlayerGreenJump", sprPlayerGreenJump);
+ds_map_add(global.mapSprites, "sprPlayerGreenIdle", sprPlayerGreenIdle);
+ds_map_add(global.mapSprites, "sprPlayerGreenJumpStart", sprPlayerGreenJumpStart);
+ds_map_add(global.mapSprites, "sprPlayerGreenRun", sprPlayerGreenRun);
+ds_map_add(global.mapSprites, "sprPlayerGreenDie", sprPlayerGreenDie);
+ds_map_add(global.mapSprites, "sprPlayerGreenJumpEnd", sprPlayerGreenJumpEnd);
+ds_map_add(global.mapSprites, "sprPlayerGreenAscend", sprPlayerGreenAscend);
+ds_map_add(global.mapSprites, "sprPlayerGreenDescend", sprPlayerGreenDescend);
 
 ds_map_add(global.mapSprites, "sprPlayerBlueMove", sprPlayerBlueMove);
-ds_map_add(global.mapSprites, "sprPlayerBlueJump", sprPlayerBlueJump);
+ds_map_add(global.mapSprites, "sprPlayerBlueIdle", sprPlayerBlueIdle);
+ds_map_add(global.mapSprites, "sprPlayerBlueJumpStart", sprPlayerBlueJumpStart);
+ds_map_add(global.mapSprites, "sprPlayerBlueRun", sprPlayerBlueRun);
+ds_map_add(global.mapSprites, "sprPlayerBlueDie", sprPlayerBlueDie);
+ds_map_add(global.mapSprites, "sprPlayerBlueJumpEnd", sprPlayerBlueJumpEnd);
+ds_map_add(global.mapSprites, "sprPlayerBlueAscend", sprPlayerBlueAscend);
+ds_map_add(global.mapSprites, "sprPlayerBlueDescend", sprPlayerBlueDescend);
 
-//Map Sprites
+//Map Sprites Player
 
 //Cria mapa para Save/Load
 MapasSaveLoad();
@@ -107,7 +113,7 @@ global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
 //toca música de abertura
-PlaySound(sndAbertura, true, true);
+//////PlaySound(sndAbertura, true, true);
 sound_volume(sndAbertura, 0.7);
 //Cria player persistente
 instance_create(352, 32, objPlayer);
