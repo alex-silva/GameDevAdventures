@@ -167,6 +167,7 @@
     <background>background\FloorColorsOff</background>
     <background>background\Fundo</background>
     <background>background\bgdMapa11</background>
+    <background>background\TileSetV1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
