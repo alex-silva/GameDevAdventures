@@ -213,13 +213,6 @@
       <object>objects\objBgController</object>
       <object>objects\objConstants</object>
     </objects>
-    <objects name="Powerup">
-      <object>objects\objPowerUp</object>
-    </objects>
-    <objects name="Propulsor">
-      <object>objects\objPropulsorRed</object>
-      <object>objects\objPropulsor</object>
-    </objects>
     <objects name="Menu">
       <object>objects\objSplashProbe</object>
       <object>objects\objPlayButton</object>
@@ -259,6 +252,7 @@
       </objects>
       <objects name="Propulsor">
         <object>objects\objPropulsor</object>
+        <object>objects\objPropulsorRed</object>
       </objects>
       <objects name="Door">
         <object>objects\objDoorStart</object>

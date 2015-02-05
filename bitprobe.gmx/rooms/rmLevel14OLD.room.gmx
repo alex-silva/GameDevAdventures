@@ -331,7 +331,6 @@
     <instance objName="objSpike" x="256" y="448" name="inst_D90192D5" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="640" y="704" name="inst_1592A7CA" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="128" y="448" name="inst_E8BD0AFB" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPropulsor" x="768" y="704" name="inst_10B7C248" locked="0" code="spd = 24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="704" y="704" name="inst_3C3FE9AD" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="448" y="704" name="inst_BD59692E" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="704" y="704" name="inst_9A9F124F" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -348,11 +347,9 @@
     <instance objName="objBarrier" x="736" y="416" name="inst_331DF825" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.25;&#xA;" scaleX="0.25" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="800" y="416" name="inst_2215C057" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.37;&#xA;scaleY = 2.4;&#xA;rot = 90;" scaleX="0.370000004768372" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="832" y="416" name="inst_A73C6047" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.37;&#xA;scaleY = 4;&#xA;" scaleX="0.370000004768372" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objPropulsor" x="864" y="704" name="inst_592DD2A9" locked="0" code="spd = 24;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="800" y="288" name="inst_BC490A59" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleX = 0.37;&#xA;scaleY = 2.4;&#xA;rot = 90;&#xA;" scaleX="0.370000004768372" scaleY="2.40000009536743" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="960" y="288" name="inst_444D741E" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.63;&#xA;scaleY = 4;&#xA;" scaleX="0.629999995231628" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="1082" y="200" name="inst_00FB575A" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.15;&#xA;scaleY = 3;&#xA;" scaleX="0.150000005960464" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1200" y="112" name="inst_EC334DB4" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="992" y="392" name="inst_01D3E660" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objSpike" x="976" y="432" name="inst_E06E3BA0" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1008" y="432" name="inst_B0B85E9F" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
