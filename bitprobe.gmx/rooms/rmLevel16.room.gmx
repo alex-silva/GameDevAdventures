@@ -60,7 +60,6 @@
     <instance objName="objBarrier" x="352" y="192" name="inst_73A768AE" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleY = 5;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="608" y="192" name="inst_08B55565" locked="0" code="" scaleX="7" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="128" y="0" name="inst_CC0D4F66" locked="0" code="" scaleX="13" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="704" y="160" name="inst_C78086AA" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="608" y="640" name="inst_1E3DAD37" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleY = 5;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="608" y="448" name="inst_1FD2D882" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;scaleY = 5;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="352" y="384" name="inst_2EBC3D2D" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleY = 5;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>

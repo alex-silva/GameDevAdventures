@@ -124,9 +124,6 @@
     <instance objName="objDoorStart" x="1664" y="1280" name="inst_C48F56CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1440" y="1616" name="inst_96BEDF23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1024" y="1632" name="inst_2B83D1EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1872" y="1504" name="inst_9FF7B497" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1872" y="1536" name="inst_AAA41409" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1872" y="1568" name="inst_526C8268" locked="0" code="SetObject(Cor.Blue);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="864" y="1632" name="inst_E01C81E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="896" y="1632" name="inst_5A14EE7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="832" y="1632" name="inst_8B23FC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

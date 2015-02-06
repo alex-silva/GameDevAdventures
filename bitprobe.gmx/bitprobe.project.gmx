@@ -66,6 +66,8 @@
       <sprite>sprites\sprPowerUpRed</sprite>
       <sprite>sprites\sprPowerUpGreen</sprite>
       <sprite>sprites\sprPowerUpBlue</sprite>
+      <sprite>sprites\sprPowerUpGreenOld</sprite>
+      <sprite>sprites\sprPowerUpBlueOld</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sprSettings</sprite>
@@ -76,14 +78,6 @@
       <sprite>sprites\sprBack</sprite>
       <sprite>sprites\sprCursor</sprite>
       <sprite>sprites\sprSplash</sprite>
-    </sprites>
-    <sprites name="Gameplay">
-      <sprite>sprites\sprButtonLeft</sprite>
-      <sprite>sprites\sprButtonRight</sprite>
-      <sprite>sprites\sprButtonRed</sprite>
-      <sprite>sprites\sprButtonGreen</sprite>
-      <sprite>sprites\sprButtonBlue</sprite>
-      <sprite>sprites\sprButtonJump</sprite>
     </sprites>
     <sprites name="Control">
       <sprite>sprites\sprBarreiraInvisivel</sprite>
@@ -114,16 +108,44 @@
         <sprite>sprites\sprBarrierRed</sprite>
       </sprites>
       <sprites name="Propulsor">
-        <sprite>sprites\sprPropulsor</sprite>
         <sprite>sprites\sprPropulsorRed</sprite>
         <sprite>sprites\sprPropulsorGreen</sprite>
         <sprite>sprites\sprPropulsorBlue</sprite>
+        <sprite>sprites\sprPropulsorChargeGreen</sprite>
+        <sprite>sprites\sprPropulsorChargeBlue</sprite>
+        <sprite>sprites\sprPropulsorChargeRed</sprite>
+        <sprite>sprites\sprPropulsorDischargeRed</sprite>
+        <sprite>sprites\sprPropulsorDischargeGreen</sprite>
+        <sprite>sprites\sprPropulsorDischargeBlue</sprite>
+        <sprite>sprites\sprPropulsorChargedRed</sprite>
+        <sprite>sprites\sprPropulsorChargedGreen</sprite>
+        <sprite>sprites\sprPropulsorChargedBlue</sprite>
+        <sprites name="PropulsorBranco">
+          <sprite>sprites\sprPropulsorIdle</sprite>
+          <sprite>sprites\sprPropulsorCharge</sprite>
+          <sprite>sprites\sprPropulsorCharged</sprite>
+          <sprite>sprites\sprPropulsorDischarge</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Bosses">
       <sprites name="Trojan">
         <sprite>sprites\sprTrojanMove</sprite>
         <sprite>sprites\sprTrojanHead</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="Controllers">
+      <sprites name="Digital">
+        <sprite>sprites\sprButtonLeft</sprite>
+        <sprite>sprites\sprButtonRight</sprite>
+        <sprite>sprites\sprButtonRed</sprite>
+        <sprite>sprites\sprButtonRedDown</sprite>
+        <sprite>sprites\sprButtonGreen</sprite>
+        <sprite>sprites\sprButtonGreenDown</sprite>
+        <sprite>sprites\sprButtonBlue</sprite>
+        <sprite>sprites\sprButtonBlueDown</sprite>
+        <sprite>sprites\sprButtonJump</sprite>
+        <sprite>sprites\sprPause</sprite>
       </sprites>
     </sprites>
     <sprites name="Room">
@@ -138,12 +160,14 @@
         <sprite>sprites\sprFloorBlue</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\sprBgController</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\FloorColors_ON</background>
     <background>background\FloorColorsOff</background>
     <background>background\Fundo</background>
     <background>background\bgdMapa11</background>
+    <background>background\TileSetV1</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -186,6 +210,7 @@
       <object>objects\objCollision</object>
       <object>objects\objCheckpoint</object>
       <object>objects\objColorido</object>
+      <object>objects\objBgController</object>
       <object>objects\objConstants</object>
     </objects>
     <objects name="Menu">
@@ -227,6 +252,7 @@
       </objects>
       <objects name="Propulsor">
         <object>objects\objPropulsor</object>
+        <object>objects\objPropulsorRed</object>
       </objects>
       <objects name="Door">
         <object>objects\objDoorStart</object>

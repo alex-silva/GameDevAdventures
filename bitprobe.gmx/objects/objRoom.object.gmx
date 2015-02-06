@@ -99,13 +99,16 @@ show_debug_message(global.rooms[? "RoomAtual"]);
     SaveGame("bitprobe.ini");
     //Cria array para armazenar portais na tela
     portais[instance_number(objSphere)] = id;
-        
+
 }
 //considerar
 //desativa inércia do player
 if (instance_exists(objPlayer))
     objPlayer.inercia = 0;
+///pq criar o objeto toda fase se podemos executar o código dele aqui?
 //ajusta view
+//Controlador de movimentação de backgrounds
+instance_create(0,0,objBgController);
 LoadScreen();
 </string>
           </argument>
