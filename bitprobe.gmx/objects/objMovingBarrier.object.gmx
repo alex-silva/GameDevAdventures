@@ -146,7 +146,7 @@ if (instance_exists(objPlayer))
                 if (!isJumping){
                 if (sentido==-1)
                     objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)-7;
-                    objPlayer.verticalSpeed = -objPlayer.jumpSpeed;
+                    objPlayer.verticalSpeed = -objPlayer.jumpSpeed -6;
                     }
                 isJumping = true;
                 isCarryingPlayer = false;
