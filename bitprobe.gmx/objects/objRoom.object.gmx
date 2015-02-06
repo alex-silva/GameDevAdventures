@@ -81,13 +81,13 @@ if(IsLevel())
 // música de fase
 {
     StopSound(sndAbertura);
-    PlaySound(sndLevelBgm,true,true);
+////    PlaySound(sndLevelBgm,true,true);
     ControllerSelector();
 }
 else
 {
     StopSound(sndLevelBgm);
-    PlaySound(sndAbertura, true, true);
+ /////   PlaySound(sndAbertura, true, true);
     sound_volume(sndAbertura, 0.7);
 }
 // Grava level mais avançado
