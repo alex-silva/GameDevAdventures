@@ -59,7 +59,7 @@
     <instance objName="objCollision" x="96" y="32" name="inst_BD7F5FDE" locked="0" code="" scaleX="1" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="384" y="224" name="inst_46A73BF3" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="384" y="416" name="inst_D934BA4C" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="objCollision" x="640" y="320" name="inst_BD57DDE6" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="672" y="320" name="inst_BD57DDE6" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="448" y="64" name="inst_F6695198" locked="0" code="" scaleX="13" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="128" y="0" name="inst_CC0D4F66" locked="0" code="" scaleX="13" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
@@ -443,15 +443,13 @@
     <tile bgName="TileSetV1" x="480" y="448" w="32" h="32" xo="32" yo="160" id="10012591" name="inst_93BF9501" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="448" y="448" w="32" h="32" xo="32" yo="160" id="10012592" name="inst_22E0EDBD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="416" y="448" w="32" h="32" xo="32" yo="160" id="10012593" name="inst_E0C04035" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="TileSetV1" x="640" y="320" w="32" h="32" xo="0" yo="192" id="10012594" name="inst_A6AEC2AC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="TileSetV1" x="640" y="352" w="32" h="32" xo="0" yo="256" id="10012595" name="inst_A408234C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="TileSetV1" x="672" y="320" w="32" h="32" xo="0" yo="192" id="10012594" name="inst_A6AEC2AC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="TileSetV1" x="672" y="352" w="32" h="32" xo="0" yo="256" id="10012595" name="inst_A408234C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="800" y="320" w="32" h="32" xo="64" yo="192" id="10012596" name="inst_B5194C2A" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="800" y="352" w="32" h="32" xo="64" yo="256" id="10012597" name="inst_2B834257" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="TileSetV1" x="672" y="320" w="32" h="32" xo="32" yo="192" id="10012600" name="inst_64F3059E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="704" y="320" w="32" h="32" xo="32" yo="192" id="10012601" name="inst_0C56ADDD" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="736" y="320" w="32" h="32" xo="32" yo="192" id="10012602" name="inst_9EDCD4BE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="768" y="320" w="32" h="32" xo="32" yo="192" id="10012603" name="inst_1F277F37" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="TileSetV1" x="672" y="352" w="32" h="32" xo="32" yo="256" id="10012605" name="inst_F19F8FB8" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="704" y="352" w="32" h="32" xo="32" yo="256" id="10012606" name="inst_7B208F45" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="736" y="352" w="32" h="32" xo="32" yo="256" id="10012607" name="inst_343327B6" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="768" y="352" w="32" h="32" xo="32" yo="256" id="10012608" name="inst_0072B26D" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
