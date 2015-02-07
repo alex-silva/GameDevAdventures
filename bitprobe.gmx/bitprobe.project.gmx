@@ -287,7 +287,6 @@
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmTeste</room>
     <room>rooms\rmMapa22</room>
-    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel11OLD</room>
       <room>rooms\rmLevel12OLD</room>
