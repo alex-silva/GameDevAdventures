@@ -40,4 +40,12 @@ if (instance_exists(objPlayer))
     objPlayer.cor = Decrypt(ini_read_string("PlayerStats", "CorAtual", Cor.White), 11);
     TrocaSpritePlayer();
 }
+
+///cor para testes
+global.playerStats[? "PlayerBlue"] = false;
+global.playerStats[? "PlayerGreen"] = false;
+global.playerStats[? "PlayerRed"] = true;
+
+
+
 ini_close();

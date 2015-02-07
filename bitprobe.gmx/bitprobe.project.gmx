@@ -275,8 +275,8 @@
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
     <room>rooms\rmMenuInicial</room>
-    <room>rooms\rmLevel11</room>
     <room>rooms\rmMapa11</room>
+    <room>rooms\rmLevel11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>
     <room>rooms\rmLevel14</room>
@@ -287,6 +287,7 @@
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmTeste</room>
     <room>rooms\rmMapa22</room>
+    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel11OLD</room>
       <room>rooms\rmLevel12OLD</room>

@@ -7,6 +7,9 @@ with(objPlayer)
     image_speed = 1;
     var sprite = "sprPlayer"
   
+    
+    
+    ///teste
     if (cor == Cor.White)
         cor = Cor.Green;
     

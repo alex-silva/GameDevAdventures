@@ -683,6 +683,7 @@ if(global.playerStats[? "PlayerGreen"])
      
     PlaySound(sndColorShift, false, false);
 }
+
 </string>
           </argument>
         </arguments>
@@ -714,6 +715,8 @@ if(global.playerStats[? "PlayerRed"])
     
     PlaySound(sndColorShift, false, false);
 }
+
+show_debug_message(global.playerStats[? "PlayerGreen"]);
 </string>
           </argument>
         </arguments>

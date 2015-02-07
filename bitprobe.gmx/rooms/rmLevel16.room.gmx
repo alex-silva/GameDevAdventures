@@ -79,6 +79,7 @@
     <instance objName="objBarrier" x="1440" y="1632" name="inst_D700801D" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleY = 5;&#xA;" scaleX="1" scaleY="5" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="992" y="480" name="inst_282C21E6" locked="0" code="" scaleX="5" scaleY="5" colour="4294967295" rotation="90"/>
     <instance objName="objSpike" x="224" y="384" name="inst_149E88C0" locked="0" code="" scaleX="2.5" scaleY="5" colour="4294967295" rotation="0"/>
+    <instance objName="objPowerUp" x="288" y="128" name="inst_87443C03" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="736" w="32" h="32" xo="0" yo="160" id="10000001" name="inst_290EC399" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

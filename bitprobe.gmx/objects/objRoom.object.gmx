@@ -80,13 +80,13 @@ checkpointY = 0;
 if(IsLevel())
 // música de fase
 {
-    StopSound(sndAbertura);
+    ////StopSound(sndAbertura);
 ////    PlaySound(sndLevelBgm,true,true);
     ControllerSelector();
 }
 else
 {
-    StopSound(sndLevelBgm);
+  /////  StopSound(sndLevelBgm);
  /////   PlaySound(sndAbertura, true, true);
     sound_volume(sndAbertura, 0.7);
 }
