@@ -27,7 +27,10 @@
             <kind>1</kind>
             <string>///Define destino da sphere
 event_inherited();
-portalDestino = 999;
+path = pathTeste;
+speedPath = 20;
+endAction = 0;//continua
+absolutePath = true;
 </string>
           </argument>
         </arguments>
