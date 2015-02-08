@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,15 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///variáveis de checkpoint, se houver
-checkpointX = 0;
-checkpointY = 0;
+            <string>//mydatetime = date_create_datetime(2011, 9, 15, 9, 43, 30);
+//score = date_time_string( mydatetime );
+//alarm[0] = room_speed/10; 
+gui_x[0] = 50;
+gui_y[0] = 50
+m = 0;
+s = 0;
+ms = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="5">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -50,9 +55,26 @@ checkpointY = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Desabilita checkpoints
-checkpointX = 0;
-checkpointY = 0;
+            <string>time = get_timer();
+//if(init&gt;time)
+ms =  floor((time-init)/1000)- (s + m*60)*1000;
+if(ms&gt;= 1000) 
+{
+    s++;
+    ms=0;
+}
+s = floor((time-init)/1000000) - m*60;
+//s =  s - m*60;
+if(s&gt;=60) 
+{
+    m++;
+    s=0;
+}
+//
+//
+
+
+
 </string>
           </argument>
         </arguments>
@@ -75,41 +97,41 @@ checkpointY = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Armazena variáveis das rooms
+            <string>init = get_timer();
+//highscore_add("Time", score);
+//score = 0;
 
-if(IsLevel())
-// música de fase
-{
-    ////StopSound(sndAbertura);
-////    PlaySound(sndLevelBgm,true,true);
-    instance_create(0,0,objHUD);
-}
-else
-{
-  /////  StopSound(sndLevelBgm);
- /////   PlaySound(sndAbertura, true, true);
-    sound_volume(sndAbertura, 0.7);
-}
-// Grava level mais avançado
-if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
-{
-    global.rooms[? "RoomAtual"] = room;
-    show_debug_message("room save");
-show_debug_message(global.rooms[? "RoomAtual"]);
-    SaveGame("bitprobe.ini");
-    //Cria array para armazenar portais na tela
-    portais[instance_number(objSphere)] = id;
-
-}
-//considerar
-//desativa inércia do player
-if (instance_exists(objPlayer))
-    objPlayer.inercia = 0;
-///pq criar o objeto toda fase se podemos executar o código dele aqui?
-//ajusta view
-//Controlador de movimentação de backgrounds
-instance_create(0,0,objBgController);
-LoadScreen();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>str_m = string(m);
+str_s = string(s);
+str_ms = string(ms);
+if(m&lt;10) str_m = "0"+str_m; 
+if(s&lt;10) str_s = "0"+str_s; 
+if(ms&lt;100) str_ms = "0"+str_ms; 
+if(ms&lt;10) str_ms = "0"+str_ms; 
+draw_text(10,10,str_m+":"+str_s);
+//draw_highscore(100, 100, room_width - 100, room_height - 100); 
 </string>
           </argument>
         </arguments>

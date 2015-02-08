@@ -187,6 +187,7 @@
     </scripts>
     <scripts name="Gameplay">
       <script>scripts\ControllerSelector.gml</script>
+      <script>scripts\isOS.gml</script>
     </scripts>
     <scripts name="Sprite">
       <script>scripts\TrocaSpritePlayer.gml</script>
@@ -207,11 +208,13 @@
     </objects>
     <objects name="Control">
       <object>objects\objBarreiraInvisivel</object>
+      <object>objects\objScore</object>
       <object>objects\objCollision</object>
       <object>objects\objCheckpoint</object>
       <object>objects\objColorido</object>
       <object>objects\objBgController</object>
       <object>objects\objConstants</object>
+      <object>objects\objHUD</object>
     </objects>
     <objects name="Menu">
       <object>objects\objSplashProbe</object>
