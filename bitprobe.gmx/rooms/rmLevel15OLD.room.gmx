@@ -53,7 +53,7 @@
   <instances>
     <instance objName="objSpike" x="320" y="480" name="inst_34B74A71" locked="0" code="SetObject(Cor.White);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="384" y="480" name="inst_15DD5624" locked="0" code="SetObject(Cor.White);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorStart" x="64" y="1312" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDoorStart" x="560" y="656" name="inst_43A165A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="384" y="1216" name="inst_B3F78C32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="704" y="416" name="inst_A45C2A9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="0" y="1376" name="inst_231F0125" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -325,8 +325,8 @@
     <instance objName="objMovingSpike" x="352" y="576" name="inst_7E0EFBAE" locked="0" code="SetObject(Cor.Green);&#xA;direcao = Direction.Down;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objSpike" x="384" y="1344" name="inst_7358820A" locked="0" code="SetObject(Cor.White);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="448" y="1344" name="inst_424257D4" locked="0" code="SetObject(Cor.White);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSphere" x="704" y="672" name="inst_81B2C991" locked="0" code="SetObject(Cor.White);&#xA;objRoom.portais[0] = id;&#xA;portalDestino = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSphere" x="224" y="336" name="inst_AADA7698" locked="0" code="SetObject(Cor.White);&#xA;objRoom.portais[1] = id;&#xA;//armadilha&#xA;//portalDestino = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSphere" x="704" y="672" name="inst_81B2C991" locked="0" code="SetObject(Cor.White);&#xA;path = pathTeste;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSphere" x="224" y="336" name="inst_AADA7698" locked="0" code="SetObject(Cor.White);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="32" y="320" name="inst_8A7E45AF" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;scaleX = 0.50;&#xA;scaleY = 2.70;&#xA;" scaleX="0.5" scaleY="2.70000004768372" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="576" y="960" name="inst_42B5D3A6" locked="0" code="SetObject(Cor.Blue);&#xA;direcao = Direction.Left;&#xA;delay = 2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objMovingSpike" x="576" y="1024" name="inst_B8547BCA" locked="0" code="SetObject(Cor.Blue);&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>

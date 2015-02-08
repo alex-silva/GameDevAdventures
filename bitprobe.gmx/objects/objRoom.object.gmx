@@ -76,18 +76,22 @@ checkpointY = 0;
           <argument>
             <kind>1</kind>
             <string>///Armazena variáveis das rooms
-
+var playerExiste = instance_exists(objPlayer);
 if(IsLevel())
 // música de fase
 {
     ////StopSound(sndAbertura);
 ////    PlaySound(sndLevelBgm,true,true);
     instance_create(0,0,objHUD);
+    if (!playerExiste &amp;&amp; instance_exists(objDoorStart))
+        instance_create(objDoorStart.x, objDoorStart.y, objPlayer);
 }
 else
 {
   /////  StopSound(sndLevelBgm);
  /////   PlaySound(sndAbertura, true, true);
+    if (playerExiste)
+        with (objPlayer) instance_destroy();
     sound_volume(sndAbertura, 0.7);
 }
 // Grava level mais avançado
@@ -97,8 +101,6 @@ if (IsLevel() &amp;&amp; room &gt; global.rooms[? "RoomAtual"])
     show_debug_message("room save");
 show_debug_message(global.rooms[? "RoomAtual"]);
     SaveGame("bitprobe.ini");
-    //Cria array para armazenar portais na tela
-    portais[instance_number(objSphere)] = id;
 
 }
 //considerar

@@ -94,9 +94,30 @@ kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite
 draw_sprite(sprButtonLeft,0,kleft_x, kleft_y);
 draw_sprite(sprButtonRight,0,kright_x, kright_y);
 draw_sprite(sprButtonJump,0,kjump_x, kjump_y);
-if(global.playerStats[? "PlayerRed"])draw_sprite(sprButtonRed,0,kred_x, kred_y);
-if(global.playerStats[? "PlayerGreen"])draw_sprite(sprButtonGreen,0,kgreen_x, kgreen_y);
-if(global.playerStats[? "PlayerBlue"])draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
+var corPlayer = Cor.White
+if (instance_exists(objPlayer))
+    corPlayer = objPlayer.cor;
+if(global.playerStats[? "PlayerRed"])
+{
+    if (corPlayer = Cor.Red)
+        draw_sprite(sprButtonRedDown,0,kred_x, kred_y);
+    else
+        draw_sprite(sprButtonRed,0,kred_x, kred_y);
+}
+if(global.playerStats[? "PlayerGreen"])
+{
+    if (corPlayer = Cor.Green)
+        draw_sprite(sprButtonGreenDown,0,kgreen_x, kgreen_y);
+    else
+        draw_sprite(sprButtonGreen,0,kgreen_x, kgreen_y);
+}
+if(global.playerStats[? "PlayerBlue"])
+{
+    if (corPlayer = Cor.Blue)
+        draw_sprite(sprButtonBlueDown,0,kBlue_x, kBlue_y);
+    else
+        draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
+}
 </string>
           </argument>
         </arguments>

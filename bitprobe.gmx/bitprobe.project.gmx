@@ -66,8 +66,6 @@
       <sprite>sprites\sprPowerUpRed</sprite>
       <sprite>sprites\sprPowerUpGreen</sprite>
       <sprite>sprites\sprPowerUpBlue</sprite>
-      <sprite>sprites\sprPowerUpGreenOld</sprite>
-      <sprite>sprites\sprPowerUpBlueOld</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sprSettings</sprite>
@@ -288,14 +286,14 @@
     <room>rooms\rmLevel17</room>
     <room>rooms\rmLevel18</room>
     <room>rooms\rmLevel1B</room>
-    <room>rooms\rmTeste</room>
     <room>rooms\rmMapa22</room>
+    <room>rooms\rmLevel15OLD</room>
+    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel11OLD</room>
       <room>rooms\rmLevel12OLD</room>
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>
-      <room>rooms\rmLevel15OLD</room>
     </rooms>
   </rooms>
   <help>

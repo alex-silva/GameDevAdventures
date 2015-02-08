@@ -29,6 +29,13 @@
 event_inherited();
 direcao = Direction.Right;
 moveSpeed = 3;
+horizontalSpeed = 0;
+//1 - adiante 0 - para atrás
+sentido = 1;
+
+//distancia a se percorrer
+distancia = room_width;
+distanciaPercorrida = 0;
 </string>
           </argument>
         </arguments>
@@ -52,43 +59,44 @@ moveSpeed = 3;
           <argument>
             <kind>1</kind>
             <string>///Movimenta sphere
-switch (direcao)
+if (global.pause) exit;
+
+horizontalSpeed = sentido * moveSpeed;
+if (direcao == Direction.Left || direcao == Direction.Right)
+    distanciaPercorrida += sign(x - distanciaPercorrida);
+else
+    distanciaPercorrida += sign(y - distanciaPercorrida);
+
+//se percorreu distancia, retorna na direção oposta
+if (distanciaPercorrida &gt;= distancia)
 {
-    case Direction.Up    : y-=moveSpeed; break;
-    case Direction.Down  : y+=moveSpeed; break;
-    case Direction.Left  : x-=moveSpeed; break;
-    case Direction.Right : x-=moveSpeed; break;
+    horizontalSpeed = 0;
+    sentido *= -1;
+    distanciaPercorrida = 0;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objCollision">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Volta na Direção oposta
-switch (direcao)
+//colisão horizontal com floor
+else if (place_meeting(x + horizontalSpeed, y, objCollision))
 {
-    case Direction.Up    : direcao = Direction.Down;  y-=moveSpeed; break;
-    case Direction.Down  : direcao = Direction.Up;    y+=moveSpeed; break;
-    case Direction.Left  : direcao = Direction.Left;  x-=moveSpeed; break;
-    case Direction.Right : direcao = Direction.Right; x-=moveSpeed; break;
+    while(!place_meeting(x+sign(horizontalSpeed),y,objCollision))
+        x+=sign(horizontalSpeed);
+    sentido *= -1;
+    distanciaPercorrida = 0;
+    horizontalSpeed = 0;
 }
+//colisão vertical com floor
+else if (place_meeting(x, y + horizontalSpeed, objCollision))
+{
+    while(!place_meeting(x, y + sign(horizontalSpeed),objCollision))
+        y+=sign(horizontalSpeed);
+    sentido *= -1;
+    distanciaPercorrida = 0;
+    horizontalSpeed = 0;
+}
+
+if (direcao == Direction.Up || direcao == Direction.Down)
+    y+=horizontalSpeed;
+else
+    x+=horizontalSpeed;
 </string>
           </argument>
         </arguments>
