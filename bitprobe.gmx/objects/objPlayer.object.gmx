@@ -127,7 +127,7 @@ if (global.pause)
 }
 if (instance_exists(objDoorStart))
 {
-    if (x &gt; room_width || y &gt; room_height)
+    if (x &gt; room_width || y &gt; room_height || x &lt; 0 || y &lt; 0)
     {
         x = objDoorStart.x;
         y = objDoorStart.y;
@@ -368,39 +368,20 @@ room_goto_next();
             <string>/// Colisão com sphere e teletransporta
 if (CollisionCor(self.cor, other.cor))
 {
-    path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
-    PlaySound(sndPortal,false, true);
-    playerVivo = false;
+    if (other.isOrigin)
+    {
+        path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
+        PlaySound(sndPortal,false, true);
+        playerVivo = false;
+    }
+    else
+    {
+        playerVivo = true;
+        /////tocar sound diferenciado
+        PlaySound(sndPortal,false, true); 
+    }   
 }
 </string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>105</id>
-        <kind>0</kind>
-        <userelative>-1</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_move_point</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
           </argument>
         </arguments>
       </action>

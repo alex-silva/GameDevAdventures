@@ -308,7 +308,8 @@
     <instance objName="objCollision" x="1056" y="1632" name="inst_1EFE74C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1120" y="1648" name="inst_01D5E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1472" y="1616" name="inst_DB437416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSphere" x="1488" y="1488" name="inst_CD9D96B6" locked="0" code="SetObject(Cor.White);&#xA;direcao = Direction.Down;&#xA;distancia = 100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSphere" x="1488" y="1488" name="inst_CD9D96B6" locked="0" code="SetObject(Cor.White);&#xA;direcao = Direction.Down;&#xA;distancia = 100;&#xA;isOrigin = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSphere" x="1360" y="1152" name="inst_719A4BF9" locked="0" code="SetObject(Cor.White);&#xA;direcao = Direction.Left;&#xA;distancia = 100;&#xA;isOrigin = false;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="1312" y="1648" w="32" h="32" xo="96" yo="128" id="10006167" name="inst_A3723BE7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

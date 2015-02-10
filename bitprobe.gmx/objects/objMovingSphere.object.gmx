@@ -97,6 +97,9 @@ if (direcao == Direction.Up || direcao == Direction.Down)
     y+=horizontalSpeed;
 else
     x+=horizontalSpeed;
+    
+//muda path de acordo
+path_shift(path,x,y);
 </string>
           </argument>
         </arguments>
