@@ -16,6 +16,7 @@
     <sound>sound\sndPortal</sound>
     <sound>sound\sndStringCrash</sound>
     <sound>sound\sndLevelBgm</sound>
+    <sound>sound\sndTroll</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprMonsterNuncaDeletarFirstApel</sprite>
@@ -130,6 +131,7 @@
       <sprites name="Trojan">
         <sprite>sprites\sprTrojanMove</sprite>
         <sprite>sprites\sprTrojanHead</sprite>
+        <sprite>sprites\sprTroll</sprite>
       </sprites>
     </sprites>
     <sprites name="Controllers">

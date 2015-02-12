@@ -48,6 +48,9 @@ distanciaPlayer = 256;
 //barreira do segundo nível, branca para prender player, vermelha
 //para liberar passagem após switch
 barreira = 0;
+
+//Troll
+flag=true;
 </string>
           </argument>
         </arguments>
@@ -107,6 +110,13 @@ if (isMoving == true)
     x+=moveSpeed;
 else
 {
+    //Troll
+    if(flag){
+        instance_create(other.x, other.y, objTrojanHead);
+        objTrojanHead.visible = true;
+        flag=false;
+    }
+    //
     if (y + sprite_get_height(sprite_index)/2 &lt;= room_height)
         y++;
     image_index = 1;
