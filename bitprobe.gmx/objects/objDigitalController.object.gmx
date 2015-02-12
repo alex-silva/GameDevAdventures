@@ -45,6 +45,8 @@ kright_y = gui_y[0]-sprite_get_height(sprButtonRight)/2;
 //Posição botões lado direito
 kjump_x = gui_x[1];
 kjump_y = gui_y[1];
+kpause_x = gui_x[1]+ sprite_get_width(sprButtonJump)/2 - sprite_get_width(sprPause)/2;
+kpause_y = 20;
 kred_x = gui_x[1]-sprite_get_width(sprButtonJump);
 kred_y = gui_y[1]+(sprite_get_height(sprButtonJump)/2)-sprite_get_height(sprButtonRed)/2;
 kgreen_x = gui_x[1]-sprite_get_width(sprButtonGreen);
@@ -62,11 +64,10 @@ kleft = virtual_key_add(0, kleft_y,sprite_get_width(sprButtonLeft)+gap_lr+kleft_
 kright = virtual_key_add(kright_x-gap_lr, kright_y, sprite_get_width(sprButtonRight)+gap_lr+ sprite_get_width(sprButtonRight)/2,sprite_get_height(sprButtonRight), vk_right);
 //Virtual keys lado direito
 kjump = virtual_key_add(kjump_x, kjump_y,sprite_get_width(sprButtonJump) ,sprite_get_height(sprButtonJump), vk_space);
+kpause = virtual_key_add(kpause_x, kpause_y,sprite_get_width(sprPause),sprite_get_height(sprPause), vk_escape);
 kred = virtual_key_add(kred_x, kred_y,sprite_get_width(sprButtonRed) ,sprite_get_height(sprButtonRed), ord('1'));
 kgreen = virtual_key_add(kgreen_x, kgreen_y,sprite_get_width(sprButtonGreen) ,sprite_get_height(sprButtonGreen), ord('2'));
 kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite_get_height(sprButtonBlue), ord('3'));
-
-
 
 </string>
           </argument>
@@ -94,6 +95,8 @@ kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite
 draw_sprite(sprButtonLeft,0,kleft_x, kleft_y);
 draw_sprite(sprButtonRight,0,kright_x, kright_y);
 draw_sprite(sprButtonJump,0,kjump_x, kjump_y);
+draw_sprite(sprPause,0,kpause_x, kpause_y);
+
 var corPlayer = Cor.White
 if (instance_exists(objPlayer))
     corPlayer = objPlayer.cor;
