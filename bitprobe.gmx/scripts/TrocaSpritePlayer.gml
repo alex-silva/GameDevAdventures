@@ -24,7 +24,7 @@ with(objPlayer)
     if (playerVivo == false)
     {
         sprite+= "Die";
-        image_speed = (room_speed / alarmPlayerDeath) / 2;
+        image_speed = (room_speed / alarmPlayerDeath) / 2;   
     }
    // else if (verticalSpeed == 0 && isJumping)
     //{//

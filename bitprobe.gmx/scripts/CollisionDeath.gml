@@ -5,11 +5,11 @@
 //
 if (instance_exists(objPlayer))
 {
-with (objPlayer){
-    playerVivo = false;
-    ParticleDeath();
-    alarm[0] = alarmPlayerDeath;
-    PlaySound(sndDying,false,false);
-    TrocaSpritePlayer();
+    with (objPlayer){
+        playerVivo = false;
+        ParticleDeath();
+        alarm[1] = alarmPlayerDeath;
+        PlaySound(sndDying,false,false);
+        TrocaSpritePlayer(); 
     }
 }

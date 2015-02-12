@@ -59,6 +59,14 @@
       <sprites name="White">
         <sprite>sprites\sprPlayerWhiteMove_old</sprite>
         <sprite>sprites\sprPlayerWhiteJump_old</sprite>
+        <sprite>sprites\sprPlayerWhiteMove</sprite>
+        <sprite>sprites\sprPlayerWhiteIdle</sprite>
+        <sprite>sprites\sprPlayerWhiteJumpStart</sprite>
+        <sprite>sprites\sprPlayerWhiteJumpEnd</sprite>
+        <sprite>sprites\sprPlayerWhiteRun</sprite>
+        <sprite>sprites\sprPlayerWhiteDie</sprite>
+        <sprite>sprites\sprPlayerWhiteAscend</sprite>
+        <sprite>sprites\sprPlayerWhiteDescend</sprite>
       </sprites>
     </sprites>
     <sprites name="Collectables">
@@ -201,6 +209,7 @@
     <scripts name="Control">
       <script>scripts\IsLevel.gml</script>
       <script>scripts\LoadScreen.gml</script>
+      <script>scripts\Destroy.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -214,7 +223,7 @@
       <object>objects\objCheckpoint</object>
       <object>objects\objColorido</object>
       <object>objects\objBgController</object>
-      <object>objects\objConstants</object>
+      <object>objects\objGlobal</object>
       <object>objects\objHUD</object>
     </objects>
     <objects name="Menu">

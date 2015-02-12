@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define constantes
+            <string>///Constantes
 
 // CORES - O JOGO TODO SERÁ BASEADO NESTA PORRA
 enum Cor
@@ -68,8 +68,7 @@ enum Combinacao
 }
 // COMBINAÇÕES DE CORES
 
-//Variável controle de pausa
-globalvar pause; pause = false;
+
 
 //Map Sprites Player
 globalvar mapSprites; global.mapSprites = ds_map_create();
@@ -100,6 +99,57 @@ ds_map_add(global.mapSprites, "sprPlayerBlueDie", sprPlayerBlueDie);
 ds_map_add(global.mapSprites, "sprPlayerBlueJumpEnd", sprPlayerBlueJumpEnd);
 ds_map_add(global.mapSprites, "sprPlayerBlueAscend", sprPlayerBlueAscend);
 ds_map_add(global.mapSprites, "sprPlayerBlueDescend", sprPlayerBlueDescend);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Variáveis de controle
+globalvar keyLeft;keyLeft = 0;
+globalvar keyRight;keyRight = 0;
+globalvar keyJump;keyJump = 0;
+globalvar keyRed;keyRed = 0;
+globalvar keyGreen;keyGreen = 0;
+globalvar keyBlue;keyBlue = 0;
+
+//Variável controle de pausa
+globalvar pause; pause = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Loading...
 
 //Map Sprites Player
 
@@ -112,21 +162,32 @@ global.enableAudio = ini_read_real("settings", "audio", true);
 global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
-//toca música de abertura
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Toca música de abertura
 PlaySound(sndAbertura, true, true);
 sound_volume(sndAbertura, 0.7);
 //Cria player persistente
 ////instance_create(352, 32, objPlayer);
 ////objPlayer.visible = false;
-
-
-//Variáveis de controle
-globalvar keyLeft;keyLeft = 0;
-globalvar keyRight;keyRight = 0;
-globalvar keyJump;keyJump = 0;
-globalvar keyRed;keyRed = 0;
-globalvar keyGreen;keyGreen = 0;
-globalvar keyBlue;keyBlue = 0;
 </string>
           </argument>
         </arguments>

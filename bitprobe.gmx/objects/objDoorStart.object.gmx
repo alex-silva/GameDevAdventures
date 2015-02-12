@@ -26,14 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>///Move player para DoorStart
-            if (instance_exists(objPlayer))
-            {
-            with (objPlayer)
-            {
-playerVivo = true;
-visible = true;
-x = objDoorStart.x;
-y = objDoorStart.y;}
+if (!instance_exists(objPlayer))
+{
+    instance_create(x,y,objPlayer);
+    with (objPlayer)
+    {
+        playerVivo = true;
+        visible = true;
+        //x = objDoorStart.x;
+        //y = objDoorStart.y;
+    }
 }
 </string>
           </argument>
