@@ -6,7 +6,7 @@
   <depth>-50</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>sprPlayerIdle</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -493,7 +493,7 @@ if (playerVivo)
             <string>/// Colisão com boss, restarta room 
 if (playerVivo)
     if (CollisionCor(cor, other.cor))
-        CollisionDeath();
+        Destroy(self);
 </string>
           </argument>
         </arguments>
