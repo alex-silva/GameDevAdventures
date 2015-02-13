@@ -72,7 +72,7 @@ enum Combinacao
 
 //Map Sprites Player
 globalvar mapSprites; global.mapSprites = ds_map_create();
-
+/*
 ds_map_add(global.mapSprites, "sprPlayerRedMove", sprPlayerRedMove);
 ds_map_add(global.mapSprites, "sprPlayerRedIdle", sprPlayerRedIdle);
 ds_map_add(global.mapSprites, "sprPlayerRedJumpStart", sprPlayerRedJumpStart);
@@ -99,6 +99,15 @@ ds_map_add(global.mapSprites, "sprPlayerBlueDie", sprPlayerBlueDie);
 ds_map_add(global.mapSprites, "sprPlayerBlueJumpEnd", sprPlayerBlueJumpEnd);
 ds_map_add(global.mapSprites, "sprPlayerBlueAscend", sprPlayerBlueAscend);
 ds_map_add(global.mapSprites, "sprPlayerBlueDescend", sprPlayerBlueDescend);
+*/
+ds_map_add(global.mapSprites, "sprPlayerMove", sprPlayerMove);
+ds_map_add(global.mapSprites, "sprPlayerIdle", sprPlayerIdle);
+ds_map_add(global.mapSprites, "sprPlayerJumpStart", sprPlayerJumpStart);
+ds_map_add(global.mapSprites, "sprPlayerRun", sprPlayerRun);
+ds_map_add(global.mapSprites, "sprPlayerDie", sprPlayerDie);
+ds_map_add(global.mapSprites, "sprPlayerJumpEnd", sprPlayerJumpEnd);
+ds_map_add(global.mapSprites, "sprPlayerAscend", sprPlayerAscend);
+ds_map_add(global.mapSprites, "sprPlayerDescend", sprPlayerDescend);
 </string>
           </argument>
         </arguments>

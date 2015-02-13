@@ -20,54 +20,16 @@
   <sprites name="sprites">
     <sprite>sprites\sprMonsterNuncaDeletarFirstApel</sprite>
     <sprites name="Player">
-      <sprites name="Blue">
-        <sprite>sprites\sprPlayerBlueMove_old</sprite>
-        <sprite>sprites\sprPlayerBlueJump_old</sprite>
-        <sprite>sprites\sprPlayerBlueMove</sprite>
-        <sprite>sprites\sprPlayerBlueIdle</sprite>
-        <sprite>sprites\sprPlayerBlueJumpStart</sprite>
-        <sprite>sprites\sprPlayerBlueJumpEnd</sprite>
-        <sprite>sprites\sprPlayerBlueRun</sprite>
-        <sprite>sprites\sprPlayerBlueDie</sprite>
-        <sprite>sprites\sprPlayerBlueAscend</sprite>
-        <sprite>sprites\sprPlayerBlueDescend</sprite>
-      </sprites>
-      <sprites name="Red">
-        <sprite>sprites\sprPlayerRedMove_old</sprite>
-        <sprite>sprites\sprPlayerRedJump_old</sprite>
-        <sprite>sprites\sprPlayerRedMove</sprite>
-        <sprite>sprites\sprPlayerRedIdle</sprite>
-        <sprite>sprites\sprPlayerRedJumpStart</sprite>
-        <sprite>sprites\sprPlayerRedJumpEnd</sprite>
-        <sprite>sprites\sprPlayerRedRun</sprite>
-        <sprite>sprites\sprPlayerRedDie</sprite>
-        <sprite>sprites\sprPlayerRedAscend</sprite>
-        <sprite>sprites\sprPlayerRedDescend</sprite>
-      </sprites>
-      <sprites name="Green">
-        <sprite>sprites\sprPlayerGreenMove_old</sprite>
-        <sprite>sprites\sprPlayerGreenJump_old</sprite>
-        <sprite>sprites\sprPlayerGreenMove</sprite>
-        <sprite>sprites\sprPlayerGreenIdle</sprite>
-        <sprite>sprites\sprPlayerGreenJumpStart</sprite>
-        <sprite>sprites\sprPlayerGreenJumpEnd</sprite>
-        <sprite>sprites\sprPlayerGreenRun</sprite>
-        <sprite>sprites\sprPlayerGreenDie</sprite>
-        <sprite>sprites\sprPlayerGreenAscend</sprite>
-        <sprite>sprites\sprPlayerGreenDescend</sprite>
-      </sprites>
-      <sprites name="White">
-        <sprite>sprites\sprPlayerWhiteMove_old</sprite>
-        <sprite>sprites\sprPlayerWhiteJump_old</sprite>
-        <sprite>sprites\sprPlayerWhiteMove</sprite>
-        <sprite>sprites\sprPlayerWhiteIdle</sprite>
-        <sprite>sprites\sprPlayerWhiteJumpStart</sprite>
-        <sprite>sprites\sprPlayerWhiteJumpEnd</sprite>
-        <sprite>sprites\sprPlayerWhiteRun</sprite>
-        <sprite>sprites\sprPlayerWhiteDie</sprite>
-        <sprite>sprites\sprPlayerWhiteAscend</sprite>
-        <sprite>sprites\sprPlayerWhiteDescend</sprite>
-      </sprites>
+      <sprite>sprites\sprPlayerBlueMove_old</sprite>
+      <sprite>sprites\sprPlayerBlueJump_old</sprite>
+      <sprite>sprites\sprPlayerMove</sprite>
+      <sprite>sprites\sprPlayerRun</sprite>
+      <sprite>sprites\sprPlayerIdle</sprite>
+      <sprite>sprites\sprPlayerJumpEnd</sprite>
+      <sprite>sprites\sprPlayerJumpStart</sprite>
+      <sprite>sprites\sprPlayerDie</sprite>
+      <sprite>sprites\sprPlayerAscend</sprite>
+      <sprite>sprites\sprPlayerDescend</sprite>
     </sprites>
     <sprites name="Collectables">
       <sprite>sprites\sprBit</sprite>
@@ -212,6 +174,9 @@
       <script>scripts\Destroy.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <objects name="Player">
       <object>objects\objPlayer</object>
