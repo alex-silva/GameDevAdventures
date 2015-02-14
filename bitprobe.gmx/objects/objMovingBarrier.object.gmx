@@ -116,7 +116,7 @@ if (instance_exists(objPlayer))
         {
             //mantem personagem acima da barrier
             if (isCarryingPlayer &amp;&amp; !isJumping)
-                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)+6;
+                objPlayer.y = y - (sprite_get_height(sprPlayerMove)/2)+6;
             //desativa pulo caso sai da barrier
             if ((isJumping) &amp;&amp; !place_meeting(x,y,objPlayer))
                 isJumping = false;
@@ -124,10 +124,10 @@ if (instance_exists(objPlayer))
         /* atravessa se player estiver com parte do corpo na barrier */
         var barrierXDireita = round(x + sprite_get_width(barrierSprite) * scaleX);
         var barrierYAbaixo = round(y + sprite_get_height(barrierSprite) * scaleY);
-        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerBlueMove)/2));
-        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerBlueMove)/2));
-        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerBlueMove)/2));
-        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerBlueMove)/2));
+        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerMove)/2));
+        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerMove)/2));
+        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerMove)/2));
+        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerMove)/2));
         
          if (place_meeting(x, y, objPlayer) &amp;&amp; !isCarryingPlayer
           &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
@@ -145,7 +145,7 @@ if (instance_exists(objPlayer))
            {
                 if (!isJumping){
                 if (sentido==-1)
-                    objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)-7;
+                    objPlayer.y = y - (sprite_get_height(sprPlayerMove)/2)-7;
                     objPlayer.verticalSpeed = -objPlayer.jumpSpeed -6;
                     }
                 isJumping = true;
@@ -157,7 +157,7 @@ if (instance_exists(objPlayer))
             else if (direcao = Direction.Vertical &amp;&amp; !isJumping)
             {
                 isCarryingPlayer = true;
-                objPlayer.y = y - (sprite_get_height(sprPlayerBlueMove)/2)+6;
+                objPlayer.y = y - (sprite_get_height(sprPlayerMove)/2)+6;
                 objPlayer.verCarry = 1;
             }
         }

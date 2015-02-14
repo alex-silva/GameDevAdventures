@@ -117,7 +117,7 @@ if(global.playerStats[? "PlayerGreen"])
 if(global.playerStats[? "PlayerBlue"])
 {
     if (corPlayer = Cor.Blue)
-        draw_sprite(sprButtonBlueDown,0,kBlue_x, kBlue_y);
+        draw_sprite(sprButtonBlueDown,0,kblue_x, kblue_y);
     else
         draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
 }

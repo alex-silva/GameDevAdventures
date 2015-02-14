@@ -8,19 +8,6 @@ with(objPlayer)
     var sprite = "sprPlayer"
   
     
-    
-    ///teste
-    if (cor == Cor.White)
-        cor = Cor.Green;
-    
-    
-    switch (cor)
-    {
-        case Cor.White : sprite += "White"; break;
-        case Cor.Red   : sprite += "Red"  ; break;
-        case Cor.Green : sprite += "Green"; break;
-        case Cor.Blue  : sprite += "Blue" ; break; 
-    }
     if (playerVivo == false)
     {
         sprite+= "Die";
@@ -80,4 +67,12 @@ with(objPlayer)
         }
     }
     sprite_index = ds_map_find_value(global.mapSprites, sprite);
+    
+    switch (cor)
+    {
+        case Cor.Red   : hue = 0; break;
+        case Cor.Green : hue = 80; break;
+        case Cor.Blue  : hue = 160; break; 
+        case Cor.White : hue = 255; break;
+    }
 }
