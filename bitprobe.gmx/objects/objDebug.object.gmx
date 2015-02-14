@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(isOS(os_android,os_ios,os_winphone)) ControllerSelector();
-instance_create(0,0,objScore);
+            <string>
 
+for (var i = 0; i &lt; path_get_number(pathTeste)-1; i+=1)
+{
+draw_set_colour(c_lime);
+    draw_line(path_get_point_x(pathTeste, i),path_get_point_y(pathTeste, i),path_get_point_x(pathTeste, i+1),path_get_point_y(pathTeste, i+1));
+}
 </string>
           </argument>
         </arguments>

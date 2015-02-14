@@ -16,6 +16,7 @@
     <sound>sound\sndPortal</sound>
     <sound>sound\sndStringCrash</sound>
     <sound>sound\sndLevelBgm</sound>
+    <sound>sound\sound11</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprMonsterNuncaDeletarFirstApel</sprite>
@@ -187,6 +188,7 @@
       <object>objects\objBgController</object>
       <object>objects\objConstants</object>
       <object>objects\objHUD</object>
+      <object>objects\objDebug</object>
     </objects>
     <objects name="Menu">
       <object>objects\objSplashProbe</object>
@@ -204,6 +206,9 @@
       <objects name="Trojan">
         <object>objects\objTriggerTrojanParar</object>
         <object>objects\objTriggerTrojanSubir</object>
+      </objects>
+      <objects name="Views">
+        <object>objects\objTriggerView1_10_1</object>
       </objects>
     </objects>
     <objects name="Interactives">
@@ -250,25 +255,26 @@
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
     <room>rooms\rmMenuInicial</room>
-    <room>rooms\rmMapa11</room>
-    <room>rooms\rmLevel11</room>
-    <room>rooms\rmLevel12</room>
-    <room>rooms\rmLevel13</room>
-    <room>rooms\rmLevel14</room>
-    <room>rooms\rmLevel15</room>
-    <room>rooms\rmLevel16</room>
-    <room>rooms\rmLevel17</room>
-    <room>rooms\rmLevel18</room>
-    <room>rooms\rmLevel19</room>
+    <room>rooms\rmMapa01</room>
+    <room>rooms\rmLevel1_1</room>
+    <room>rooms\rmLevel1_2</room>
+    <room>rooms\rmLevel1_3</room>
+    <room>rooms\rmLevel1_4</room>
+    <room>rooms\rmLevel1_5</room>
+    <room>rooms\rmLevel1_6</room>
+    <room>rooms\rmLevel1_7</room>
+    <room>rooms\rmLevel1_8</room>
+    <room>rooms\rmLevel1_9</room>
     <room>rooms\rmLevel1B</room>
-    <room>rooms\rmMapa22</room>
+    <room>rooms\rmLevel1_10</room>
     <room>rooms\rmTeste</room>
+    <room>rooms\rmMapa22</room>
+    <room>rooms\rmLevel15OLD</room>
     <rooms name="OLD">
       <room>rooms\rmLevel11OLD</room>
       <room>rooms\rmLevel12OLD</room>
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>
-      <room>rooms\rmLevel15OLD</room>
     </rooms>
   </rooms>
   <help>

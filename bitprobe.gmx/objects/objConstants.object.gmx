@@ -109,6 +109,27 @@ ds_map_add(global.mapSprites, "sprPlayerBlueJumpEnd", sprPlayerBlueJumpEnd);
 ds_map_add(global.mapSprites, "sprPlayerBlueAscend", sprPlayerBlueAscend);
 ds_map_add(global.mapSprites, "sprPlayerBlueDescend", sprPlayerBlueDescend);
 
+// MUSIC - SFX
+enum Sound
+{
+    MUSIC = 1,
+    SFX = 2
+}
+//Map SFX(0) - Music(1)
+globalvar mapSound; global.mapSound = ds_map_create();
+
+ds_map_add(global.mapSound, sndAbertura, Sound.MUSIC);
+ds_map_add(global.mapSound, sndLevelBgm, Sound.MUSIC);
+ds_map_add(global.mapSound, sndColorShift, Sound.SFX);
+ds_map_add(global.mapSound, sndJump, Sound.SFX);
+ds_map_add(global.mapSound, sndStep1, Sound.SFX);
+ds_map_add(global.mapSound, sndBoost, Sound.SFX);
+ds_map_add(global.mapSound, sndDying, Sound.SFX);
+ds_map_add(global.mapSound, sndPowerUp, Sound.SFX);
+ds_map_add(global.mapSound, sndNextLevel, Sound.SFX);
+ds_map_add(global.mapSound, sndPortal, Sound.SFX);
+ds_map_add(global.mapSound, sndStringCrash, Sound.SFX);
+
 //Map Sprites Player
 */
 //Cria mapa para Save/Load
@@ -120,6 +141,9 @@ global.enableAudio = ini_read_real("settings", "audio", true);
 global.enableMusic = ini_read_real("settings", "music", true);
 ini_close();
 
+
+//carrega configs
+LoadGame("bitprobe.ini");
 //toca música de abertura
 PlaySound(sndAbertura, true, true);
 sound_volume(sndAbertura, 0.7);

@@ -126,6 +126,7 @@ if (global.pause)
     image_index = 0;
     exit;
 }
+show_debug_message(path_position);
 if (instance_exists(objDoorStart))
 {
     if (x &gt; room_width || y &gt; room_height || x &lt; 0 || y &lt; 0)
@@ -249,13 +250,18 @@ if (place_meeting(x, y + verticalSpeed, objCollision))
     }
     verticalSpeed = 0;
 }
-
+//se está seguindo path, cancela velocidade
+if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
+{
+    verticalSpeed = 0;
+    hspFinal = 0;
+}
 // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
 x += hspFinal;  
 
 if (verCarry == 0)
     y += verticalSpeed;
-
+    
 //Anima sprite
 if (horizontalSpeed &gt; 0)
 {
@@ -369,18 +375,19 @@ room_goto_next();
             <string>/// Colisão com sphere e teletransporta
 if (CollisionCor(self.cor, other.cor))
 {
-    if (other.isOrigin)
+    if (other.isOrigin &amp;&amp; playerVivo == true)
     {
         path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
         PlaySound(sndPortal,false, true);
         playerVivo = false;
     }
-    else
+    else if ((!other.isOrigin &amp;&amp; playerVivo == false))
     {
+    //TODO:sound diferenciado
+    PlaySound(sndPortal,false, true);
         playerVivo = true;
-        /////tocar sound diferenciado
-        PlaySound(sndPortal,false, true); 
-    }   
+    }
+    
 }
 </string>
           </argument>

@@ -69,6 +69,17 @@ kred = virtual_key_add(kred_x, kred_y,sprite_get_width(sprButtonRed) ,sprite_get
 kgreen = virtual_key_add(kgreen_x, kgreen_y,sprite_get_width(sprButtonGreen) ,sprite_get_height(sprButtonGreen), ord('2'));
 kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite_get_height(sprButtonBlue), ord('3'));
 
+//está em modo tutorial de movimento
+tutorialMov = false;
+//está em modo tutorial de pulo
+tutorialPulo = false;
+//está em modo tutorial de cor - Red
+tutorialRed = false;
+//está em modo tutorial de cor - Blue
+tutorialBlue = false;
+//está em modo tutorial de cor - Green
+tutorialGreen = false;
+
 </string>
           </argument>
         </arguments>
@@ -92,6 +103,7 @@ kblue = virtual_key_add(kblue_x, kblue_y,sprite_get_width(sprButtonBlue) ,sprite
           <argument>
             <kind>1</kind>
             <string>///Inserção dos sprites na tela
+
 draw_sprite(sprButtonLeft,0,kleft_x, kleft_y);
 draw_sprite(sprButtonRight,0,kright_x, kright_y);
 draw_sprite(sprButtonJump,0,kjump_x, kjump_y);
