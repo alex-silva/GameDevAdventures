@@ -30,7 +30,7 @@ event_inherited();
 direcao = Direction.Right;
 moveSpeed = 3;
 horizontalSpeed = 0;
-//1 - adiante 0 - para atrás
+//1 - adiante -1 - para atrás
 sentido = 1;
 
 //distancia a se percorrer
@@ -58,7 +58,7 @@ distanciaPercorrida = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movimenta sphere
+            <string>///Movimenta sphere, define path
 if (global.pause) exit;
 
 horizontalSpeed = sentido * moveSpeed;
@@ -92,14 +92,38 @@ else if (place_meeting(x, y + horizontalSpeed, objCollision))
     distanciaPercorrida = 0;
     horizontalSpeed = 0;
 }
+//muda path de acordo com posição
+   var deslocamentoX = 0;
+    var deslocamentoY = 0;
+    if (direcao == Direction.Up || direcao == Direction.Down)
+        deslocamentoY = horizontalSpeed;
+    else
+        deslocamentoX = horizontalSpeed;
 
+for (var i = 0; i &lt; path_get_number(pathTeste)-1; i+=1)
+{
+path_change_point(path,i,path_get_point_x(pathTeste, i) + 10,path_get_point_y(pathTeste, i) + 10, 100);
+}
+
+if (isOrigin)
+{
+   var px = path_get_point_x(path,0) + deslocamentoX;
+    var py = path_get_point_y(path,0) + deslocamentoY;
+ //   path_change_point(path, 0, px, py, speedPath);
+}
+else
+{
+    var px = path_get_point_x(path, path_get_number(path) - 1) + deslocamentoX;
+    var py = path_get_point_y(path, path_get_number(path) - 1) + deslocamentoY;
+ //   path_change_point(path, path_get_number(path) - 1, px, py, speedPath);
+//    if (objPlayer.path_position &gt; 0 &amp;&amp; objPlayer.path_position &lt; 1)
+  //      horizontalSpeed = 0;
+}
+ 
 if (direcao == Direction.Up || direcao == Direction.Down)
     y+=horizontalSpeed;
 else
     x+=horizontalSpeed;
-    
-//muda path de acordo
-path_shift(path,x,y);
 </string>
           </argument>
         </arguments>

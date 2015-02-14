@@ -9,11 +9,11 @@ if (!file_exists(argument0))
 
 ini_open(argument0);
 
-global.rooms[? "RoomAtual"] = Decrypt(ini_read_string("Rooms", "RoomAtual", rmLevel11), 2);
+global.rooms[? "RoomAtual"] = Decrypt(ini_read_string("Rooms", "RoomAtual", rmLevel1_1), 2);
 show_debug_message("room load");
 show_debug_message(global.rooms[? "RoomAtual"]);
 
-global.rooms[? "MundoAtual"] = Decrypt(ini_read_string("Rooms", "MundoAtual", rmMapa11), 5);
+global.rooms[? "MundoAtual"] = Decrypt(ini_read_string("Rooms", "MundoAtual", rmMapa01), 5);
 
 if (Decrypt(ini_read_string("PlayerStats", "PlayerRed", 0), 7) == 0)
     global.playerStats[? "PlayerRed"] = false;
@@ -34,7 +34,22 @@ if (Decrypt(ini_read_string("PlayerStats", "PlayerWhite", 0), 6) == 0)
     global.playerStats[? "PlayerWhite"] = false;
 else
     global.playerStats[? "PlayerWhite"] = true;
+
+if (Decrypt(ini_read_string("Config", "enableSFX", 0), 19) == 0)
+    global.enableSFX = false;
+else
+    global.enableSFX = true;
     
+if (Decrypt(ini_read_string("Config", "enableMusic", 0), 20) == 0)
+    global.enableMusic = false;
+else
+    global.enableMusic = true;
+
+    
+    
+    /////tocar ou nao musica e efeitos para testes
+    global.enableMusic = false;
+    global.enableSFX = true;
 if (instance_exists(objPlayer))
 {
     objPlayer.cor = Decrypt(ini_read_string("PlayerStats", "CorAtual", Cor.White), 11);

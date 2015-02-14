@@ -25,13 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Define destino da sphere
+            <string>///Define path da sphere
 event_inherited();
 path = pathTeste;
 speedPath = 20;
 endAction = 0;//continua
-absolutePath = false;
+absolutePath = true;
 isOrigin = false;
+pathInitialX = 0;
+pathInitialY = 0;
+pathFinalX = 0;
+pathFinalY = 0;
 </string>
           </argument>
         </arguments>

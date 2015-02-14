@@ -26,5 +26,6 @@ ini_write_string("PlayerStats", "PlayerWhite", Encrypt(PlayerWhite, 6));
 if (instance_exists(objPlayer))
     ini_write_string("PlayerStats", "CorAtual", Encrypt(objPlayer.cor, 11));
     
-  
+ini_write_string("Config", "enableSFX", Encrypt(global.enableSFX, 19));
+ini_write_string("Config", "enableMusic", Encrypt(global.enableMusic, 20));
 ini_close();
