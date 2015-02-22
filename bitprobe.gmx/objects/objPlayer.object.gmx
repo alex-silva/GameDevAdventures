@@ -55,6 +55,8 @@ playerDirection = Direction.Right;
 playerVivo = true;
 /* variáveis de estado do player (para troca de sprites) */
 
+//distancia do player da view (padrao - meio da tela)
+distanciaView = 2;
 // alarme até morte do player
 alarmPlayerDeath = room_speed;
 image_speed = 1;
@@ -124,7 +126,7 @@ if (global.pause)
     image_index = 0;
     exit;
 }
-show_debug_message(path_position);
+
 if (instance_exists(objDoorStart))
 {
     if (x &gt; room_width || y &gt; room_height || x &lt; 0 || y &lt; 0)
@@ -133,10 +135,16 @@ if (instance_exists(objDoorStart))
         y = objDoorStart.y;
     }
 }
-view_object[0]=object_index;
 // player visível apenas quando vivo
 //visible = playerVivo;
 
+movimentoViewX = objPlayer.x - 128;
+if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[0] - 128 &lt; room_width)
+    view_xview[0] = movimentoViewX;
+movimentoViewY = objPlayer.y - 128;
+if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[0] - 128 &lt; room_height)
+    view_yview[0] = movimentoViewY;
+            
 if (!playerVivo)
     exit;
 
@@ -822,8 +830,6 @@ if(global.playerStats[? "PlayerRed"])
     
     PlaySound(sndColorShift, false, false);
 }
-
-show_debug_message(global.playerStats[? "PlayerGreen"]);
 </string>
           </argument>
         </arguments>

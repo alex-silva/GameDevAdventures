@@ -41,8 +41,8 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="objPlayer" xview="100" yview="350" wview="960" hview="1200" xport="0" yport="0" wport="960" hport="1200" hborder="1000" vborder="1000" hspeed="-1" vspeed="-1"/>
-    <view visible="0" objName="objPlayer" xview="0" yview="0" wview="560" hview="560" xport="0" yport="0" wport="560" hport="560" hborder="1000" vborder="1000" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="" xview="0" yview="0" wview="750" hview="750" xport="0" yport="0" wport="750" hport="750" hborder="0" vborder="0" hspeed="-1" vspeed="-1"/>
+    <view visible="0" objName="" xview="0" yview="0" wview="560" hview="373" xport="0" yport="0" wport="560" hport="373" hborder="1000" vborder="1000" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -56,7 +56,7 @@
     <instance objName="objSpike" x="608" y="1056" name="inst_21B44CAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="544" y="1056" name="inst_FC7E3229" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="672" y="1056" name="inst_E79F6908" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingBarrier" x="672" y="992" name="inst_24DD98C2" locked="0" code="barrierSprite = sprBarrierGreen;&#xA;cor = Cor.Green;&#xA;direcao = Direction.Horizontal;&#xA;sentido = 1;&#xA;distancia = 100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="80" y="720" name="inst_3E07E30E" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="832" y="736" name="inst_500D13FD" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Down;&#xA;moveSpeed = 7;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objSpike" x="96" y="1056" name="inst_6991228C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="432" y="736" name="inst_E2DDCCEA" locked="0" code="SetObject(Cor.White);&#xA;direcao = Direction.Down;&#xA;delay = 30;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
@@ -65,23 +65,23 @@
     <instance objName="objCollision" x="80" y="1088" name="inst_A5F95B98" locked="0" code="" scaleX="36" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="480" y="1056" name="inst_837BC8B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="416" y="1056" name="inst_9A9125FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingBarrier" x="80" y="992" name="inst_B8AFF8DE" locked="0" code="barrierSprite = sprBarrierRed;&#xA;cor = Cor.Red;&#xA;direcao = Direction.Horizontal;&#xA;sentido = 1;&#xA;distancia = 120;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="336" y="304" name="inst_07C97997" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objMovingSpike" x="336" y="224" name="inst_07C97997" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSpike" x="864" y="1056" name="inst_37C7CC0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="96" y="464" name="inst_920A68FB" locked="0" code="SetObject(Cor.Green);&#xA;direcao = Direction.Right;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
+    <instance objName="objMovingSpike" x="96" y="304" name="inst_920A68FB" locked="0" code="SetObject(Cor.Green);&#xA;direcao = Direction.Right;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objSpike" x="800" y="1056" name="inst_D211DF84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="992" y="1056" name="inst_C94546CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="896" y="736" name="inst_786862D1" locked="0" code="SetObject(Cor.Green);&#xA;direcao = Direction.Down;&#xA;moveSpeed = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
     <instance objName="objSpike" x="736" y="1056" name="inst_0B18631B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="368" y="256" name="inst_A6E97F23" locked="0" code="" scaleX="2" scaleY="13" colour="4294967295" rotation="0"/>
-    <instance objName="objCollision" x="368" y="192" name="inst_06F8FBCB" locked="0" code="" scaleX="6" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="368" y="192" name="inst_06F8FBCB" locked="0" code="" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="0" y="256" name="inst_3D4C3735" locked="0" code="" scaleX="2" scaleY="26" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="336" y="624" name="inst_E843BCAE" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objMovingSpike" x="336" y="480" name="inst_E843BCAE" locked="0" code="SetObject(Cor.Red);&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSpike" x="160" y="1056" name="inst_3D5EA523" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="224" y="1056" name="inst_648C0999" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="928" y="1056" name="inst_94FCF10C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="288" y="1056" name="inst_8AAC64CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTriggerView1_10_1" x="16" y="768" name="inst_CB88498F" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objTriggerView" x="48" y="528" name="inst_C0DF4F13" locked="0" code="view = 0;&#xA;novaView = 1;&#xA;" scaleX="10" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="objTriggerViewFollowing" x="32" y="80" name="inst_83B943A0" locked="0" code="" scaleX="11" scaleY="16" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="0" y="736" w="32" h="32" xo="0" yo="160" id="10000001" name="inst_290EC399" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

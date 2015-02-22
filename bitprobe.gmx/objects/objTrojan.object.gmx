@@ -152,8 +152,6 @@ else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; distanciaPlayer &amp
           <argument>
             <kind>1</kind>
             <string>///Destrói qualquer objeto que colidir (exceto player)
-show_debug_message("boss" + string(cor));
-        show_debug_message("barrier" + string(other.cor));
 if (CollisionCor(cor, other.cor))
 {
     

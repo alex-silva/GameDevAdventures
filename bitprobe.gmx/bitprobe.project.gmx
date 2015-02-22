@@ -207,7 +207,8 @@
         <object>objects\objTriggerTrojanSubir</object>
       </objects>
       <objects name="Views">
-        <object>objects\objTriggerView1_10_1</object>
+        <object>objects\objTriggerView</object>
+        <object>objects\objTriggerViewFollowing</object>
       </objects>
     </objects>
     <objects name="Interactives">
@@ -253,11 +254,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmTeste</room>
+    <room>rooms\rmLevel1_2</room>
+    <room>rooms\rmLevel1_10</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
-    <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_4</room>
     <room>rooms\rmLevel1_5</room>
@@ -266,9 +267,9 @@
     <room>rooms\rmLevel1_8</room>
     <room>rooms\rmLevel1_9</room>
     <room>rooms\rmLevel1B</room>
-    <room>rooms\rmLevel1_10</room>
     <room>rooms\rmMapa22</room>
     <room>rooms\rmLevel15OLD</room>
+    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel11OLD</room>
       <room>rooms\rmLevel12OLD</room>
