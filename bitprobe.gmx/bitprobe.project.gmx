@@ -70,9 +70,7 @@
         <sprite>sprites\sprSphereWhite</sprite>
       </sprites>
       <sprites name="Barrier">
-        <sprite>sprites\sprBarrierBlue</sprite>
-        <sprite>sprites\sprBarrierGreen</sprite>
-        <sprite>sprites\sprBarrierRed</sprite>
+        <sprite>sprites\sprBarrier</sprite>
       </sprites>
       <sprites name="Propulsor">
         <sprite>sprites\sprPropulsorRed</sprite>
@@ -162,6 +160,7 @@
     <scripts name="Sprite">
       <script>scripts\TrocaSpritePlayer.gml</script>
       <script>scripts\SetObject.gml</script>
+      <script>scripts\MudaCor.gml</script>
     </scripts>
     <scripts name="Sound">
       <script>scripts\StopSound.gml</script>
@@ -254,6 +253,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmTeste</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
@@ -267,7 +267,6 @@
     <room>rooms\rmLevel1_9</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmLevel1_10</room>
-    <room>rooms\rmTeste</room>
     <room>rooms\rmMapa22</room>
     <room>rooms\rmLevel15OLD</room>
     <rooms name="OLD">

@@ -67,12 +67,4 @@ with(objPlayer)
         }
     }
     sprite_index = ds_map_find_value(global.mapSprites, sprite);
-    
-    switch (cor)
-    {
-        case Cor.Red   : hue = 0; break;
-        case Cor.Green : hue = 80; break;
-        case Cor.Blue  : hue = 160; break; 
-        case Cor.White : hue = 255; break;
-    }
 }

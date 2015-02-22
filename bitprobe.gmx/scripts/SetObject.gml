@@ -66,14 +66,14 @@ else if (object_get_name(object_index) == "objPowerUp")
 
 else if (object_get_name(object_index) == "objBarrier")
 {
-    if (corObj == Cor.Red)
+ /*   if (corObj == Cor.Red)
         sprite = sprBarrierRed;
     else if (corObj == Cor.Green)
         sprite = sprBarrierGreen;
     else if (corObj == Cor.Blue)
         sprite = sprBarrierBlue
  //   else
-   //     sprite = sprBarrierWhite;
+   //     sprite = sprBarrierWhite;*/
 }
 else if (object_get_name(object_index) == "objSphere")
 {

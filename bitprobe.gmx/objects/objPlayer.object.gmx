@@ -26,9 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do player
-cor = Cor.White
-hue = 255;
-
+cor = Cor.White;
 playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
@@ -250,12 +248,73 @@ if (place_meeting(x, y + verticalSpeed, objCollision))
     }
     verticalSpeed = 0;
 }
+
+//colisão vertical com barrier
+if (place_meeting(x, y + verticalSpeed, objBarrier))
+{
+if CollisionCor(self.cor, objBarrier.cor)
+    {
+        var barrierXDireita = round(objBarrier.x + sprite_get_width(objBarrier.sprite_index));
+        var barrierYAbaixo = round(objBarrier.y + sprite_get_height(objBarrier.sprite_index));
+        var playerXDireita = round(x + (sprite_get_width(sprite_index)/2));
+        var playerXEsquerda = round(x - (sprite_get_width(sprite_index)/2));
+        var playerYAcima = round(y - (sprite_get_height(sprite_index)/2));
+        var playerYAbaixo = round(y + (sprite_get_height(sprite_index)/2));
+         // atravessa se player estiver com parte do corpo na barrier
+         if (place_meeting(x, y + verticalSpeed, objBarrier))
+          //&amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; objBarrier.x) 
+           //|| (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; objBarrier.y) ))
+         {
+            while(!place_meeting(x, y + sign(verticalSpeed), objBarrier))
+            {
+                y += sign(verticalSpeed);
+            }
+            verticalSpeed = 0;
+         }
+    }
+}
+
+/*
+if (place_meeting(x + hspFinal, y, objBarrier))
+{
+if CollisionCor(self.cor, objBarrier.cor)
+    {
+        with(objBarrier)
+        {
+        var barrierXDireita = round(x + sprite_get_width(sprite_index) * scaleX);
+        var barrierYAbaixo = round(y + sprite_get_height(sprite_index) * scaleY);
+        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerMove)/2));
+        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerMove)/2));
+        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerMove)/2));
+        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerMove)/2));
+         // atravessa se player estiver com parte do corpo na barrier
+         if (place_meeting(x, y, objPlayer) 
+          &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
+           || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
+         {
+         with(objPlayer){
+            while(!place_meeting(x + sign(hspFinal), y, objBarrier))
+    {
+        x += sign(hspFinal);
+    }
+    }
+    hspFinal = 0;
+    horizontalSpeed = 0;
+    inercia = 0;}
+       }
+}
+}*/
+
 //se está seguindo path, cancela velocidade
 if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
 {
     verticalSpeed = 0;
     hspFinal = 0;
 }
+
+
+
+
 // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
 x += hspFinal;  
 
@@ -377,12 +436,14 @@ if (CollisionCor(self.cor, other.cor))
 {
     if (other.isOrigin &amp;&amp; playerVivo == true)
     {
+        other.isFollowingPath = true;
         path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
         PlaySound(sndPortal,false, true);
         playerVivo = false;
     }
     else if ((!other.isOrigin &amp;&amp; playerVivo == false))
     {
+        other.isFollowingPath = false;
     //TODO:sound diferenciado
     PlaySound(sndPortal,false, true);
         playerVivo = true;
@@ -666,16 +727,8 @@ global.keyBlue = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if( shader_is_compiled(shader0) )
-{    
-    shader_set(shader0);
-    shader_set_uniform_f(shader_get_uniform(shader0,"hue"),hue);
-    //shader_set_uniform_f(shader_get_uniform(shader0,"light"),128);
-    draw_self();
-    shader_reset();
-}else{
-    draw_text(10,40,"sShaderDemo2 did not compile");
-}
+            <string>/// Manipula cor do player
+MudaCor(cor);
 </string>
           </argument>
         </arguments>
