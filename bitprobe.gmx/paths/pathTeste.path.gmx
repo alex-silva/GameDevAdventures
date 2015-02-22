@@ -2,19 +2,20 @@
   <kind>1</kind>
   <closed>0</closed>
   <precision>4</precision>
-  <backroom>14</backroom>
+  <backroom>1</backroom>
   <hsnap>16</hsnap>
   <vsnap>16</vsnap>
   <points>
-    <point>1360,1520,300</point>
+    <point>1328,1568,300</point>
     <point>1376,1376,300</point>
-    <point>1120,1360,300</point>
-    <point>1136,1120,300</point>
+    <point>1488,1264,300</point>
+    <point>1472,1056,300</point>
     <point>1152,880,300</point>
     <point>1408,880,300</point>
     <point>1504,880,300</point>
     <point>1584,912,300</point>
     <point>1584,1024,300</point>
-    <point>1616,1248,300</point>
+    <point>1488,944,300</point>
+    <point>1952,1024,300</point>
   </points>
 </path>

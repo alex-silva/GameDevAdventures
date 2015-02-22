@@ -32,10 +32,30 @@ speedPath = 20;
 endAction = 0;//continua
 absolutePath = true;
 isOrigin = false;
-pathInitialX = 0;
-pathInitialY = 0;
-pathFinalX = 0;
-pathFinalY = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///muda cor
+MudaCor(cor);
 </string>
           </argument>
         </arguments>
