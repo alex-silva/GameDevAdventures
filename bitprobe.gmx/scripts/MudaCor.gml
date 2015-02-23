@@ -11,13 +11,13 @@ switch (argument0)
     case Cor.Blue  : hue = 160; break; 
     case Cor.White : hue = 255; break;
 }
-if( shader_is_compiled(shader0) )
+if( shader_is_compiled(shaTrocaCor) )
 {    
-    shader_set(shader0);
-    shader_set_uniform_f(shader_get_uniform(shader0,"hue"),hue);
+    shader_set(shaTrocaCor);
+    shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"hue"),hue);
     //shader_set_uniform_f(shader_get_uniform(shader0,"light"),128);
     draw_self();
     shader_reset();
 }else{
-    show_debug_message("sShaderDemo2 did not compile");
+    show_debug_message("shaTrocaCor nao compilou");
 }

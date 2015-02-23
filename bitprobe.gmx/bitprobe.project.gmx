@@ -16,7 +16,6 @@
     <sound>sound\sndPortal</sound>
     <sound>sound\sndStringCrash</sound>
     <sound>sound\sndLevelBgm</sound>
-    <sound>sound\sound11</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprMonsterNuncaDeletarFirstApel</sprite>
@@ -32,9 +31,7 @@
     </sprites>
     <sprites name="Collectables">
       <sprite>sprites\sprBit</sprite>
-      <sprite>sprites\sprPowerUpRed</sprite>
-      <sprite>sprites\sprPowerUpGreen</sprite>
-      <sprite>sprites\sprPowerUpBlue</sprite>
+      <sprite>sprites\sprPowerUp</sprite>
     </sprites>
     <sprites name="Menu">
       <sprite>sprites\sprSettings</sprite>
@@ -51,47 +48,17 @@
       <sprite>sprites\sprController</sprite>
     </sprites>
     <sprites name="Interactives">
-      <sprites name="Ball">
-        <sprite>sprites\sprBallBlue</sprite>
-        <sprite>sprites\sprBallGreen</sprite>
-        <sprite>sprites\sprBallRed</sprite>
-      </sprites>
-      <sprites name="Spike">
-        <sprite>sprites\sprSpikeBlue</sprite>
-        <sprite>sprites\sprSpikeRedGreenBlue</sprite>
-        <sprite>sprites\sprSpikeRed</sprite>
-        <sprite>sprites\sprSpikeGreen</sprite>
-        <sprite>sprites\sprSpikeWhite</sprite>
-      </sprites>
-      <sprites name="Sphere">
-        <sprite>sprites\sprSphereBlue</sprite>
-        <sprite>sprites\sprSphereRed</sprite>
-        <sprite>sprites\sprSphereGreen</sprite>
-        <sprite>sprites\sprSphereWhite</sprite>
-      </sprites>
-      <sprites name="Barrier">
-        <sprite>sprites\sprBarrier</sprite>
-      </sprites>
       <sprites name="Propulsor">
-        <sprite>sprites\sprPropulsorRed</sprite>
-        <sprite>sprites\sprPropulsorGreen</sprite>
-        <sprite>sprites\sprPropulsorBlue</sprite>
-        <sprite>sprites\sprPropulsorChargeGreen</sprite>
-        <sprite>sprites\sprPropulsorChargeBlue</sprite>
-        <sprite>sprites\sprPropulsorChargeRed</sprite>
-        <sprite>sprites\sprPropulsorDischargeRed</sprite>
-        <sprite>sprites\sprPropulsorDischargeGreen</sprite>
-        <sprite>sprites\sprPropulsorDischargeBlue</sprite>
-        <sprite>sprites\sprPropulsorChargedRed</sprite>
-        <sprite>sprites\sprPropulsorChargedGreen</sprite>
-        <sprite>sprites\sprPropulsorChargedBlue</sprite>
-        <sprites name="PropulsorBranco">
-          <sprite>sprites\sprPropulsorIdle</sprite>
-          <sprite>sprites\sprPropulsorCharge</sprite>
-          <sprite>sprites\sprPropulsorCharged</sprite>
-          <sprite>sprites\sprPropulsorDischarge</sprite>
-        </sprites>
+        <sprite>sprites\sprPropulsor</sprite>
+        <sprite>sprites\sprPropulsorCharge</sprite>
+        <sprite>sprites\sprPropulsorDischarge</sprite>
+        <sprite>sprites\sprPropulsorCharged</sprite>
+        <sprite>sprites\sprPropulsorIdle</sprite>
       </sprites>
+      <sprite>sprites\sprBall</sprite>
+      <sprite>sprites\sprSpike</sprite>
+      <sprite>sprites\sprSphere</sprite>
+      <sprite>sprites\sprBarrier</sprite>
     </sprites>
     <sprites name="Bosses">
       <sprites name="Trojan">
@@ -120,12 +87,10 @@
       </sprites>
       <sprites name="Floor">
         <sprite>sprites\sprCollision</sprite>
-        <sprite>sprites\sprFloorGreen</sprite>
-        <sprite>sprites\sprFloorRed</sprite>
-        <sprite>sprites\sprFloorBlue</sprite>
+        <sprite>sprites\sprFloor</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprBgController</sprite>
+    <sprite>sprites\sprBgController_____</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\FloorColors_ON</background>
@@ -159,7 +124,7 @@
     </scripts>
     <scripts name="Sprite">
       <script>scripts\TrocaSpritePlayer.gml</script>
-      <script>scripts\SetObject.gml</script>
+      <script>scripts\SetObject_DELETAR___________________.gml</script>
       <script>scripts\MudaCor.gml</script>
     </scripts>
     <scripts name="Sound">
@@ -172,7 +137,7 @@
     </scripts>
   </scripts>
   <shaders name="shaders">
-    <shader type="GLSLES">shaders\shader0.shader</shader>
+    <shader type="GLSLES">shaders\shaTrocaCor.shader</shader>
   </shaders>
   <objects name="objects">
     <objects name="Player">
@@ -212,9 +177,6 @@
       </objects>
     </objects>
     <objects name="Interactives">
-      <objects name="Ball">
-        <object>objects\objBall</object>
-      </objects>
       <objects name="Barrier">
         <object>objects\objBarrier</object>
         <object>objects\objMovingBarrier</object>
@@ -230,14 +192,11 @@
         <object>objects\objSphere</object>
         <object>objects\objMovingSphere</object>
       </objects>
-      <objects name="Propulsor">
-        <object>objects\objPropulsor</object>
-        <object>objects\objPropulsorRed</object>
-      </objects>
       <objects name="Door">
         <object>objects\objDoorStart</object>
         <object>objects\objDoorEnd</object>
       </objects>
+      <object>objects\objBall</object>
     </objects>
     <objects name="Gameplay">
       <object>objects\objDigitalController</object>
@@ -254,6 +213,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmLevel12OLD</room>
+    <room>rooms\rmLevel11OLD</room>
+    <room>rooms\rmLevel1_6</room>
     <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_10</room>
     <room>rooms\rmMenuInicial</room>
@@ -262,7 +224,6 @@
     <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_4</room>
     <room>rooms\rmLevel1_5</room>
-    <room>rooms\rmLevel1_6</room>
     <room>rooms\rmLevel1_7</room>
     <room>rooms\rmLevel1_8</room>
     <room>rooms\rmLevel1_9</room>
@@ -271,8 +232,6 @@
     <room>rooms\rmLevel15OLD</room>
     <room>rooms\rmTeste</room>
     <rooms name="OLD">
-      <room>rooms\rmLevel11OLD</room>
-      <room>rooms\rmLevel12OLD</room>
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>
     </rooms>

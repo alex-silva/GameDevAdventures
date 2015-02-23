@@ -128,7 +128,7 @@
     <instance objName="objCollision" x="896" y="1632" name="inst_5A14EE7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="832" y="1632" name="inst_8B23FC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="800" y="1632" name="inst_55C2E919" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1776" y="1552" name="inst_0D650025" locked="0" code="SetObject(Cor.Blue);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPowerUp" x="1776" y="1552" name="inst_0D650025" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDoorStart" x="1888" y="1424" name="inst_6DD01F4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="2016" y="1616" name="inst_40A360EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="768" y="1648" name="inst_6748A307" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -309,9 +309,9 @@
     <instance objName="objCollision" x="1120" y="1648" name="inst_01D5E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1472" y="1616" name="inst_DB437416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSphere" x="1328" y="1568" name="inst_0EBE74DB" locked="0" code="cor = Cor.Green;&#xA;isOrigin=true;&#xA;path=pathTeste;&#xA;direcao=Direction.Right;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1776" y="1504" name="inst_0BD1312B" locked="0" code="SetObject(Cor.Green);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPowerUp" x="1776" y="1504" name="inst_0BD1312B" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSphere" x="1952" y="1024" name="inst_506404A5" locked="0" code="cor = Cor.Green;&#xA;isOrigin=false;&#xA;path=pathTeste;&#xA;direcao=Direction.Up;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1776" y="1408" name="inst_BF5597E4" locked="0" code="SetObject(Cor.Red);&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPowerUp" x="1776" y="1408" name="inst_BF5597E4" locked="0" code="cor = Cor.Red;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDebug" x="1152" y="624" name="inst_9947846F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>

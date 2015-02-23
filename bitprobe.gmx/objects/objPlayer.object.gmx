@@ -138,12 +138,12 @@ if (instance_exists(objDoorStart))
 // player visível apenas quando vivo
 //visible = playerVivo;
 
-movimentoViewX = objPlayer.x - 128;
-if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[0] - 128 &lt; room_width)
-    view_xview[0] = movimentoViewX;
-movimentoViewY = objPlayer.y - 128;
-if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[0] - 128 &lt; room_height)
-    view_yview[0] = movimentoViewY;
+movimentoViewX = objPlayer.x - 32;
+if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 32 &lt; room_width)
+    view_xview[1] = movimentoViewX;
+movimentoViewY = objPlayer.y - 32;
+if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[1] - 32 &lt; room_height)
+    view_yview[1] = movimentoViewY;
             
 if (!playerVivo)
     exit;
