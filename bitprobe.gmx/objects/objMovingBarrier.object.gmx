@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objCollision</parentName>
+  <parentName>objColorido</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -205,6 +205,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão
+event_inherited();
 //draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, 0, c_white, 1);
 </string>
           </argument>

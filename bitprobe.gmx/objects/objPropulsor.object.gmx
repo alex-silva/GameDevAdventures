@@ -27,14 +27,9 @@
             <kind>1</kind>
             <string>///Velocidade para jump do player, e cor
 spd  = 24;
-//Retira máscaras de colisão, define sprite e cor
-sprite_index = -1;
-propulsorSprite = sprPropulsorIdle;
+//cor
 cor = Cor.White;
 //Parâmetros para drawing: escala e rotação
-scaleX = 1;
-scaleY = 1;
-rot = 0;
 //Variável de controle de colisão com o player
 isOn = false;
 //Velocidade de animação
@@ -44,8 +39,6 @@ image_speed = 0;
 isCharged = false;
 isCharging = false;
 isDischarging = false;
-
-// draw_sprite_ext(propulsorSprite, 0, x, y, scaleX, scaleY, rot, c_white, 1);
 </string>
           </argument>
         </arguments>
@@ -68,37 +61,74 @@ isDischarging = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Muda velocidade de pulo do player se colidir com player, se cor igual
-
-if (instance_exists(objPlayer))
+            <string>///Controle de Animação, colisao com player
+if (!instance_exists(objPlayer)) exit;
+if (CollisionCor(self.cor, objPlayer.cor) &amp;&amp; (place_meeting(x, y, objPlayer)))
 {
-    // se o player está acima ou abaixo da barrier
-   /* if (round(objPlayer.y + (objPlayer.sprite_height/2)) &gt; y
-    || (round(objPlayer.y + (objPlayer.sprite_height/2)) &lt;= y))
-    {
-        if (CollisionCor(self.cor, objPlayer.cor))
-            mask_index = propulsorSprite;
-        else
-            mask_index = -1;
+    isOn = true;
+    objPlayer.jumpSpeed = spd;
+}
+else isOn = false;
 
+//colidiu com player
+if (isOn == true)
+{
+    //idle, carrega
+    if(isCharged == false &amp;&amp; isCharging = false)
+    {
+        isCharged = false;
+        isDischarging = false;
+        image_speed = 0;
+        image_index = 0;
+        sprite_index = sprPropulsorCharge;
+        //spritePropulsor = sprPropulsorCharge;
+        image_speed = animSpeed;
+        isCharging = true;
     }
-    else
+    //carregado
+    if(image_index &gt;= 9 &amp;&amp; isCharged == false)
     {
-
-       mask_index = -1;
+         isDischarging = false;
+         isCharging = false;
+         isCharged = true;
+         image_speed = 0;
+         image_index = 0;
+         sprite_index = sprPropulsorCharged;
+         image_speed = animSpeed;
     }
-*/
-    if (CollisionCor(self.cor, objPlayer.cor)
-    &amp;&amp; (place_meeting(x, y - 16, objPlayer)))
+}
+//nao colide com player
+else
+{
+    //carregado ou carregando, descarrega
+    if((isCharged == true || isCharging == true) &amp;&amp; isDischarging == false)
     {
 
-        objPlayer.jumpSpeed = spd;
+        image_speed = 0;
+        if(isCharging == true) image_index = 9 - image_index;
+        else image_index = 0;
+        sprite_index = sprPropulsorDischarge;
+        image_speed = animSpeed;
+        isDischarging = true;
+        isCharged = false;
+    }
+    //descarregado
+    if(image_index &gt;8 &amp;&amp; isDischarging == true)
+    {
+        isCharged = false;
+        isCharging = false;
+        isDischarging = false;
+        image_speed = 0;
+        image_index = 0;
+        sprite_index = sprPropulsorIdle;
     }
 }
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -115,62 +145,8 @@ if (instance_exists(objPlayer))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Controle de Animação
-if(place_meeting(x, y - 16, objPlayer)) isOn = true;
-else isOn = false;
-if (isOn == true)
-{
-    if(isCharged == false &amp;&amp; isCharging = false)
-    {
-        isCharged = false;
-        isDischarging = false;
-        image_speed = 0;
-        image_index = 0;
-        sprite_index = sprPropulsorCharge;
-        //spritePropulsor = sprPropulsorCharge;
-        image_speed = animSpeed;
-        isCharging = true;
-
-    }
-    if(image_index &gt;= 9 &amp;&amp; isCharged == false)
-    {
-         isDischarging = false;
-         isCharging = false;
-         isCharged = true;
-         image_speed = 0;
-         image_index = 0;
-         sprite_index = sprPropulsorCharged;
-        // spritePropulsor = sprPropulsorCharged;
-         image_speed = animSpeed;
-
-    }
-}
-else
-{
-    if((isCharged == true || isCharging == true) &amp;&amp; isDischarging == false)
-    {
-
-        image_speed = 0;
-        if(isCharging == true) image_index = 9 - image_index;
-        else image_index = 0;
-        sprite_index = sprPropulsorDischarge;
-      //spritePropulsor = sprPropulsorDischarge;
-        image_speed = animSpeed;
-        isDischarging = true;
-        isCharged = false;
-         //if(isOn == true)
-    }
-    if(image_index &gt;8 &amp;&amp; isDischarging == true)
-    {
-        isCharged = false;
-        isCharging = false;
-        isDischarging = false;
-        image_speed = 0;
-        image_index = 0;
-        sprite_index = sprPropulsorIdle;
-     // spritePropulsor = sprPropulsorIdle;
-    }
-}
+            <string>///Muda cor
+MudaCor(cor);
 </string>
           </argument>
         </arguments>

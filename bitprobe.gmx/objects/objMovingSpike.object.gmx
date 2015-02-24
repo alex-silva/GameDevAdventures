@@ -121,27 +121,24 @@ if (delay &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>///Retorna a posição inicial
-if (CollisionCor(self.cor, other.cor))
+ParticleDeath();
+if !(audio_is_playing(sndStringCrash))
 {
-    ParticleDeath();
-    if !(audio_is_playing(sndStringCrash))
+    if (instance_exists(objPlayer))
     {
-        if (instance_exists(objPlayer))
+        distancia = point_distance(x,y,objPlayer.x, objPlayer.y);
+        if (distancia &lt;= 200)
         {
-            distancia = point_distance(x,y,objPlayer.x, objPlayer.y);
-            if (distancia &lt;= 200)
-            {
-                volume = abs((0.005 * distancia) - 1);
-                
-                sound = PlaySound(sndStringCrash,false, false);
-                sound_volume(sound,volume);
-            }
+            volume = abs((0.005 * distancia) - 1);
+            
+            sound = PlaySound(sndStringCrash,false, false);
+            sound_volume(sound,volume);
         }
     }
-    x = initialX;
-    y = initialY;
-    moveSpeedIncr = 0;
 }
+x = initialX;
+y = initialY;
+moveSpeedIncr = 0;
 </string>
           </argument>
         </arguments>

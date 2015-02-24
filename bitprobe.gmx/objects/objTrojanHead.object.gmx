@@ -5,7 +5,7 @@
   <visible>0</visible>
   <depth>-60</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///cabeça troca de cor lentamente
+cor = Cor.Red;
 image_speed = 0.025;
 </string>
           </argument>

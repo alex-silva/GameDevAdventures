@@ -27,8 +27,9 @@
             <kind>1</kind>
             <string>///velocidade de transição, cores
 event_inherited();
+//velocidade e controle de incremento
 spd = 0.01;
-image_speed = spd;
+inc = 1;
 combinacao = Combinacao.RedGreenBlue;
 </string>
           </argument>
@@ -55,19 +56,24 @@ combinacao = Combinacao.RedGreenBlue;
             <string>///Determina cor atual
 if (global.pause) exit;
 event_inherited();
-if (image_speed &gt; 0)
+if (inc &gt;= 1)
 {
+    inc = spd;
     switch (combinacao)
     {
         case Combinacao.RedGreenBlue:
-            if (image_index &lt; 1)
+            if (cor == Cor.Blue || cor = Cor.White)
                 cor = Cor.Red;
-            else if (image_index &lt; 2)
+            else if (cor == Cor.Red)
                 cor = Cor.Green;
             else
-                cor = Cor.Blue;
+                cor = Cor.Blue;                
             break;
     }
+}
+else
+{
+    inc += spd;
 }
 </string>
           </argument>

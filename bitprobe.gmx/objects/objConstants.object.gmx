@@ -120,10 +120,6 @@ LoadGame("bitprobe.ini");
 //toca música de abertura
 PlaySound(sndAbertura, true, true);
 sound_volume(sndAbertura, 0.7);
-//Cria player persistente
-////instance_create(352, 32, objPlayer);
-////objPlayer.visible = false;
-
 
 //Variáveis de controle
 globalvar keyLeft;keyLeft = 0;

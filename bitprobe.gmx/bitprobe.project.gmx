@@ -49,7 +49,6 @@
     </sprites>
     <sprites name="Interactives">
       <sprites name="Propulsor">
-        <sprite>sprites\sprPropulsor</sprite>
         <sprite>sprites\sprPropulsorCharge</sprite>
         <sprite>sprites\sprPropulsorDischarge</sprite>
         <sprite>sprites\sprPropulsorCharged</sprite>
@@ -90,7 +89,7 @@
         <sprite>sprites\sprFloor</sprite>
       </sprites>
     </sprites>
-    <sprite>sprites\sprBgController_____</sprite>
+    <sprite>sprites\sprBgController</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\FloorColors_ON</background>
@@ -124,7 +123,6 @@
     </scripts>
     <scripts name="Sprite">
       <script>scripts\TrocaSpritePlayer.gml</script>
-      <script>scripts\SetObject_DELETAR___________________.gml</script>
       <script>scripts\MudaCor.gml</script>
     </scripts>
     <scripts name="Sound">
@@ -197,6 +195,7 @@
         <object>objects\objDoorEnd</object>
       </objects>
       <object>objects\objBall</object>
+      <object>objects\objPropulsor</object>
     </objects>
     <objects name="Gameplay">
       <object>objects\objDigitalController</object>
@@ -213,6 +212,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmTeste</room>
     <room>rooms\rmLevel12OLD</room>
     <room>rooms\rmLevel11OLD</room>
     <room>rooms\rmLevel1_6</room>
@@ -230,7 +230,6 @@
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
     <room>rooms\rmLevel15OLD</room>
-    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>

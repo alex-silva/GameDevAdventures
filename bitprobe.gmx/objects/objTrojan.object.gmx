@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-50</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,8 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Variáveis do boss
-cor = Cor.Red
-
+cor = Cor.Red;
 initialX = x;
 initialY = y;
 
@@ -127,39 +126,6 @@ else if (point_distance(x,y, objPlayer.x, objPlayer.y) &gt; distanciaPlayer &amp
 {
     pertoPlayer = false;
     image_index = imgIndexAnt;
-}
-//TrocaSpriteBoss();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="objBarrier">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destrói qualquer objeto que colidir (exceto player)
-if (CollisionCor(cor, other.cor))
-{
-    
-    with (other)
-    {
-        instance_destroy();
-        ParticleDeath();
-    }
 }
 </string>
           </argument>

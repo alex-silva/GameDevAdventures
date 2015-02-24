@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code></code>
-  <enableViews>0</enableViews>
+  <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
   <makerSettings>
@@ -308,11 +308,16 @@
     <instance objName="objCollision" x="1056" y="1632" name="inst_1EFE74C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1120" y="1648" name="inst_01D5E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1472" y="1616" name="inst_DB437416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSphere" x="1328" y="1568" name="inst_0EBE74DB" locked="0" code="cor = Cor.Green;&#xA;isOrigin=true;&#xA;path=pathTeste;&#xA;direcao=Direction.Right;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSphere" x="1056" y="992" name="inst_0EBE74DB" locked="0" code="cor = Cor.Green;&#xA;isOrigin=true;&#xA;path=pathTeste;&#xA;direcao=Direction.Right;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1776" y="1504" name="inst_0BD1312B" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSphere" x="1952" y="1024" name="inst_506404A5" locked="0" code="cor = Cor.Green;&#xA;isOrigin=false;&#xA;path=pathTeste;&#xA;direcao=Direction.Up;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1776" y="1408" name="inst_BF5597E4" locked="0" code="cor = Cor.Red;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDebug" x="1152" y="624" name="inst_9947846F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1840" y="1520" name="inst_6958ADD3" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1616" y="1520" name="inst_40366476" locked="0" code="cor = Cor.Green;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1408" y="1520" name="inst_1F9D09AC" locked="0" code="cor = Cor.Red;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1232" y="1648" name="inst_0729F2E0" locked="0" code="cor = Cor.Red;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="90"/>
+    <instance objName="objBarrier" x="1136" y="1648" name="inst_5F2E67FE" locked="0" code="cor = Cor.Green;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="90"/>
   </instances>
   <tiles>
     <tile bgName="FloorColors_ON" x="1312" y="1648" w="32" h="32" xo="96" yo="128" id="10006167" name="inst_A3723BE7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

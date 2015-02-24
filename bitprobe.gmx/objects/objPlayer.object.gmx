@@ -55,6 +55,12 @@ playerDirection = Direction.Right;
 playerVivo = true;
 /* variáveis de estado do player (para troca de sprites) */
 
+/* PLATAFORMAS */
+//esta acima de uma plataforma
+isOnBarrier = false;
+//colidiu horizontalmente com uma plataforma
+colideBarrier = false;
+/* PLATAFORMAS */
 //distancia do player da view (padrao - meio da tela)
 distanciaView = 2;
 // alarme até morte do player
@@ -126,7 +132,6 @@ if (global.pause)
     image_index = 0;
     exit;
 }
-
 if (instance_exists(objDoorStart))
 {
     if (x &gt; room_width || y &gt; room_height || x &lt; 0 || y &lt; 0)
@@ -138,6 +143,7 @@ if (instance_exists(objDoorStart))
 // player visível apenas quando vivo
 //visible = playerVivo;
 
+//view sempre segue player
 movimentoViewX = objPlayer.x - 32;
 if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 32 &lt; room_width)
     view_xview[1] = movimentoViewX;
@@ -166,7 +172,7 @@ if(global.keyRight || global.keyLeft)
         acelerando = false;
     }
     else
-           acelerando = true;
+        acelerando = true;
 }
 else if (inercia &lt;= moveSpeed &amp;&amp; inercia &gt; 0)
 { 
@@ -202,9 +208,9 @@ if (verticalSpeed &gt; verticalSpeedAnt)
     isFalling = true;
 else
     isFalling = false;
-// pula mais alto se tocar em propulsor, pular normal se tocar em floor
-if (place_meeting(x, y + 1, objPropulsor)
-  || place_meeting(x, y + 1, objCollision))
+// pula mais alto se tocar em propulsor, pular normal se tocar em floor e plataformas
+if (place_meeting(x, y + 1, objCollision)
+ || place_meeting(x, y, objPropulsor))
 {
     if (global.keyJump){
         verticalSpeed = -jumpSpeed;
@@ -216,14 +222,14 @@ if (place_meeting(x, y + 1, objPropulsor)
     else
     {
         //som do step do player, se estiver movimentando-se
-        if (move != 0 )
-            PlaySound(sndStep1, false, true);
-        verticalSpeed = 0;
+        if(move!=0)  PlaySound(sndStep1, false, true);
+        if (place_meeting(x, y + 1, objCollision))
+            verticalSpeed = 0;
     }
     
 }
 // retorna velocidade de pulo ao normal após utilizar propulsor
-if !(place_meeting(x, y + 1, objPropulsor))
+if !(place_meeting(x, y, objPropulsor))
     jumpSpeed = jumpSpeedPadrao;
 
 //mantém personagem acima da barrier
@@ -233,7 +239,11 @@ hspCarry = 0;
 //Colisão com quinas
 //if (x + s
  
- 
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* ----------- COLISAO FLOOR ----------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
  
 //Colisão Horizontal com floor
 if (place_meeting(x + hspFinal, y, objCollision))
@@ -257,11 +267,26 @@ if (place_meeting(x, y + verticalSpeed, objCollision))
     verticalSpeed = 0;
 }
 
-//colisão vertical com barrier
-if (place_meeting(x, y + verticalSpeed, objBarrier))
-{
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* ----------- COLISAO FLOOR ----------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
+
+
+
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* --------- COLISAO BARRIER ----------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
+/*
 if CollisionCor(self.cor, objBarrier.cor)
+{
+    //colisão com barrier
+    if (place_meeting(x, y + verticalSpeed, objBarrier))
     {
+
         var barrierXDireita = round(objBarrier.x + sprite_get_width(objBarrier.sprite_index));
         var barrierYAbaixo = round(objBarrier.y + sprite_get_height(objBarrier.sprite_index));
         var playerXDireita = round(x + (sprite_get_width(sprite_index)/2));
@@ -270,8 +295,8 @@ if CollisionCor(self.cor, objBarrier.cor)
         var playerYAbaixo = round(y + (sprite_get_height(sprite_index)/2));
          // atravessa se player estiver com parte do corpo na barrier
          if (place_meeting(x, y + verticalSpeed, objBarrier))
-          //&amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; objBarrier.x) 
-           //|| (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; objBarrier.y) ))
+          &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; objBarrier.x) 
+           || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; objBarrier.y) )
          {
             while(!place_meeting(x, y + sign(verticalSpeed), objBarrier))
             {
@@ -282,36 +307,45 @@ if CollisionCor(self.cor, objBarrier.cor)
     }
 }
 
-/*
-if (place_meeting(x + hspFinal, y, objBarrier))
-{
-if CollisionCor(self.cor, objBarrier.cor)
+    //Colisao Horizontal com barrier
+    
+    /*
+    if (place_meeting(x + hspFinal, y, objBarrier))
     {
-        with(objBarrier)
+    if CollisionCor(self.cor, objBarrier.cor)
         {
-        var barrierXDireita = round(x + sprite_get_width(sprite_index) * scaleX);
-        var barrierYAbaixo = round(y + sprite_get_height(sprite_index) * scaleY);
-        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerMove)/2));
-        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerMove)/2));
-        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerMove)/2));
-        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerMove)/2));
-         // atravessa se player estiver com parte do corpo na barrier
-         if (place_meeting(x, y, objPlayer) 
-          &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
-           || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
-         {
-         with(objPlayer){
-            while(!place_meeting(x + sign(hspFinal), y, objBarrier))
-    {
-        x += sign(hspFinal);
+            with(objBarrier)
+            {
+            var barrierXDireita = round(x + sprite_get_width(sprite_index) * scaleX);
+            var barrierYAbaixo = round(y + sprite_get_height(sprite_index) * scaleY);
+            var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerMove)/2));
+            var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerMove)/2));
+            var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerMove)/2));
+            var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerMove)/2));
+             // atravessa se player estiver com parte do corpo na barrier
+             if (place_meeting(x, y, objPlayer) 
+              &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
+               || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
+             {
+             with(objPlayer){
+                while(!place_meeting(x + sign(hspFinal), y, objBarrier))
+        {
+            x += sign(hspFinal);
+        }
+        }
+        hspFinal = 0;
+        horizontalSpeed = 0;
+        inercia = 0;}
+           }
     }
     }
-    hspFinal = 0;
-    horizontalSpeed = 0;
-    inercia = 0;}
-       }
 }
-}*/
+
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* --------- COLISAO BARRIER ----------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
 
 //se está seguindo path, cancela velocidade
 if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
@@ -320,16 +354,20 @@ if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
     hspFinal = 0;
 }
 
-
-
-
 // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
-x += hspFinal;  
+if (!colideBarrier)
+    x += hspFinal;  
 
-if (verCarry == 0)
+//caso nao esteja acima de uma barrier
+if (verCarry == 0 &amp;&amp; !isOnBarrier)
     y += verticalSpeed;
     
-//Anima sprite
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* ----------- ANIMACAO ---------------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
+
 if (horizontalSpeed &gt; 0)
 {
     if verticalSpeed &lt; 0
@@ -357,6 +395,12 @@ else if(global.playerStats[? "PlayerBlue"]&amp;&amp;global.keyBlue)
     self.cor = Cor.Blue;
 }
 TrocaSpritePlayer();
+
+/* ------------------------------------*/
+/* ------------------------------------*/
+/* ----------- ANIMACAO ---------------*/
+/* ------------------------------------*/
+/* ------------------------------------*/
 /*
 background_x[] = -view_xview[0]/4;
 background_y[] = -view_yview[0]/4;

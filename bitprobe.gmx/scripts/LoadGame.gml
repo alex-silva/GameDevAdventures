@@ -49,7 +49,11 @@ else
     
     /////tocar ou nao musica e efeitos para testes
     global.enableMusic = false;
-    global.enableSFX = true;
+    global.enableSFX = false;
+    /////tocar ou nao musica e efeitos para testes
+    
+    
+    
 if (instance_exists(objPlayer))
 {
     objPlayer.cor = Decrypt(ini_read_string("PlayerStats", "CorAtual", Cor.White), 11);
