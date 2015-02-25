@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-990</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -56,7 +56,7 @@ global.pause = false;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -78,11 +78,11 @@ if (global.pause)
 {
     draw_set_color(c_black);
     draw_set_alpha(0.5);
-    draw_rectangle(0,0, room_width, room_height,0);
+    draw_rectangle(0,0, display_get_gui_width(), display_get_gui_height(),0);
     draw_set_halign(fa_center);
     draw_set_color(c_white);
     draw_set_alpha(1);
-    draw_text(view_xview + view_wview/2,view_yview + view_hview/2,"Pause");
+    draw_text(display_get_gui_width()/2,display_get_gui_height()/2,"Pause");
     draw_set_color(c_black);
 }
 </string>
@@ -114,13 +114,15 @@ if (!global.pause)
 {
     global.pause = true;
     instance_create(mouse_x, mouse_y, objMouseCursor);
-    instance_create(view_xview + view_wview/8,view_yview + view_hview-64,objBackMapMenu);
+    instance_create(view_xview+view_wview/8, view_yview+view_hview-64,objBackMapMenu);
     if(instance_exists(objScore)) objScore.timer = false; // Desabilita contagem de tempo
+    if(instance_exists(objDigitalController)) objDigitalController.control_hab = false;
 }
 else
 {  
     global.pause = false;
     if(instance_exists(objScore)) objScore.timer = true; // Habilita contagem de tempo
+    if(instance_exists(objDigitalController)) objDigitalController.control_hab = true;
     with (objMouseCursor) instance_destroy();
     with (objBackMapMenu) instance_destroy(); 
 }

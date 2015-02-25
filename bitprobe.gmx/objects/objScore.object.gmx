@@ -115,23 +115,26 @@ timer = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>str_m = string(minutes);
-str_s = string(floor(seconds));
-//str_ms = string(mseconds);
-if(minutes&lt;10) str_m = "0"+str_m; 
-if(seconds&lt;10) str_s = "0"+str_s; 
-//if(mseconds&lt;100) str_ms = "0"+str_ms; 
-//if(mseconds&lt;10) str_ms = "0"+str_ms; 
-draw_rectangle_colour(20, 20, 130, 60, c_white, c_white, c_white, c_white, false); 
-draw_set_halign(fa_left);
-draw_set_valign(fa_top); 
-draw_text_transformed(25, 25, str_m+":"+str_s, 2, 2, 0);
-
-
-//display_get_gui_height(); 
-//display_get_gui_width();
-//draw_text(10,10,str_m+":"+str_s);
-//draw_highscore(100, 100, room_width - 100, room_height - 100); 
+            <string>if(timer == true)
+{
+    str_m = string(minutes);
+    str_s = string(floor(seconds));
+    //str_ms = string(mseconds);
+    if(minutes&lt;10) str_m = "0"+str_m; 
+    if(seconds&lt;10) str_s = "0"+str_s; 
+    //if(mseconds&lt;100) str_ms = "0"+str_ms; 
+    //if(mseconds&lt;10) str_ms = "0"+str_ms; 
+    draw_rectangle_colour(20, 20, 130, 60, c_white, c_white, c_white, c_white, false); 
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top); 
+    draw_text_transformed(25, 25, str_m+":"+str_s, 2, 2, 0);
+    
+    
+    //display_get_gui_height(); 
+    //display_get_gui_width();
+    //draw_text(10,10,str_m+":"+str_s);
+    //draw_highscore(100, 100, room_width - 100, room_height - 100); 
+}
 </string>
           </argument>
         </arguments>
