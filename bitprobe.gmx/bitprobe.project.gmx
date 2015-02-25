@@ -212,17 +212,17 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmTeste</room>
     <room>rooms\rmLevel12OLD</room>
     <room>rooms\rmLevel11OLD</room>
     <room>rooms\rmLevel1_6</room>
     <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_10</room>
-    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
-    <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_4</room>
+    <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_5</room>
     <room>rooms\rmLevel1_7</room>
     <room>rooms\rmLevel1_8</room>

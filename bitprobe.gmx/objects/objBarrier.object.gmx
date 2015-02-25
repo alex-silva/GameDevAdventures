@@ -59,6 +59,10 @@ if (global.pause || ! instance_exists(objPlayer)) exit;
 //colide
 if CollisionCor(self.cor, objPlayer.cor)
 {
+
+    ////verificar quinas!
+
+
     //se player estiver com parte do corpo para fora, atravessa
     var barrierXDireita = round(x + sprite_get_width(sprite_index));
     var barrierYAbaixo = round(y + sprite_get_height(sprite_index));
@@ -109,7 +113,7 @@ if CollisionCor(self.cor, objPlayer.cor)
     
     
     
-    /* colisão horizontal com player */
+    /* colisão horizontal com player (ou vertical por baixo)*/
     if (place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer)
      || place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer))
     {
@@ -120,7 +124,8 @@ if CollisionCor(self.cor, objPlayer.cor)
         carregaPlayer = true;
         exit;
     }
-     
+    /* colisão horizontal com player (ou vertical por baixo)*/
+         
     //player não colide mais com plataforma ou pulou (se estiver acima)
     if (carregaPlayer == true || isJumping == true)
     {

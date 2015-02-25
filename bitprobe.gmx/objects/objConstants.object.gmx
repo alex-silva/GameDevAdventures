@@ -103,17 +103,11 @@ ds_map_add(global.mapSound, sndNextLevel, Sound.SFX);
 ds_map_add(global.mapSound, sndPortal, Sound.SFX);
 ds_map_add(global.mapSound, sndStringCrash, Sound.SFX);
 
-//Map Sprites Player
+globalvar enableMusic; global.enableMusic = true;
+globalvar enableSFX; global.enableSFX = true;
 
 //Cria mapa para Save/Load
 MapasSaveLoad();
-
-// Carregar configurações
-ini_open("bitprobe.ini");
-global.enableAudio = ini_read_real("settings", "audio", true);
-global.enableMusic = ini_read_real("settings", "music", true);
-ini_close();
-
 
 //carrega configs
 LoadGame("bitprobe.ini");
