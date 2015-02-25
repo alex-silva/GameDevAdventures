@@ -115,10 +115,12 @@ if (!global.pause)
     global.pause = true;
     instance_create(mouse_x, mouse_y, objMouseCursor);
     instance_create(view_xview + view_wview/8,view_yview + view_hview-64,objBackMapMenu);
+    if(instance_exists(objScore)) objScore.timer = false; // Desabilita contagem de tempo
 }
 else
 {  
     global.pause = false;
+    if(instance_exists(objScore)) objScore.timer = true; // Habilita contagem de tempo
     with (objMouseCursor) instance_destroy();
     with (objBackMapMenu) instance_destroy(); 
 }
