@@ -95,6 +95,10 @@
         <sprite>sprites\sprSpikeRed</sprite>
         <sprite>sprites\sprSpikeGreen</sprite>
         <sprite>sprites\sprSpikeWhite</sprite>
+        <sprite>sprites\sprDeadStringSingle</sprite>
+        <sprite>sprites\sprDeadStringMiddle</sprite>
+        <sprite>sprites\sprDeadStringFly</sprite>
+        <sprite>sprites\sprDeadStringEdge</sprite>
       </sprites>
       <sprites name="Sphere">
         <sprite>sprites\sprSphereBlue</sprite>
@@ -274,16 +278,16 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmLevel16</room>
-    <room>rooms\rmLevel17</room>
-    <room>rooms\rmLevel18</room>
-    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel11</room>
-    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel12</room>
     <room>rooms\rmLevel13</room>
     <room>rooms\rmLevel14</room>
     <room>rooms\rmLevel15</room>
+    <room>rooms\rmLevel16</room>
+    <room>rooms\rmLevel17</room>
+    <room>rooms\rmLevel18</room>
+    <room>rooms\rmMenuInicial</room>
+    <room>rooms\rmMapa11</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
     <room>rooms\rmTeste</room>
