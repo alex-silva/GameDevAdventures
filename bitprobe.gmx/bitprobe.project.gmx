@@ -137,6 +137,9 @@
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shaTrocaCor.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <objects name="Player">
       <object>objects\objPlayer</object>
@@ -212,6 +215,11 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+<<<<<<< HEAD
+=======
+    <room>rooms\rmMenuInicial</room>
+    <room>rooms\rmLevel1_1</room>
+>>>>>>> 2035e48143b5976ad0d901e12988997da0037c66
     <room>rooms\rmTeste</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel12OLD</room>
@@ -220,7 +228,6 @@
     <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_10</room>
     <room>rooms\rmMapa01</room>
-    <room>rooms\rmLevel1_1</room>
     <room>rooms\rmLevel1_4</room>
     <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_5</room>

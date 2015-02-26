@@ -30,9 +30,13 @@
 //alarm[0] = room_speed/10; 
 gui_x[0] = 50;
 gui_y[0] = 50
-m = 0;
-s = 0;
-ms = 0;
+
+// Variáveis de tempo
+minutes = 0;
+seconds = 0;
+
+// Variáveis de controle
+timer = false;
 </string>
           </argument>
         </arguments>
@@ -55,26 +59,16 @@ ms = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>time = get_timer();
-//if(init&gt;time)
-ms =  floor((time-init)/1000)- (s + m*60)*1000;
-if(ms&gt;= 1000) 
+            <string>if(timer == true)
 {
-    s++;
-    ms=0;
+    seconds += 1/room_speed;
 }
-s = floor((time-init)/1000000) - m*60;
-//s =  s - m*60;
-if(s&gt;=60) 
+
+if(seconds &lt; 60 &amp;&amp; seconds &gt; 59.9)
 {
-    m++;
-    s=0;
-}
-//
-//
-
-
-
+    seconds = 0;
+    minutes += 1;
+} 
 </string>
           </argument>
         </arguments>
@@ -97,10 +91,8 @@ if(s&gt;=60)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>init = get_timer();
-//highscore_add("Time", score);
-//score = 0;
-
+            <string>// Habilita o temporizador ao iniciar a Room
+timer = true;
 </string>
           </argument>
         </arguments>
@@ -123,23 +115,26 @@ if(s&gt;=60)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>str_m = string(m);
-str_s = string(s);
-str_ms = string(ms);
-if(m&lt;10) str_m = "0"+str_m; 
-if(s&lt;10) str_s = "0"+str_s; 
-if(ms&lt;100) str_ms = "0"+str_ms; 
-if(ms&lt;10) str_ms = "0"+str_ms; 
-draw_rectangle_colour(20, 20, 130, 60, c_white, c_white, c_white, c_white, false); 
-draw_set_halign(fa_left);
-draw_set_valign(fa_top); 
-draw_text_transformed(25, 25, str_m+":"+str_s, 2, 2, 0);
-
-
-//display_get_gui_height(); 
-//display_get_gui_width();
-//draw_text(10,10,str_m+":"+str_s);
-//draw_highscore(100, 100, room_width - 100, room_height - 100); 
+            <string>if(timer == true)
+{
+    str_m = string(minutes);
+    str_s = string(floor(seconds));
+    //str_ms = string(mseconds);
+    if(minutes&lt;10) str_m = "0"+str_m; 
+    if(seconds&lt;10) str_s = "0"+str_s; 
+    //if(mseconds&lt;100) str_ms = "0"+str_ms; 
+    //if(mseconds&lt;10) str_ms = "0"+str_ms; 
+    draw_rectangle_colour(20, 20, 130, 60, c_white, c_white, c_white, c_white, false); 
+    draw_set_halign(fa_left);
+    draw_set_valign(fa_top); 
+    draw_text_transformed(25, 25, str_m+":"+str_s, 2, 2, 0);
+    
+    
+    //display_get_gui_height(); 
+    //display_get_gui_width();
+    //draw_text(10,10,str_m+":"+str_s);
+    //draw_highscore(100, 100, room_width - 100, room_height - 100); 
+}
 </string>
           </argument>
         </arguments>
