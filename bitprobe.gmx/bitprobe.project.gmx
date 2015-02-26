@@ -54,6 +54,12 @@
         <sprite>sprites\sprPropulsorCharged</sprite>
         <sprite>sprites\sprPropulsorIdle</sprite>
       </sprites>
+      <sprites name="DeadString">
+        <sprite>sprites\sprDeadStringSingle</sprite>
+        <sprite>sprites\sprDeadStringMiddle</sprite>
+        <sprite>sprites\sprDeadStringFly</sprite>
+        <sprite>sprites\sprDeadStringEdge</sprite>
+      </sprites>
       <sprite>sprites\sprBall</sprite>
       <sprite>sprites\sprSpike</sprite>
       <sprite>sprites\sprSphere</sprite>
@@ -215,6 +221,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmLevel1_5</room>
     <room>rooms\rmTeste</room>
     <room>rooms\rmLevel1_1</room>
     <room>rooms\rmMenuInicial</room>
@@ -226,7 +233,6 @@
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_4</room>
     <room>rooms\rmLevel1_3</room>
-    <room>rooms\rmLevel1_5</room>
     <room>rooms\rmLevel1_7</room>
     <room>rooms\rmLevel1_8</room>
     <room>rooms\rmLevel1_9</room>
