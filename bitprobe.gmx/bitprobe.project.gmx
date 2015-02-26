@@ -215,12 +215,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-<<<<<<< HEAD
-=======
-    <room>rooms\rmMenuInicial</room>
-    <room>rooms\rmLevel1_1</room>
->>>>>>> 2035e48143b5976ad0d901e12988997da0037c66
     <room>rooms\rmTeste</room>
+    <room>rooms\rmLevel1_1</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel12OLD</room>
     <room>rooms\rmLevel11OLD</room>

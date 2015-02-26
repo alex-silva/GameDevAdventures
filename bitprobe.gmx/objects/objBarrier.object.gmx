@@ -27,10 +27,11 @@
             <kind>1</kind>
             <string>///Define cor
 cor = Cor.White;
+sprite_index = - 1;
 //player esta acima da plataforma, ou colidiu
-carregaPlayer = false;
+/////carregaPlayer = false;
 //player pulou acima da plataforma
-isJumping = false;
+/////isJumping = false;
 </string>
           </argument>
         </arguments>
@@ -54,14 +55,30 @@ isJumping = false;
           <argument>
             <kind>1</kind>
             <string>///Ativa ou desativa máscara de colisão de acordo com cor
-if (global.pause || ! instance_exists(objPlayer)) exit;
+if (global.pause) exit;
 
-if CollisionCor(self.cor, objPlayer.cor)
+if (instance_exists(objPlayer))
 {
-    mask_index = sprBarrier;
+    if CollisionCor(self.cor, objPlayer.cor)
+    {
+        mask_index = sprBarrier;
+        var barrierXDireita = round(x + sprite_get_width(sprBarrier) * image_xscale);
+        var barrierYAbaixo = round(y + sprite_get_height(sprBarrier) * image_yscale);
+        var playerXDireita = round(objPlayer.x + (sprite_get_width(sprPlayerMove)/2));
+        var playerXEsquerda = round(objPlayer.x - (sprite_get_width(sprPlayerMove)/2));
+        var playerYAcima = round(objPlayer.y - (sprite_get_height(sprPlayerMove)/2));
+        var playerYAbaixo = round(objPlayer.y + (sprite_get_height(sprPlayerMove)/2));
+         // atravessa se player estiver com parte do corpo na barrier
+         if (place_meeting(x, y, objPlayer) 
+          &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
+           || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
+         
+            mask_index = -1;
+         
+    }
+    else
+        mask_index = -1;
 }
-else
-    mask_index = -1;
 
 
 //colide
@@ -198,8 +215,26 @@ else
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão, muda cor
-MudaCor(cor);
-///draw_sprite_ext(sprBarrier, 0, x, y, 1, 1, 0, c_white, 1);
+///MudaCor(cor);
+
+var hue = 255;
+switch (cor)
+{
+    case Cor.Red   : hue = 0; break;
+    case Cor.Green : hue = 80; break;
+    case Cor.Blue  : hue = 160; break; 
+    case Cor.White : hue = 255; break;
+}
+if( shader_is_compiled(shaTrocaCor) )
+{    
+    shader_set(shaTrocaCor);
+    shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"hue"),hue);
+    //shader_set_uniform_f(shader_get_uniform(shader0,"light"),128);
+    draw_sprite_ext(sprBarrier, 0, x, y, image_xscale, image_yscale,image_angle, c_white, 1);
+    shader_reset();
+}else{
+    show_debug_message("shaTrocaCor nao compilou");
+}
 </string>
           </argument>
         </arguments>

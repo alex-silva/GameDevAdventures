@@ -57,9 +57,9 @@ playerVivo = true;
 
 /* PLATAFORMAS */
 //esta acima de uma plataforma
-isOnBarrier = false;
+////isOnBarrier = false;
 //colidiu horizontalmente com uma plataforma
-colideBarrier = false;
+//////colideBarrier = false;
 /* PLATAFORMAS */
 //distancia do player da view (padrao - meio da tela)
 distanciaView = 2;
@@ -355,11 +355,11 @@ if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
 }
 
 // Define movimentação caso não colida com objetos (ou não esteja em barrier vertical)
-if (!colideBarrier)
+////if (!colideBarrier)
     x += hspFinal;  
 
 //caso nao esteja acima de uma barrier
-if (verCarry == 0 &amp;&amp; !isOnBarrier)
+if (verCarry == 0) ///&amp;&amp; !isOnBarrier)
     y += verticalSpeed;
     
 /* ------------------------------------*/
