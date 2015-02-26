@@ -212,8 +212,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmTeste</room>
+    <room>rooms\rmMenuInicial</room>
     <room>rooms\rmLevel12OLD</room>
     <room>rooms\rmLevel11OLD</room>
     <room>rooms\rmLevel1_6</room>

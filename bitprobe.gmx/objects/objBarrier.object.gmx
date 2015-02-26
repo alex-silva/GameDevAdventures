@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>objColorido</parentName>
+  <parentName>objCollision</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -56,16 +56,31 @@ isJumping = false;
             <string>///Ativa ou desativa máscara de colisão de acordo com cor
 if (global.pause || ! instance_exists(objPlayer)) exit;
 
-//colide
 if CollisionCor(self.cor, objPlayer.cor)
 {
+    mask_index = sprBarrier;
+}
+else
+    mask_index = -1;
 
+
+//colide
+/*if CollisionCor(self.cor, objPlayer.cor)
+{
     ////verificar quinas!
-
+    ////na horizontal se mudar de cor enquanto colidir, nao prossegue
+    ////pula mais alto se for da msm cor da barrier(abaixo da mesma)
 
     //se player estiver com parte do corpo para fora, atravessa
-    var barrierXDireita = round(x + sprite_get_width(sprite_index));
+/*    var barrierXDireita = round(x + sprite_get_width(sprite_index));
     var barrierYAbaixo = round(y + sprite_get_height(sprite_index));
+    var playerXDireita = round(objPlayer.x + (sprite_get_width(objPlayer.sprite_index)/2));
+    var playerXEsquerda = round(objPlayer.x - (sprite_get_width(objPlayer.sprite_index)/2));
+    var playerYAcima = round(objPlayer.y - (sprite_get_height(objPlayer.sprite_index)/2));
+    var playerYAbaixo = round(objPlayer.y + (sprite_get_height(objPlayer.sprite_index)/2));*/
+/*    
+      var barrierXDireita = round(x + sprite_width);
+    var barrierYAbaixo = round(y + sprite_height);
     var playerXDireita = round(objPlayer.x + (sprite_get_width(objPlayer.sprite_index)/2));
     var playerXEsquerda = round(objPlayer.x - (sprite_get_width(objPlayer.sprite_index)/2));
     var playerYAcima = round(objPlayer.y - (sprite_get_height(objPlayer.sprite_index)/2));
@@ -85,11 +100,10 @@ if CollisionCor(self.cor, objPlayer.cor)
     }
     
     /*colisão vertical com player (acima)*/
-    if (place_meeting(x, y - objPlayer.verticalSpeed, objPlayer))
+  /*  if (place_meeting(x, y - objPlayer.verticalSpeed, objPlayer))
     {
         while(!place_meeting(x, y - sign(objPlayer.verticalSpeed), objPlayer))
             objPlayer.y += sign(objPlayer.verticalSpeed);
-        show_debug_message("entrou");
         objPlayer.isOnBarrier = true;
         objPlayer.verticalSpeed = 0;
         carregaPlayer = true;
@@ -107,15 +121,27 @@ if CollisionCor(self.cor, objPlayer.cor)
     }
     /*colisão vertical com player (acima)*/
     
-    
+    /* colisão vertical com player (por baixo)*/
+ /*   if (place_meeting(x, y + sign(objPlayer.verticalSpeed), objPlayer))
+    {
+    show_debug_message("baixo");
+        while(!place_meeting(x, y + sign(objPlayer.verticalSpeed), objPlayer))
+        {
+        show_debug_message("barrier " + string(y)); 
+                show_debug_message("player " + string(objPlayer.y));
+            objPlayer.y -= sign(objPlayer.verticalSpeed);
+            }
+        objPlayer.verticalSpeed = 0;
+        exit;
+    }
+    /* colisão vertical com player (por baixo)*/
     
     //////testar
     
     
     
-    /* colisão horizontal com player (ou vertical por baixo)*/
-    if (place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer)
-     || place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer))
+    /* colisão horizontal com player*/
+ /*   if (place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer))
     {
         while(!place_meeting(x - sign(objPlayer.horizontalSpeed), y, objPlayer))
             objPlayer.x += sign(objPlayer.horizontalSpeed);
@@ -124,10 +150,10 @@ if CollisionCor(self.cor, objPlayer.cor)
         carregaPlayer = true;
         exit;
     }
-    /* colisão horizontal com player (ou vertical por baixo)*/
-         
+    /* colisão horizontal com player*/
+
     //player não colide mais com plataforma ou pulou (se estiver acima)
-    if (carregaPlayer == true || isJumping == true)
+  /*  if (carregaPlayer == true || isJumping == true)
     {
         show_debug_message("saiu");
         carregaPlayer = false;
@@ -172,8 +198,8 @@ else
           <argument>
             <kind>1</kind>
             <string>///Apenas desenha o sprite, sem máscaras de colisão, muda cor
-event_inherited();
-///draw_sprite_ext(barrierSprite, 0, x, y, scaleX, scaleY, 0, c_white, 1);
+MudaCor(cor);
+///draw_sprite_ext(sprBarrier, 0, x, y, 1, 1, 0, c_white, 1);
 </string>
           </argument>
         </arguments>
