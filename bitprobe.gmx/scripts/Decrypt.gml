@@ -6,4 +6,9 @@
 var decode = argument0;
 repeat(argument1)
     decode = base64_decode(string(decode));
-return real(decode);
+    
+    
+    
+//nao encripta
+return real(argument0);
+///return real(decode);

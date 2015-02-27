@@ -104,7 +104,8 @@ control_hab = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(control_hab = true)
+            <string>///desenha botoes
+if(control_hab = true)
 {
     ///Inserção dos sprites na tela
     

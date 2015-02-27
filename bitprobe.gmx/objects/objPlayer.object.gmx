@@ -144,13 +144,13 @@ if (instance_exists(objDoorStart))
 //visible = playerVivo;
 
 //view sempre segue player
-movimentoViewX = objPlayer.x - 32;
-if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 32 &lt; room_width)
+/*movimentoViewX = objPlayer.x - 128;
+if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 128 &lt; room_width)
     view_xview[1] = movimentoViewX;
-movimentoViewY = objPlayer.y - 32;
-if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[1] - 32 &lt; room_height)
+movimentoViewY = objPlayer.y - 128;
+if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[1] - 128 &lt; room_height)
     view_yview[1] = movimentoViewY;
-            
+  */          
 if (!playerVivo)
     exit;
 
@@ -394,6 +394,10 @@ else if(global.playerStats[? "PlayerBlue"]&amp;&amp;global.keyBlue)
 {
     self.cor = Cor.Blue;
 }
+else if(global.playerStats[? "PlayerWhite"])
+{
+    self.cor = Cor.White;
+}
 TrocaSpritePlayer();
 
 /* ------------------------------------*/
@@ -434,6 +438,8 @@ switch(other.cor)
     case Cor.Blue  : { global.playerStats[? "PlayerBlue"]  = true; cor = Cor.Blue;  break; }
     case Cor.White : { global.playerStats[? "PlayerWhite"] = true; cor = Cor.White; break; }
 }
+if (cor != Cor.White)
+    global.playerStats[? "PlayerWhite"] = false;
 sprite_index = TrocaSpritePlayer();
 with (other) instance_destroy();
 PlaySound(sndPowerUp,false, false);

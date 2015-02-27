@@ -6,4 +6,8 @@
 var encode = argument0;
 repeat(argument1)
     encode = base64_encode(string(encode));
-return encode;
+    
+    
+//nao encripta
+return string(argument0);
+////return encode;

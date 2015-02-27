@@ -31,7 +31,7 @@ if (instance_exists(objRoom))
     objRoom.checkpointX = x;
     objRoom.checkpointY = y;
 }
-for (var i = 300; i&lt; 400; i++)
+/*for (var i = 300; i&lt; 400; i++)
 {
     inst = instance_create(2192, i, objSpike);
     with(inst) 
@@ -40,7 +40,7 @@ for (var i = 300; i&lt; 400; i++)
         image_angle = 90;
     }
 }
-    
+ */   
 instance_destroy();
 </string>
           </argument>
