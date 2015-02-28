@@ -51,49 +51,48 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="objDoorStart" x="208" y="704" name="inst_5A4AC8DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objDoorEnd" x="1088" y="528" name="inst_C0B48ECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="48" y="560" name="inst_6B8CD837" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="47" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="464" y="704" name="inst_0C551976" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Up;&#xA;moveSpeed = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="624" y="768" name="inst_422A5677" locked="0" code="cor = Cor.White;&#xA;" scaleX="2" scaleY="36" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="624" y="672" name="inst_22B047C0" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="592" y="784" name="inst_E2F7B38B" locked="0" code="cor = Cor.Red;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="400" y="656" name="inst_7649A25D" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Up;&#xA;moveSpeed = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="272" y="592" name="inst_43A17771" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Down;&#xA;moveSpeed = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="336" y="640" name="inst_A1824F35" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Down;&#xA;moveSpeed = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="176" y="768" name="inst_E2F052D7" locked="0" code="cor = Cor.White;&#xA;" scaleX="3" scaleY="44" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="592" y="976" name="inst_2CC44879" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="objSpike" x="592" y="1056" name="inst_FF7A917D" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="592" y="1104" name="inst_D845E972" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
-    <instance objName="objSpike" x="592" y="1152" name="inst_BEC5428F" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="592" y="1008" name="inst_917DC733" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCheckpoint" x="672" y="1296" name="inst_0F170F07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="176" y="560" name="inst_0916938D" locked="0" code="cor = Cor.Red;&#xA;" scaleX="3" scaleY="2.5" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1024" y="672" name="inst_456380C5" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1088" y="672" name="inst_4F116037" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="752" name="inst_EC5781DB" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1216" y="752" name="inst_9652D782" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="992" y="592" name="inst_09B238E4" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="992" y="768" name="inst_2FAE26B1" locked="0" code="cor = Cor.White;&#xA;" scaleX="2" scaleY="37" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="656" y="752" name="inst_4A8FE9B7" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="720" y="752" name="inst_557C7980" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="784" y="752" name="inst_EAF46834" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="848" y="752" name="inst_2B7B8B7F" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="544" y="1360" name="inst_910EF23A" locked="0" code="cor = Cor.White;&#xA;" scaleX="5" scaleY="11" colour="4294967295" rotation="0"/>
-    <instance objName="objBarrier" x="1152" y="1248" name="inst_63CA06A0" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
-    <instance objName="objPowerUp" x="1056" y="1312" name="inst_A416BA23" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objPropulsor" x="944" y="1344" name="inst_D08B91EF" locked="0" code="cor = Cor.Blue;&#xA;spd = 35;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="416" name="inst_3B1FEEE9" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="464" name="inst_81C6C20C" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="512" name="inst_366B7ADE" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="560" name="inst_A34B2A04" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="608" name="inst_5E39DBBA" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="656" name="inst_644F609F" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1152" y="704" name="inst_5DC8A482" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1024" y="720" name="inst_4D108342" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1088" y="720" name="inst_0C0E097C" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1024" y="752" name="inst_BDAF87A9" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objSpike" x="1088" y="752" name="inst_AFE61474" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDoorStart" x="160" y="240" name="inst_5A4AC8DD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objDoorEnd" x="1040" y="64" name="inst_C0B48ECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="0" y="96" name="inst_6B8CD837" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="47" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSpike" x="416" y="240" name="inst_0C551976" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Up;&#xA;moveSpeed = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="576" y="304" name="inst_422A5677" locked="0" code="cor = Cor.White;&#xA;" scaleX="2" scaleY="36" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="576" y="208" name="inst_22B047C0" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="544" y="320" name="inst_E2F7B38B" locked="0" code="cor = Cor.Red;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSpike" x="352" y="192" name="inst_7649A25D" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Up;&#xA;moveSpeed = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSpike" x="224" y="128" name="inst_43A17771" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Down;&#xA;moveSpeed = 4;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSpike" x="288" y="176" name="inst_A1824F35" locked="0" code="cor = Cor.Blue;&#xA;direcao = Direction.Down;&#xA;moveSpeed = 3;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="128" y="304" name="inst_E2F052D7" locked="0" code="cor = Cor.White;&#xA;" scaleX="3" scaleY="44" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="544" y="512" name="inst_2CC44879" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objSpike" x="544" y="592" name="inst_FF7A917D" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="544" y="640" name="inst_D845E972" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="180"/>
+    <instance objName="objSpike" x="544" y="688" name="inst_BEC5428F" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="544" y="544" name="inst_917DC733" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCheckpoint" x="624" y="832" name="inst_0F170F07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="128" y="96" name="inst_0916938D" locked="0" code="cor = Cor.Red;&#xA;" scaleX="3" scaleY="2.5" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="976" y="208" name="inst_456380C5" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1040" y="208" name="inst_4F116037" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="288" name="inst_EC5781DB" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1168" y="288" name="inst_9652D782" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="944" y="128" name="inst_09B238E4" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="944" y="304" name="inst_2FAE26B1" locked="0" code="cor = Cor.White;&#xA;" scaleX="2" scaleY="37" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="608" y="288" name="inst_4A8FE9B7" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="672" y="288" name="inst_557C7980" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="736" y="288" name="inst_EAF46834" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="800" y="288" name="inst_2B7B8B7F" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="496" y="896" name="inst_910EF23A" locked="0" code="cor = Cor.White;&#xA;" scaleX="5" scaleY="11" colour="4294967295" rotation="0"/>
+    <instance objName="objBarrier" x="1104" y="784" name="inst_63CA06A0" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="objPowerUp" x="1008" y="848" name="inst_A416BA23" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objPropulsor" x="896" y="880" name="inst_D08B91EF" locked="0" code="cor = Cor.Blue;&#xA;spd = 35;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="0" name="inst_81C6C20C" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="48" name="inst_366B7ADE" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="96" name="inst_A34B2A04" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="144" name="inst_5E39DBBA" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="192" name="inst_644F609F" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1104" y="240" name="inst_5DC8A482" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="976" y="256" name="inst_4D108342" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1040" y="256" name="inst_0C0E097C" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="976" y="288" name="inst_BDAF87A9" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objSpike" x="1040" y="288" name="inst_AFE61474" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

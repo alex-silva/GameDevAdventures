@@ -107,6 +107,22 @@
   <paths name="paths">
     <path>paths\pathTeste</path>
     <path>paths\movingPath</path>
+    <path>paths\path1_15</path>
+    <paths name="Level1_17">
+      <path>paths\path1_17_1</path>
+      <path>paths\path1_17_2</path>
+      <path>paths\path1_17_3</path>
+      <path>paths\path1_17_4</path>
+    </paths>
+    <paths name="Level1_18">
+      <path>paths\path1_18_1</path>
+      <path>paths\path1_18_2</path>
+      <path>paths\path1_18_3</path>
+    </paths>
+    <paths name="Level1_19">
+      <path>paths\path1_19_1</path>
+      <path>paths\path1_19_2</path>
+    </paths>
   </paths>
   <scripts name="scripts">
     <scripts name="Particles">
@@ -181,6 +197,7 @@
       <objects name="Views">
         <object>objects\objTriggerView</object>
         <object>objects\objTriggerViewFollowing</object>
+        <object>objects\objTriggerViewNormal</object>
       </objects>
     </objects>
     <objects name="Interactives">
@@ -217,12 +234,23 @@
     </objects>
     <objects name="Collectables">
       <object>objects\objPowerUp</object>
+      <object>objects\objBandAid</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmLevel1_10</room>
+    <room>rooms\rmLevel1_19</room>
+    <room>rooms\room31</room>
+    <room>rooms\rmLevel1_18</room>
+    <room>rooms\rmLevel1_17</room>
+    <room>rooms\rmLevel1_16</room>
+    <room>rooms\rmLevel1_15</room>
+    <room>rooms\rmLevel1_14</room>
+    <room>rooms\rmLevel1_13</room>
+    <room>rooms\rmLevel1_12</room>
     <room>rooms\rmLevel1_11</room>
+    <room>rooms\rmTeste</room>
+    <room>rooms\rmLevel1_10</room>
     <room>rooms\rmLevel1_9</room>
     <room>rooms\rmLevel1_6</room>
     <room>rooms\rmLevel1_7</room>
@@ -236,7 +264,6 @@
     <room>rooms\rmLevel1_5</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
-    <room>rooms\rmTeste</room>
     <rooms name="OLD">
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>

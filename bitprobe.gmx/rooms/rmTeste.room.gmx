@@ -308,9 +308,9 @@
     <instance objName="objCollision" x="1056" y="1632" name="inst_1EFE74C6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1120" y="1648" name="inst_01D5E3FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objCollision" x="1472" y="1616" name="inst_DB437416" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSphere" x="1056" y="992" name="inst_0EBE74DB" locked="0" code="cor = Cor.Green;&#xA;isOrigin=true;&#xA;path=pathTeste;&#xA;direcao=Direction.Right;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSphere" x="1632" y="1488" name="inst_0EBE74DB" locked="0" code="cor = Cor.Green;&#xA;isOrigin=true;&#xA;path=pathTeste;&#xA;direcao=Direction.Right;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1776" y="1504" name="inst_0BD1312B" locked="0" code="cor = Cor.Green;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSphere" x="1952" y="1024" name="inst_506404A5" locked="0" code="cor = Cor.Green;&#xA;isOrigin=false;&#xA;path=pathTeste;&#xA;direcao=Direction.Up;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingSphere" x="1952" y="1168" name="inst_506404A5" locked="0" code="cor = Cor.Green;&#xA;isOrigin=false;&#xA;path=pathTeste;&#xA;direcao=Direction.Up;&#xA;distancia = 100;&#xA;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objPowerUp" x="1776" y="1408" name="inst_BF5597E4" locked="0" code="cor = Cor.Red;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objDebug" x="1152" y="624" name="inst_9947846F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="1824" y="1120" name="inst_6958ADD3" locked="0" code="cor = Cor.Blue;&#xA;" scaleX="0.5" scaleY="3" colour="4294967295" rotation="0"/>

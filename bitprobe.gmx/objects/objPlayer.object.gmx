@@ -62,7 +62,17 @@ playerVivo = true;
 //////colideBarrier = false;
 /* PLATAFORMAS */
 //distancia do player da view (padrao - meio da tela)
-distanciaView = 2;
+/////distanciaView = 2;
+///considerar
+
+//view acompanha player
+viewFollows = false;
+viewX = 0;
+viewY = 0;
+
+//está em portal e ignora colisoes
+isInPortal = false;
+
 // alarme até morte do player
 alarmPlayerDeath = room_speed;
 image_speed = 1;
@@ -143,14 +153,6 @@ if (instance_exists(objDoorStart))
 // player visível apenas quando vivo
 //visible = playerVivo;
 
-//view sempre segue player
-/*movimentoViewX = objPlayer.x - 128;
-if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 128 &lt; room_width)
-    view_xview[1] = movimentoViewX;
-movimentoViewY = objPlayer.y - 128;
-if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[1] - 128 &lt; room_height)
-    view_yview[1] = movimentoViewY;
-  */          
 if (!playerVivo)
     exit;
 
@@ -361,7 +363,24 @@ if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
 //caso nao esteja acima de uma barrier
 if (verCarry == 0) ///&amp;&amp; !isOnBarrier)
     y += verticalSpeed;
+
+//view segue player
+if (viewFollows)
+{
+   /// movimentoViewX = objPlayer.x - 128;
+   /// if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 128 &lt; room_width)
+    if (view_xview[0] + hspFinal &gt;= 0 &amp;&amp; view_xview[0] + hspFinal &lt; room_width)
+        view_xview[0] += hspFinal;
+  ///  movimentoViewY = objPlayer.y - 128;
+   /// if (movimentoViewY &gt;= 0 &amp;&amp; objPlayer.y + view_hview[1] - 128 &lt; room_height)
+    if (view_yview[0] + verticalSpeed &gt;= 0 &amp;&amp; view_yview[0] + verticalSpeed &lt; room_height)
+        view_yview[0] += verticalSpeed;
     
+    viewX = view_xview[0];
+    viewY = view_yview[0];
+}
+
+        
 /* ------------------------------------*/
 /* ------------------------------------*/
 /* ----------- ANIMACAO ---------------*/
@@ -492,18 +511,18 @@ room_goto_next();
             <string>/// Colisão com sphere e teletransporta
 if (CollisionCor(self.cor, other.cor))
 {
-    if (other.isOrigin &amp;&amp; playerVivo == true)
+    if (other.isOrigin &amp;&amp; isInPortal == false)
     {
         path_change_point(other.path, 0, other.x, other.y, other.speedPath);
         path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
         PlaySound(sndPortal,false, true);
-        playerVivo = false;
+        isInPortal = true;
     }
-    else if ((!other.isOrigin &amp;&amp; playerVivo == false))
+    else if ((!other.isOrigin &amp;&amp; isInPortal == true))
     {
         //TODO:sound diferenciado
         PlaySound(sndPortal,false, true);
-        playerVivo = true;
+        isInPortal = false;
     }
     
 }
