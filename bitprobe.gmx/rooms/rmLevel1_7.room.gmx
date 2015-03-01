@@ -65,7 +65,6 @@
     <instance objName="objBarrier" x="864" y="256" name="inst_E02CA997" locked="0" code="cor = Cor.Red;&#xA;" scaleX="0.300000011920929" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="1184" y="256" name="inst_CA39CC63" locked="0" code="cor = Cor.Red;&#xA;" scaleX="0.300000011920929" scaleY="10" colour="4294967295" rotation="0"/>
     <instance objName="objBarrier" x="576" y="256" name="inst_1EA0B6EC" locked="0" code="cor = Cor.Green;&#xA;" scaleX="0.300000011920929" scaleY="10" colour="4294967295" rotation="0"/>
-    <instance objName="objPlayer" x="320" y="352" name="inst_5B664958" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="TileSetV1" x="160" y="224" w="32" h="32" xo="0" yo="32" id="10019088" name="inst_5DDA9BA4" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

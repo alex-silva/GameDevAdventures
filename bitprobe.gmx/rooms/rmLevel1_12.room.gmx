@@ -41,7 +41,7 @@
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
   </backgrounds>
   <views>
-    <view visible="-1" objName="&lt;undefined&gt;" xview="0" yview="0" wview="960" hview="720" xport="0" yport="0" wport="960" hport="720" hborder="1000" vborder="1000" hspeed="-1" vspeed="-1"/>
+    <view visible="-1" objName="objPlayer" xview="0" yview="0" wview="960" hview="720" xport="0" yport="0" wport="960" hport="720" hborder="1000" vborder="1000" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
@@ -79,8 +79,6 @@
     <instance objName="objBarrier" x="816" y="1232" name="inst_CE81B206" locked="0" code="cor = Cor.White;&#xA;" scaleX="8.35000038146973" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objBarrier" x="16" y="1264" name="inst_58EBD6C2" locked="0" code="cor = Cor.White;&#xA;" scaleX="8.35000038146973" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objPropulsor" x="992" y="1216" name="inst_D1B5C8C7" locked="0" code="cor = Cor.Red;&#xA;spd = 55;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objTriggerViewFollowing" x="448" y="0" name="inst_545C82F0" locked="0" code="" scaleX="6" scaleY="4" colour="4294967295" rotation="0"/>
-    <instance objName="objTriggerViewNormal" x="32" y="352" name="inst_50D7ECC7" locked="0" code="" scaleX="5" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

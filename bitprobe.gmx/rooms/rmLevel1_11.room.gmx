@@ -86,6 +86,13 @@
     <instance objName="objSpike" x="1168" y="464" name="inst_81C6C20C" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1168" y="512" name="inst_366B7ADE" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1168" y="560" name="inst_A34B2A04" locked="0" code="cor = Cor.White;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="160" y="768" name="inst_91255371" locked="0" code="" scaleX="12" scaleY="19" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="640" y="768" name="inst_B6162299" locked="0" code="" scaleX="8" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="544" y="1376" name="inst_7E370BFE" locked="0" code="" scaleX="20" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="992" y="768" name="inst_52417EBE" locked="0" code="" scaleX="8" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="0" y="448" name="inst_AEAD9C44" locked="0" code="" scaleX="5" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="160" y="448" name="inst_33020B79" locked="0" code="" scaleX="12" scaleY="4" colour="4294967295" rotation="0"/>
+    <instance objName="objCollision" x="1184" y="352" name="inst_865D8A52" locked="0" code="" scaleX="4" scaleY="12" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="TileSetV1" x="128" y="576" w="32" h="32" xo="64" yo="0" id="10022767" name="inst_2DE71EA0" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
