@@ -37,6 +37,14 @@ seconds = 0;
 
 // Variáveis de controle
 timer = false;
+save = false;
+
+if(file_exists("s_data.dat")) 
+    s_map = ds_map_secure_load("s_data.dat"); 
+else 
+    s_map = ds_map_create(); 
+
+//room_get_name(room); 
 </string>
           </argument>
         </arguments>
@@ -59,16 +67,22 @@ timer = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(timer == true)
-{
-    seconds += 1/room_speed;
+            <string>if(save == true){
+    ds_map_secure_save(s_map,"s_data.dat");
+//room_get_name(room); 
 }
-
-if(seconds &lt; 60 &amp;&amp; seconds &gt; 59.9)
-{
-    seconds = 0;
-    minutes += 1;
-} 
+else{
+    if(timer == true)
+    {
+        seconds += 1/room_speed;
+    }
+    
+    if(seconds &lt; 60 &amp;&amp; seconds &gt; 59.9)
+    {
+        seconds = 0;
+        minutes += 1;
+    } 
+}
 </string>
           </argument>
         </arguments>
