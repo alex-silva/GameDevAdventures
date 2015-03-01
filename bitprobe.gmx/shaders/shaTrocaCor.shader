@@ -2,7 +2,7 @@
 // Simple passthrough vertex shader
 //
 attribute vec3 in_Position;                  // (x,y,z)
-//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.	
+//attribute vec3 in_Normal;                  // (x,y,z)     unused in this shader.
 attribute vec4 in_Colour;                    // (r,g,b,a)
 attribute vec2 in_TextureCoord;              // (u,v)
 
@@ -13,7 +13,6 @@ void main()
 {
     vec4 object_space_pos = vec4( in_Position.x, in_Position.y, in_Position.z, 1.0);
     gl_Position = gm_Matrices[MATRIX_WORLD_VIEW_PROJECTION] * object_space_pos;
-    
     v_vColour = in_Colour;
     v_vTexcoord = in_TextureCoord;
 }
@@ -25,7 +24,7 @@ varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
 uniform float hue;
-//uniform float light;
+uniform float light;
 
 vec3 rgb2hsv(vec3 c)
 {
@@ -50,12 +49,20 @@ void main() {
     vec3 fragRGB = textureColor.rgb;
     vec3 fragHSV = rgb2hsv(fragRGB).xyz;
     fragHSV.x = hue / 255.0;
-    //fragHSV.yz = mod(fragHSV.yz,0.5);
-    //fragHSV.xyz = mod(fragHSV.xyz,1.0);//mod(fragHSV.xyz, 1.0);
+    
+    if(light == 0.0)
+        fragHSV.z = fragHSV.z;
+    else
+        fragHSV.z = light;
+  ///  fragHSV.yz = mod(fragHSV.yz,1.0);
+   /// fragHSV.xyz = mod(fragHSV.xyz,1.0);//mod(fragHSV.xyz, 1.0);
     fragRGB = hsv2rgb(fragHSV);
     if(hue == 255.0){
         fragRGB = vec3(dot(texture2D(gm_BaseTexture,v_vTexcoord).rgb, vec3(0.21, 0.71, 0.07)));
     }
+   /// vec3 Vector = vec3(255.0, 0.0, 0.0);
+   ///  gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+   /// gl_FragColor.rgb *= vec3(2.0,2.0,2.0);//this doubles the red, green and blue values
     gl_FragColor = vec4(fragRGB, textureColor.w);
 } 
 
