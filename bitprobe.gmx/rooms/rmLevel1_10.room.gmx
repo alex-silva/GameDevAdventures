@@ -65,7 +65,7 @@
     <instance objName="objCollision" x="1056" y="640" name="inst_A5F95B98" locked="0" code="" scaleX="7" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="496" y="736" name="inst_837BC8B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="432" y="736" name="inst_9A9125FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="304" y="240" name="inst_07C97997" locked="0" code="cor = Cor.Red;&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objMovingSpike" x="288" y="256" name="inst_07C97997" locked="0" code="cor = Cor.Red;&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objSpike" x="880" y="736" name="inst_37C7CC0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMovingSpike" x="128" y="304" name="inst_920A68FB" locked="0" code="cor = Cor.Green;&#xA;direcao = Direction.Right;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="objSpike" x="816" y="736" name="inst_D211DF84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -84,7 +84,7 @@
     <instance objName="objTriggerViewFollowing" x="800" y="784" name="inst_83B943A0" locked="0" code="" scaleX="11" scaleY="16" colour="4294967295" rotation="0"/>
     <instance objName="objMovingBarrier" x="704" y="688" name="inst_DE43BF72" locked="0" code="cor = Cor.Green;&#xA;direcao = Direction.Horizontal;&#xA;distancia = 100;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpike" x="1072" y="736" name="inst_953AD02E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingSpike" x="304" y="400" name="inst_0B6A9A9C" locked="0" code="cor = Cor.Red;&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
+    <instance objName="objMovingSpike" x="288" y="448" name="inst_0B6A9A9C" locked="0" code="cor = Cor.Red;&#xA;direcao = Direction.Left;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
     <instance objName="objCollision" x="64" y="768" name="inst_BA871DCC" locked="0" code="" scaleX="32" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
