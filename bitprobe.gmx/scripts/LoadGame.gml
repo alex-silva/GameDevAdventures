@@ -48,8 +48,8 @@ else
     
     
     /////tocar ou nao musica e efeitos para testes
-    global.enableMusic = false;
-    global.enableSFX = false;
+    global.enableMusic = true;
+    global.enableSFX = true;
     /////tocar ou nao musica e efeitos para testes
     
     
