@@ -509,6 +509,19 @@ PlaySound(sndPowerUp,false, false);
           <argument>
             <kind>1</kind>
             <string>///Vai para próximo level
+playerVivo = true;
+//desativa inercia
+horizontalSpeed = 0;
+verticalSpeed = 0;
+hspCarry = 0;
+verCarry = 0;
+isJumping = false;
+isEndJump = false;
+move = 0;
+isFalling = false;
+acelerando = true;
+inercia = 0;
+isInPortal = false;
 room_goto_next();
 </string>
           </argument>
