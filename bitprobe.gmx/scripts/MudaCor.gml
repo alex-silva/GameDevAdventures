@@ -15,7 +15,17 @@ if( shader_is_compiled(shaTrocaCor) )
 {    
     shader_set(shaTrocaCor);
     shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"hue"),hue);
-    //shader_set_uniform_f(shader_get_uniform(shader0,"light"),128);
+    if (instance_exists(objPlayer))
+    {
+        if (object_get_name(object_index) == "objPlayer")
+            shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"light"),0.0);            
+        else if (objPlayer.cor != argument0)
+            shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"light"),0.5);
+        else
+            shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"light"),1.0);
+    }
+    else
+        shader_set_uniform_f(shader_get_uniform(shaTrocaCor,"light"),0.0);
     draw_self();
     shader_reset();
 }else{

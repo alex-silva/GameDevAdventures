@@ -81,7 +81,7 @@ tutorialBlue = false;
 tutorialGreen = false;
 
 control_hab = true;
-
+alpha = 1.0;
 </string>
           </argument>
         </arguments>
@@ -108,10 +108,9 @@ control_hab = true;
 if(control_hab = true)
 {
     ///Inserção dos sprites na tela
-    
-    draw_sprite(sprButtonLeft,0,kleft_x, kleft_y);
-    draw_sprite(sprButtonRight,0,kright_x, kright_y);
-    draw_sprite(sprButtonJump,0,kjump_x, kjump_y);
+    draw_sprite_ext(sprButtonLeft,0,kleft_x,kleft_y,1,1,0,c_white,alpha);
+    draw_sprite_ext(sprButtonRight,0,kright_x, kright_y,1,1,0,c_white,alpha);
+    draw_sprite_ext(sprButtonJump,0,kjump_x, kjump_y,1,1,0,c_white,alpha);
         
     var corPlayer = Cor.White
     if (instance_exists(objPlayer))
@@ -119,26 +118,26 @@ if(control_hab = true)
     if(global.playerStats[? "PlayerRed"])
     {
         if (corPlayer = Cor.Red)
-            draw_sprite(sprButtonRedDown,0,kred_x, kred_y);
+            draw_sprite_ext(sprButtonRedDown,0,kred_x, kred_y,1,1,0,c_white,alpha);
         else
-            draw_sprite(sprButtonRed,0,kred_x, kred_y);
+            draw_sprite_ext(sprButtonRed,0,kred_x, kred_y,1,1,0,c_white,alpha);
     }
     if(global.playerStats[? "PlayerGreen"])
     {
         if (corPlayer = Cor.Green)
-            draw_sprite(sprButtonGreenDown,0,kgreen_x, kgreen_y);
+            draw_sprite_ext(sprButtonGreenDown,0,kgreen_x, kgreen_y,1,1,0,c_white,alpha);
         else
-            draw_sprite(sprButtonGreen,0,kgreen_x, kgreen_y);
+            draw_sprite_ext(sprButtonGreen,0,kgreen_x, kgreen_y,1,1,0,c_white,alpha);
     }
     if(global.playerStats[? "PlayerBlue"])
     {
         if (corPlayer = Cor.Blue)
-            draw_sprite(sprButtonBlueDown,0,kblue_x, kblue_y);
+            draw_sprite_ext(sprButtonBlueDown,0,kblue_x, kblue_y,1,1,0,c_white,alpha);
         else
-            draw_sprite(sprButtonBlue,0,kblue_x, kblue_y);
+            draw_sprite_ext(sprButtonBlue,0,kblue_x, kblue_y,1,1,0,c_white,alpha);
     }
 }
-draw_sprite(sprPause,0,kpause_x, kpause_y);
+draw_sprite_ext(sprPause,0,kpause_x, kpause_y,1,1,0,c_white,alpha);
 </string>
           </argument>
         </arguments>
