@@ -511,14 +511,14 @@ room_goto_next();
             <string>/// Colisão com sphere e teletransporta
 if (CollisionCor(self.cor, other.cor))
 {
-    if (other.isOrigin &amp;&amp; isInPortal == false)
+    if (path_exists(other.path) &amp;&amp; isInPortal == false)
     {
-        path_change_point(other.path, 0, other.x, other.y, other.speedPath);
-        path_start(other.path, other.speedPath, other.endAction, other.absolutePath);
+        path_change_point(other.path, 0, other.x, other.y, path_get_speed(other.path, 0));
+        path_start(other.path, path_get_speed(other.path, 0), 0, true);
         PlaySound(sndPortal,false, true);
         isInPortal = true;
     }
-    else if ((!other.isOrigin &amp;&amp; isInPortal == true))
+    else if (isInPortal == true)
     {
         //TODO:sound diferenciado
         PlaySound(sndPortal,false, true);

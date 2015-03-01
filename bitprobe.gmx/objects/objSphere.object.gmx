@@ -27,11 +27,7 @@
             <kind>1</kind>
             <string>///Define path da sphere
 event_inherited();
-path = pathTeste;
-speedPath = 20;
-endAction = 0;//continua
-absolutePath = true;
-isOrigin = false;
+path = noone;
 </string>
           </argument>
         </arguments>
