@@ -53,6 +53,9 @@ checkpointY = 0;
             <string>///Desabilita checkpoints
 checkpointX = 0;
 checkpointY = 0;
+//desabilita acompanhamento da view no player
+if (instance_exists(objPlayer))
+    objPlayer.viewFollows = false;
 </string>
           </argument>
         </arguments>

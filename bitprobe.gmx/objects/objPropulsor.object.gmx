@@ -70,6 +70,11 @@ if (CollisionCor(self.cor, objPlayer.cor) &amp;&amp; (place_meeting(x, y, objPla
 }
 else isOn = false;
 
+//isOn quando nao colide com player
+
+if !(place_meeting(x, y, objPlayer))
+    isOn = true;
+
 //colidiu com player
 if (isOn == true)
 {
@@ -81,7 +86,6 @@ if (isOn == true)
         image_speed = 0;
         image_index = 0;
         sprite_index = sprPropulsorCharge;
-        //spritePropulsor = sprPropulsorCharge;
         image_speed = animSpeed;
         isCharging = true;
     }
