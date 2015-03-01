@@ -239,6 +239,21 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+<<<<<<< HEAD
+=======
+    <room>rooms\rmLevel1_19</room>
+    <room>rooms\room31</room>
+    <room>rooms\rmLevel1_18</room>
+    <room>rooms\rmLevel1_17</room>
+    <room>rooms\rmLevel1_16</room>
+    <room>rooms\rmLevel1_15</room>
+    <room>rooms\rmLevel1_14</room>
+    <room>rooms\rmLevel1_13</room>
+    <room>rooms\rmLevel1_12</room>
+    <room>rooms\rmLevel1_11</room>
+    <room>rooms\rmTeste</room>
+    <room>rooms\rmMenuInicial</room>
+>>>>>>> 921935921e19f189ffa8b9379e136452e4706df1
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
     <room>rooms\rmLevel1_2</room>
@@ -250,6 +265,7 @@
     <room>rooms\rmLevel1_8</room>
     <room>rooms\rmLevel1_9</room>
     <room>rooms\rmLevel1_10</room>
+<<<<<<< HEAD
     <room>rooms\rmLevel1_11</room>
     <room>rooms\rmLevel1_12</room>
     <room>rooms\rmLevel1_13</room>
@@ -262,6 +278,8 @@
     <room>rooms\rmLevel1_20</room>
     <room>rooms\rmTeste</room>
     <room>rooms\rmMenuInicial</room>
+=======
+>>>>>>> 921935921e19f189ffa8b9379e136452e4706df1
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
     <rooms name="OLD">
