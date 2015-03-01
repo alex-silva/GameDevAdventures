@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Variáveis do player
 cor = Cor.White;
+playerVivo = true;
 playerGravity = 0.75;
 horizontalSpeed = 0;
 verticalSpeed = 0;
@@ -50,9 +51,7 @@ isFalling = false;
 //controle de inércia
 acelerando = true;
 inercia = 0;
-playerVivo = true;
 playerDirection = Direction.Right;
-playerVivo = true;
 /* variáveis de estado do player (para troca de sprites) */
 
 /* PLATAFORMAS */
@@ -102,12 +101,24 @@ TrocaSpritePlayer();
             <kind>1</kind>
             <string>///Recomeça nível ou checkpoint, "matando" player, mas não destruímos a instância
 playerVivo = true;
+//desativa inercia
+horizontalSpeed = 0;
+verticalSpeed = 0;
+hspCarry = 0;
+verCarry = 0;
+isJumping = false;
+isEndJump = false;
+move = 0;
+isFalling = false;
+acelerando = true;
+inercia = 0;
+isInPortal = false;
 if (instance_exists(objRoom))
 {
     if (objRoom.checkpointX != 0 &amp;&amp; objRoom.checkpointY != 0)
     {
-            x = objRoom.checkpointX;
-            y = objRoom.checkpointY;
+        x = objRoom.checkpointX;
+        y = objRoom.checkpointY;
     }
     else
         room_restart();
@@ -146,6 +157,19 @@ if (instance_exists(objDoorStart))
 {
     if (x &gt; room_width || y &gt; room_height || x &lt; 0 || y &lt; 0)
     {
+        playerVivo = true;
+        //desativa inercia
+        horizontalSpeed = 0;
+        verticalSpeed = 0;
+        hspCarry = 0;
+        verCarry = 0;
+        isJumping = false;
+        isEndJump = false;
+        move = 0;
+        isFalling = false;
+        acelerando = true;
+        inercia = 0;
+        isInPortal = false;
         x = objDoorStart.x;
         y = objDoorStart.y;
     }
