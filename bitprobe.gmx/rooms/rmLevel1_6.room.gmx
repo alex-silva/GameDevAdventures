@@ -102,7 +102,6 @@
     <tile bgName="FloorColors_ON" x="64" y="64" w="32" h="32" xo="128" yo="128" id="10001525" name="inst_E944D961" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="FloorColors_ON" x="832" y="448" w="32" h="32" xo="64" yo="96" id="10007096" name="inst_E7B82FD7" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="FloorColors_ON" x="832" y="480" w="32" h="32" xo="64" yo="96" id="10007097" name="inst_37781041" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="TileSetV1" x="288" y="128" w="32" h="32" xo="32" yo="32" id="10013356" name="inst_4F9FB5EE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="320" y="128" w="32" h="32" xo="64" yo="0" id="10014827" name="inst_706A5BEE" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="320" y="160" w="32" h="32" xo="64" yo="64" id="10014828" name="inst_A860CF77" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="224" y="160" w="32" h="32" xo="32" yo="64" id="10014849" name="inst_CDC7AA98" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -2773,6 +2772,7 @@
     <tile bgName="TileSetV1" x="128" y="1152" w="32" h="32" xo="128" yo="32" id="10035969" name="inst_A821326B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="128" y="1088" w="32" h="32" xo="128" yo="32" id="10035971" name="inst_85CBC905" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="TileSetV1" x="128" y="1120" w="32" h="32" xo="128" yo="32" id="10035972" name="inst_66EA701F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="TileSetV1" x="288" y="128" w="32" h="32" xo="32" yo="0" id="10036035" name="inst_4FA8BD5E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

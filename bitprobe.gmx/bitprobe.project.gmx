@@ -211,6 +211,7 @@
         <object>objects\objAlternatingSpike</object>
         <object>objects\objMovingSpike</object>
         <object>objects\objMovingAlternatingSpike</object>
+        <object>objects\objDSMiddle</object>
       </objects>
       <objects name="Sphere">
         <object>objects\objSphere</object>
