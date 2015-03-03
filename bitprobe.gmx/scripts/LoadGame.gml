@@ -61,10 +61,10 @@ if (instance_exists(objPlayer))
 }
 
 ///cor para testes
-global.playerStats[? "PlayerBlue"] = true;
-global.playerStats[? "PlayerGreen"] = true;
-global.playerStats[? "PlayerRed"] = true;
-global.playerStats[? "PlayerWhite"] = false;
+//global.playerStats[? "PlayerBlue"] = true;
+//global.playerStats[? "PlayerGreen"] = true;
+//global.playerStats[? "PlayerRed"] = true;
+//global.playerStats[? "PlayerWhite"] = false;
 
 
 ini_close();
