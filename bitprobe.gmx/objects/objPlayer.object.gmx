@@ -250,7 +250,15 @@ if (place_meeting(x, y + verticalSpeed, objCollision)
         //som do step do player, se estiver movimentando-se
         if(move!=0)  PlaySound(sndStep1, false, true);
         if (place_meeting(x, y + verticalSpeed, objCollision))
+        {
+            show_debug_message("vertical");
+            while(!place_meeting(x, y + sign(verticalSpeed), objCollision))
+            {
+                y += sign(verticalSpeed);
+            }
             verticalSpeed = 0;
+        }
+
     }
     
 }
@@ -262,8 +270,6 @@ if !(place_meeting(x, y, objPropulsor))
 var hspFinal = horizontalSpeed + hspCarry;
 hspCarry = 0;
 
-//Colisão com quinas
-//if (x + s
  
 /* ------------------------------------*/
 /* ------------------------------------*/
@@ -274,6 +280,8 @@ hspCarry = 0;
 //Colisão Horizontal com floor
 if (place_meeting(x + hspFinal, y, objCollision))
 {
+    
+//    show_debug_message("horizontal");
     while(!place_meeting(x + sign(hspFinal), y, objCollision))
     {
         x += sign(hspFinal);
@@ -299,6 +307,32 @@ if (place_meeting(x, y + verticalSpeed, objCollision))
 /* ------------------------------------*/
 /* ------------------------------------*/
 
+if (global.keyRight)
+    playerDirection = Direction.Right;
+else if (global.keyLeft)
+    playerDirection = Direction.Left;
+    
+//Colisão com quinas
+if (place_meeting(x,y,objCollision))
+{
+    if (playerDirection == Direction.Right)
+    {
+        x-=1;
+        if verticalSpeed &lt; 0
+            playerDirection = Direction.JumpRight;      
+    }
+    else if (playerDirection == Direction.Left)
+    {
+        x+=1;
+        if verticalSpeed &lt; 0
+            playerDirection = Direction.JumpLeft;      
+    }
+        
+    if (verticalSpeed &lt; 0 )    
+        y+=1;
+    else if (verticalSpeed &gt; 0)
+        y-=1;
+}
 
 
 /* ------------------------------------*/
@@ -404,7 +438,7 @@ if (verCarry == 0) ///&amp;&amp; !isOnBarrier)
     y += verticalSpeed;
 
 //view segue player
-if (viewFollows)
+/*if (viewFollows)
 {
    /// movimentoViewX = objPlayer.x - 128;
    /// if (movimentoViewX &gt;= 0 &amp;&amp; objPlayer.x + view_wview[1] - 128 &lt; room_width)
@@ -418,7 +452,7 @@ if (viewFollows)
     viewX = view_xview[0];
     viewY = view_yview[0];
 }
-
+*/
         
 /* ------------------------------------*/
 /* ------------------------------------*/
@@ -426,7 +460,7 @@ if (viewFollows)
 /* ------------------------------------*/
 /* ------------------------------------*/
 
-if (horizontalSpeed &gt; 0)
+/*if (horizontalSpeed &gt; 0)
 {
     if verticalSpeed &lt; 0
         playerDirection = Direction.JumpRight;      
@@ -439,7 +473,7 @@ else if horizontalSpeed &lt; 0
        playerDirection = Direction.JumpLeft;
     else if verticalSpeed &gt;= 0 
        playerDirection = Direction.Left
-}
+}*/
 if(global.playerStats[? "PlayerRed"]&amp;&amp;global.keyRed)
 {
     self.cor = Cor.Red;
@@ -1075,7 +1109,7 @@ if(global.playerStats[? "PlayerRed"])
       </action>
     </event>
   </events>
-  <PhysicsObject>-1</PhysicsObject>
+  <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
@@ -1087,7 +1121,9 @@ if(global.playerStats[? "PlayerRed"])
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>16,16</point>
-    <point>16,16</point>
+    <point>0,-1</point>
+    <point>66,-1</point>
+    <point>66,67</point>
+    <point>0,67</point>
   </PhysicsShapePoints>
 </object>

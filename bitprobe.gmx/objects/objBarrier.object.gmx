@@ -28,15 +28,12 @@
             <string>///Define cor
 cor = Cor.White;
 sprite_index = - 1;
-<<<<<<< HEAD
-=======
 mask_index = sprBarrier;
-player_colide = false;
+playerColide = false;
 //player esta acima da plataforma, ou colidiu
 /////carregaPlayer = false;
 //player pulou acima da plataforma
 /////isJumping = false;
->>>>>>> 72792d3c22cdace15ac5d33665ad99c37e129b52
 </string>
           </argument>
         </arguments>
@@ -65,21 +62,19 @@ if (global.pause) exit;
 var barrierXDireita = round(x + sprite_get_width(sprBarrier) * image_xscale);
 var barrierYAbaixo = round(y + sprite_get_height(sprBarrier) * image_yscale);
 
-if (CollisionCor(cor, objPlayer.cor) &amp;&amp; player_colide == false)
+if (CollisionCor(cor, objPlayer.cor) &amp;&amp; playerColide == false)
         mask_index = sprBarrier;
     else
         mask_index = -1;
+//se esta dentro
 if(collision_rectangle(x+abs(objPlayer.horizontalSpeed), y+1, barrierXDireita-5-abs(objPlayer.horizontalSpeed), barrierYAbaixo-1, objPlayer, false, true)!=noone) 
 {    
     mask_index = -1;
-    player_colide = true
+    playerColide = true;
 }
-<<<<<<< HEAD
-=======
+//fora do objeto
 else if (collision_rectangle(x, y, barrierXDireita, barrierYAbaixo, objPlayer, false, true)==noone) 
-    player_colide = false;
-
->>>>>>> 72792d3c22cdace15ac5d33665ad99c37e129b52
+    playerColide = false;
 </string>
           </argument>
         </arguments>

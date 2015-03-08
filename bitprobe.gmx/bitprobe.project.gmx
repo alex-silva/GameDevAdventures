@@ -241,12 +241,12 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
-    <room>rooms\rmTeste</room>
+    <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_5</room>
+    <room>rooms\rmTeste</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
-    <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_4</room>
     <room>rooms\rmLevel1_6</room>
@@ -266,12 +266,9 @@
     <room>rooms\rmLevel1_20</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
-<<<<<<< HEAD
     <room>rooms\rmLevel1_21</room>
-=======
     <room>rooms\roomTestFisica</room>
     <room>rooms\rmTeste</room>
->>>>>>> 72792d3c22cdace15ac5d33665ad99c37e129b52
     <rooms name="OLD">
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>
