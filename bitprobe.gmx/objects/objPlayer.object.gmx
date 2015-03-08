@@ -235,7 +235,7 @@ if (verticalSpeed &gt; verticalSpeedAnt)
 else
     isFalling = false;
 // pula mais alto se tocar em propulsor, pular normal se tocar em floor e plataformas
-if (place_meeting(x, y + 1, objCollision)
+if (place_meeting(x, y + verticalSpeed, objCollision)
  || place_meeting(x, y, objPropulsor))
 {
     if (global.keyJump){
@@ -249,7 +249,7 @@ if (place_meeting(x, y + 1, objCollision)
     {
         //som do step do player, se estiver movimentando-se
         if(move!=0)  PlaySound(sndStep1, false, true);
-        if (place_meeting(x, y + 1, objCollision))
+        if (place_meeting(x, y + verticalSpeed, objCollision))
             verticalSpeed = 0;
     }
     
@@ -372,6 +372,21 @@ if CollisionCor(self.cor, objBarrier.cor)
 /* --------- COLISAO BARRIER ----------*/
 /* ------------------------------------*/
 /* ------------------------------------*/
+inst = instance_place(x+horizontalSpeed, y+verticalSpeed, objBarrier);
+if(inst!=noone){
+    if CollisionCor(cor, inst.cor)
+        inst.mask_index = sprBarrier;
+}
+inst = instance_place(x, y, objBarrier);
+if(inst!=noone){
+    if(place_meeting(x, y, objBarrier)) 
+    {
+            inst.mask_index = -1;
+    }
+}
+
+
+
 
 //se está seguindo path, cancela velocidade
 if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
