@@ -28,10 +28,6 @@
             <string>///Define cor
 cor = Cor.White;
 sprite_index = - 1;
-//player esta acima da plataforma, ou colidiu
-/////carregaPlayer = false;
-//player pulou acima da plataforma
-/////isJumping = false;
 </string>
           </argument>
         </arguments>
@@ -78,119 +74,6 @@ if (instance_exists(objPlayer))
     }
     else
         mask_index = -1;
-}
-
-
-//colide
-/*if CollisionCor(self.cor, objPlayer.cor)
-{
-    ////verificar quinas!
-    ////na horizontal se mudar de cor enquanto colidir, nao prossegue
-    ////pula mais alto se for da msm cor da barrier(abaixo da mesma)
-
-    //se player estiver com parte do corpo para fora, atravessa
-/*    var barrierXDireita = round(x + sprite_get_width(sprite_index));
-    var barrierYAbaixo = round(y + sprite_get_height(sprite_index));
-    var playerXDireita = round(objPlayer.x + (sprite_get_width(objPlayer.sprite_index)/2));
-    var playerXEsquerda = round(objPlayer.x - (sprite_get_width(objPlayer.sprite_index)/2));
-    var playerYAcima = round(objPlayer.y - (sprite_get_height(objPlayer.sprite_index)/2));
-    var playerYAbaixo = round(objPlayer.y + (sprite_get_height(objPlayer.sprite_index)/2));*/
-/*    
-      var barrierXDireita = round(x + sprite_width);
-    var barrierYAbaixo = round(y + sprite_height);
-    var playerXDireita = round(objPlayer.x + (sprite_get_width(objPlayer.sprite_index)/2));
-    var playerXEsquerda = round(objPlayer.x - (sprite_get_width(objPlayer.sprite_index)/2));
-    var playerYAcima = round(objPlayer.y - (sprite_get_height(objPlayer.sprite_index)/2));
-    var playerYAbaixo = round(objPlayer.y + (sprite_get_height(objPlayer.sprite_index)/2));
-     // atravessa se player estiver com parte do corpo na barrier
-     if (place_meeting(x, y, objPlayer) 
-      &amp;&amp; ((playerXDireita &gt; barrierXDireita) || (playerXEsquerda &lt; x) 
-       || (playerYAbaixo &gt; barrierYAbaixo)   || (playerYAcima &lt; y) ))
-    {
-        if (carregaPlayer == true)
-        {
-            objPlayer.isOnBarrier = false;
-            isJumping = false;
-        }
-        carregaPlayer = false;
-        exit;
-    }
-    
-    /*colisão vertical com player (acima)*/
-  /*  if (place_meeting(x, y - objPlayer.verticalSpeed, objPlayer))
-    {
-        while(!place_meeting(x, y - sign(objPlayer.verticalSpeed), objPlayer))
-            objPlayer.y += sign(objPlayer.verticalSpeed);
-        objPlayer.isOnBarrier = true;
-        objPlayer.verticalSpeed = 0;
-        carregaPlayer = true;
-        if (global.keyJump){
-            objPlayer.verticalSpeed = -objPlayer.jumpSpeed;
-            isJumping = true;
-            carregaPlayer = false;
-            objPlayer.isOnBarrier = false;
-            PlaySound(sndJump, false, false);
-            }
-        else if (objPlayer.move != 0 )
-            PlaySound(sndStep1, false, true);
-        exit;
-            
-    }
-    /*colisão vertical com player (acima)*/
-    
-    /* colisão vertical com player (por baixo)*/
- /*   if (place_meeting(x, y + sign(objPlayer.verticalSpeed), objPlayer))
-    {
-    show_debug_message("baixo");
-        while(!place_meeting(x, y + sign(objPlayer.verticalSpeed), objPlayer))
-        {
-        show_debug_message("barrier " + string(y)); 
-                show_debug_message("player " + string(objPlayer.y));
-            objPlayer.y -= sign(objPlayer.verticalSpeed);
-            }
-        objPlayer.verticalSpeed = 0;
-        exit;
-    }
-    /* colisão vertical com player (por baixo)*/
-    
-    //////testar
-    
-    
-    
-    /* colisão horizontal com player*/
- /*   if (place_meeting(x - objPlayer.horizontalSpeed, y, objPlayer))
-    {
-        while(!place_meeting(x - sign(objPlayer.horizontalSpeed), y, objPlayer))
-            objPlayer.x += sign(objPlayer.horizontalSpeed);
-        objPlayer.colideBarrier = true;
-        objPlayer.horizontalSpeed = 0;
-        carregaPlayer = true;
-        exit;
-    }
-    /* colisão horizontal com player*/
-
-    //player não colide mais com plataforma ou pulou (se estiver acima)
-  /*  if (carregaPlayer == true || isJumping == true)
-    {
-        show_debug_message("saiu");
-        carregaPlayer = false;
-        objPlayer.isOnBarrier = false;
-        objPlayer.colideBarrier = false;
-        if !(place_meeting(x, y - objPlayer.verticalSpeed, objPlayer) &amp;&amp; isJumping)
-            isJumping = false;
-    }
-   
-   
-}
-//atravessa
-else
-{
-    if (carregaPlayer == true)
-    {
-        objPlayer.isOnBarrier = false;
-        isJumping = false;
-    }
-    carregaPlayer = false;
 }
 </string>
           </argument>

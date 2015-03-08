@@ -28,6 +28,8 @@
             <string>///Define path da sphere
 event_inherited();
 path = noone;
+//on rails
+isAutomatic = false;
 </string>
           </argument>
         </arguments>

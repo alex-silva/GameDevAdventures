@@ -483,7 +483,7 @@ switch(other.cor)
 }
 if (cor != Cor.White)
     global.playerStats[? "PlayerWhite"] = false;
-sprite_index = TrocaSpritePlayer();
+TrocaSpritePlayer();
 with (other) instance_destroy();
 PlaySound(sndPowerUp,false, false);
 </string>
@@ -553,7 +553,8 @@ if (CollisionCor(self.cor, other.cor))
         path_change_point(other.path, 0, other.x, other.y, path_get_speed(other.path, 0));
         path_start(other.path, path_get_speed(other.path, 0), 0, true);
         PlaySound(sndPortal,false, true);
-        isInPortal = true;
+        if (!other.isAutomatic)
+            isInPortal = true;
     }
     else if (isInPortal == true)
     {
@@ -1059,9 +1060,9 @@ if(global.playerStats[? "PlayerRed"])
       </action>
     </event>
   </events>
-  <PhysicsObject>0</PhysicsObject>
+  <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>0</PhysicsObjectShape>
+  <PhysicsObjectShape>1</PhysicsObjectShape>
   <PhysicsObjectDensity>0.5</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>

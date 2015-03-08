@@ -188,6 +188,7 @@
     <objects name="Boss">
       <object>objects\objTrojan</object>
       <object>objects\objTrojanHead</object>
+      <object>objects\objTrojanHeadMoving</object>
     </objects>
     <objects name="Triggers">
       <objects name="Trojan">
@@ -240,13 +241,14 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\rmTeste</room>
+    <room>rooms\rmLevel1_5</room>
     <room>rooms\rmMenuInicial</room>
     <room>rooms\rmMapa01</room>
     <room>rooms\rmLevel1_1</room>
     <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_3</room>
     <room>rooms\rmLevel1_4</room>
-    <room>rooms\rmLevel1_5</room>
     <room>rooms\rmLevel1_6</room>
     <room>rooms\rmLevel1_7</room>
     <room>rooms\rmLevel1_8</room>
@@ -262,9 +264,9 @@
     <room>rooms\rmLevel1_18</room>
     <room>rooms\rmLevel1_19</room>
     <room>rooms\rmLevel1_20</room>
-    <room>rooms\rmTeste</room>
     <room>rooms\rmLevel1B</room>
     <room>rooms\rmMapa22</room>
+    <room>rooms\rmLevel1_21</room>
     <rooms name="OLD">
       <room>rooms\rmLevel13OLD</room>
       <room>rooms\rmLevel14OLD</room>
