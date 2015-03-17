@@ -71,7 +71,14 @@ viewY = 0;
 
 //está em portal e ignora colisoes
 isInPortal = false;
-
+//está em portal e reconhece colisões e mortes
+isInRailsPortal = false;
+//posição anterior do path antes de colidir
+pathPositionAnt = 0;
+//esta em path
+isInPath = false;
+//preso em path até trocar de cor
+stuckInPath = false;
 // alarme até morte do player
 alarmPlayerDeath = room_speed;
 image_speed = 1;
@@ -113,6 +120,7 @@ isFalling = false;
 acelerando = true;
 inercia = 0;
 isInPortal = false;
+isInRailsPortal = false;
 if (instance_exists(objRoom))
 {
     if (objRoom.checkpointX != 0 &amp;&amp; objRoom.checkpointY != 0)
@@ -170,6 +178,7 @@ if (instance_exists(objDoorStart))
         acelerando = true;
         inercia = 0;
         isInPortal = false;
+        isInRailsPortal = false;
         x = objDoorStart.x;
         y = objDoorStart.y;
     }
@@ -180,6 +189,12 @@ if (instance_exists(objDoorStart))
 if (!playerVivo)
     exit;
 
+//esta em path
+isInPath = path_position &gt; 0 &amp;&amp; path_position &lt; 1;
+if (isInPath &amp;&amp; stuckInPath)
+{
+    path_position = pathPositionAnt;
+}    
 //pulando
 if (verticalSpeed &lt; 0)
     isJumping = true;
@@ -280,8 +295,15 @@ hspCarry = 0;
 //Colisão Horizontal com floor
 if (place_meeting(x + hspFinal, y, objCollision))
 {
-    
-//    show_debug_message("horizontal");
+    //se está seguindo path on rails, colide se cor for igual, e retorna
+    //o path quando não colidir mais
+    if (isInRailsPortal &amp;&amp; isInPath)
+    {
+       pathPositionAnt = path_position;
+       stuckInPath = true;
+    }
+    else
+        stuckInPath = false;
     while(!place_meeting(x + sign(hspFinal), y, objCollision))
     {
         x += sign(hspFinal);
@@ -422,8 +444,8 @@ if(inst!=noone){
 
 
 
-//se está seguindo path, cancela velocidade
-if (path_position &gt; 0 &amp;&amp; path_position &lt; 1)
+//se está seguindo path, cancela velocidade, trata colisões se for on rails
+if (isInPath)
 {
     verticalSpeed = 0;
     hspFinal = 0;
@@ -597,19 +619,30 @@ room_goto_next();
             <string>/// Colisão com sphere e teletransporta
 if (CollisionCor(self.cor, other.cor))
 {
-    if (path_exists(other.path) &amp;&amp; isInPortal == false)
+    //portal origem
+    if (path_exists(other.path) &amp;&amp; (isInPortal == false &amp;&amp; isInRailsPortal == false))
     {
         path_change_point(other.path, 0, other.x, other.y, path_get_speed(other.path, 0));
         path_start(other.path, path_get_speed(other.path, 0), 0, true);
         PlaySound(sndPortal,false, true);
         if (!other.isAutomatic)
+        {
             isInPortal = true;
+            isInRailsPortal = false;
+        }
+        else
+        {
+            isInPortal = false;
+            isInRailsPortal = true;   
+        }
     }
-    else if (isInPortal == true)
+    //portal destino
+    else if (path_position == 1)
     {
         //TODO:sound diferenciado
         PlaySound(sndPortal,false, true);
         isInPortal = false;
+        isInRailsPortal = false;  
     }
     
 }

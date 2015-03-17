@@ -63,7 +63,9 @@ var barrierXDireita = round(x + sprite_get_width(sprBarrier) * image_xscale);
 var barrierYAbaixo = round(y + sprite_get_height(sprBarrier) * image_yscale);
 
 if (CollisionCor(cor, objPlayer.cor) &amp;&amp; playerColide == false)
+{
         mask_index = sprBarrier;
+}
     else
         mask_index = -1;
 //se esta dentro

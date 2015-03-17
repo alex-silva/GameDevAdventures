@@ -123,6 +123,9 @@
       <path>paths\path1_19_1</path>
       <path>paths\path1_19_2</path>
     </paths>
+    <paths name="Level1_21">
+      <path>paths\path1_21_1</path>
+    </paths>
   </paths>
   <scripts name="scripts">
     <scripts name="Particles">
@@ -241,6 +244,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rmSplash</room>
+    <room>rooms\room34</room>
     <room>rooms\rmLevel1_2</room>
     <room>rooms\rmLevel1_5</room>
     <room>rooms\rmTeste</room>
