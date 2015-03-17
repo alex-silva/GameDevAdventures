@@ -297,10 +297,11 @@ if (place_meeting(x + hspFinal, y, objCollision))
 {
     //se está seguindo path on rails, colide se cor for igual, e retorna
     //o path quando não colidir mais
+    //provavelmente nao sera usado pois podemos colocar como obstaculos spikes
     if (isInRailsPortal &amp;&amp; isInPath)
     {
-       pathPositionAnt = path_position;
-       stuckInPath = true;
+     //  pathPositionAnt = path_position;
+       //stuckInPath = true;
     }
     else
         stuckInPath = false;
